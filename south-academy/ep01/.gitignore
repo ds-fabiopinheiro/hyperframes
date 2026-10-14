@@ -8,3 +8,4 @@ entrega/*.wav
 entrega/conferencia/
 entrega/.*hf-transaction*/
 entrega/work-*/
+entrega/*.flac
