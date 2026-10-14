@@ -151,7 +151,7 @@ export const SCENES = {
   </div>`;
     const css = `
   #root { background: transparent; }
-  #root #g-kicker { position: absolute; left: 96px; top: 64px; font-size: 24px; color: rgba(255,255,255,.75); letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
+  #root #g-kicker { position: absolute; left: 1210px; top: 64px; font-size: 24px; color: rgba(255,255,255,.75); letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
   #root #g-kicker b { color: #fff; background: #FF5100; padding: 6px 12px; border-radius: 6px; margin-right: 14px; font-weight: 900; }
   #root #g-chips { position: absolute; left: 1230px; top: 300px; display: flex; flex-direction: column; gap: 22px; }
   #root .chip { display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,.08); border: 2px solid rgba(255,255,255,.18); color: #fff; font-size: 34px; font-weight: 700; padding: 18px 28px; border-radius: 16px; width: 560px; }

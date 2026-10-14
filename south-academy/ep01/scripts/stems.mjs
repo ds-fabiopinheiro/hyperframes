@@ -5,7 +5,7 @@
  * Lê entrega/sfx-manifest.json (gerado por build.mjs) e mixa os SFX com ffmpeg nos mesmos
  * tempos e volumes do index.html. A narração é a mixagem já produzida por build.mjs.
  */
-import { readFileSync, copyFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFileSync } from "node:child_process";
@@ -18,7 +18,23 @@ const OUT = join(ROOT, "entrega");
 
 const narr = join(ROOT, "media", "vo", `${EP}-narration.wav`);
 if (!existsSync(narr)) throw new Error(`narração não encontrada: ${narr} (rode scripts/build.mjs)`);
-copyFileSync(narr, join(OUT, `${EP}-narracao-kokoro.wav`));
+// a mixagem tem 1 s de margem no fim; corta no total do episódio para alinhar com os MP4
+execFileSync(
+  "ffmpeg",
+  [
+    "-y",
+    "-v",
+    "error",
+    "-i",
+    narr,
+    "-t",
+    String(timing.total),
+    "-c",
+    "copy",
+    join(OUT, `${EP}-narracao-kokoro.wav`),
+  ],
+  { stdio: "inherit" },
+);
 
 const sfx = JSON.parse(readFileSync(join(OUT, "sfx-manifest.json"), "utf8"));
 const args = ["-y", "-v", "error"];
