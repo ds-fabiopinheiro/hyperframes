@@ -106,7 +106,9 @@ for (const scene of script.scenes) {
       beat.t = r2(t);
       beat.dur = r2(dur);
       beat.end = r2(t + dur);
-      t = beat.end + (beat.pause ?? 0) + T.lineGap;
+      // folga humana: fração da fala após cada beat (maior nos beats lentos)
+      const slack = dur * (T.beatSlack ?? 0) * (beat.slow ? 1.5 : 1);
+      t = beat.end + slack + (beat.pause ?? 0) + T.lineGap;
     }
     t = t - T.lineGap + T.sceneTail;
   } else {
@@ -264,12 +266,7 @@ for (const scene of script.scenes) {
   });
   const media = hasVideo
     ? `<video id="nar-video" src="${AVATAR}" data-start="0" data-duration="${TOTAL}" muted playsinline></video>`
-    : `<div id="nar-ph">
-        <div class="nar-net"></div>
-        <div class="nar-ring"><div class="nar-ini">FP</div></div>
-        <div class="nar-name">${esc(script.narrator)}<span>${esc(script.org)}</span></div>
-        <div class="nar-tag">avatar · placeholder</div>
-      </div>`;
+    : `<div id="nar-ph"><div class="nar-frame"></div></div>`;
   const body = `
 <style>
   #root { position: absolute; inset: 0; pointer-events: none; font-family: Inter, Arial, Helvetica, sans-serif; }
@@ -278,17 +275,9 @@ for (const scene of script.scenes) {
     transform-origin: 0 0; background: #1A1A1A; box-shadow: 0 30px 80px -30px rgba(0,0,0,.6);
   }
   #root #nar-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  #root #nar-ph { position: absolute; inset: 0; background: radial-gradient(1200px 800px at 40% 45%, #2A2A2A 0%, #1A1A1A 60%, #121212 100%); }
-  #root .nar-net { position: absolute; inset: 0; background: url(assets/network-art.png) right -120px bottom -80px / 1200px auto no-repeat; opacity: .10; filter: invert(1); }
-  #root .nar-ring {
-    position: absolute; left: 50%; top: 50%; width: 420px; height: 420px; margin: -230px 0 0 -210px;
-    border-radius: 50%; border: 10px solid #FF5100; display: grid; place-items: center;
-    background: #222; box-shadow: 0 0 0 24px rgba(255,81,0,.12);
-  }
-  #root .nar-ini { font-size: 164px; font-weight: 900; color: #fff; letter-spacing: -0.05em; }
-  #root .nar-name { position: absolute; left: 50%; top: 50%; margin-top: 220px; transform: translateX(-50%); color: #fff; font-size: 44px; font-weight: 800; text-align: center; white-space: nowrap; }
-  #root .nar-name span { display: block; font-size: 26px; font-weight: 500; color: #FF9A66; margin-top: 6px; letter-spacing: .08em; text-transform: uppercase; }
-  #root .nar-tag { position: absolute; right: 40px; top: 36px; font-size: 22px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.45); border: 2px solid rgba(255,255,255,.25); padding: 8px 16px; border-radius: 999px; }
+  /* zona reservada para o vídeo do Fabio (CapCut): área vazia, moldura discreta, sem texto */
+  #root #nar-ph { position: absolute; inset: 0; background: #1A1A1A; }
+  #root .nar-frame { position: absolute; inset: 24px; border: 3px dashed rgba(255,81,0,.45); border-radius: 18px; }
 </style>
 <div id="root" data-composition-id="narrator" data-width="1920" data-height="1080" data-duration="${TOTAL}">
   <div id="nar-win">
@@ -341,7 +330,9 @@ for (const scene of script.scenes) {
     "sfx-pop.mp3": 0.72,
     "sfx-click.mp3": 0.37,
   };
+  const sfxList = [];
   const addSfx = (id, file, at, vol, track = 11) =>
+    sfxList.push({ id, file, at: r2(at), dur: SFX_DUR[file], vol }) &&
     sfx.push(
       `      <audio id="${id}" src="assets/${file}" data-start="${r2(at)}" data-duration="${SFX_DUR[file]}" data-track-index="${track}" data-volume="${vol}"></audio>`,
     );
@@ -385,7 +376,7 @@ ${fullCards.join("\n")}
       <!-- legendas (rail) — overlay por cima de tudo -->
       <div id="el-captions" data-track-kind="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="${TOTAL}" data-track-index="6" data-width="1920" data-height="1080"></div>
       <!-- narração: troque media/vo/${EP}/<beat>.wav pela voz clonada e rode scripts/build.mjs -->
-      <audio id="vo" src="media/vo/${EP}-narration.wav" data-start="0" data-duration="${TOTAL}" data-track-index="10" data-volume="1"></audio>
+${process.env.VOICE === "0" ? "      <!-- render sem voz: narração omitida (VOICE=0) -->" : `      <audio id="vo" src="media/vo/${EP}-narration.wav" data-start="0" data-duration="${TOTAL}" data-track-index="10" data-volume="1"></audio>`}
 ${sfx.join("\n")}
     </div>
     <script>
@@ -395,6 +386,51 @@ ${sfx.join("\n")}
 </html>
 `;
   writeFileSync(join(ROOT, "index.html"), html);
+
+  // ---------------------------------------------------------------- entrega/ (CapCut)
+  const OUT = join(ROOT, "entrega");
+  mkdirSync(OUT, { recursive: true });
+  writeFileSync(join(OUT, "sfx-manifest.json"), JSON.stringify(sfxList, null, 2));
+  // zonas reservadas para o vídeo do narrador, em pixels de 1920x1080
+  const ZONE = { full: { x: 0, y: 0, w: 1920, h: 1080 }, pip: { x: 1472, y: 807, w: 400, h: 225 } };
+  const rows = ["inicio,fim,modo,x,y,largura,altura,cena,observacao"];
+  for (const scene of script.scenes) {
+    const m = scene.avatar ?? (scene.kind === "sting" || scene.kind === "card" ? "none" : "full");
+    if (m === "none") continue;
+    const z = ZONE[m];
+    const obs =
+      m === "full"
+        ? "graficos a direita (x>=1210); manter o video em x<1140 para nao cobri-los"
+        : "canto inferior direito";
+    rows.push(
+      `${scene.start},${scene.end},${m === "full" ? "tela_cheia" : "canto"},${z.x},${z.y},${z.w},${z.h},${scene.id},${obs}`,
+    );
+  }
+  writeFileSync(join(OUT, `${EP}-zonas.csv`), rows.join("\n") + "\n");
+  const mmss = (x) => `${Math.floor(x / 60)}:${(x % 60).toFixed(1).padStart(4, "0")}`;
+  const md = [
+    `# ${script.episode} · ${script.title} — roteiro com tempos`,
+    "",
+    `Duração total: ${mmss(TOTAL)} (${TOTAL} s). Tempos = início de cada beat no vídeo guia. Pausas: [PAUSA] 1 s · [PAUSA LONGA] 2,5 s.`,
+    "",
+  ];
+  for (const scene of script.scenes) {
+    const modo =
+      scene.avatar === "full"
+        ? "narrador em tela cheia"
+        : scene.avatar === "pip"
+          ? "narrador no canto"
+          : "sem narrador";
+    md.push(`## ${mmss(scene.start)} · ${scene.label} (${modo}, até ${mmss(scene.end)})`, "");
+    for (const b of scene.beats ?? []) {
+      const tag = b.slow ? " _[RITMO: lento]_" : "";
+      md.push(
+        `- **${mmss(b.t)}** ${b.cap ?? b.say}${tag}${b.pause ? `  → [PAUSA ${b.pause} s]` : ""}`,
+      );
+    }
+    md.push("");
+  }
+  writeFileSync(join(OUT, `${EP}-roteiro-tempos.md`), md.join("\n"));
 }
 
 console.log(

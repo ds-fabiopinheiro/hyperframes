@@ -5,11 +5,14 @@
   "narrator": "Fabio Pinheiro",
   "org": "South System",
   "timing": {
-    "lineGap": 0.35,
+    "lineGap": 0.5,
     "pause": 1.0,
     "pauseLong": 2.5,
     "sceneLeadIn": 0.6,
-    "sceneTail": 1.2
+    "sceneTail": 1.2,
+    "speed": 0.85,
+    "slowSpeed": 0.78,
+    "beatSlack": 0.25
   },
   "scenes": [
     {
@@ -18,7 +21,11 @@
       "avatar": "full",
       "label": "Gancho frio",
       "beats": [
-        { "id": "g01", "say": "Sua empresa já tem IA.", "cue": "open" },
+        {
+          "id": "g01",
+          "say": "Sua empresa já tem IA.",
+          "cue": "open"
+        },
         {
           "id": "g02",
           "say": "Um modelo de crédito, um antifraude, um chatbot, talvez um copiloto no time de TI.",
@@ -26,18 +33,31 @@
           "cue": "chips",
           "pause": 1.0
         },
-        { "id": "g03", "say": "Então eu não vou te explicar o que é IA.", "cue": "clear" },
-        { "id": "g04", "say": "Vou te fazer uma pergunta mais desconfortável:" },
+        {
+          "id": "g03",
+          "say": "Então eu não vou te explicar o que é IA.",
+          "cue": "clear"
+        },
+        {
+          "id": "g04",
+          "say": "Vou te fazer uma pergunta mais desconfortável:"
+        },
         {
           "id": "g05",
           "say": "quanto disso apareceu no balanço?",
           "cap": "**quanto disso** apareceu **no balanço?**",
           "cue": "embed",
-          "pause": 0.6
+          "pause": 0.6,
+          "slow": true
         }
       ]
     },
-    { "id": "vinheta", "kind": "sting", "hold": 3.2, "label": "Vinheta" },
+    {
+      "id": "vinheta",
+      "kind": "sting",
+      "hold": 3.2,
+      "label": "Vinheta"
+    },
     {
       "id": "tela01",
       "kind": "slide",
@@ -57,24 +77,32 @@
           "cue": "academy",
           "pause": 0.5
         },
-        { "id": "t1-03", "say": "A tese da série cabe numa frase:", "cue": "tese" },
+        {
+          "id": "t1-03",
+          "say": "A tese da série cabe numa frase:",
+          "cue": "tese",
+          "slow": true
+        },
         {
           "id": "t1-04",
           "say": "no setor financeiro, quase todo mundo já usa IA.",
           "cap": "**no setor financeiro, quase todo mundo já usa IA.**",
-          "cue": "tese1"
+          "cue": "tese1",
+          "slow": true
         },
         {
           "id": "t1-05",
           "say": "Pouca gente captura o valor.",
           "cap": "**Pouca gente captura o valor.**",
-          "cue": "tese2"
+          "cue": "tese2",
+          "slow": true
         },
         {
           "id": "t1-06",
           "say": "E a diferença não está na tecnologia.",
           "cue": "tese3",
-          "pause": 0.5
+          "pause": 0.5,
+          "slow": true
         },
         {
           "id": "t1-07",
@@ -129,7 +157,10 @@
           "say": "Antes de seguir, pense numa tarefa da sua equipe que ainda é feita à mão",
           "cue": "ask"
         },
-        { "id": "t2-05", "say": "e que não deveria." },
+        {
+          "id": "t2-05",
+          "say": "e que não deveria."
+        },
         {
           "id": "t2-06",
           "say": "Não a mais chata. A mais cara.",
@@ -137,7 +168,11 @@
           "cue": "cara",
           "pause": 1.0
         },
-        { "id": "t2-07", "say": "Ela volta no episódio 4.", "cue": "ep4" }
+        {
+          "id": "t2-07",
+          "say": "Ela volta no episódio 4.",
+          "cue": "ep4"
+        }
       ]
     },
     {
@@ -146,7 +181,11 @@
       "avatar": "pip",
       "label": "Tela 03 · Cinco módulos",
       "beats": [
-        { "id": "t3-01", "say": "Cinco módulos, cinco perguntas de gestor.", "cue": "cards" },
+        {
+          "id": "t3-01",
+          "say": "Cinco módulos, cinco perguntas de gestor.",
+          "cue": "cards"
+        },
         {
           "id": "t3-02",
           "say": "Onde a IA ajuda. O que preciso entender para avaliar. O que começa primeiro.",
@@ -158,7 +197,11 @@
           "cue": "walk2",
           "pause": 0.4
         },
-        { "id": "t3-04", "say": "Este programa não é sobre tecnologia.", "cue": "band" },
+        {
+          "id": "t3-04",
+          "say": "Este programa não é sobre tecnologia.",
+          "cue": "band"
+        },
         {
           "id": "t3-05",
           "say": "É sobre reconhecer, julgar e provar.",
@@ -173,34 +216,53 @@
       "avatar": "pip",
       "label": "Tela 04 · O paradoxo",
       "beats": [
-        { "id": "t4-01", "say": "Agora o paradoxo.", "cue": "intro" },
+        {
+          "id": "t4-01",
+          "say": "Agora o paradoxo.",
+          "cue": "intro"
+        },
         {
           "id": "t4-02",
           "say": "Setenta e nove por cento das organizações dizem que já tiveram algum valor mensurável com IA.",
           "cap": "**Setenta e nove por cento** das organizações dizem que já tiveram algum valor mensurável com IA.",
           "cue": "r1"
         },
-        { "id": "t4-03", "say": "Se eu perguntasse na sua diretoria, a resposta seria a mesma." },
+        {
+          "id": "t4-03",
+          "say": "Se eu perguntasse na sua diretoria, a resposta seria a mesma."
+        },
         {
           "id": "t4-04",
           "say": "Mas menos de trinta por cento dos líderes de IA",
           "cap": "Mas **menos de trinta por cento** dos líderes de IA",
-          "cue": "r2"
+          "cue": "r2",
+          "slow": true
         },
-        { "id": "t4-05", "say": "dizem que o retorno superou a expectativa do CEO." },
+        {
+          "id": "t4-05",
+          "say": "dizem que o retorno superou a expectativa do CEO.",
+          "slow": true
+        },
         {
           "id": "t4-06",
           "say": "Mais da metade dos projetos não chega à produção.",
           "cap": "**Mais da metade** dos projetos não chega à produção.",
-          "cue": "r3"
+          "cue": "r3",
+          "slow": true
         },
         {
           "id": "t4-07",
           "say": "E a Gartner prevê mais de quarenta por cento dos projetos de IA agêntica",
           "cap": "E a Gartner prevê **mais de quarenta por cento** dos projetos de IA agêntica",
-          "cue": "r4"
+          "cue": "r4",
+          "slow": true
         },
-        { "id": "t4-08", "say": "cancelados até o fim de 2027.", "pause": 1.0 },
+        {
+          "id": "t4-08",
+          "say": "cancelados até o fim de 2027.",
+          "pause": 1.0,
+          "slow": true
+        },
         {
           "id": "t4-09",
           "say": "Um diretor de operações de uma cooperativa me disse uma vez:",
@@ -224,15 +286,25 @@
           "cue": "dedos",
           "pause": 0.4
         },
-        { "id": "t4-13", "say": "Dezessete iniciativas não é uma estratégia.", "cue": "inv1" },
+        {
+          "id": "t4-13",
+          "say": "Dezessete iniciativas não é uma estratégia.",
+          "cue": "inv1",
+          "slow": true
+        },
         {
           "id": "t4-14",
           "say": "É um inventário.",
           "cap": "É um **inventário**.",
           "cue": "inv2",
-          "pause": 0.6
+          "pause": 0.6,
+          "slow": true
         },
-        { "id": "t4-15", "say": "O diferencial não é usar IA.", "cue": "band" },
+        {
+          "id": "t4-15",
+          "say": "O diferencial não é usar IA.",
+          "cue": "band"
+        },
         {
           "id": "t4-16",
           "say": "É escolher o problema certo, preparar dados e pessoas e medir.",
@@ -247,7 +319,11 @@
       "avatar": "pip",
       "label": "Tela 05 · Cinco diferenciais",
       "beats": [
-        { "id": "t5-01", "say": "Cinco diferenciais. Cada um volta num módulo.", "cue": "intro" },
+        {
+          "id": "t5-01",
+          "say": "Cinco diferenciais. Cada um volta num módulo.",
+          "cue": "intro"
+        },
         {
           "id": "t5-02",
           "say": "Problema antes da tecnologia.",
@@ -275,7 +351,11 @@
           "id": "t5-06",
           "say": "Antes do deploy, um executivo responde por converter ganho operacional em resultado."
         },
-        { "id": "t5-07", "say": "Um nome. Não um comitê.", "cue": "d2n" },
+        {
+          "id": "t5-07",
+          "say": "Um nome. Não um comitê.",
+          "cue": "d2n"
+        },
         {
           "id": "t5-08",
           "say": "Dados prontos para o caso de uso.",
@@ -312,7 +392,11 @@
           "cue": "d5n",
           "pause": 1.0
         },
-        { "id": "t5-14", "say": "Você tem três perfis na sua diretoria.", "cue": "perfis" },
+        {
+          "id": "t5-14",
+          "say": "Você tem três perfis na sua diretoria.",
+          "cue": "perfis"
+        },
         {
           "id": "t5-15",
           "say": "O pioneiro, que quer vantagem.",
@@ -350,7 +434,11 @@
           "say": "Antes do próximo episódio, uma tarefa de dois minutos:",
           "cue": "task"
         },
-        { "id": "d02", "say": "pegue a iniciativa de IA mais visível da sua área", "cue": "list" },
+        {
+          "id": "d02",
+          "say": "pegue a iniciativa de IA mais visível da sua área",
+          "cue": "list"
+        },
         {
           "id": "d03",
           "say": "e marque qual dos cinco diferenciais está mais fraco.",
@@ -363,9 +451,20 @@
           "cap": "Se foi “um dono para o valor”, você não está sozinho.",
           "cue": "dono"
         },
-        { "id": "d05", "say": "É o mais comum.", "pause": 0.4 },
-        { "id": "d06", "say": "No próximo episódio: Comercial e Marketing,", "cue": "next" },
-        { "id": "d07", "say": "e por que o assistente que todo mundo compra primeiro" },
+        {
+          "id": "d05",
+          "say": "É o mais comum.",
+          "pause": 0.4
+        },
+        {
+          "id": "d06",
+          "say": "No próximo episódio: Comercial e Marketing,",
+          "cue": "next"
+        },
+        {
+          "id": "d07",
+          "say": "e por que o assistente que todo mundo compra primeiro"
+        },
         {
           "id": "d08",
           "say": "é o que menos vale.",

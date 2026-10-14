@@ -751,7 +751,7 @@ export const SCENES = {
   #root .it .box { width: 34px; height: 34px; border-radius: 8px; border: 3px solid #C9C9C9; display: block; flex: none; }
   #root .it .box svg { width: 100%; height: 100%; }
   #root .it.on { color: #1A1A1A; font-weight: 800; } #root .it.on .box { background: #FF5100; border-color: #FF5100; }
-  #root .tag { display: inline-block; margin-left: 10px; background: #FFEEE6; color: #E04600; font-size: 16px; letter-spacing: .12em; text-transform: uppercase; font-weight: 900; padding: 8px 14px; border-radius: 999px; }
+  #root .tag { display: inline-block; margin-left: 10px; background: #FFEEE6; color: #C73E00; font-size: 16px; letter-spacing: .12em; text-transform: uppercase; font-weight: 900; padding: 8px 14px; border-radius: 999px; }
   #root #d-next { position: absolute; left: 1210px; top: 200px; width: 640px; }
   #root #d-next .lab { font-size: 22px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7); font-weight: 800; }
   #root #d-next .ttl { font-size: 58px; font-weight: 900; color: #fff; letter-spacing: -0.04em; line-height: 1.05; margin-top: 16px; }

@@ -33,13 +33,16 @@ def main():
     ap.add_argument("outdir")
     ap.add_argument("--voice", default="pm_alex")
     ap.add_argument("--lang", default="pt-br")
-    ap.add_argument("--speed", type=float, default=1.0)
+    ap.add_argument("--speed", type=float, default=None, help="sobrescreve timing.speed do roteiro")
     ap.add_argument("--force", action="store_true")
     args = ap.parse_args()
 
     import kokoro_onnx
 
     data = json.load(open(args.script, encoding="utf-8"))
+    timing = data.get("timing", {})
+    base_speed = args.speed if args.speed is not None else timing.get("speed", 1.0)
+    slow_speed = timing.get("slowSpeed", base_speed)
     os.makedirs(args.outdir, exist_ok=True)
     model = kokoro_onnx.Kokoro(MODEL, VOICES)
 
@@ -49,11 +52,12 @@ def main():
             out = os.path.join(args.outdir, f"{beat['id']}.wav")
             if os.path.exists(out) and not args.force:
                 continue
-            samples, rate = model.create(beat["say"], voice=args.voice, speed=args.speed, lang=args.lang)
+            speed = slow_speed if beat.get("slow") else base_speed
+            samples, rate = model.create(beat["say"], voice=args.voice, speed=speed, lang=args.lang)
             samples = trim(samples, rate)
             sf.write(out, samples, rate)
             done += 1
-            print(f"{beat['id']}: {len(samples)/rate:.2f}s", flush=True)
+            print(f"{beat['id']}: {len(samples)/rate:.2f}s @{speed}", flush=True)
     print(f"ok: {done} beats sintetizados em {args.outdir}")
 
 

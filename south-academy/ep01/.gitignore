@@ -3,3 +3,8 @@ renders/
 node_modules/
 media/vo/*.log
 media/vo/*-narration.wav
+entrega/*.mp4
+entrega/*.wav
+entrega/conferencia/
+entrega/.*hf-transaction*/
+entrega/work-*/
