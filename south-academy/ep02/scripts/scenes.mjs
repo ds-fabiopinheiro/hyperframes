@@ -700,7 +700,7 @@ const FIGS = {
     src: "Tech Buying Drivers: Tech Providers Must Move CMOs Beyond Efficiency-Only AI", zooms: { top: [0.0, 0.2, 1.0, 0.13], bottom: [0.0, 0.72, 1.0, 0.1] } },
   tela10b: { num: "10B", eyebrow: "Módulo 1 · Marketing · <b>Gartner</b>", title: "Principais estratégias de crescimento <em>de CEOs e CFOs</em>", img: "fig-10b.webp", iw: 1492, ih: 1189,
     desc: "As principais estratégias de crescimento citadas por 125 CEOs e CFOs.",
-    insights: ["Melhorar a experiência do cliente é a nº 1: <b>57%</b>.", "Depois vêm melhorar produtos (46%) e lançar novos (45%).", "Casos de receita e experiência rendem <b>de 3 a 5 vezes mais</b> que casos de produtividade."],
+    insights: ["Melhorar a experiência do cliente é a nº 1: <b>57%</b>.", "Depois vêm melhorar produtos (46%) e lançar novos (45%).", "Preço e novos públicos aparecem bem abaixo."],
     key: "IA em marketing deve mirar o cliente e a receita, não só eficiência.",
     src: "Tech Buying Drivers: Tech Providers Must Move CMOs Beyond Efficiency-Only AI", zooms: { bar: [0.0, 0.11, 1.0, 0.14], x35: [0, 0, 1, 1] } },
   tela10c: { num: "10C", eyebrow: "Módulo 1 · Marketing · <b>Gartner</b> · corte opcional", title: "Modelo de mercado: <em>marketing digital e estratégia de marca</em>", img: "fig-10c.webp", iw: 1280, ih: 1096,
