@@ -1,0 +1,5 @@
+renders/
+.hyperframes/
+node_modules/
+media/vo/*.log
+media/vo/*-narration.wav

@@ -1,0 +1,385 @@
+{
+  "episode": "EP01",
+  "series": "South Academy Executive",
+  "title": "O paradoxo de quem já usa IA",
+  "narrator": "Fabio Pinheiro",
+  "org": "South System",
+  "timing": {
+    "lineGap": 0.35,
+    "pause": 1.0,
+    "pauseLong": 2.5,
+    "sceneLeadIn": 0.6,
+    "sceneTail": 1.2
+  },
+  "scenes": [
+    {
+      "id": "gancho",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Gancho frio",
+      "beats": [
+        { "id": "g01", "say": "Sua empresa já tem IA.", "cue": "open" },
+        {
+          "id": "g02",
+          "say": "Um modelo de crédito, um antifraude, um chatbot, talvez um copiloto no time de TI.",
+          "cap": "Um modelo de crédito, um antifraude, um chatbot, talvez um copiloto no time de TI.",
+          "cue": "chips",
+          "pause": 1.0
+        },
+        { "id": "g03", "say": "Então eu não vou te explicar o que é IA.", "cue": "clear" },
+        { "id": "g04", "say": "Vou te fazer uma pergunta mais desconfortável:" },
+        {
+          "id": "g05",
+          "say": "quanto disso apareceu no balanço?",
+          "cap": "**quanto disso** apareceu **no balanço?**",
+          "cue": "embed",
+          "pause": 0.6
+        }
+      ]
+    },
+    { "id": "vinheta", "kind": "sting", "hold": 3.2, "label": "Vinheta" },
+    {
+      "id": "tela01",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 01 · Capa",
+      "beats": [
+        {
+          "id": "t1-01",
+          "say": "Eu sou Fabio Pinheiro, da South System.",
+          "cap": "Eu sou **Fabio Pinheiro**, da South System.",
+          "cue": "nome"
+        },
+        {
+          "id": "t1-02",
+          "say": "Esta é a South Academy Executive.",
+          "cap": "Esta é a **South Academy Executive**.",
+          "cue": "academy",
+          "pause": 0.5
+        },
+        { "id": "t1-03", "say": "A tese da série cabe numa frase:", "cue": "tese" },
+        {
+          "id": "t1-04",
+          "say": "no setor financeiro, quase todo mundo já usa IA.",
+          "cap": "**no setor financeiro, quase todo mundo já usa IA.**",
+          "cue": "tese1"
+        },
+        {
+          "id": "t1-05",
+          "say": "Pouca gente captura o valor.",
+          "cap": "**Pouca gente captura o valor.**",
+          "cue": "tese2"
+        },
+        {
+          "id": "t1-06",
+          "say": "E a diferença não está na tecnologia.",
+          "cue": "tese3",
+          "pause": 0.5
+        },
+        {
+          "id": "t1-07",
+          "say": "Nos próximos episódios, a gente trata de três verbos:",
+          "cue": "verbos"
+        },
+        {
+          "id": "t1-08",
+          "say": "reconhecer uma boa oportunidade,",
+          "cap": "**reconhecer** uma boa oportunidade,",
+          "cue": "v1"
+        },
+        {
+          "id": "t1-09",
+          "say": "julgar se ela é viável,",
+          "cap": "**julgar** se ela é viável,",
+          "cue": "v2"
+        },
+        {
+          "id": "t1-10",
+          "say": "e provar que ela gerou valor.",
+          "cap": "e **provar** que ela gerou valor.",
+          "cue": "v3"
+        }
+      ]
+    },
+    {
+      "id": "tela02",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 02 · Identificar, avaliar e comprovar",
+      "beats": [
+        {
+          "id": "t2-01",
+          "say": "Identificar: onde a IA mexe em receita, custo ou risco na sua área.",
+          "cap": "Identificar: onde a IA mexe em receita, custo ou risco na **sua** área.",
+          "cue": "c1"
+        },
+        {
+          "id": "t2-02",
+          "say": "Avaliar: se a ideia sobrevive a dados, integração, custo, pessoas e compliance.",
+          "cue": "c2"
+        },
+        {
+          "id": "t2-03",
+          "say": "Comprovar: linha de base, captura e um número que o CFO assina.",
+          "cue": "c3",
+          "pause": 0.4
+        },
+        {
+          "id": "t2-04",
+          "say": "Antes de seguir, pense numa tarefa da sua equipe que ainda é feita à mão",
+          "cue": "ask"
+        },
+        { "id": "t2-05", "say": "e que não deveria." },
+        {
+          "id": "t2-06",
+          "say": "Não a mais chata. A mais cara.",
+          "cap": "Não a mais chata. A mais **cara**.",
+          "cue": "cara",
+          "pause": 1.0
+        },
+        { "id": "t2-07", "say": "Ela volta no episódio 4.", "cue": "ep4" }
+      ]
+    },
+    {
+      "id": "tela03",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 03 · Cinco módulos",
+      "beats": [
+        { "id": "t3-01", "say": "Cinco módulos, cinco perguntas de gestor.", "cue": "cards" },
+        {
+          "id": "t3-02",
+          "say": "Onde a IA ajuda. O que preciso entender para avaliar. O que começa primeiro.",
+          "cue": "walk1"
+        },
+        {
+          "id": "t3-03",
+          "say": "Como vira projeto real. E se valeu a pena.",
+          "cue": "walk2",
+          "pause": 0.4
+        },
+        { "id": "t3-04", "say": "Este programa não é sobre tecnologia.", "cue": "band" },
+        {
+          "id": "t3-05",
+          "say": "É sobre reconhecer, julgar e provar.",
+          "cap": "É sobre **reconhecer, julgar e provar**.",
+          "cue": "band2"
+        }
+      ]
+    },
+    {
+      "id": "tela04",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 04 · O paradoxo",
+      "beats": [
+        { "id": "t4-01", "say": "Agora o paradoxo.", "cue": "intro" },
+        {
+          "id": "t4-02",
+          "say": "Setenta e nove por cento das organizações dizem que já tiveram algum valor mensurável com IA.",
+          "cap": "**Setenta e nove por cento** das organizações dizem que já tiveram algum valor mensurável com IA.",
+          "cue": "r1"
+        },
+        { "id": "t4-03", "say": "Se eu perguntasse na sua diretoria, a resposta seria a mesma." },
+        {
+          "id": "t4-04",
+          "say": "Mas menos de trinta por cento dos líderes de IA",
+          "cap": "Mas **menos de trinta por cento** dos líderes de IA",
+          "cue": "r2"
+        },
+        { "id": "t4-05", "say": "dizem que o retorno superou a expectativa do CEO." },
+        {
+          "id": "t4-06",
+          "say": "Mais da metade dos projetos não chega à produção.",
+          "cap": "**Mais da metade** dos projetos não chega à produção.",
+          "cue": "r3"
+        },
+        {
+          "id": "t4-07",
+          "say": "E a Gartner prevê mais de quarenta por cento dos projetos de IA agêntica",
+          "cap": "E a Gartner prevê **mais de quarenta por cento** dos projetos de IA agêntica",
+          "cue": "r4"
+        },
+        { "id": "t4-08", "say": "cancelados até o fim de 2027.", "pause": 1.0 },
+        {
+          "id": "t4-09",
+          "say": "Um diretor de operações de uma cooperativa me disse uma vez:",
+          "cue": "parabola"
+        },
+        {
+          "id": "t4-10",
+          "say": "\"A gente tem dezessete iniciativas de IA.\"",
+          "cap": "“A gente tem **dezessete** iniciativas de IA.”",
+          "cue": "dezessete"
+        },
+        {
+          "id": "t4-11",
+          "say": "Perguntei quantas tinham dono com meta financeira.",
+          "cue": "dono",
+          "pause": 1.0
+        },
+        {
+          "id": "t4-12",
+          "say": "Ele contou nos dedos de uma mão. E sobrou dedo.",
+          "cue": "dedos",
+          "pause": 0.4
+        },
+        { "id": "t4-13", "say": "Dezessete iniciativas não é uma estratégia.", "cue": "inv1" },
+        {
+          "id": "t4-14",
+          "say": "É um inventário.",
+          "cap": "É um **inventário**.",
+          "cue": "inv2",
+          "pause": 0.6
+        },
+        { "id": "t4-15", "say": "O diferencial não é usar IA.", "cue": "band" },
+        {
+          "id": "t4-16",
+          "say": "É escolher o problema certo, preparar dados e pessoas e medir.",
+          "cap": "É escolher o **problema certo**, preparar **dados e pessoas** e **medir**.",
+          "cue": "band2"
+        }
+      ]
+    },
+    {
+      "id": "tela05",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 05 · Cinco diferenciais",
+      "beats": [
+        { "id": "t5-01", "say": "Cinco diferenciais. Cada um volta num módulo.", "cue": "intro" },
+        {
+          "id": "t5-02",
+          "say": "Problema antes da tecnologia.",
+          "cap": "**Problema antes da tecnologia.**",
+          "cue": "d1"
+        },
+        {
+          "id": "t5-03",
+          "say": "Só quatorze por cento alinham negócio, TI e executivos sobre o problema.",
+          "cap": "Só **quatorze por cento** alinham negócio, TI e executivos sobre o problema.",
+          "cue": "d1n"
+        },
+        {
+          "id": "t5-04",
+          "say": "Esses têm duas vezes e meia mais chance de relatar valor.",
+          "cap": "Esses têm **duas vezes e meia** mais chance de relatar valor."
+        },
+        {
+          "id": "t5-05",
+          "say": "Um dono para o valor.",
+          "cap": "**Um dono para o valor.**",
+          "cue": "d2"
+        },
+        {
+          "id": "t5-06",
+          "say": "Antes do deploy, um executivo responde por converter ganho operacional em resultado."
+        },
+        { "id": "t5-07", "say": "Um nome. Não um comitê.", "cue": "d2n" },
+        {
+          "id": "t5-08",
+          "say": "Dados prontos para o caso de uso.",
+          "cap": "**Dados prontos para o caso de uso.**",
+          "cue": "d3"
+        },
+        {
+          "id": "t5-09",
+          "say": "Sessenta por cento dos projetos sem dados prontos são abandonados.",
+          "cap": "**Sessenta por cento** dos projetos sem dados prontos são abandonados.",
+          "cue": "d3n"
+        },
+        {
+          "id": "t5-10",
+          "say": "Pessoas tão prontas quanto a tecnologia.",
+          "cap": "**Pessoas tão prontas quanto a tecnologia.**",
+          "cue": "d4"
+        },
+        {
+          "id": "t5-11",
+          "say": "Só onze por cento combinam prontidão técnica e humana.",
+          "cap": "Só **onze por cento** combinam prontidão técnica e humana.",
+          "cue": "d4n"
+        },
+        {
+          "id": "t5-12",
+          "say": "Medição desde o dia zero.",
+          "cap": "**Medição desde o dia zero.**",
+          "cue": "d5"
+        },
+        {
+          "id": "t5-13",
+          "say": "Linha de base e meta de captura. Não só adoção.",
+          "cue": "d5n",
+          "pause": 1.0
+        },
+        { "id": "t5-14", "say": "Você tem três perfis na sua diretoria.", "cue": "perfis" },
+        {
+          "id": "t5-15",
+          "say": "O pioneiro, que quer vantagem.",
+          "cap": "O **pioneiro**, que quer vantagem.",
+          "cue": "p1"
+        },
+        {
+          "id": "t5-16",
+          "say": "O cauteloso, que quer prova antes de escalar.",
+          "cap": "O **cauteloso**, que quer prova antes de escalar.",
+          "cue": "p2"
+        },
+        {
+          "id": "t5-17",
+          "say": "E o protetor, que quer governança e trilha.",
+          "cap": "E o **protetor**, que quer governança e trilha.",
+          "cue": "p3",
+          "pause": 1.0
+        },
+        {
+          "id": "t5-18",
+          "say": "Esses cinco diferenciais são o que os três concordam.",
+          "cue": "concordam"
+        }
+      ]
+    },
+    {
+      "id": "decisao",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Decisão para levar",
+      "beats": [
+        {
+          "id": "d01",
+          "say": "Antes do próximo episódio, uma tarefa de dois minutos:",
+          "cue": "task"
+        },
+        { "id": "d02", "say": "pegue a iniciativa de IA mais visível da sua área", "cue": "list" },
+        {
+          "id": "d03",
+          "say": "e marque qual dos cinco diferenciais está mais fraco.",
+          "cue": "mark",
+          "pause": 1.0
+        },
+        {
+          "id": "d04",
+          "say": "Se foi \"um dono para o valor\", você não está sozinho.",
+          "cap": "Se foi “um dono para o valor”, você não está sozinho.",
+          "cue": "dono"
+        },
+        { "id": "d05", "say": "É o mais comum.", "pause": 0.4 },
+        { "id": "d06", "say": "No próximo episódio: Comercial e Marketing,", "cue": "next" },
+        { "id": "d07", "say": "e por que o assistente que todo mundo compra primeiro" },
+        {
+          "id": "d08",
+          "say": "é o que menos vale.",
+          "cap": "é o que **menos vale**.",
+          "cue": "punch"
+        }
+      ]
+    },
+    {
+      "id": "final",
+      "kind": "card",
+      "hold": 5.0,
+      "label": "Cartão final",
+      "next": "EP02 · Onde o valor está escondido"
+    }
+  ]
+}
