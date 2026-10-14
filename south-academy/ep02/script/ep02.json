@@ -1,0 +1,627 @@
+{
+  "episode": "EP02",
+  "series": "South Academy Executive",
+  "title": "Onde o valor está escondido: Comercial e Marketing",
+  "narrator": "Fabio Pinheiro",
+  "org": "South System",
+  "timing": {
+    "lineGap": 0.5,
+    "pause": 1.0,
+    "pauseLong": 2.5,
+    "sceneLeadIn": 0.6,
+    "sceneTail": 1.2,
+    "speed": 0.85,
+    "slowSpeed": 0.78,
+    "beatSlack": 0.33
+  },
+  "scenes": [
+    {
+      "id": "gancho",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Gancho frio",
+      "beats": [
+        {
+          "id": "g01",
+          "say": "Se alguém da sua equipe comercial pedir orçamento para um assistente de IA para os gerentes de conta,",
+          "cue": "open"
+        },
+        {
+          "id": "g02",
+          "say": "a resposta mais fácil é \"sim\".",
+          "cap": "a resposta mais fácil é “sim”.",
+          "cue": "sim"
+        },
+        { "id": "g03", "say": "É barato, é rápido, todo mundo tem.", "cue": "chips", "pause": 1.0 },
+        {
+          "id": "g04",
+          "say": "A Gartner colocou esse caso no quadrante de menor valor.",
+          "cap": "A Gartner colocou esse caso no quadrante de **menor valor**.",
+          "cue": "embed",
+          "slow": true
+        },
+        { "id": "g05", "say": "E hoje eu te mostro o porquê.", "cue": "porque", "pause": 0.5 }
+      ]
+    },
+    { "id": "vinheta", "kind": "sting", "hold": 3.2, "label": "Vinheta" },
+    {
+      "id": "tela06",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 06 · Divisória · Módulo 1",
+      "beats": [
+        { "id": "t6-01", "say": "Módulo um: onde a IA ajuda a minha área.", "cue": "title" },
+        {
+          "id": "t6-02",
+          "say": "Sete áreas, três perguntas em cada: ganho, pré-requisito e risco.",
+          "cue": "chips"
+        },
+        {
+          "id": "t6-03",
+          "say": "Hoje, Comercial e Marketing.",
+          "cap": "Hoje, **Comercial e Marketing**.",
+          "cue": "hoje"
+        }
+      ]
+    },
+    {
+      "id": "tela07",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 07 · Três tipos de valor",
+      "beats": [
+        { "id": "t7-01", "say": "Um filtro rápido, porque vocês já usam.", "cue": "intro" },
+        {
+          "id": "t7-02",
+          "say": "Toda iniciativa de IA mexe em um de três lugares:",
+          "cue": "cards"
+        },
+        {
+          "id": "t7-03",
+          "say": "produtividade, experiência do cliente ou qualidade da decisão.",
+          "cap": "**produtividade**, **experiência do cliente** ou **qualidade da decisão**.",
+          "cue": "three"
+        },
+        { "id": "t7-04", "say": "E repare: decisão é o menos explorado.", "cue": "decisao" },
+        { "id": "t7-05", "say": "Para quem precifica risco, concede crédito e subscreve apólice," },
+        {
+          "id": "t7-06",
+          "say": "é onde mora o dinheiro grande.",
+          "cap": "é onde mora o **dinheiro grande**.",
+          "cue": "ask"
+        }
+      ]
+    },
+    {
+      "id": "tela08",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 08 · Benefícios relatados",
+      "beats": [
+        {
+          "id": "t8-01",
+          "say": "O mercado relata: produtividade setenta e três por cento, custo sessenta e quatro, receita cinquenta e nove.",
+          "cap": "O mercado relata: produtividade **73%**, custo 64, receita 59.",
+          "cue": "bars"
+        },
+        {
+          "id": "t8-02",
+          "say": "Decisão, quarenta e cinco. A última.",
+          "cap": "Decisão, **45**. A última.",
+          "cue": "bar5"
+        },
+        {
+          "id": "t8-03",
+          "say": "Entre oitocentos e vinte e dois líderes com IA generativa em uso:",
+          "cue": "dark"
+        },
+        {
+          "id": "t8-04",
+          "say": "mais vinte e dois vírgula seis de produtividade, mais quinze vírgula oito de receita, menos quinze vírgula dois de custo.",
+          "cap": "**+22,6%** de produtividade, **+15,8%** de receita, **−15,2%** de custo.",
+          "cue": "darknums"
+        },
+        { "id": "t8-05", "say": "Números bons. Médias.", "pause": 0.4 },
+        {
+          "id": "t8-06",
+          "say": "A sua pergunta não é \"quanto o mercado ganhou\".",
+          "cap": "A sua pergunta não é “quanto o mercado ganhou”."
+        },
+        {
+          "id": "t8-07",
+          "say": "É \"onde o mercado ganhou e por que ganhou menos em decisão\".",
+          "cap": "É “**onde** o mercado ganhou e por que ganhou menos em decisão”.",
+          "cue": "onde"
+        }
+      ]
+    },
+    {
+      "id": "tela09",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 09 · Comercial e Pré-vendas",
+      "beats": [
+        { "id": "t9-01", "say": "Comercial. Três casos.", "cue": "intro" },
+        {
+          "id": "t9-02",
+          "say": "Assistente do vendedor: resume, rascunha, atualiza o CRM.",
+          "cap": "**Assistente do vendedor:** resume, rascunha, atualiza o CRM.",
+          "cue": "c1"
+        },
+        { "id": "t9-03", "say": "Até cinquenta por cento menos preparo." },
+        {
+          "id": "t9-04",
+          "say": "O risco que ninguém conta: CRM atualizado sem validação corrompe o dado que o seu modelo de propensão usa.",
+          "cap": "O risco que ninguém conta: CRM atualizado sem validação **corrompe o dado** que o seu modelo de propensão usa.",
+          "cue": "w1"
+        },
+        {
+          "id": "t9-05",
+          "say": "Propostas e RFP: um dos dois únicos casos com impacto na eficácia, não só na eficiência.",
+          "cap": "**Propostas e RFP:** um dos dois únicos casos com impacto na **eficácia**, não só na eficiência.",
+          "cue": "c2"
+        },
+        { "id": "t9-06", "say": "Exige base aprovada e revisão humana.", "cue": "w2" },
+        {
+          "id": "t9-07",
+          "say": "Previsão e priorização de oportunidades: times com IA têm duas vezes e meia mais chance de bater meta.",
+          "cap": "**Previsão e priorização de oportunidades:** times com IA têm 2,5× mais chance de bater meta.",
+          "cue": "c3"
+        },
+        {
+          "id": "t9-08",
+          "say": "Mas nota sem próxima ação é ignorada pelo gerente.",
+          "cue": "w3",
+          "pause": 0.4
+        },
+        {
+          "id": "t9-09",
+          "say": "Até 2028, setenta e cinco por cento menos tempo longe do cliente.",
+          "cap": "Até 2028, **75%** menos tempo longe do cliente.",
+          "cue": "n1",
+          "slow": true
+        },
+        {
+          "id": "t9-10",
+          "say": "E ainda assim, um em três líderes de vendas diz que a IA generativa rendeu bem menos que o esperado.",
+          "cap": "E ainda assim, **um em três** líderes de vendas diz que a IA generativa rendeu bem menos que o esperado.",
+          "cue": "n2",
+          "slow": true
+        },
+        {
+          "id": "t9-11",
+          "say": "Quando a aceitação das sugestões fica abaixo de oitenta por cento, o time parou de confiar.",
+          "cap": "Quando a aceitação das sugestões fica abaixo de **80%**, o time parou de confiar.",
+          "cue": "n3",
+          "slow": true,
+          "pause": 0.4
+        },
+        {
+          "id": "t9-12",
+          "say": "Numa cooperativa, numa seguradora, numa adquirente:",
+          "cue": "ask"
+        },
+        {
+          "id": "t9-13",
+          "say": "quanto do dia do gerente de relacionamento é relacionamento?",
+          "cap": "quanto do dia do gerente de relacionamento **é relacionamento?**"
+        }
+      ]
+    },
+    {
+      "id": "tela09a",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 09A · Gartner · Vendas B2B: valor × viabilidade",
+      "beats": [
+        { "id": "t9a-01", "say": "Esta é a matriz do gancho.", "cue": "fig" },
+        {
+          "id": "t9a-02",
+          "say": "Treze casos de IA generativa em vendas, por valor e viabilidade."
+        },
+        {
+          "id": "t9a-03",
+          "say": "Nos ganhos prováveis: automação de propostas, mensagens de valor, inteligência de negócios, operações de vendas.",
+          "cap": "Nos **ganhos prováveis**: automação de propostas, mensagens de valor, inteligência de negócios, operações de vendas.",
+          "cue": "likely"
+        },
+        {
+          "id": "t9a-04",
+          "say": "Nos riscos calculados: inteligência de decisão de vendas, vendedores digitais, dados sintéticos.",
+          "cap": "Nos **riscos calculados**: inteligência de decisão de vendas, vendedores digitais, dados sintéticos.",
+          "cue": "risks"
+        },
+        { "id": "t9a-05", "say": "Valor alto. Pedem dado e preparo." },
+        {
+          "id": "t9a-06",
+          "say": "E nos ganhos marginais:",
+          "cap": "E nos **ganhos marginais**:",
+          "cue": "marginal",
+          "slow": true
+        },
+        {
+          "id": "t9a-07",
+          "say": "o assistente do vendedor e a pesquisa de mercado.",
+          "cap": "o **assistente do vendedor** e a pesquisa de mercado.",
+          "slow": true,
+          "pause": 0.5
+        },
+        {
+          "id": "t9a-08",
+          "say": "Isso me lembra o diretor comercial de uma seguradora",
+          "cue": "parabola"
+        },
+        {
+          "id": "t9a-09",
+          "say": "que comprou licenças de assistente para toda a força de vendas."
+        },
+        {
+          "id": "t9a-10",
+          "say": "Seis meses depois, adoção de noventa por cento. Festa.",
+          "cap": "Seis meses depois, adoção de **noventa por cento**. Festa.",
+          "cue": "p90"
+        },
+        {
+          "id": "t9a-11",
+          "say": "Aí o CFO perguntou: \"e a taxa de conversão?\"",
+          "cap": "Aí o CFO perguntou: “e a taxa de conversão?”",
+          "cue": "cfo",
+          "pause": 1.0
+        },
+        { "id": "t9a-12", "say": "Igual.", "cue": "igual" },
+        {
+          "id": "t9a-13",
+          "say": "A ferramenta economizou tempo. E o tempo foi para o mesmo lugar de sempre."
+        },
+        {
+          "id": "t9a-14",
+          "say": "Viabilidade alta não é valor alto.",
+          "cap": "**Viabilidade alta não é valor alto.**",
+          "cue": "embed",
+          "slow": true
+        },
+        { "id": "t9a-15", "say": "Essa é a frase para levar ao próximo comitê de investimentos." }
+      ]
+    },
+    {
+      "id": "tela09b",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 09B · Gartner · Scorecard de vendas",
+      "beats": [
+        { "id": "t9b-01", "say": "O mesmo ranking, critério a critério.", "cue": "fig" },
+        {
+          "id": "t9b-02",
+          "say": "Propostas e mensagens de valor pontuam alto em receita, eficiência e viabilidade.",
+          "cue": "rows"
+        },
+        { "id": "t9b-03", "say": "É a mesma régua que vocês vão usar no Módulo 3." }
+      ]
+    },
+    {
+      "id": "tela09c",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 09C · Gartner · Pipeline de adoção",
+      "beats": [
+        {
+          "id": "t9c-01",
+          "say": "Onde cada caso atua na jornada: marketing, vendas, pós-venda.",
+          "cue": "fig"
+        },
+        { "id": "t9c-02", "say": "Repare quantos atravessam a jornada inteira.", "cue": "arrows" },
+        {
+          "id": "t9c-03",
+          "say": "Caso que cruza áreas precisa de um dono e de uma base única de cliente.",
+          "cap": "Caso que cruza áreas precisa de **um dono** e de uma base única de cliente."
+        }
+      ]
+    },
+    {
+      "id": "tela09d",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 09D · Gartner · Eficácia de vendas com IA",
+      "beats": [
+        {
+          "id": "t9d-01",
+          "say": "A IA concentra valor em qualificar, descobrir e avaliar.",
+          "cue": "mid"
+        },
+        { "id": "t9d-02", "say": "Negociar e fechar continua com gente.", "cue": "right" },
+        {
+          "id": "t9d-03",
+          "say": "E nada disso funciona sem processo de vendas repetível.",
+          "cap": "E nada disso funciona sem processo de vendas **repetível**.",
+          "cue": "process"
+        }
+      ]
+    },
+    {
+      "id": "tela09e",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 09E · Gartner · Visão do mercado de IA em vendas",
+      "beats": [
+        {
+          "id": "t9e-01",
+          "say": "Quatro caminhos para trazer IA generativa para vendas.",
+          "cue": "fig"
+        },
+        {
+          "id": "t9e-02",
+          "say": "Dois são comprados por Vendas, dois por TI.",
+          "cap": "Dois são comprados por **Vendas**, dois por **TI**.",
+          "cue": "buyer"
+        },
+        {
+          "id": "t9e-03",
+          "say": "Antes de comprar: quem decide, quem sustenta, quem paga o uso variável."
+        }
+      ]
+    },
+    {
+      "id": "tela09f",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 09F · Gartner · Mapa de mercado",
+      "beats": [
+        {
+          "id": "t9f-01",
+          "say": "O CRM está virando plataforma com agentes embutidos.",
+          "cue": "crm"
+        },
+        {
+          "id": "t9f-02",
+          "say": "Antes de contratar mais uma ferramenta, veja o que a que você já tem está entregando no próximo release.",
+          "cue": "disrupt"
+        }
+      ]
+    },
+    {
+      "id": "tela09g",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 09G · Gartner · O futuro da IA agêntica",
+      "beats": [
+        {
+          "id": "t9g-01",
+          "say": "De assistentes em toda aplicação, em 2025, a ecossistemas de agentes entre aplicações, em 2029.",
+          "cue": "pan"
+        },
+        { "id": "t9g-02", "say": "Autonomia vem por etapas.", "cue": "steps" },
+        {
+          "id": "t9g-03",
+          "say": "E cada etapa pede dado e governança antes.",
+          "cap": "E cada etapa pede dado e governança **antes**."
+        }
+      ]
+    },
+    {
+      "id": "tela10",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 10 · Marketing",
+      "beats": [
+        { "id": "t10-01", "say": "Marketing. Três casos.", "cue": "intro" },
+        {
+          "id": "t10-02",
+          "say": "Conteúdo em escala: variações, testes A/B mais rápidos.",
+          "cap": "**Conteúdo em escala:** variações, testes A/B mais rápidos.",
+          "cue": "c1"
+        },
+        {
+          "id": "t10-03",
+          "say": "Em setor regulado, aprovação humana e trilha de auditoria não são opcionais.",
+          "cue": "w1"
+        },
+        {
+          "id": "t10-04",
+          "say": "Uma peça com promessa de rentabilidade errada é problema de compliance, não de marketing."
+        },
+        {
+          "id": "t10-05",
+          "say": "Qualificação de contas e sinais de intenção: prioriza quem tem chance de comprar.",
+          "cap": "**Qualificação de contas e sinais de intenção:** prioriza quem tem chance de comprar.",
+          "cue": "c2"
+        },
+        {
+          "id": "t10-06",
+          "say": "O modelo herda o viés do histórico e precisa ser re-treinado.",
+          "cue": "w2"
+        },
+        {
+          "id": "t10-07",
+          "say": "Personalização para o grupo de compra: o pré-requisito número um é uma camada única de dados do cliente.",
+          "cap": "**Personalização para o grupo de compra:** o pré-requisito número um é uma camada única de dados do cliente.",
+          "cue": "c3"
+        },
+        {
+          "id": "t10-08",
+          "say": "Sem isso, é personalização de fachada.",
+          "cue": "w3",
+          "pause": 0.4
+        },
+        {
+          "id": "t10-09",
+          "say": "Setenta e nove por cento dos CMOs miram produtividade. Só quarenta e oito miram receita.",
+          "cap": "**79%** dos CMOs miram produtividade. Só 48% miram receita.",
+          "cue": "n1"
+        },
+        {
+          "id": "t10-10",
+          "say": "Enquanto cinquenta e sete por cento de CEOs e CFOs veem experiência do cliente como a principal alavanca de crescimento.",
+          "cap": "Enquanto **57%** de CEOs e CFOs veem experiência do cliente como a principal alavanca de crescimento.",
+          "cue": "n2"
+        },
+        { "id": "t10-11", "say": "Marketing está otimizando a produção.", "cue": "n3" },
+        { "id": "t10-12", "say": "A diretoria quer crescimento." },
+        { "id": "t10-13", "say": "Essa distância tem nome na próxima tela.", "cue": "ask" }
+      ]
+    },
+    {
+      "id": "tela10a",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 10A · Gartner · Adoção de IA no marketing",
+      "beats": [
+        {
+          "id": "t10a-01",
+          "say": "Conteúdo: sessenta e quatro por cento já usam.",
+          "cap": "Conteúdo: **64%** já usam.",
+          "cue": "top"
+        },
+        {
+          "id": "t10a-02",
+          "say": "Qualificação de contas B2B: treze.",
+          "cap": "Qualificação de contas B2B: **13**.",
+          "cue": "bottom"
+        },
+        {
+          "id": "t10a-03",
+          "say": "O mercado começou pelo fácil. O valor está no outro extremo da lista.",
+          "cue": "fig"
+        }
+      ]
+    },
+    {
+      "id": "tela10b",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 10B · Gartner · Estratégias de crescimento de CEOs e CFOs",
+      "beats": [
+        {
+          "id": "t10b-01",
+          "say": "A Gartner chama de armadilha da eficiência.",
+          "cap": "A Gartner chama de **armadilha da eficiência**.",
+          "cue": "fig"
+        },
+        {
+          "id": "t10b-02",
+          "say": "A diretoria quer experiência do cliente: cinquenta e sete por cento, estratégia número um.",
+          "cap": "A diretoria quer experiência do cliente: **57%**, estratégia número um.",
+          "cue": "bar"
+        },
+        {
+          "id": "t10b-03",
+          "say": "Casos de receita e experiência rendem de três a cinco vezes mais que casos de produtividade.",
+          "cap": "Casos de receita e experiência rendem de **3 a 5 vezes** mais que casos de produtividade.",
+          "cue": "x35"
+        }
+      ]
+    },
+    {
+      "id": "tela10c",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 10C · Gartner · Modelo de mercado de marketing [CORTE OPCIONAL]",
+      "optional": true,
+      "beats": [
+        {
+          "id": "t10c-01",
+          "say": "Contexto: o mercado de serviços de marketing digital cresce cinquenta e quatro bilhões de dólares em cinco anos,",
+          "cap": "Contexto: o mercado de serviços de marketing digital cresce **US$ 54 bilhões** em cinco anos,",
+          "cue": "top"
+        },
+        { "id": "t10c-02", "say": "e a IA muda onde esse dinheiro é gasto.", "cue": "fig" }
+      ]
+    },
+    {
+      "id": "tela10d",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 10D · Gartner · Gasto por segmento [CORTE OPCIONAL]",
+      "optional": true,
+      "beats": [
+        {
+          "id": "t10d-01",
+          "say": "Consultoria de tecnologia e implementação crescem mais que serviços gerenciados.",
+          "cue": "bubbles"
+        },
+        {
+          "id": "t10d-02",
+          "say": "Integrar vale mais que acumular ferramentas.",
+          "cap": "**Integrar** vale mais que acumular ferramentas.",
+          "cue": "fig"
+        }
+      ]
+    },
+    {
+      "id": "tela10e",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 10E · Gartner · Da pesquisa ao futuro [CORTE OPCIONAL]",
+      "optional": true,
+      "beats": [
+        {
+          "id": "t10e-01",
+          "say": "E um lembrete sobre toda previsão que apareceu aqui:",
+          "cue": "fig"
+        },
+        {
+          "id": "t10e-02",
+          "say": "bússola, não meta.",
+          "cap": "**bússola**, não meta.",
+          "cue": "embed"
+        },
+        { "id": "t10e-03", "say": "A meta sai da sua linha de base. Módulo 5." }
+      ]
+    },
+    {
+      "id": "decisao",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Decisão para levar",
+      "beats": [
+        { "id": "d01", "say": "Decisão para esta semana:", "cue": "task" },
+        {
+          "id": "d02",
+          "say": "pegue a iniciativa de IA comercial ou de marketing que está em andamento",
+          "cue": "list"
+        },
+        { "id": "d03", "say": "e pergunte em qual quadrante ela cai.", "cue": "quad" },
+        {
+          "id": "d04",
+          "say": "Se for \"ganho marginal\", não cancele.",
+          "cap": "Se for “ganho marginal”, não cancele.",
+          "cue": "marginal",
+          "pause": 1.0
+        },
+        {
+          "id": "d05",
+          "say": "Só não a chame de estratégia.",
+          "cap": "Só não a chame de **estratégia**.",
+          "cue": "punch",
+          "pause": 0.4
+        },
+        {
+          "id": "d06",
+          "say": "Quando a South entra nessa conversa, costuma ser aqui:",
+          "cue": "south"
+        },
+        { "id": "d07", "say": "num assessment curto para separar, na carteira comercial," },
+        {
+          "id": "d08",
+          "say": "o que é viável do que é valioso.",
+          "cap": "o que é **viável** do que é **valioso**.",
+          "cue": "vv",
+          "pause": 0.4
+        },
+        { "id": "d09", "say": "Próximo episódio: TI e Financeiro.", "cue": "next" },
+        {
+          "id": "d10",
+          "say": "E por que cinco anos de chatbot não moveram quinze por cento.",
+          "cap": "E por que cinco anos de chatbot não moveram **quinze por cento**.",
+          "cue": "punch2"
+        }
+      ]
+    },
+    {
+      "id": "final",
+      "kind": "card",
+      "hold": 5.0,
+      "label": "Cartão final",
+      "next": "EP03 · O problema não é a ferramenta"
+    }
+  ]
+}
