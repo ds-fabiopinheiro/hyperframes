@@ -392,6 +392,7 @@ Object.assign(SCENES_EP02, {
     <div class="src">Fontes: Gartner, via Ask Gartner (out/2026), e Gartner Newsroom (29/07/2024).</div>
   </div>`;
     const css = `
+  #root #s7-sub { width: 1720px; font-size: 25px; }
   #root .card.tv { top: 440px; width: 420px; height: 330px; padding: 26px 28px; display: flex; flex-direction: column; gap: 10px; transform-origin: 50% 50%; }
   #root .card.tv .n { font-size: 16px; letter-spacing: .14em; color: #6B6B6B; font-weight: 800; }
   #root .card.tv h4 { font-size: 30px; }
@@ -592,7 +593,7 @@ Object.assign(SCENES_EP02, {
   #root #d-punch2 { position: static; margin-top: 34px; font-size: 72px; color: #fff; transform-origin: 0% 50%; } #root #d-punch2 em { font-style: normal; color: #FF5100; }
 `;
     const js = `
-    hide("#d-card, .kick, .step, #d-matrix, #d-dot, #d-marg, #d-punch, #d-south, #d-v1, #d-v2, #d-next .lab, #d-next .ttl, #d-next .sub, #d-punch2");
+    hide("#d-card, #d-kick, .step, #d-matrix, #d-dot, #d-marg, #d-punch, #d-south, #d-v1, #d-v2, #d-next .lab, #d-next .ttl, #d-next .sub, #d-punch2");
     tl.set("#d-card", { opacity: 1 }, ${cues.task});
     waterfall(tl, ["#d-card", "#d-kick"], ${cues.task}, { y: 80, d: 0.22, gap: 0.1 });
     waterfall(tl, ["#d-s1"], ${cues.list}, { y: 40 });

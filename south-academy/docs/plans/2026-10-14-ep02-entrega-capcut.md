@@ -24,3 +24,4 @@
 - `check`: 2 erros de layout corrigidos (eyebrow da tela06 em fluxo; títulos das telas 09/10 em 54 px para não ficarem sob os cartões), 3 avisos de contraste corrigidos (kicker das notas #B83800, etiqueta do kicker da decisão #C73E00, numeral decorativo da tela06). Overflow do zoom das figuras marcado como intencional (`data-layout-allow-overflow`).
 - Snapshots conferidos antes do render: gancho e decisão com gráficos/legendas em x ≥ 1210; telas 06, 09, 09A, 10, 10E.
 - Um único ciclo de render (sem voz + guia), conforme a regra de economia.
+- Verificação do 1º render (`verify-entrega.sh` + varredura de 13 frames) achou 2 defeitos: kicker "South · onde a South entra" nunca revelado na decisão (`hide(".kick")` pegava os dois cartões) e 2ª linha do subtítulo da tela07 sob os cartões. Corrigidos (reveal só de `#d-kick`; subtítulo 25 px / 1720 px), `check` repassou e um 2º ciclo de render foi feito — o único re-render do episódio.
