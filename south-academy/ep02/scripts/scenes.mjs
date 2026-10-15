@@ -155,19 +155,21 @@ const FIG_CSS = `
   #root .fig img { position: absolute; display: block; }
   #root .note { position: absolute; left: 1260px; top: 290px; width: 564px; }
   #root .note .k { font-size: 16px; letter-spacing: .14em; text-transform: uppercase; font-weight: 900; color: #B83800; margin-bottom: 12px; }
-  #root .note .desc { font-size: 23px; line-height: 1.4; color: #4A4A4A; margin-bottom: 18px; }
-  #root .note ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-  #root .note li { font-size: 21px; line-height: 1.4; color: #1A1A1A; padding-left: 26px; position: relative; }
+  #root .note .desc { font-size: 22px; line-height: 1.4; color: #4A4A4A; margin-bottom: 16px; }
+  #root .note ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  #root .note li { font-size: 20px; line-height: 1.4; color: #1A1A1A; padding-left: 26px; position: relative; }
+  #root .note .takeaway { margin-top: 18px; padding: 12px 16px; background: #FFEEE6; border-left: 6px solid #FF5100; border-radius: 10px; font-size: 20px; line-height: 1.35; font-weight: 700; color: #1A1A1A; }
+  #root .note .takeaway span { display: block; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: #B83800; font-weight: 900; margin-bottom: 4px; }
   #root .note li::before { content: ""; position: absolute; left: 0; top: 11px; width: 10px; height: 10px; border-radius: 50%; background: #FF5100; }
   #root .note li b { font-weight: 900; }
-  #root .figsrc { position: absolute; left: 1260px; top: 740px; width: 564px; font-size: 15px; line-height: 1.3; color: #5F5F5F; }
+  #root .figsrc { position: absolute; left: 1260px; top: 766px; width: 564px; font-size: 15px; line-height: 1.3; color: #5F5F5F; }
 `;
 
 /**
  * Cena Gartner: figura + nota + zooms por cue.
  * zooms: { cue: [fx, fy, fw, fh] } em frações da imagem; "fig" volta ao enquadramento inteiro.
  */
-const figScene = (id, { num, crumb = "Módulo 1 · Aplicações", eyebrow, title, img, iw, ih, desc, insights, src, zooms = {}, extra = "" }) =>
+const figScene = (id, { num, crumb = "Módulo 1 · Aplicações", eyebrow, title, img, iw, ih, desc, insights, key = "", src, zooms = {}, extra = "" }) =>
   ({ cues, dur, beats }) => {
     const BW = 1070, BH = 670;
     const s0 = Math.min(BW / iw, BH / ih);
@@ -197,6 +199,7 @@ const figScene = (id, { num, crumb = "Módulo 1 · Aplicações", eyebrow, title
       <div class="k" id="${id}-nk">O que a figura mostra</div>
       <div class="desc" id="${id}-nd">${desc}</div>
       <ul>${insights.map((t, i) => `<li id="${id}-li${i}">${t}</li>`).join("")}</ul>
+      ${key ? `<div class="takeaway" id="${id}-key"><span>Para levar</span>${key}</div>` : ""}
     </div>
     <div class="figsrc">Fonte: Gartner — ${src}. Uso interno South System.</div>
     ${extra}
@@ -205,11 +208,12 @@ const figScene = (id, { num, crumb = "Módulo 1 · Aplicações", eyebrow, title
   #root .title { font-size: 50px; width: 1500px; }
 `;
     const js = `
-    hide("#${id}-fig, #${id}-nk, #${id}-nd, #${id}-note li");
+    hide("#${id}-fig, #${id}-nk, #${id}-nd, #${id}-note li, #${id}-key");
     enterCurve(tl, "#${id}-stage", 0);
     waterfall(tl, ["#${id}-fig"], 0.25, { y: 60, d: 0.22 });
     waterfall(tl, ["#${id}-nk", "#${id}-nd"], 0.6, { y: 36, d: 0.16, gap: 0.08 });
     waterfall(tl, [${insights.map((_, i) => `"#${id}-li${i}"`).join(", ")}], ${Math.min(2.2, Math.max(1.2, (beats[0]?.end ?? 1.2)))}, { y: 30, d: 0.14, gap: 0.08 });
+    ${key ? `waterfall(tl, ["#${id}-key"], ${Math.min(2.2, Math.max(1.2, (beats[0]?.end ?? 1.2))) + 0.08 * insights.length + 0.5}, { y: 30, d: 0.18 });` : ""}
     ${moves.join("\n    ")}
     exitCurve(tl, "#${id}-stage", ${dur - 0.3});`;
     return { inner, css, js };
@@ -221,20 +225,22 @@ const caseCard = (id, i, c, x) => `
       <span class="badge${c.badgeInk ? " ink" : ""}"><i></i>${c.badge}</span>
       <h4>${c.h}</h4>
       <p><b>Ganho:</b> ${c.g}</p>
+      <p class="req"><b>Requer:</b> ${c.r}</p>
       <div class="warn" id="${id}-w${i}"><b>Atenção:</b> ${c.w}</div>
     </div>`;
 const CASE_CSS = `
-  #root .card.case { top: 330px; width: 420px; height: 420px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px; }
+  #root .card.case { top: 300px; width: 420px; height: 500px; padding: 24px 28px; display: flex; flex-direction: column; gap: 10px; }
   #root .card.case h4 { font-size: 26px; min-height: 62px; }
-  #root .card.case p { font-size: 20px; margin-top: 0; }
+  #root .card.case p { font-size: 19px; line-height: 1.35; margin-top: 0; }
+  #root .card.case p.req b { color: #1A1A1A; }
   #root .card.case .warn { margin-top: auto; background: #FFEEE6; border-left: 6px solid #FF5100; border-radius: 10px; padding: 12px 14px; font-size: 18px; line-height: 1.35; color: #1A1A1A; }
   #root .card.case .warn b { color: #C73E00; }
-  #root .stats { position: absolute; left: 1420px; top: 330px; width: 404px; display: flex; flex-direction: column; gap: 14px; }
+  #root .stats { position: absolute; left: 1420px; top: 300px; width: 404px; display: flex; flex-direction: column; gap: 14px; }
   #root .stat { background: #1A1A1A; color: #fff; border-radius: 14px; padding: 16px 20px; }
   #root .stat .n { font-size: 46px; font-weight: 900; letter-spacing: -0.04em; line-height: 1; color: #FF9A66; }
   #root .stat .n.g { color: #FF9A66; } #root .stat .n.r { color: #FF7A33; }
   #root .stat .l { font-size: 17px; color: rgba(255,255,255,.8); margin-top: 6px; line-height: 1.3; }
-  #root .ask.low { top: 800px; width: 1290px; }
+  #root .ask.low { top: 818px; width: 1290px; }
 `;
 
 Object.assign(SCENES_EP02, {
@@ -478,9 +484,9 @@ Object.assign(SCENES_EP02, {
   // ------------------------------------------------------------------ TELA 09 · COMERCIAL E PRÉ-VENDAS
   tela09: ({ cues, dur }) => {
     const cases = [
-      { badge: "IA generativa", h: "Assistente do vendedor", g: "Resume reuniões, rascunha follow-ups e atualiza o CRM; até 50% menos tempo de preparo.", w: "Atualizar o CRM sem validação corrompe os dados." },
-      { badge: "IA generativa", h: "Respostas a RFP e propostas", g: "Um dos dois únicos casos com alto impacto em eficácia de vendas, não só em eficiência.", w: "Revisão humana obrigatória; dado competitivo velho gera resposta genérica." },
-      { badge: "IA preditiva", badgeInk: true, h: "Previsão e priorização de oportunidades", g: "Chance de ganho por oportunidade para focar o pipeline; times com IA têm 2,5× mais chance de bater metas.", w: "Nota sem próxima ação recomendada é ignorada." },
+      { badge: "IA generativa", h: "Assistente do vendedor", r: "Transcrições e CRM integrados; consentimento para gravar (LGPD).", g: "Resume reuniões, rascunha follow-ups e atualiza o CRM; até 50% menos tempo de preparo.", w: "Atualizar o CRM sem validação corrompe os dados." },
+      { badge: "IA generativa", h: "Respostas a RFP e propostas", r: "Base de respostas aprovadas, cases e templates atualizados.", g: "Um dos dois únicos casos com alto impacto em eficácia de vendas, não só em eficiência.", w: "Revisão humana obrigatória; dado competitivo velho gera resposta genérica." },
+      { badge: "IA preditiva", badgeInk: true, h: "Previsão e priorização de oportunidades", r: "CRM com estágios consistentes e histórico de ganhos e perdas.", g: "Chance de ganho por oportunidade para focar o pipeline; times com IA têm 2,5× mais chance de bater metas.", w: "Nota sem próxima ação recomendada é ignorada." },
     ];
     const stats = [["75%+", "g", "menos tempo longe do cliente até 2028 (previsão)"], ["1 em 3", "r", "dos CSOs relata benefício da GenAI bem abaixo do esperado"], ["<80%", "r", "de aceitação das sugestões da IA sinaliza falta de confiança"]];
     const inner = `
@@ -494,10 +500,10 @@ Object.assign(SCENES_EP02, {
     <div class="src">Fontes: Gartner — 13 Generative AI Use Cases for B2B Sales; Boost Sales Effectiveness With Targeted AI Investments.</div>
   </div>`;
     const css = `${CASE_CSS}
-  #root .stats { left: 1420px; top: 330px; width: 404px; }
-  #root .card.case { height: 440px; }
+  #root .stats { left: 1420px; top: 300px; width: 404px; }
+  #root .card.case { height: 500px; }
   #root #s9-title { font-size: 54px; width: 1700px; }
-  #root #s9-ask { top: 800px; width: 1290px; }
+  #root #s9-ask { top: 818px; width: 1290px; }
 `;
     const js = `
     hide(".card, .warn, .stat, #s9-ask");
@@ -512,9 +518,9 @@ Object.assign(SCENES_EP02, {
   // ------------------------------------------------------------------ TELA 10 · MARKETING
   tela10: ({ cues, dur }) => {
     const cases = [
-      { badge: "IA generativa", h: "Geração e otimização de conteúdo", g: "Variações de anúncios, e-mails e páginas em escala, com testes A/B mais rápidos.", w: "Alucinação, viés e risco à marca exigem aprovação humana e trilha de auditoria." },
-      { badge: "IA preditiva", badgeInk: true, h: "Qualificação de contas e sinais de intenção", g: "Prioriza as contas com maior chance de compra e deixa o pipeline mais preciso.", w: "O modelo herda vieses do histórico e precisa ser re-treinado." },
-      { badge: "Preditiva + generativa", h: "Personalização para o grupo de compra", g: "Conteúdo por papel no comitê de compra (5 a 12 pessoas), no canal e no momento certos.", w: "Plataformas imaturas e preço por consumo de agentes podem estourar o orçamento." },
+      { badge: "IA generativa", h: "Geração e otimização de conteúdo", r: "Guia de marca, histórico de campanhas e integração com as plataformas de mídia.", g: "Variações de anúncios, e-mails e páginas em escala, com testes A/B mais rápidos.", w: "Alucinação, viés e risco à marca exigem aprovação humana e trilha de auditoria." },
+      { badge: "IA preditiva", badgeInk: true, h: "Qualificação de contas e sinais de intenção", r: "Dados de contas, histórico de negócios e sinais de intenção integrados.", g: "Prioriza as contas com maior chance de compra e deixa o pipeline mais preciso.", w: "O modelo herda vieses do histórico e precisa ser re-treinado." },
+      { badge: "Preditiva + generativa", h: "Personalização para o grupo de compra", r: "Camada única de dados do cliente (CDP), o pré-requisito número 1.", g: "Conteúdo por papel no comitê de compra (5 a 12 pessoas), no canal e no momento certos.", w: "Plataformas imaturas e preço por consumo de agentes podem estourar o orçamento." },
     ];
     const stats = [["79%", "r", "dos CMOs miram produtividade; só 48% miram receita"], ["57%", "g", "de CEOs e CFOs veem CX como a principal alavanca de crescimento"], ["60%", "g", "das marcas usarão IA agêntica em interações 1:1 até 2028"]];
     const inner = `
@@ -529,8 +535,8 @@ Object.assign(SCENES_EP02, {
   </div>`;
     const css = `${CASE_CSS}
   #root #s10-title { font-size: 54px; width: 1700px; }
-  #root .card.case { height: 440px; }
-  #root #s10-ask { top: 800px; width: 1290px; }
+  #root .card.case { height: 500px; }
+  #root #s10-ask { top: 818px; width: 1290px; }
 `;
     const js = `
     hide(".card, .warn, .stat, #s10-ask");
@@ -655,50 +661,62 @@ const FIGS = {
   tela09a: { num: "09A", eyebrow: "Módulo 1 · Comercial · <b>Gartner</b>", title: "Casos de IA generativa em vendas B2B: <em>valor × viabilidade</em>", img: "fig-09a.webp", iw: 1273, ih: 1180,
     desc: "13 casos de IA generativa em vendas B2B posicionados por valor (vertical) e viabilidade (horizontal).",
     insights: ["<b>Ganhos prováveis:</b> automação de propostas (RFP), mensagens de valor, inteligência de negócios e operações de vendas.", "<b>Riscos calculados:</b> inteligência de decisão de vendas, “vendedores digitais” e dados sintéticos.", "<b>Ganhos marginais:</b> assistente do vendedor e pesquisa de mercado: fáceis, mas de pouco valor."],
+    key: "O mais fácil de comprar nem sempre é o que mais vale.",
     src: "13 Generative AI Use Cases for B2B Sales", zooms: { likely: [0.40, 0.08, 0.36, 0.52], risks: [0.05, 0.08, 0.36, 0.52], marginal: [0.05, 0.59, 0.72, 0.27], parabola: [0, 0, 1, 1] } },
   tela09b: { num: "09B", eyebrow: "Módulo 1 · Comercial · <b>Gartner</b>", title: "Casos de IA generativa em vendas B2B: <em>scorecard</em>", img: "fig-09b.webp", iw: 1273, ih: 916,
     desc: "A nota de cada caso de vendas em valor (receita, eficiência, experiência do comprador) e viabilidade (técnica e interna).",
     insights: ["Círculo maior e mais escuro = nota mais alta.", "<b>Automação de RFP</b> e <b>criação de mensagens de valor</b> pontuam alto em quase todos os critérios.", "É o mesmo raciocínio da régua do Módulo 3."],
+    key: "Pontue as ideias da sua área com critérios iguais para todas.",
     src: "13 Generative AI Use Cases for B2B Sales", zooms: { rows: [0.0, 0.52, 1.0, 0.32] } },
   tela09c: { num: "09C", eyebrow: "Módulo 1 · Comercial · <b>Gartner</b>", title: "Casos de IA generativa em vendas B2B: <em>pipeline de adoção</em>", img: "fig-09c.webp", iw: 1273, ih: 892,
     desc: "Em que etapa da jornada (marketing, vendas, pós-venda) cada caso de IA atua.",
     insights: ["Vários casos atravessam a jornada inteira, do marketing ao sucesso do cliente.", "Isso exige uma <b>base única de dados do cliente</b>.", "Ajuda a definir qual área é dona de cada iniciativa."],
+    key: "Caso que cruza áreas precisa de um dono só.",
     src: "13 Generative AI Use Cases for B2B Sales", zooms: { arrows: [0.22, 0.08, 0.76, 0.78] } },
   tela09d: { num: "09D", eyebrow: "Módulo 1 · Comercial · <b>Gartner</b>", title: "Eficácia de vendas impulsionada por <em>investimentos estratégicos em IA</em>", img: "fig-09d.webp", iw: 1274, ih: 858,
     desc: "Como agentes de IA, vendedores e investimentos em IA se combinam ao longo do processo de vendas.",
     insights: ["A IA concentra valor em <b>qualificar, descobrir e avaliar</b> oportunidades.", "Negociação e fechamento seguem com pessoas.", "Tudo depende de um <b>processo de vendas repetível</b>."],
+    key: "IA acelera o funil; o relacionamento continua humano.",
     src: "Boost Sales Effectiveness With Targeted AI Investments", zooms: { mid: [0.17, 0.14, 0.5, 0.66], right: [0.58, 0.14, 0.42, 0.66], process: [0.0, 0.66, 1.0, 0.18] } },
   tela09e: { num: "09E", eyebrow: "Módulo 1 · Comercial · <b>Gartner</b>", title: "IA generativa em tecnologia de vendas: <em>visão geral do mercado</em>", img: "fig-09e.webp", iw: 1273, ih: 691,
     desc: "Os quatro segmentos do mercado de IA generativa para vendas e quem costuma comprar cada um.",
     insights: ["Funções em ferramentas de vendas e startups de IA: quem compra é <b>Vendas</b>.", "Recursos de IA em ferramentas de escritório e provedores de modelos: quem compra é <b>TI</b>.", "Cada caminho tem custo, integração e governança diferentes."],
+    key: "Antes de comprar, defina quem decide e quem sustenta.",
     src: "Navigate GenAI in Sales Tech: Balance Opportunities and Risks", zooms: { buyer: [0.72, 0.12, 0.28, 0.7] } },
   tela09f: { num: "09F", eyebrow: "Módulo 1 · Comercial · <b>Gartner</b>", title: "IA generativa em tecnologia de vendas: <em>mapa de mercado</em>", img: "fig-09f.webp", iw: 1273, ih: 836,
     desc: "O mapa de categorias de tecnologia de vendas impactadas pela IA generativa.",
     insights: ["<b>CRM</b>, orquestração de receita, assistentes e agentes de vendas estão no centro da mudança.", "Três rupturas: sintetizar informação, simplificar o uso das ferramentas e gerar conteúdo e insights.", "O CRM tende a virar plataforma com agentes embutidos."],
+    key: "A ferramenta atual pode já trazer a IA; avalie antes de comprar outra.",
     src: "Navigate GenAI in Sales Tech: Balance Opportunities and Risks", zooms: { crm: [0.46, 0.12, 0.54, 0.58], disrupt: [0.0, 0.7, 1.0, 0.17] } },
   tela09g: { num: "09G", eyebrow: "Módulo 1 · Comercial · <b>Gartner</b>", title: "O futuro da IA agêntica <em>nas aplicações corporativas</em>", img: "fig-09g.webp", iw: 1280, ih: 770,
     desc: "Linha do tempo da IA agêntica nas aplicações corporativas, de 2025 a 2029.",
     insights: ["<b>2025:</b> assistentes de IA em toda aplicação.", "<b>2026 e 2027:</b> agentes por tarefa, depois colaborando dentro da aplicação.", "<b>2028 e 2029:</b> ecossistemas de agentes entre aplicações e o “novo normal”."],
+    key: "Dados e governança precisam estar prontos antes da autonomia.",
     src: "Innovation Insight: AI-Native CRM", zooms: { pan: [0.22, 0.68, 0.76, 0.22], steps: [0.22, 0.08, 0.76, 0.3] } },
   tela10a: { num: "10A", eyebrow: "Módulo 1 · Marketing · <b>Gartner</b>", title: "Adoção de IA nos <em>casos de uso de marketing</em>", img: "fig-10a.webp", iw: 1269, ih: 798,
     desc: "Percentual de líderes de marketing que já usam, vão usar ou não pretendem usar IA em cada caso.",
     insights: ["Produção de conteúdo lidera: <b>64%</b> já usam.", "Gestão de campanhas (54%) e experimentação (45%) vêm a seguir.", "Qualificação de contas B2B ainda é pouco adotada: <b>13%</b> usam."],
+    key: "O mercado começou pelo conteúdo; o valor maior está em qualificar e personalizar.",
     src: "Tech Buying Drivers: Tech Providers Must Move CMOs Beyond Efficiency-Only AI", zooms: { top: [0.0, 0.2, 1.0, 0.13], bottom: [0.0, 0.72, 1.0, 0.1] } },
   tela10b: { num: "10B", eyebrow: "Módulo 1 · Marketing · <b>Gartner</b>", title: "Principais estratégias de crescimento <em>de CEOs e CFOs</em>", img: "fig-10b.webp", iw: 1492, ih: 1189,
     desc: "As principais estratégias de crescimento citadas por 125 CEOs e CFOs.",
-    insights: ["Melhorar a experiência do cliente é a nº 1: <b>57%</b>.", "Depois vêm melhorar produtos (46%) e lançar novos (45%).", "Casos de receita e experiência rendem <b>de 3 a 5 vezes mais</b> que casos de produtividade."],
+    insights: ["Melhorar a experiência do cliente é a nº 1: <b>57%</b>.", "Depois vêm melhorar produtos (46%) e lançar novos (45%).", "Preço e novos públicos aparecem bem abaixo."],
+    key: "IA em marketing deve mirar o cliente e a receita, não só eficiência.",
     src: "Tech Buying Drivers: Tech Providers Must Move CMOs Beyond Efficiency-Only AI", zooms: { bar: [0.0, 0.11, 1.0, 0.14], x35: [0, 0, 1, 1] } },
   tela10c: { num: "10C", eyebrow: "Módulo 1 · Marketing · <b>Gartner</b> · corte opcional", title: "Modelo de mercado: <em>marketing digital e estratégia de marca</em>", img: "fig-10c.webp", iw: 1280, ih: 1096,
     desc: "Como a Gartner projeta o mercado de serviços de marketing digital e estratégia de marca até 2029.",
     insights: ["Crescimento previsto de <b>US$ 54 bilhões</b> em cinco anos (5,4% ao ano).", "IA e IA generativa aparecem entre os fatores que mudam o investimento em marketing.", "CMOs devem recorrer mais a parceiros externos."],
+    key: "A IA muda onde o orçamento de marketing é gasto.",
     src: "Forecast Analysis: Digital Marketing and Brand Strategy Services, Worldwide", zooms: { top: [0.1, 0.06, 0.8, 0.13] } },
   tela10d: { num: "10D", eyebrow: "Módulo 1 · Marketing · <b>Gartner</b> · corte opcional", title: "Marketing digital e marca: <em>gasto por segmento</em>", img: "fig-10d.webp", iw: 1275, ih: 1003,
     desc: "Crescimento em 2025 × crescimento anual até 2029 por segmento de serviços de marketing. O tamanho da bolha é o gasto.",
     insights: ["<b>Consultoria de tecnologia</b> e <b>implementação de aplicações</b> crescem mais.", "Serviços gerenciados crescem menos.", "Os serviços que integram dados e ferramentas lideram."],
+    key: "O valor está em integrar, não em ter mais ferramentas.",
     src: "Forecast Analysis: Digital Marketing and Brand Strategy Services, Worldwide", zooms: { bubbles: [0.5, 0.08, 0.45, 0.45] } },
   tela10e: { num: "10E", eyebrow: "Módulo 1 · Marketing · <b>Gartner</b> · corte opcional", title: "Previsões Gartner: <em>da pesquisa ao futuro</em>", img: "fig-10e.webp", iw: 1310, ih: 608,
     desc: "Como a Gartner transforma pesquisa acumulada em previsões de mercado.",
     insights: ["As previsões combinam dados de pesquisa e análise de especialistas.", "Servem para orientar direção e prioridades.", "<b>Não substituem a linha de base da sua empresa.</b>"],
+    key: "Use previsão como bússola, não como meta.",
     src: "Over 100 Data, Analytics and AI Predictions Through 2031", zooms: {},
     extra: `<div class="embed" id="s10e-embed"><em>Bússola,</em> não meta.</div>` },
 };
