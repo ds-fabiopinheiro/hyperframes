@@ -21,8 +21,8 @@ done
 echo "--- frames com a zona do CSV sobreposta"
 mkdir -p "$E/conferencia"
 i=0
-# uma linha do CSV por modo: tela_cheia (gancho), canto (tela09), tela_cheia (decisao)
-for cena in gancho tela09 decisao; do
+# uma linha do CSV por modo: tela_cheia (gancho), canto (tela11), tela_cheia (decisao)
+for cena in gancho tela11 decisao; do
   row=$(grep ",$cena," "$E/$EP-zonas.csv")
   IFS=, read -r ini fim modo x y w h _ <<<"$row"
   t=$(node -e "console.log((($ini*1+$fim*1)/2).toFixed(2))")
@@ -32,6 +32,6 @@ for cena in gancho tela09 decisao; do
   echo "$out"
   i=$((i+1))
 done
-ffmpeg -v error -y -i "$E/conferencia/zona-gancho-"*.png -i "$E/conferencia/zona-tela09-"*.png -i "$E/conferencia/zona-decisao-"*.png \
+ffmpeg -v error -y -i "$E/conferencia/zona-gancho-"*.png -i "$E/conferencia/zona-tela11-"*.png -i "$E/conferencia/zona-decisao-"*.png \
   -filter_complex "[0][1][2]hstack=inputs=3,scale=1800:-1" "$E/conferencia/zonas-conferencia.png"
 echo "sheet: $E/conferencia/zonas-conferencia.png"

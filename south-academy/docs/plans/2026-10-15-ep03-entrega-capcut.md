@@ -17,3 +17,9 @@
 2. `scripts/scenes.mjs` (cabeçalho + figScene/caseCard do EP02; cenas novas). (60 min)
 3. `scripts/fidelity.mjs` + build + lint + check + snapshots; duração na faixa. (25 min)
 4. Render único (sem voz, guia) + stems + `verify-entrega.sh` + partes ≤ 30 MiB + commit + PR #3 + entrega; parar para aprovação. (2 × ~17 min de render)
+
+## Resultado (2026-10-15)
+- Fidelidade deck × cenas (`scripts/fidelity.mjs`, 16 slides): **0 faltas no 1º build** (linhas de texto e números). Rodado antes do `check` e do render.
+- Duração: 581,6 s com folga 0,33 (abaixo da faixa) → folga calculada por interpolação linear (0,48 → 642,6 s) → **`beatSlack` 0,523 → 660,05 s (11m00s)**, dentro de 630–690 s. P2 aplicada.
+- `check`: passou no 1º build (0 erros de layout; aviso de contraste só no numeral decorativo). 25 snapshots nos cues principais conferidos antes do render: gancho e decisão com gráficos em x ≥ 1210; cartões com Ganho/Requer/Atenção; zooms 11A, 11B, 11D, 11F, 12B, 12G; parábola e embed da 11D; citação, embed e quadro "83%" da tela12.
+- Render: um único ciclo (sem voz + guia).
