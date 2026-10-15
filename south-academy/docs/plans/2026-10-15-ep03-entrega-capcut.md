@@ -23,3 +23,5 @@
 - Duração: 581,6 s com folga 0,33 (abaixo da faixa) → folga calculada por interpolação linear (0,48 → 642,6 s) → **`beatSlack` 0,523 → 660,05 s (11m00s)**, dentro de 630–690 s. P2 aplicada.
 - `check`: passou no 1º build (0 erros de layout; aviso de contraste só no numeral decorativo). 25 snapshots nos cues principais conferidos antes do render: gancho e decisão com gráficos em x ≥ 1210; cartões com Ganho/Requer/Atenção; zooms 11A, 11B, 11D, 11F, 12B, 12G; parábola e embed da 11D; citação, embed e quadro "83%" da tela12.
 - Render: um único ciclo (sem voz + guia).
+- Render único verificado (`verify-entrega.sh`): MP4 sem voz e guia 660,07 s, narração 660,05 s, SFX 660,05 s; trecho 2–18 s do sem-voz em silêncio (−91 dB), guia com fala (−25,7 dB); frames com a zona do CSV (gancho, tela11, decisão) e 7 frames das cenas principais em `entrega/conferencia/`. Entrega: MP4 em 2 partes sem reencode (corte em keyframe a 337,8 s); narração enviada em FLAC (o WAV de 31,7 MB passa do limite de envio por 225 KB; o WAV fica em `entrega/`).
+- Pendências de texto herdadas do EP02 (crumb, "Detalhes nas notas.", rótulo "Insights") mantidas como premissa P6.
