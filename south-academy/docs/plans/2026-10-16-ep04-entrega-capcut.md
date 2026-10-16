@@ -23,3 +23,7 @@
 - Duração: 877,0 s com folga 0,523 (acima da faixa) → interpolação (0,25 → 727,3 s) → **`beatSlack` 0,24 → 721,9 s (12m02s)**, dentro de 690–750 s. P2 aplicada.
 - `check`: passou no 1º build; 34 snapshots nos cues principais conferidos antes do render. Ajuste único antes do render: três zooms (14B, 14C, 16E) com região de largura total não ampliavam; regiões estreitadas.
 - Render: um único ciclo (sem voz + guia).
+- Render interrompido pelo reinício do container durante o guia (sem-voz já completo); o guia foi retomado com `renders/chain-guia.sh` (só render guia + stems), sem refazer o sem-voz. Continua um ciclo único.
+- Verificação (`verify-entrega.sh`): sem-voz e guia 721,87 s, narração 721,92 s, SFX 721,86 s (timing.json 721,86 s); trecho 2–18 s do sem-voz em silêncio (−91 dB), guia com fala (−25 dB); frames com a zona do CSV (gancho tela cheia, tela 13 canto, decisão tela cheia) em `entrega/conferencia/`, mais uma montagem com um frame por cena (`entrega/conferencia/cenas/montagem.png`).
+- Entrega: sem-voz em 2 partes e guia em 3 partes sem reencode (`-c copy -f segment`), narração e SFX como FLAC só para o envio; originais em `entrega/`.
+- Handoff do projeto em `south-academy/HANDOFF.md` (com `docs/teleprompter.md` e `deck/`).
