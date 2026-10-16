@@ -1,0 +1,107 @@
+[
+  {
+    "id": "sfx-whoosh",
+    "file": "sfx-whoosh.mp3",
+    "at": 31.28,
+    "dur": 5.54,
+    "vol": 0.5
+  },
+  {
+    "id": "sfx-impact",
+    "file": "sfx-impact.mp3",
+    "at": 31.98,
+    "dur": 2.12,
+    "vol": 0.45
+  },
+  {
+    "id": "sfx-pop-0",
+    "file": "sfx-pop.mp3",
+    "at": 38.07,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-1",
+    "file": "sfx-pop.mp3",
+    "at": 58.58,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-2",
+    "file": "sfx-pop.mp3",
+    "at": 80.59,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-3",
+    "file": "sfx-pop.mp3",
+    "at": 198.07,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-4",
+    "file": "sfx-pop.mp3",
+    "at": 211.91,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-5",
+    "file": "sfx-pop.mp3",
+    "at": 224.04,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-6",
+    "file": "sfx-pop.mp3",
+    "at": 393.9,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-7",
+    "file": "sfx-pop.mp3",
+    "at": 436.22,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-8",
+    "file": "sfx-pop.mp3",
+    "at": 442.82,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-9",
+    "file": "sfx-pop.mp3",
+    "at": 458.96,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-10",
+    "file": "sfx-pop.mp3",
+    "at": 517.86,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-11",
+    "file": "sfx-pop.mp3",
+    "at": 521.07,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-12",
+    "file": "sfx-pop.mp3",
+    "at": 524.37,
+    "dur": 0.72,
+    "vol": 0.28
+  }
+]
