@@ -744,11 +744,11 @@ const FIGS = {
   tela14b: { num: "14B", eyebrow: "Módulo 1 · Pessoas · <b>Gartner</b>", title: "Casos de IA generativa <em>priorizados pelos líderes de RH</em>", img: "fig-14b.webp", iw: 1303, ih: 1124,
     desc: "Os casos de IA generativa priorizados por 132 líderes de RH.",
     insights: ["Tarefas administrativas e documentos lideram: <b>53%</b>.", "Descrição de cargos (52%) e chatbot para colaboradores (51%) vêm a seguir.", "Só <b>7%</b> não pretendem usar IA generativa."],
-    key: "O RH começa pelo operacional repetitivo.", src: HR, zooms: { bars: [0.0, 0.06, 1.0, 0.3], certo: "fig" } },
+    key: "O RH começa pelo operacional repetitivo.", src: HR, zooms: { bars: [0.22, 0.05, 0.76, 0.3], certo: "fig" } },
   tela14c: { num: "14C", eyebrow: "Módulo 1 · Pessoas · <b>Gartner</b>", title: "Gestão de desempenho: <em>adoção da IA generativa</em>", img: "fig-14c.webp", iw: 1800, ih: 1128,
     desc: "Adoção de IA generativa em três usos da gestão de desempenho.",
     insights: ["Resumo de feedback: <b>38%</b> já usam.", "Planos de desenvolvimento: 24% usam e 40% planejam.", "Notas de desempenho: <b>60%</b> não pretendem usar IA."],
-    key: "IA ajuda a escrever e resumir; quem avalia é o gestor.", src: PM, zooms: { feedback: [0.0, 0.4, 1.0, 0.22], nota: [0.0, 0.2, 1.0, 0.22], gestor: "fig" } },
+    key: "IA ajuda a escrever e resumir; quem avalia é o gestor.", src: PM, zooms: { feedback: [0.26, 0.37, 0.64, 0.26], nota: [0.26, 0.16, 0.64, 0.26], gestor: "fig" } },
   tela14d: { num: "14D", eyebrow: "Módulo 1 · Pessoas · <b>Gartner</b>", title: "Gestão de desempenho: <em>risco × retorno das aplicações de IA</em>", img: "fig-14d.webp", iw: 1800, ih: 1128,
     desc: "Risco × retorno das aplicações de IA na gestão de desempenho.",
     insights: ["<b>Adotar:</b> planos de desenvolvimento, apoio para metas, resumo e escrita de feedback.", "<b>Equilibrar:</b> resumo de indicadores e preparação da calibração.", "<b>Evitar:</b> dar a nota de desempenho, inferir comportamento e criar planos de melhoria."],
@@ -773,7 +773,7 @@ const FIGS = {
   tela16e: { num: "16E", eyebrow: "Módulo 1 · Estratégia e serviços de TI · <b>Gartner</b>", title: "Serviços de IA: <em>casos mais adotados</em>", img: "fig-16e.webp", iw: 2200, ih: 1898,
     desc: "Os casos de uso de IA mais adotados, em percentual do total (171 casos).",
     insights: ["Engajamento do cliente lidera: <b>17%</b>.", "Dados e analytics (13%), conteúdo com IA generativa (12%) e assistência preditiva (11%) vêm a seguir.", "IA conversacional e análise de texto: 9% cada."],
-    key: "O mercado começa pelo cliente e pelos dados.", src: SV, zooms: { bar: [0.0, 0.04, 1.0, 0.18], cliente: "fig" } },
+    key: "O mercado começa pelo cliente e pelos dados.", src: SV, zooms: { bar: [0.22, 0.03, 0.74, 0.2], cliente: "fig" } },
 };
 for (const [id, cfg] of Object.entries(FIGS)) {
   const base = figScene(id, cfg);

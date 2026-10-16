@@ -17,3 +17,9 @@
 2. `scripts/scenes.mjs` (cabeçalho do EP03 + cenas novas: gancho, 13, 14, 15, 16, 17, pausa, decisão, final, 13 figuras). (70 min)
 3. `fidelity.mjs` (18 slides) + build + lint + check + snapshots; duração na faixa. (25 min)
 4. Render único + stems + `verify-entrega.sh` + partes ≤ 30 MiB + commit + PR #4 + entrega; parar. (2 × ~18 min de render)
+
+## Resultado (2026-10-16)
+- Fidelidade deck × cenas (`fidelity.mjs`, 18 slides): **0 faltas no 1º build**.
+- Duração: 877,0 s com folga 0,523 (acima da faixa) → interpolação (0,25 → 727,3 s) → **`beatSlack` 0,24 → 721,9 s (12m02s)**, dentro de 690–750 s. P2 aplicada.
+- `check`: passou no 1º build; 34 snapshots nos cues principais conferidos antes do render. Ajuste único antes do render: três zooms (14B, 14C, 16E) com região de largura total não ampliavam; regiões estreitadas.
+- Render: um único ciclo (sem voz + guia).
