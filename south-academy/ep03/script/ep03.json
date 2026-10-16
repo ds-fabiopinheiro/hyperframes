@@ -1,0 +1,666 @@
+{
+  "episode": "EP03",
+  "series": "South Academy Executive",
+  "title": "O problema não é a ferramenta: TI e Financeiro",
+  "narrator": "Fabio Pinheiro",
+  "org": "South System",
+  "timing": {
+    "lineGap": 0.5,
+    "pause": 1.0,
+    "pauseLong": 2.5,
+    "sceneLeadIn": 0.6,
+    "sceneTail": 1.2,
+    "speed": 0.85,
+    "slowSpeed": 0.78,
+    "beatSlack": 0.523
+  },
+  "scenes": [
+    {
+      "id": "gancho",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Gancho frio",
+      "beats": [
+        {
+          "id": "g01",
+          "say": "De 2021 a 2025, as empresas investiram em chatbot para o service desk como nunca.",
+          "cue": "open",
+          "pause": 1.0
+        },
+        {
+          "id": "g02",
+          "say": "O autoatendimento ficou parado em quinze por cento.",
+          "cap": "O autoatendimento ficou parado em **15%**.",
+          "cue": "pct"
+        },
+        {
+          "id": "g03",
+          "say": "Cinco anos.",
+          "cue": "anos",
+          "pause": 1.0
+        },
+        {
+          "id": "g04",
+          "say": "Isso não é um problema de ferramenta. É um diagnóstico.",
+          "cap": "Isso não é um problema de ferramenta. É um **diagnóstico**.",
+          "cue": "diag"
+        }
+      ]
+    },
+    {
+      "id": "vinheta",
+      "kind": "sting",
+      "hold": 3.2,
+      "label": "Vinheta"
+    },
+    {
+      "id": "tela11",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 11 · TI",
+      "beats": [
+        {
+          "id": "t11-01",
+          "say": "TI, três casos que o seu CIO já conhece.",
+          "cue": "intro"
+        },
+        {
+          "id": "t11-02",
+          "say": "Triagem e roteamento de chamados. Classifica, agrupa, reduz o tempo de resolução.",
+          "cap": "**Triagem e roteamento de chamados.** Classifica, agrupa, reduz o tempo de resolução.",
+          "cue": "c1"
+        },
+        {
+          "id": "t11-03",
+          "say": "O alerta: só vinte e oito por cento dos casos de IA em infraestrutura e operações atingem o ROI esperado.",
+          "cap": "O alerta: só **28%** dos casos de IA em infraestrutura e operações atingem o ROI esperado.",
+          "cue": "w1"
+        },
+        {
+          "id": "t11-04",
+          "say": "Agente virtual de service desk. Desvia de quinze a vinte por cento dos incidentes.",
+          "cap": "**Agente virtual de service desk.** Desvia de 15% a 20% dos incidentes.",
+          "cue": "c2"
+        },
+        {
+          "id": "t11-05",
+          "say": "Até 2027, metade desses projetos pode ser abandonada.",
+          "cue": "w2"
+        },
+        {
+          "id": "t11-06",
+          "say": "Agentes de código. De vinte e cinco a cinquenta por cento de produtividade até 2028.",
+          "cap": "**Agentes de código.** De 25% a 50% de produtividade até 2028.",
+          "cue": "c3"
+        },
+        {
+          "id": "t11-07",
+          "say": "E, até 2027, quarenta por cento das empresas com ferramentas cobradas por uso vão gastar mais do dobro do orçado.",
+          "cap": "E, até 2027, **40%** das empresas com ferramentas cobradas por uso vão gastar mais do dobro do orçado.",
+          "cue": "w3"
+        },
+        {
+          "id": "t11-08",
+          "say": "Preço por token é um risco de orçamento, não um detalhe técnico.",
+          "cap": "Preço por token é um **risco de orçamento**, não um detalhe técnico.",
+          "cue": "token"
+        },
+        {
+          "id": "t11-09",
+          "say": "Quinze por cento de autoatendimento, estável há cinco anos.",
+          "cap": "**15%** de autoatendimento, estável há cinco anos.",
+          "cue": "n1"
+        },
+        {
+          "id": "t11-10",
+          "say": "Oitenta por cento dos fluxos centrais de ITSM autônomos até 2030.",
+          "cap": "**80%** dos fluxos centrais de ITSM autônomos até 2030.",
+          "cue": "n2"
+        },
+        {
+          "id": "t11-11",
+          "say": "E a IA passando de trinta por cento do custo dessas plataformas em 2028.",
+          "cap": "E a IA passando de **30%** do custo dessas plataformas em 2028.",
+          "cue": "n3"
+        }
+      ]
+    },
+    {
+      "id": "tela11a",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 11A · Gartner · Service desk: valor × viabilidade",
+      "beats": [
+        {
+          "id": "t11a-01",
+          "say": "Ganhos prováveis: agente virtual, triagem e roteamento, resumo de chamados, detecção de incidentes graves.",
+          "cap": "**Ganhos prováveis:** agente virtual, triagem e roteamento, resumo de chamados, detecção de incidentes graves.",
+          "cue": "likely"
+        },
+        {
+          "id": "t11a-02",
+          "say": "Triagem e resumo é o nosso Case 2. Guarde.",
+          "cap": "Triagem e resumo é o nosso **Case 2**. Guarde.",
+          "cue": "case2"
+        }
+      ]
+    },
+    {
+      "id": "tela11b",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 11B · Gartner · Scorecard do service desk",
+      "beats": [
+        {
+          "id": "t11b-01",
+          "say": "Olhe só a coluna de prontidão organizacional.",
+          "cap": "Olhe só a coluna de **prontidão organizacional**.",
+          "cue": "col"
+        },
+        {
+          "id": "t11b-02",
+          "say": "Viabilidade técnica alta com prontidão baixa é projeto que o time de TI entrega e o negócio não usa.",
+          "cap": "Viabilidade técnica alta com prontidão baixa é projeto que o time de TI entrega **e o negócio não usa**.",
+          "cue": "usa"
+        }
+      ]
+    },
+    {
+      "id": "tela11c",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 11C · Gartner · Pipeline: contexto, recomendação, ação",
+      "beats": [
+        {
+          "id": "t11c-01",
+          "say": "Três estágios: dar contexto, recomendar, agir.",
+          "cap": "Três estágios: **dar contexto**, **recomendar**, **agir**.",
+          "cue": "cols"
+        },
+        {
+          "id": "t11c-02",
+          "say": "Comece pelos dois primeiros. O terceiro exige controle que vocês ainda vão desenhar no Módulo 2.",
+          "cap": "Comece pelos dois primeiros. O terceiro exige controle que vocês ainda vão desenhar no **Módulo 2**.",
+          "cue": "agir"
+        }
+      ]
+    },
+    {
+      "id": "tela11d",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 11D · Gartner · Atendidos × autoatendimento",
+      "beats": [
+        {
+          "id": "t11d-01",
+          "say": "Aqui está o gráfico do gancho.",
+          "cue": "fig",
+          "slow": true
+        },
+        {
+          "id": "t11d-02",
+          "say": "Dezessete, dezessete, quinze, quinze, quinze.",
+          "cap": "**17**, **17**, **15**, **15**, **15**.",
+          "cue": "bars",
+          "slow": true
+        },
+        {
+          "id": "t11d-03",
+          "say": "Um banco que eu conheço trocou de chatbot três vezes em quatro anos.",
+          "cap": "Um banco que eu conheço trocou de chatbot **três vezes em quatro anos**.",
+          "cue": "parabola",
+          "slow": true
+        },
+        {
+          "id": "t11d-04",
+          "say": "Fornecedor novo, modelo novo, contrato novo.",
+          "cue": "novo",
+          "slow": true
+        },
+        {
+          "id": "t11d-05",
+          "say": "O indicador nunca saiu do lugar.",
+          "cap": "O indicador **nunca saiu do lugar**.",
+          "cue": "lugar",
+          "slow": true
+        },
+        {
+          "id": "t11d-06",
+          "say": "Na quarta vez, em vez de trocar a ferramenta, alguém abriu a base de conhecimento.",
+          "cap": "Na quarta vez, em vez de trocar a ferramenta, alguém abriu a **base de conhecimento**.",
+          "cue": "base",
+          "slow": true,
+          "pause": 1.0
+        },
+        {
+          "id": "t11d-07",
+          "say": "Metade dos artigos tinha mais de três anos.",
+          "cap": "**Metade dos artigos** tinha mais de três anos.",
+          "cue": "metade",
+          "slow": true
+        },
+        {
+          "id": "t11d-08",
+          "say": "Um deles ensinava a configurar um sistema que a empresa tinha desligado.",
+          "cap": "Um deles ensinava a configurar um sistema que a empresa **tinha desligado**.",
+          "cue": "desligado",
+          "slow": true
+        },
+        {
+          "id": "t11d-09",
+          "say": "A IA responde com o que ela lê.",
+          "cap": "A IA responde com **o que ela lê**.",
+          "cue": "le",
+          "slow": true
+        },
+        {
+          "id": "t11d-10",
+          "say": "Se o que ela lê está velho, ela responde errado com muita educação.",
+          "cap": "Se o que ela lê está velho, ela responde **errado com muita educação**.",
+          "cue": "velho",
+          "slow": true
+        },
+        {
+          "id": "t11d-11",
+          "say": "Ferramenta sem base curada não move indicador.",
+          "cap": "**Ferramenta sem base curada não move indicador.**",
+          "cue": "embed",
+          "slow": true
+        }
+      ]
+    },
+    {
+      "id": "tela11e",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 11E · Gartner · Capacidades futuras do analista",
+      "beats": [
+        {
+          "id": "t11e-01",
+          "say": "O que acontece com quem trabalha no service desk: engenharia de prompt, curadoria de conhecimento, construção de agentes.",
+          "cap": "O que acontece com quem trabalha no service desk: **engenharia de prompt**, **curadoria de conhecimento**, **construção de agentes**.",
+          "cue": "circle"
+        },
+        {
+          "id": "t11e-02",
+          "say": "Posição Gartner: o cargo muda muito, o valor do trabalho permanece.",
+          "cap": "Posição Gartner: o cargo muda muito, **o valor do trabalho permanece**.",
+          "cue": "position"
+        },
+        {
+          "id": "t11e-03",
+          "say": "Planeje requalificação. Corte de headcount não é o plano, é a consequência mal gerida.",
+          "cap": "Planeje **requalificação**. Corte de headcount não é o plano, é a consequência mal gerida.",
+          "cue": "requal"
+        }
+      ]
+    },
+    {
+      "id": "tela11f",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 11F · Gartner · Níveis L1 a L5 de autonomia",
+      "beats": [
+        {
+          "id": "t11f-01",
+          "say": "Do assistente estático aos ambientes multiagente.",
+          "cap": "Do **assistente estático** aos **ambientes multiagente**.",
+          "cue": "l1"
+        },
+        {
+          "id": "t11f-02",
+          "say": "A cada nível, a pessoa deixa de executar e passa a supervisionar.",
+          "cap": "A cada nível, a pessoa deixa de executar e passa a **supervisionar**.",
+          "cue": "l5"
+        },
+        {
+          "id": "t11f-03",
+          "say": "Autonomia é conquistada por etapa. Não vem no contrato.",
+          "cap": "Autonomia é **conquistada por etapa**. Não vem no contrato.",
+          "cue": "etapa"
+        }
+      ]
+    },
+    {
+      "id": "tela11g",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 11G · Gartner · Lacuna de adoção em infraestrutura e operações",
+      "beats": [
+        {
+          "id": "t11g-01",
+          "say": "Repare nos pontos laranja dentro dos ganhos prováveis: casos que valem a pena e estão parados no planejamento.",
+          "cap": "Repare nos pontos laranja dentro dos ganhos prováveis: casos que valem a pena e estão **parados no planejamento**.",
+          "cue": "orange"
+        },
+        {
+          "id": "t11g-02",
+          "say": "Saber o que vale não basta. É preciso executar.",
+          "cap": "Saber o que vale não basta. **É preciso executar.**",
+          "cue": "exec"
+        }
+      ]
+    },
+    {
+      "id": "tela12",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 12 · Financeiro",
+      "beats": [
+        {
+          "id": "t12-01",
+          "say": "Financeiro. Três casos.",
+          "cue": "intro"
+        },
+        {
+          "id": "t12-02",
+          "say": "Previsão de caixa e cenários: de onze a vinte e três por cento mais acurácia em casos reais.",
+          "cap": "**Previsão de caixa e cenários:** de 11% a 23% mais acurácia em casos reais.",
+          "cue": "c1"
+        },
+        {
+          "id": "t12-03",
+          "say": "O obstáculo não é técnico: é a resistência a confiar na IA em decisão de liquidez. E ela é saudável.",
+          "cap": "O obstáculo não é técnico: é a resistência a confiar na IA em decisão de liquidez. E ela é **saudável**.",
+          "cue": "w1"
+        },
+        {
+          "id": "t12-04",
+          "say": "Contas a pagar e conciliações: ganho provável para a Gartner.",
+          "cap": "**Contas a pagar e conciliações:** \"ganho provável\" para a Gartner.",
+          "cue": "c2"
+        },
+        {
+          "id": "t12-05",
+          "say": "Fatura, pedido e recebimento cruzados no ERP. Alto volume, regra clara.",
+          "cap": "Fatura, pedido e recebimento cruzados no ERP. **Alto volume, regra clara.**",
+          "cue": "w2"
+        },
+        {
+          "id": "t12-06",
+          "say": "Fechamento e anomalias: cerca de setecentos e quarenta e dois mil dólares por ano numa empresa de tecnologia típica.",
+          "cap": "**Fechamento e anomalias:** cerca de US$ 742 mil por ano numa empresa de tecnologia típica.",
+          "cue": "c3"
+        },
+        {
+          "id": "t12-07",
+          "say": "Mas nada de lançamento autônomo.",
+          "cap": "Mas **nada de lançamento autônomo**.",
+          "cue": "auto",
+          "slow": true
+        },
+        {
+          "id": "t12-08",
+          "say": "Numa cooperativa ou num banco, o auditor externo vai perguntar: quem aprovou este lançamento, e por quê.",
+          "cap": "Numa cooperativa ou num banco, o auditor externo vai perguntar: \"quem aprovou este lançamento e por quê\".",
+          "cue": "auditor",
+          "slow": true
+        },
+        {
+          "id": "t12-09",
+          "say": "Se a resposta for: o modelo, a conversa acabou.",
+          "cap": "Se a resposta for \"o modelo\", **a conversa acabou**.",
+          "cue": "modelo",
+          "slow": true
+        },
+        {
+          "id": "t12-10",
+          "say": "Caixa-preta não passa em auditoria. E não passa no Banco Central.",
+          "cap": "**Caixa-preta não passa em auditoria.** E não passa no Banco Central.",
+          "cue": "caixa",
+          "slow": true
+        },
+        {
+          "id": "t12-11",
+          "say": "Cinquenta e oito por cento das equipes de finanças já usam IA.",
+          "cap": "**58%** das equipes de finanças já usam IA.",
+          "cue": "n1"
+        },
+        {
+          "id": "t12-12",
+          "say": "Oitenta e três por cento dos CFOs dizem que menos da metade das iniciativas gera resultado mensurável.",
+          "cap": "**83%** dos CFOs dizem que menos da metade das iniciativas gera resultado mensurável.",
+          "cue": "n2"
+        },
+        {
+          "id": "t12-13",
+          "say": "E sessenta e dois por cento não têm processo para escolher casos de uso.",
+          "cap": "E **62%** não têm processo para escolher casos de uso.",
+          "cue": "n3"
+        },
+        {
+          "id": "t12-14",
+          "say": "Oitenta e três por cento dos CFOs não estão céticos com IA.",
+          "cap": "83% dos CFOs **não estão céticos com IA**.",
+          "cue": "ceticos"
+        },
+        {
+          "id": "t12-15",
+          "say": "Estão céticos com a forma como a IA foi escolhida.",
+          "cap": "Estão céticos com a forma como a IA foi **escolhida**.",
+          "cue": "escolhida"
+        },
+        {
+          "id": "t12-16",
+          "say": "É isso que o Módulo 3 resolve.",
+          "cap": "É isso que o **Módulo 3** resolve.",
+          "cue": "mod3"
+        }
+      ]
+    },
+    {
+      "id": "tela12a",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 12A · Gartner · Contabilidade, reporte, impostos e RI",
+      "beats": [
+        {
+          "id": "t12a-01",
+          "say": "Ganhos prováveis: detecção de anomalias, conciliações, testes SOX, notificações fiscais.",
+          "cap": "**Ganhos prováveis:** detecção de anomalias, conciliações, testes SOX, notificações fiscais.",
+          "cue": "likely"
+        },
+        {
+          "id": "t12a-02",
+          "say": "Comece por conciliações e anomalias: volume alto, regra clara, auditável.",
+          "cap": "Comece por conciliações e anomalias: **volume alto, regra clara, auditável**.",
+          "cue": "comece"
+        }
+      ]
+    },
+    {
+      "id": "tela12b",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 12B · Gartner · Scorecard contábil",
+      "beats": [
+        {
+          "id": "t12b-01",
+          "say": "A coluna de receita está quase vazia.",
+          "cap": "A coluna de **receita** está quase vazia.",
+          "cue": "col"
+        },
+        {
+          "id": "t12b-02",
+          "say": "Em finanças, o primeiro retorno vem de risco e eficiência. Não venda receita onde não há.",
+          "cap": "Em finanças, o primeiro retorno vem de **risco e eficiência**. Não venda receita onde não há.",
+          "cue": "risco"
+        }
+      ]
+    },
+    {
+      "id": "tela12c",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 12C · Gartner · Planejamento, orçamento e previsão",
+      "beats": [
+        {
+          "id": "t12c-01",
+          "say": "Repare: análise de churn está em risco calculado. Alto valor, exige dado preparado.",
+          "cap": "Repare: análise de churn está em **risco calculado**. Alto valor, exige dado preparado.",
+          "cue": "churn"
+        },
+        {
+          "id": "t12c-02",
+          "say": "No EP06, vocês vão ver na prática por quê.",
+          "cap": "No **EP06**, vocês vão ver na prática por quê.",
+          "cue": "ep06"
+        }
+      ]
+    },
+    {
+      "id": "tela12d",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 12D · Gartner · Analytics e apoio à decisão: scorecard",
+      "beats": [
+        {
+          "id": "t12d-01",
+          "say": "Segmentação de clientes e análise aumentada pontuam em receita e eficiência.",
+          "cap": "**Segmentação de clientes** e **análise aumentada** pontuam em receita e eficiência.",
+          "cue": "rows"
+        },
+        {
+          "id": "t12d-02",
+          "say": "Precificação dinâmica: valor alto, risco de gestão alto.",
+          "cap": "**Precificação dinâmica:** valor alto, risco de gestão alto.",
+          "cue": "pricing"
+        },
+        {
+          "id": "t12d-03",
+          "say": "Em seguros e crédito, precificação dinâmica sem governança vira pergunta do regulador.",
+          "cap": "Em seguros e crédito, precificação dinâmica sem governança vira **pergunta do regulador**.",
+          "cue": "regulador"
+        }
+      ]
+    },
+    {
+      "id": "tela12e",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 12E · Gartner · Analytics e apoio à decisão: matriz",
+      "beats": [
+        {
+          "id": "t12e-01",
+          "say": "Único ganho provável: segmentação de clientes.",
+          "cap": "Único ganho provável: **segmentação de clientes**.",
+          "cue": "seg"
+        },
+        {
+          "id": "t12e-02",
+          "say": "Para quem administra carteira, é o ponto de partida.",
+          "cap": "Para quem administra carteira, é o **ponto de partida**.",
+          "cue": "partida"
+        }
+      ]
+    },
+    {
+      "id": "tela12f",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 12F · Gartner · Como ler exemplos reais [CORTE OPCIONAL]",
+      "optional": true,
+      "beats": [
+        {
+          "id": "t12f-01",
+          "say": "Objetivo, solução, resultado.",
+          "cap": "**Objetivo**, **solução**, **resultado**.",
+          "cue": "fig"
+        },
+        {
+          "id": "t12f-02",
+          "say": "É o formato que serve para levar um caso ao comitê.",
+          "cap": "É o formato que serve para levar um caso **ao comitê**.",
+          "cue": "comite"
+        }
+      ]
+    },
+    {
+      "id": "tela12g",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 12G · Gartner · Fluxos de trabalho com IA em finanças",
+      "beats": [
+        {
+          "id": "t12g-01",
+          "say": "O mapa completo.",
+          "cue": "fig"
+        },
+        {
+          "id": "t12g-02",
+          "say": "Se for começar por um, comece pelos processos transacionais.",
+          "cap": "Se for começar por um, comece pelos **processos transacionais**.",
+          "cue": "trans"
+        },
+        {
+          "id": "t12g-03",
+          "say": "Alto volume. Regra clara. Trilha fácil.",
+          "cap": "**Alto volume. Regra clara. Trilha fácil.**",
+          "cue": "trilha"
+        }
+      ]
+    },
+    {
+      "id": "decisao",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Decisão para levar",
+      "beats": [
+        {
+          "id": "d01",
+          "say": "Para levar ao próximo comitê:",
+          "cue": "task"
+        },
+        {
+          "id": "d02",
+          "say": "qual é o processo de maior volume com regra clara da sua área que ainda não tem IA?",
+          "cap": "qual é o processo de **maior volume com regra clara** da sua área que ainda não tem IA?",
+          "cue": "question"
+        },
+        {
+          "id": "d03",
+          "say": "Essa é a resposta para: por onde começar. Em qualquer uma das sete áreas.",
+          "cap": "Essa é a resposta para \"por onde começar\". Em qualquer uma das **sete áreas**.",
+          "cue": "sete"
+        },
+        {
+          "id": "d04",
+          "say": "Quando a South entra num caso desses, a primeira entrega não é o modelo.",
+          "cap": "Quando a South entra num caso desses, a primeira entrega **não é o modelo**.",
+          "cue": "south"
+        },
+        {
+          "id": "d05",
+          "say": "É a base de conhecimento curada e a trilha de auditoria.",
+          "cap": "É a **base de conhecimento curada** e a **trilha de auditoria**.",
+          "cue": "base"
+        },
+        {
+          "id": "d06",
+          "say": "O modelo vem depois e, geralmente, é a parte mais rápida.",
+          "cap": "O modelo vem depois e, geralmente, é a **parte mais rápida**.",
+          "cue": "modelo"
+        },
+        {
+          "id": "d07",
+          "say": "Próximo episódio: Jurídico, Pessoas e Atendimento.",
+          "cap": "Próximo episódio: **Jurídico, Pessoas e Atendimento**.",
+          "cue": "next"
+        },
+        {
+          "id": "d08",
+          "say": "Onde a IA ajuda e onde ela não deve decidir.",
+          "cap": "Onde a IA ajuda e onde ela **não deve decidir**.",
+          "cue": "punch2"
+        }
+      ]
+    },
+    {
+      "id": "final",
+      "kind": "card",
+      "hold": 5.0,
+      "label": "Cartão final",
+      "next": "EP04 · Jurídico, Pessoas e Atendimento"
+    }
+  ]
+}

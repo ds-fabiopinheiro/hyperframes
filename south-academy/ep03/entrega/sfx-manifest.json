@@ -1,0 +1,58 @@
+[
+  {
+    "id": "sfx-whoosh",
+    "file": "sfx-whoosh.mp3",
+    "at": 29.19,
+    "dur": 5.54,
+    "vol": 0.5
+  },
+  {
+    "id": "sfx-impact",
+    "file": "sfx-impact.mp3",
+    "at": 29.89,
+    "dur": 2.12,
+    "vol": 0.45
+  },
+  {
+    "id": "sfx-pop-0",
+    "file": "sfx-pop.mp3",
+    "at": 38.15,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-1",
+    "file": "sfx-pop.mp3",
+    "at": 59.53,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-2",
+    "file": "sfx-pop.mp3",
+    "at": 76.79,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-3",
+    "file": "sfx-pop.mp3",
+    "at": 351.94,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-4",
+    "file": "sfx-pop.mp3",
+    "at": 373.02,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-5",
+    "file": "sfx-pop.mp3",
+    "at": 388.47,
+    "dur": 0.72,
+    "vol": 0.28
+  }
+]

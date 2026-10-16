@@ -58,3 +58,9 @@ posições: tela cheia nos ganchos e na decisão, janela 400×225 no canto infer
 - `scripts/scenes.mjs` — templates das cenas (uma função por tela, cues → tempos locais).
 - `scripts/build.mjs` — gerador (host, narrador, legendas, mixagem).
 - `assets/` — logo, fundos e SFX extraídos do deck / biblioteca bundled do media-use.
+
+## Transcrição local (whisper.cpp, CPU)
+
+- Binário: `whisper-cli` em `/usr/local/bin` (build CPU do whisper.cpp, sem CUDA), que é onde `hyperframes doctor` procura.
+- Modelo escolhido: **ggml-small** em `~/.cache/hyperframes/whisper/models/ggml-small.bin`. Teste com 30 s da narração do EP02 (4 threads): ggml-base transcreveu em 3,7 s mas trocou "sim" por "assim"; ggml-small transcreveu exato em 10,3 s (~3× tempo real). Um episódio de 11 min leva ~4 min.
+- Uso: `whisper-cli -m ~/.cache/hyperframes/whisper/models/ggml-small.bin -l pt -t 4 -f audio-16k-mono.wav` (converter antes com `ffmpeg -ar 16000 -ac 1`).
