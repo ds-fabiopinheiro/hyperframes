@@ -1,0 +1,10 @@
+inicio,fim,modo,x,y,largura,altura,cena,observacao
+0,27.6,tela_cheia,0,0,1920,1080,gancho,graficos a direita (x>=1210); manter o video em x<1140 para nao cobri-los
+30.8,46.96,canto,1472,807,400,225,tela18,canto inferior direito
+46.96,119.3,canto,1472,807,400,225,tela19,canto inferior direito
+119.3,154.45,canto,1472,807,400,225,tela20,canto inferior direito
+154.45,199.65,canto,1472,807,400,225,tela21,canto inferior direito
+199.65,215.45,canto,1472,807,400,225,tela21a,canto inferior direito
+215.45,235.82,canto,1472,807,400,225,tela21b,canto inferior direito
+235.82,367.65,canto,1472,807,400,225,tela22,canto inferior direito
+367.65,414.99,tela_cheia,0,0,1920,1080,decisao,graficos a direita (x>=1210); manter o video em x<1140 para nao cobri-los
