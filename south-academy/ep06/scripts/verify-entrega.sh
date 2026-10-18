@@ -44,7 +44,7 @@ ffmpeg -v error -y -i "$E/conferencia/zona-gancho-"*.png -i "$E/conferencia/zona
 echo "sheet: $E/conferencia/zonas-conferencia.png"
 echo "--- legendas: guia legendado × sem-voz sem legenda, no mesmo instante"
 # instante no meio do 2º beat da primeira tela (narrador no canto, legenda embaixo no guia)
-tc=$(node -e "const t=JSON.parse(require('fs').readFileSync('$P/script/$EP.timing.json','utf8'));const s=t.scenes.find(s=>s.kind==='slide'&&s.beats&&s.beats.length>1);const b=s.beats[1];console.log((s.start+(b.t+b.end)/2).toFixed(2))")
+tc=$(node -e "const sc=JSON.parse(require('fs').readFileSync('$P/script/$EP.json','utf8')).scenes.find(s=>s.kind==='slide'&&s.beats&&s.beats.length>1).id;const t=JSON.parse(require('fs').readFileSync('$P/script/$EP.timing.json','utf8'));const s=t.scenes.find(x=>x.id===sc);const b=s.beats[1];console.log((s.start+(b.t+b.end)/2).toFixed(2))")
 ffmpeg -v error -y -ss "$tc" -i "$E/$EP-guia.mp4" -frames:v 1 -vf "drawtext=text='guia · com legenda · t=${tc}s':x=40:y=40:fontsize=36:fontcolor=lime:box=1:boxcolor=black@0.6" "$E/conferencia/legenda-guia-t${tc}.png"
 ffmpeg -v error -y -ss "$tc" -i "$E/$EP-sem-voz.mp4" -frames:v 1 -vf "drawtext=text='sem-voz · sem legenda · t=${tc}s':x=40:y=40:fontsize=36:fontcolor=lime:box=1:boxcolor=black@0.6" "$E/conferencia/legenda-semvoz-t${tc}.png"
 ffmpeg -v error -y -i "$E/conferencia/legenda-guia-t${tc}.png" -i "$E/conferencia/legenda-semvoz-t${tc}.png" -filter_complex "[0][1]hstack=inputs=2,scale=1800:-1" "$E/conferencia/legendas-conferencia.png"
