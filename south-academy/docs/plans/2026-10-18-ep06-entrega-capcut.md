@@ -19,3 +19,9 @@
 3. `scripts/scenes.mjs` (cabeçalho do EP05 + cenas novas: gancho, 23–28, pausa, decisão, final). (80 min)
 4. `fidelity.mjs` (6 slides) + build + lint + check + snapshots; duração na faixa. (25 min)
 5. Render único + stems + `verify-entrega.sh` + entrega + commit + PR #6; parar. (2 × ~18 min de render)
+
+## Resultado (2026-10-18)
+- Flag de legendas: `build.mjs` com `NO_VOICE`/`CAPTIONS`; conferido nos três modos (com voz: `el-captions` e `vo` presentes; `VOICE=0`: ambos omitidos; `VOICE=0 CAPTIONS=1`: legendas presentes). `verify-entrega.sh` com META=660 e a prova de legenda (par guia × sem-voz + luminância). HANDOFF.md atualizado (regra 5, §4.8, §4.9, tabela de scripts).
+- Fidelidade deck × cenas (`fidelity.mjs`, 6 slides): **0 faltas no 1º build**.
+- Duração: 539,6 s com folga 0,30 (abaixo da faixa) → 2º build com 0,70 (690,8 s) → interpolação → **`beatSlack` 0,619 → 660,2 s (11m00s)**, meta "cerca de 11 min" (630–690 s). P2 aplicada.
+- `lint` 0/0; `check` passou no 1º build sem avisos (contraste 80/80). 57 snapshots nos cues principais conferidos antes do render; nenhum ajuste necessário.
