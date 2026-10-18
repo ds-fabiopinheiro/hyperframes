@@ -10,6 +10,10 @@ EP=$(node -e "console.log(JSON.parse(require('fs').readFileSync('$P/script/ep05.
 TOTAL=$(node -e "console.log(JSON.parse(require('fs').readFileSync('$P/script/$EP.timing.json','utf8')).total)")
 dur() { ffprobe -v error -show_entries format=duration -of csv=p=0 "$1"; }
 echo "timing.json total: $TOTAL s"
+# meta do teleprompter do EP05: "cerca de 7 min" → 420 s ± 30 s
+META=420; TOL=30
+FINAL=$(dur "$E/$EP-guia.mp4")
+node -e "const f=$FINAL,m=$META,t=$TOL;const d=f-m;console.log('duração final vs meta do teleprompter: '+f.toFixed(2)+' s vs '+m+' s ('+(d>=0?'+':'')+d.toFixed(1)+' s; faixa '+(m-t)+'–'+(m+t)+' s) → '+(Math.abs(d)<=t?'OK':'FORA DA FAIXA'))"
 for f in "$E/$EP-sem-voz.mp4" "$E/$EP-guia.mp4" "$E/$EP-narracao-kokoro.wav" "$E/$EP-sfx.wav"; do
   printf "%-32s %s s\n" "$(basename "$f")" "$(dur "$f")"
 done

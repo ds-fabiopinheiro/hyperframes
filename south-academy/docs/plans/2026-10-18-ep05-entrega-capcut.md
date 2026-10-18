@@ -17,3 +17,9 @@
 2. `scripts/scenes.mjs` (cabeçalho do EP04 + cenas novas: gancho, 18, 19, 20, 21, 22, decisão, final, 2 figuras). (60 min)
 3. `fidelity.mjs` (7 slides) + build + lint + check + snapshots; duração na faixa. (20 min)
 4. Render único + stems + `verify-entrega.sh` (inclui duração final × meta do teleprompter) + partes ≤ 30 MiB + commit + PR #5 + entrega; parar. (2 × ~11 min de render)
+
+## Resultado (2026-10-18)
+- Fidelidade deck × cenas (`fidelity.mjs`, 7 slides): **0 faltas no 1º build**.
+- Duração: 334,6 s com folga 0,24 (abaixo da faixa) → 2º build com 0,60 (420,9 s) → interpolação → **`beatSlack` 0,596 → 420,0 s (7m00s)**, meta "cerca de 7 min" (390–450 s). P2 aplicada: a folga subiu porque o episódio tem 56 beats.
+- `lint` 0/0; `check` passou no 1º build (1 info de layout: títulos de 21A/21B em duas linhas invadindo a figura → fonte 44 px e largura 1720 px; 1 aviso de contraste no carimbo "COISA ANTIGA" do gancho, amostrado no meio da animação de escala: branco sobre vermelho escuro, legível). 44 snapshots nos cues principais conferidos antes do render.
+- `verify-entrega.sh` passa a imprimir a duração final do guia contra a meta do teleprompter (420 s ± 30 s), conforme pedido.
