@@ -38,23 +38,23 @@ episódio (`docs/plans/2026-10-16-ep04-entrega-capcut.md`).
 
 ## 3. Estado por episódio
 
-| EP   | Telas do deck                         | Branch / PR                             | Estado                                                          |
-| ---- | ------------------------------------- | --------------------------------------- | --------------------------------------------------------------- |
-| EP01 | 01–05                                 | `south-academy-ep01` / PR #1 (mesclado) | entregue                                                        |
-| EP02 | 06–10E (10C–10E opcionais)            | `south-academy-ep02` / PR #2 (mesclado) | aprovado                                                        |
-| EP03 | 11–12G                                | `south-academy-ep03` / PR #3 (mesclado) | aprovado                                                        |
-| EP04 | 13–17 (16D opcional)                  | `south-academy-ep04` / PR #4 (draft)    | render único feito; **aguardando aprovação**                    |
-| EP05 | 18, 19, 20, 21, 21A, 21B, 22          | —                                       | próximo (Módulo 2; EP04 já anuncia "EP05 · A pergunta de ouro") |
-| EP06 | 23–28 (26 dinâmica, 27 revelação)     | —                                       | —                                                               |
-| EP07 | 29–33 (31A Gartner)                   | —                                       | —                                                               |
-| EP08 | 37–50 (dois cases + Agentic Commerce) | —                                       | —                                                               |
-| EP09 | 51–62                                 | —                                       | —                                                               |
-| EP10 | 63–67 (67 encerramento)               | —                                       | —                                                               |
+| EP   | Telas do deck                         | Branch / PR                             | Estado                                                                 |
+| ---- | ------------------------------------- | --------------------------------------- | ---------------------------------------------------------------------- |
+| EP01 | 01–05                                 | `south-academy-ep01` / PR #1 (mesclado) | entregue                                                               |
+| EP02 | 06–10E (10C–10E opcionais)            | `south-academy-ep02` / PR #2 (mesclado) | aprovado                                                               |
+| EP03 | 11–12G                                | `south-academy-ep03` / PR #3 (mesclado) | aprovado                                                               |
+| EP04 | 13–17 (16D opcional)                  | `south-academy-ep04` / PR #4 (mesclado) | aprovado                                                               |
+| EP05 | 18, 19, 20, 21, 21A, 21B, 22          | `south-academy-ep05` / PR #5 (draft)    | render único feito; **aguardando aprovação**                           |
+| EP06 | 23–28 (26 dinâmica, 27 revelação)     | —                                       | próximo (EP05 já anuncia "EP06 · O painel perfeito que estava errado") |
+| EP07 | 29–33 (31A Gartner)                   | —                                       | —                                                                      |
+| EP08 | 37–50 (dois cases + Agentic Commerce) | —                                       | —                                                                      |
+| EP09 | 51–62                                 | —                                       | —                                                                      |
+| EP10 | 63–67 (67 encerramento)               | —                                       | —                                                                      |
 
 Não há telas 34–36 no teleprompter (o deck pula de 33 para 37).
 
-Durações entregues: EP02 650,4 s · EP03 660,1 s · EP04 721,9 s (12m02s, folga 0,24).
-Meta de duração = duração do teleprompter ±30 s (EP03 630–690 s; EP04 690–750 s).
+Durações entregues: EP02 650,4 s · EP03 660,1 s · EP04 721,9 s (12m02s, folga 0,24) · EP05 420,0 s (7m00s, folga 0,596).
+Meta de duração = duração do teleprompter ±30 s (EP03 630–690 s; EP04 690–750 s; EP05 390–450 s). Desde o EP05, `verify-entrega.sh` imprime a duração final contra essa meta (variável `META`).
 
 ## 4. Padrão de produção por episódio (como foi feito no EP03 e no EP04)
 
@@ -167,8 +167,9 @@ x ≥ 1210. Cada linha: início, fim, modo, x, y, largura, altura.
   digitação e lida uma vez (EP04 P5). Verifique duplicatas assim nos próximos episódios.
 - Fidelidade por script roda **antes do 1º render** (EP03 P5; adotado após o EP02 precisar de
   3 ciclos).
-- Crumb do Módulo 1 no vídeo: "Módulo 1 · Aplicações". EP05 abre o **Módulo 2** (tela 18
-  divisória): tome o crumb do deck da tela 18.
+- Crumb do Módulo 1 no vídeo: "Módulo 1 · Aplicações"; do Módulo 2: "Módulo 2 · Fundamentos" (crumb do
+  deck nas telas de corpo; nas telas Gartner o deck traz "Gartner · Casos de uso", pendência 1). A cada módulo
+  novo, tome o crumb do deck da primeira tela de corpo.
 
 ## 7. Pendências de texto (registradas, não corrigir sem pedido)
 
@@ -237,13 +238,17 @@ Reinstalação, se algo sumiu:
   inteiro e revisado.
 - Zoom com região `[0, y, 1, h]` dá escala 1 (sem zoom).
 
-## 10. Como começar o EP05
+## 10. Como começar o próximo episódio (EP06)
 
-1. Confirmar com o Fabio que o EP04 (PR #4) foi aprovado e mesclar antes de criar o branch.
-2. `git fetch origin main && git checkout -b south-academy-ep05 origin/main`.
-3. Teleprompter: `docs/teleprompter.md`, seção "# EP05 · Preditiva, generativa, nenhuma: a
-   pergunta de ouro" (telas 18, 19, 20, 21, 21A, 21B, 22). Deck:
-   `python3 deck/extract-slides.py ep05 18 19 20 21 21A 21B 22`.
-4. Seguir o §4. Meta de duração = duração do teleprompter ±30 s. EP04 termina com o teaser
-   "EP05 · A pergunta de ouro" e a frase "Devagar em quando não usar."; o gancho do EP05 deve
-   abrir nesse ponto.
+1. Confirmar com o Fabio que o EP05 (PR #5) foi aprovado e mesclar antes de criar o branch.
+2. `git fetch origin main && git checkout -b south-academy-ep06 origin/main`; copiar `ep05/` como
+   base (§4.2; `rsync` não existe no container: `cp -r` e apague `media/`, `entrega/`, `renders/`,
+   `compositions/`, `index.html`, `.hyperframes/`).
+3. Teleprompter: `docs/teleprompter.md`, seção "# EP06 · O painel perfeito que estava errado"
+   (telas 23, 24, 25, 26 dinâmica, 27 revelação, 28). Deck:
+   `python3 deck/extract-slides.py ep06 23 24 25 26 27 28`.
+4. Seguir o §4. Meta de duração = duração do teleprompter ±30 s (ajuste `META` no
+   `verify-entrega.sh`). EP05 termina com o teaser "EP06 · O painel perfeito que estava errado" e
+   a frase "Decidir certo com o dado errado."; o gancho do EP06 deve abrir nesse ponto.
+   O EP05 teve 56 beats e precisou de folga 0,596 para chegar a 7 min: comece a interpolação
+   por aí quando o episódio for curto.
