@@ -30,31 +30,34 @@ episódio (`docs/plans/2026-10-16-ep04-entrega-capcut.md`).
    de fidelidade é por script determinístico (`scripts/fidelity.mjs`), não por agentes.
 4. **Um render por episódio**: um único ciclo (sem voz + guia). Se a verificação pegar algo
    pequeno depois do render, registre como pendência e avise; não re-renderize.
-5. **Legendas renderizadas no vídeo** (como nos episódios anteriores): trilho `.right` em
-   x ≥ 1210 nas cenas de tela cheia, embaixo nas telas com narrador no canto.
+5. **Legendas renderizadas no vídeo**: trilho `.right` em x ≥ 1210 nas cenas de tela cheia,
+   embaixo nas telas com narrador no canto. **Desde o EP06 (pedido do Fabio em 2026-10-18)**: as
+   legendas ficam **só no `epNN-guia.mp4`**; o `epNN-sem-voz.mp4` sai **sem a faixa de legendas**.
+   Implementado como flag no `build.mjs`: `VOICE=0` desliga as legendas junto com a narração
+   (`CAPTIONS=1` força; `CAPTIONS=0` remove). EP01–EP05 não são re-renderizados por isso.
 6. **Parar ao terminar cada episódio** e esperar a aprovação do Fabio antes do próximo.
 7. Economia de uso: sem re-renders além do planejado, sem agentes extras, snapshots só nos cues
    principais.
 
 ## 3. Estado por episódio
 
-| EP   | Telas do deck                         | Branch / PR                             | Estado                                                                 |
-| ---- | ------------------------------------- | --------------------------------------- | ---------------------------------------------------------------------- |
-| EP01 | 01–05                                 | `south-academy-ep01` / PR #1 (mesclado) | entregue                                                               |
-| EP02 | 06–10E (10C–10E opcionais)            | `south-academy-ep02` / PR #2 (mesclado) | aprovado                                                               |
-| EP03 | 11–12G                                | `south-academy-ep03` / PR #3 (mesclado) | aprovado                                                               |
-| EP04 | 13–17 (16D opcional)                  | `south-academy-ep04` / PR #4 (mesclado) | aprovado                                                               |
-| EP05 | 18, 19, 20, 21, 21A, 21B, 22          | `south-academy-ep05` / PR #5 (draft)    | render único feito; **aguardando aprovação**                           |
-| EP06 | 23–28 (26 dinâmica, 27 revelação)     | —                                       | próximo (EP05 já anuncia "EP06 · O painel perfeito que estava errado") |
-| EP07 | 29–33 (31A Gartner)                   | —                                       | —                                                                      |
-| EP08 | 37–50 (dois cases + Agentic Commerce) | —                                       | —                                                                      |
-| EP09 | 51–62                                 | —                                       | —                                                                      |
-| EP10 | 63–67 (67 encerramento)               | —                                       | —                                                                      |
+| EP   | Telas do deck                         | Branch / PR                             | Estado                                                              |
+| ---- | ------------------------------------- | --------------------------------------- | ------------------------------------------------------------------- |
+| EP01 | 01–05                                 | `south-academy-ep01` / PR #1 (mesclado) | entregue                                                            |
+| EP02 | 06–10E (10C–10E opcionais)            | `south-academy-ep02` / PR #2 (mesclado) | aprovado                                                            |
+| EP03 | 11–12G                                | `south-academy-ep03` / PR #3 (mesclado) | aprovado                                                            |
+| EP04 | 13–17 (16D opcional)                  | `south-academy-ep04` / PR #4 (mesclado) | aprovado                                                            |
+| EP05 | 18, 19, 20, 21, 21A, 21B, 22          | `south-academy-ep05` / PR #5 (mesclado) | aprovado                                                            |
+| EP06 | 23–28 (26 dinâmica, 27 revelação)     | `south-academy-ep06` / PR #6 (draft)    | render único feito; **aguardando aprovação**                        |
+| EP07 | 29–33 (31A Gartner)                   | —                                       | próximo (EP06 já anuncia "EP07 · Carteira, não coleção de pilotos") |
+| EP08 | 37–50 (dois cases + Agentic Commerce) | —                                       | —                                                                   |
+| EP09 | 51–62                                 | —                                       | —                                                                   |
+| EP10 | 63–67 (67 encerramento)               | —                                       | —                                                                   |
 
 Não há telas 34–36 no teleprompter (o deck pula de 33 para 37).
 
-Durações entregues: EP02 650,4 s · EP03 660,1 s · EP04 721,9 s (12m02s, folga 0,24) · EP05 420,0 s (7m00s, folga 0,596).
-Meta de duração = duração do teleprompter ±30 s (EP03 630–690 s; EP04 690–750 s; EP05 390–450 s). Desde o EP05, `verify-entrega.sh` imprime a duração final contra essa meta (variável `META`).
+Durações entregues: EP02 650,4 s · EP03 660,1 s · EP04 721,9 s (12m02s, folga 0,24) · EP05 420,0 s (7m00s, folga 0,596) · EP06 660,2 s (11m00s, folga 0,619; sem-voz sem legendas).
+Meta de duração = duração do teleprompter ±30 s (EP03 630–690 s; EP04 690–750 s; EP05 390–450 s; EP06 630–690 s). Desde o EP05, `verify-entrega.sh` imprime a duração final contra essa meta (variável `META`).
 
 ## 4. Padrão de produção por episódio (como foi feito no EP03 e no EP04)
 
@@ -121,10 +124,13 @@ extra})`: regiões de zoom como frações `[x, y, w, h]`, k ≤ 2,4; regiões de
    node scripts/stems.mjs          # epNN-narracao-kokoro.wav + epNN-sfx.wav
    ```
    Nunca faça commit do `index.html` enquanto o build `VOICE=0` estiver no disco
-   (`grep -c 'id="vo"' index.html` tem de dar 1 no commit).
-9. **Verificação**: `bash scripts/verify-entrega.sh` (durações vs. timing.json; 2–18 s do
-   sem-voz em silêncio −91 dB e guia com fala; 3 frames com a zona do CSV desenhada em
-   `entrega/conferencia/`). Olhe os frames.
+   (`grep -c 'id="vo"' index.html` tem de dar 1 no commit; desde o EP06 o build sem voz também
+   omite `el-captions`, então `grep -c 'id="el-captions"' index.html` tem de dar 1 no commit).
+9. **Verificação**: `bash scripts/verify-entrega.sh` (durações vs. timing.json e vs. meta do
+   teleprompter `META ± TOL`; 2–18 s do sem-voz em silêncio −91 dB e guia com fala; 3 frames com a
+   zona do CSV desenhada em `entrega/conferencia/`; desde o EP06, par guia × sem-voz no mesmo
+   instante provando a ausência de legenda no sem-voz, `conferencia/legendas-conferencia.png`,
+   com checagem por luminância da zona da legenda). Olhe os frames.
 10. **Entrega**: MP4 divididos em partes ≤ 30 MiB sem reencode
     (`ffmpeg -i x.mp4 -c copy -map 0 -f segment -segment_time 335 -reset_timestamps 1 x-parte%d.mp4`);
     WAV > 30 MiB vira FLAC só para o envio (`ffmpeg -i x.wav -c:a flac x.flac`); os originais
@@ -136,15 +142,15 @@ extra})`: regiões de zoom como frações `[x, y, w, h]`, k ≤ 2,4; regiões de
 
 ## 5. Scripts (em `epNN/scripts/`, copiados de episódio em episódio)
 
-| Script              | Função                                                                                                                                                                                                                                                             |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `tts.py`            | um WAV por beat via kokoro-onnx; corta silêncio nas pontas; `--voice`, `--speed`, `--force`                                                                                                                                                                        |
-| `build.mjs`         | mede WAVs, calcula timing (lead-in, slack, gaps, pausas, tail), mixa `media/vo/epNN-narration.wav`, gera `index.html`, `compositions/*.html`, legendas, `entrega/epNN-zonas.csv`, `epNN-roteiro-tempos.md`, `sfx-manifest.json`; `VOICE=0` omite `<audio id="vo">` |
-| `scenes.mjs`        | templates das cenas (cabeçalho compartilhado + uma função por tela)                                                                                                                                                                                                |
-| `fidelity.mjs`      | conferência determinística deck × cenas (ver §4.7)                                                                                                                                                                                                                 |
-| `stems.mjs`         | narração cortada no total do episódio + mixagem dos SFX pelo manifesto                                                                                                                                                                                             |
-| `verify-entrega.sh` | durações, silêncio, frames com zona                                                                                                                                                                                                                                |
-| `renders/chain.sh`  | o ciclo único de render (sem voz → com voz → stems), em background                                                                                                                                                                                                 |
+| Script              | Função                                                                                                                                                                                                                                                                                                                                      |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `tts.py`            | um WAV por beat via kokoro-onnx; corta silêncio nas pontas; `--voice`, `--speed`, `--force`                                                                                                                                                                                                                                                 |
+| `build.mjs`         | mede WAVs, calcula timing (lead-in, slack, gaps, pausas, tail), mixa `media/vo/epNN-narration.wav`, gera `index.html`, `compositions/*.html`, legendas, `entrega/epNN-zonas.csv`, `epNN-roteiro-tempos.md`, `sfx-manifest.json`; `VOICE=0` omite `<audio id="vo">` e, desde o EP06, também a faixa de legendas (`CAPTIONS=0/1` sobrescreve) |
+| `scenes.mjs`        | templates das cenas (cabeçalho compartilhado + uma função por tela)                                                                                                                                                                                                                                                                         |
+| `fidelity.mjs`      | conferência determinística deck × cenas (ver §4.7)                                                                                                                                                                                                                                                                                          |
+| `stems.mjs`         | narração cortada no total do episódio + mixagem dos SFX pelo manifesto                                                                                                                                                                                                                                                                      |
+| `verify-entrega.sh` | durações, silêncio, frames com zona                                                                                                                                                                                                                                                                                                         |
+| `renders/chain.sh`  | o ciclo único de render (sem voz → com voz → stems), em background                                                                                                                                                                                                                                                                          |
 
 Zonas (CSV): `canto` = 400×225 em (1472, 807); `tela_cheia` = 0,0,1920,1080 com gráficos em
 x ≥ 1210. Cada linha: início, fim, modo, x, y, largura, altura.
@@ -238,17 +244,20 @@ Reinstalação, se algo sumiu:
   inteiro e revisado.
 - Zoom com região `[0, y, 1, h]` dá escala 1 (sem zoom).
 
-## 10. Como começar o próximo episódio (EP06)
+## 10. Como começar o próximo episódio (EP07)
 
-1. Confirmar com o Fabio que o EP05 (PR #5) foi aprovado e mesclar antes de criar o branch.
-2. `git fetch origin main && git checkout -b south-academy-ep06 origin/main`; copiar `ep05/` como
+1. Confirmar com o Fabio que o EP06 (PR #6) foi aprovado e mesclar antes de criar o branch.
+2. `git fetch origin main && git checkout -b south-academy-ep07 origin/main`; copiar `ep06/` como
    base (§4.2; `rsync` não existe no container: `cp -r` e apague `media/`, `entrega/`, `renders/`,
-   `compositions/`, `index.html`, `.hyperframes/`).
-3. Teleprompter: `docs/teleprompter.md`, seção "# EP06 · O painel perfeito que estava errado"
-   (telas 23, 24, 25, 26 dinâmica, 27 revelação, 28). Deck:
-   `python3 deck/extract-slides.py ep06 23 24 25 26 27 28`.
-4. Seguir o §4. Meta de duração = duração do teleprompter ±30 s (ajuste `META` no
-   `verify-entrega.sh`). EP05 termina com o teaser "EP06 · O painel perfeito que estava errado" e
-   a frase "Decidir certo com o dado errado."; o gancho do EP06 deve abrir nesse ponto.
-   O EP05 teve 56 beats e precisou de folga 0,596 para chegar a 7 min: comece a interpolação
-   por aí quando o episódio for curto.
+   `compositions/`, `index.html`, `.hyperframes/`). O `build.mjs` do ep06 já traz a flag de
+   legendas; o `verify-entrega.sh` já traz a meta do teleprompter (`META`) e a prova de legenda:
+   ajuste `META`, o episódio e a cena `canto` da lista de zonas.
+3. Teleprompter: `docs/teleprompter.md`, seção "# EP07 · Carteira, não coleção de pilotos"
+   (telas 29 divisória do Módulo 3, 30, 31, 31A Gartner, 32, 33). Deck:
+   `python3 deck/extract-slides.py ep07 29 30 31 31A 32 33`; a figura da 31A vem de `deck/img/`
+   (o `extract-slides.py` imprime o IMG) e usa `figScene()` com crumb do Módulo 3 (tome o crumb
+   do deck da tela 30).
+4. Seguir o §4. Meta de duração = duração do teleprompter ±30 s. EP06 termina com o teaser
+   "EP07 · Carteira, não coleção de pilotos" e a frase "Traga o seu mapa."; o gancho do EP07 deve
+   abrir nesse ponto. Folga inicial sugerida: 0,45 (EP05 0,596 com 56 beats; EP06 0,619 com 88
+   beats e 11 min); interpolar em dois builds.
