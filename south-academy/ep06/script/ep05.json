@@ -1,0 +1,443 @@
+{
+  "episode": "EP05",
+  "series": "South Academy Executive",
+  "title": "Preditiva, generativa, nenhuma: a pergunta de ouro",
+  "narrator": "Fabio Pinheiro",
+  "org": "South System",
+  "timing": {
+    "lineGap": 0.5,
+    "pause": 1.0,
+    "pauseLong": 2.5,
+    "sceneLeadIn": 0.6,
+    "sceneTail": 1.2,
+    "speed": 0.85,
+    "slowSpeed": 0.78,
+    "beatSlack": 0.596
+  },
+  "scenes": [
+    {
+      "id": "gancho",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Gancho frio",
+      "beats": [
+        {
+          "id": "g01",
+          "say": "Desde dois mil e vinte e três, IA virou sinônimo de chat.",
+          "cue": "open",
+          "cap": "Desde 2023, **“IA” virou sinônimo de chat**."
+        },
+        {
+          "id": "g02",
+          "say": "E o modelo de crédito que roda há dez anos na sua empresa e decide bilhões em concessão ficou com cara de coisa antiga.",
+          "cue": "credito",
+          "cap": "E o modelo de crédito que roda há **dez anos** na sua empresa e decide **bilhões** em concessão ficou com cara de **coisa antiga**.",
+          "pause": 1.0
+        },
+        {
+          "id": "g03",
+          "say": "Hoje a gente devolve as coisas ao lugar.",
+          "cue": "lugar",
+          "cap": "Hoje a gente **devolve as coisas ao lugar**."
+        }
+      ]
+    },
+    {
+      "id": "vinheta",
+      "kind": "sting",
+      "hold": 3.2,
+      "label": "Vinheta"
+    },
+    {
+      "id": "tela18",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 18 · Divisória · Módulo 2",
+      "beats": [
+        {
+          "id": "t18-01",
+          "say": "Módulo dois: o que eu preciso entender para usar e avaliar IA.",
+          "cue": "title",
+          "cap": "**Módulo 2:** o que eu preciso entender para usar e avaliar IA."
+        },
+        {
+          "id": "t18-02",
+          "say": "Quatro perguntas de gestor: que tipo, que dado, que risco, quem revisa.",
+          "cue": "chips",
+          "cap": "Quatro perguntas de gestor: **que tipo, que dado, que risco, quem revisa**."
+        }
+      ]
+    },
+    {
+      "id": "tela19",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 19 · Preditiva × generativa",
+      "beats": [
+        {
+          "id": "t19-01",
+          "say": "Vocês conhecem a tabela, então vou direto ao que importa.",
+          "cue": "intro"
+        },
+        {
+          "id": "t19-02",
+          "say": "A preditiva prevê e classifica: churn, fraude, crédito, demanda.",
+          "cue": "pred1",
+          "cap": "A **preditiva** prevê e classifica: churn, fraude, crédito, demanda."
+        },
+        {
+          "id": "t19-03",
+          "say": "Dado estruturado. Consistente, explicável, auditável.",
+          "cue": "pred2",
+          "cap": "Dado estruturado. **Consistente, explicável, auditável.**"
+        },
+        {
+          "id": "t19-04",
+          "say": "É o que o seu time de risco opera há anos.",
+          "cue": "pred3"
+        },
+        {
+          "id": "t19-05",
+          "say": "A generativa escreve, resume, interpreta: propostas, contratos, atendimento.",
+          "cue": "gen1",
+          "cap": "A **generativa** escreve, resume, interpreta: propostas, contratos, atendimento."
+        },
+        {
+          "id": "t19-06",
+          "say": "Texto, documento, imagem.",
+          "cue": "gen2"
+        },
+        {
+          "id": "t19-07",
+          "say": "A linha que importa é a última.",
+          "cue": "limite",
+          "cap": "A linha que importa é **a última**.",
+          "slow": true
+        },
+        {
+          "id": "t19-08",
+          "say": "A preditiva fica presa ao padrão histórico.",
+          "cue": "lim1",
+          "cap": "A preditiva **fica presa ao padrão histórico**.",
+          "slow": true
+        },
+        {
+          "id": "t19-09",
+          "say": "A generativa erra com confiança e é fraca em cálculo.",
+          "cue": "lim2",
+          "cap": "A generativa **erra com confiança** e é **fraca em cálculo**.",
+          "slow": true
+        },
+        {
+          "id": "t19-10",
+          "say": "Numa decisão regulada, erra com confiança é uma frase que deveria estar na política de risco.",
+          "cue": "cro",
+          "cap": "Numa decisão regulada, **“erra com confiança”** é uma frase que deveria estar na política de risco."
+        }
+      ]
+    },
+    {
+      "id": "tela20",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 20 · Três perguntas",
+      "beats": [
+        {
+          "id": "t20-01",
+          "say": "Três perguntas, em ordem.",
+          "cue": "intro"
+        },
+        {
+          "id": "t20-02",
+          "say": "Que dado eu tenho? Quanta precisão a decisão exige? Qual o custo de errar?",
+          "cue": "q123",
+          "cap": "**Que dado eu tenho?** Quanta **precisão** a decisão exige? Qual o **custo de errar**?"
+        },
+        {
+          "id": "t20-03",
+          "say": "Numérico, exato e caro: preditiva.",
+          "cue": "pred",
+          "cap": "Numérico, exato e caro: **preditiva**."
+        },
+        {
+          "id": "t20-04",
+          "say": "Texto, bom o suficiente e barato de corrigir: generativa.",
+          "cue": "gen",
+          "cap": "Texto, “bom o suficiente” e barato de corrigir: **generativa**."
+        },
+        {
+          "id": "t20-05",
+          "say": "E, às vezes, nenhuma IA.",
+          "cue": "nenhuma",
+          "cap": "E, às vezes, **nenhuma IA**."
+        },
+        {
+          "id": "t20-06",
+          "say": "Uma regra de negócio bem escrita ou um dado que não existe.",
+          "cue": "regra",
+          "cap": "Uma **regra de negócio** bem escrita ou um **dado que não existe**."
+        }
+      ]
+    },
+    {
+      "id": "tela21",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 21 · IA composta",
+      "beats": [
+        {
+          "id": "t21-01",
+          "say": "O caso bom é quase sempre composto.",
+          "cue": "intro",
+          "cap": "O caso bom é quase sempre **composto**."
+        },
+        {
+          "id": "t21-02",
+          "say": "Um pagamento a fornecedor foge do padrão.",
+          "cue": "pag"
+        },
+        {
+          "id": "t21-03",
+          "say": "A preditiva detecta.",
+          "cue": "detecta",
+          "cap": "A preditiva **detecta**."
+        },
+        {
+          "id": "t21-04",
+          "say": "A generativa lê o contrato e os e-mails e resume: fraude, disputa ou mudança de processo?",
+          "cue": "le",
+          "cap": "A generativa **lê** o contrato e os e-mails e resume: fraude, disputa ou mudança de processo?"
+        },
+        {
+          "id": "t21-05",
+          "say": "E a pessoa decide com o número e o contexto na mão.",
+          "cue": "decide",
+          "cap": "E a pessoa **decide** com o número e o contexto na mão."
+        },
+        {
+          "id": "t21-06",
+          "say": "É assim que vocês já operam em PLD, em sinistro, em chargeback.",
+          "cue": "opera",
+          "cap": "É assim que vocês já operam em **PLD**, em **sinistro**, em **chargeback**."
+        },
+        {
+          "id": "t21-07",
+          "say": "A novidade é a camada que lê o contexto. Não a que decide.",
+          "cue": "novidade",
+          "cap": "A novidade é a camada que **lê o contexto**. Não a que decide."
+        }
+      ]
+    },
+    {
+      "id": "tela21a",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 21A · Gartner · Preditiva, prescritiva e generativa",
+      "beats": [
+        {
+          "id": "t21a-01",
+          "say": "Seis cenários de combinação.",
+          "cue": "fig",
+          "cap": "**Seis cenários** de combinação."
+        },
+        {
+          "id": "t21a-02",
+          "say": "O cinco: dados sintéticos para detectar fraude em bancos.",
+          "cue": "cinco",
+          "cap": "O **cinco**: dados sintéticos para detectar fraude em bancos."
+        },
+        {
+          "id": "t21a-03",
+          "say": "É o nosso Case um, no EP oito.",
+          "cue": "case",
+          "cap": "É o nosso **Case 1**, no EP08."
+        }
+      ]
+    },
+    {
+      "id": "tela21b",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 21B · Gartner · Técnicas ampliadas pela generativa",
+      "beats": [
+        {
+          "id": "t21b-01",
+          "say": "A preditiva traz probabilidade. A prescritiva, otimização.",
+          "cue": "pred",
+          "cap": "A **preditiva** traz probabilidade. A **prescritiva**, otimização."
+        },
+        {
+          "id": "t21b-02",
+          "say": "A generativa acrescenta cenário e simulação.",
+          "cue": "gen",
+          "cap": "A **generativa** acrescenta cenário e simulação."
+        },
+        {
+          "id": "t21b-03",
+          "say": "Resultado: decisão mais rápida e mais adaptável.",
+          "cue": "resultado",
+          "cap": "Resultado: decisão **mais rápida** e **mais adaptável**."
+        }
+      ]
+    },
+    {
+      "id": "tela22",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 22 · Quando não usar IA generativa",
+      "beats": [
+        {
+          "id": "t22-01",
+          "say": "Agora, o que importa neste episódio.",
+          "cue": "intro"
+        },
+        {
+          "id": "t22-02",
+          "say": "Cinco situações em que a IA generativa é a ferramenta errada.",
+          "cue": "cinco",
+          "cap": "Cinco situações em que a IA generativa é a ferramenta **errada**."
+        },
+        {
+          "id": "t22-03",
+          "say": "Previsão numérica. Receita, demanda, capacidade, liquidez: modelo preditivo.",
+          "cue": "r1",
+          "cap": "**Previsão numérica.** Receita, demanda, capacidade, liquidez: modelo preditivo."
+        },
+        {
+          "id": "t22-04",
+          "say": "Decisão crítica. Fraude, crédito, alerta de segurança: a preditiva decide, a generativa explica.",
+          "cue": "r2",
+          "cap": "**Decisão crítica.** Fraude, crédito, alerta de segurança: a preditiva decide, a generativa explica."
+        },
+        {
+          "id": "t22-05",
+          "say": "Modelo que já funciona. Não substitua o que o time de risco calibrou por anos.",
+          "cue": "r3",
+          "cap": "**Modelo que já funciona.** Não substitua o que o time de risco calibrou por anos."
+        },
+        {
+          "id": "t22-06",
+          "say": "Use a generativa para explicar o resultado ao comitê.",
+          "cue": "r3b",
+          "cap": "Use a generativa para **explicar o resultado ao comitê**."
+        },
+        {
+          "id": "t22-07",
+          "say": "Regras fixas. Política igual para todos: motor de regras.",
+          "cue": "r4",
+          "cap": "**Regras fixas.** Política igual para todos: motor de regras."
+        },
+        {
+          "id": "t22-08",
+          "say": "Dado sensível fora de ambiente aprovado. Não.",
+          "cue": "r5",
+          "cap": "**Dado sensível fora de ambiente aprovado.** Não."
+        },
+        {
+          "id": "t22-09",
+          "say": "Uma fintech decidiu modernizar o motor de decisão de crédito com IA generativa.",
+          "cue": "parabola",
+          "cap": "Uma fintech decidiu “modernizar” o motor de decisão de crédito com IA generativa."
+        },
+        {
+          "id": "t22-10",
+          "say": "O modelo antigo tinha dez anos e KS estável.",
+          "cue": "antigo",
+          "cap": "O modelo antigo tinha **dez anos** e **KS estável**."
+        },
+        {
+          "id": "t22-11",
+          "say": "O novo explicava lindamente cada recusa.",
+          "cue": "novo",
+          "cap": "O novo **explicava lindamente** cada recusa.",
+          "pause": 1.0
+        },
+        {
+          "id": "t22-12",
+          "say": "E aprovava errado em um a cada doze casos.",
+          "cue": "errado",
+          "cap": "E **aprovava errado** em **um a cada doze** casos."
+        },
+        {
+          "id": "t22-13",
+          "say": "Voltaram ao antigo em seis semanas. E ficaram com a generativa só para a carta ao cliente.",
+          "cue": "voltaram",
+          "cap": "Voltaram ao antigo em **seis semanas**. E ficaram com a generativa só para a **carta ao cliente**."
+        },
+        {
+          "id": "t22-14",
+          "say": "A pergunta de ouro, para qualquer projeto de IA generativa que chegar à sua mesa:",
+          "cue": "ouro",
+          "cap": "A **pergunta de ouro**, para qualquer projeto de IA generativa que chegar à sua mesa:",
+          "slow": true
+        },
+        {
+          "id": "t22-15",
+          "say": "Preditiva, regras ou nenhuma IA resolveriam melhor?",
+          "cue": "pergunta",
+          "cap": "**Preditiva, regras ou nenhuma IA resolveriam melhor?**",
+          "slow": true
+        },
+        {
+          "id": "t22-16",
+          "say": "Se ninguém souber responder, o projeto ainda não está pronto para ser aprovado.",
+          "cue": "pronto",
+          "cap": "Se ninguém souber responder, o projeto **ainda não está pronto** para ser aprovado.",
+          "slow": true
+        }
+      ]
+    },
+    {
+      "id": "decisao",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Decisão para levar",
+      "beats": [
+        {
+          "id": "d01",
+          "say": "Pegue um projeto de IA generativa em andamento na sua área e faça a pergunta de ouro na próxima reunião de status.",
+          "cue": "task",
+          "cap": "Pegue um projeto de IA generativa em andamento na sua área e faça a **pergunta de ouro** na próxima reunião de status.",
+          "pause": 1.0
+        },
+        {
+          "id": "d02",
+          "say": "A resposta vai te dizer se é um projeto ou um experimento.",
+          "cue": "resposta",
+          "cap": "A resposta vai te dizer se é um **projeto** ou um **experimento**."
+        },
+        {
+          "id": "d03",
+          "say": "Os dois são válidos. Só não têm o mesmo orçamento.",
+          "cue": "orcamento",
+          "cap": "Os dois são válidos. Só **não têm o mesmo orçamento**."
+        },
+        {
+          "id": "d04",
+          "say": "Próximo episódio: o mais importante da série.",
+          "cue": "next",
+          "cap": "Próximo episódio: **o mais importante da série**."
+        },
+        {
+          "id": "d05",
+          "say": "Um painel de retenção que parece perfeito.",
+          "cue": "painel",
+          "cap": "Um painel de retenção que **parece perfeito**."
+        },
+        {
+          "id": "d06",
+          "say": "Você vai decidir com ele. E vai decidir certo com o dado errado.",
+          "cue": "punch2",
+          "cap": "Você vai decidir com ele. E vai decidir **certo** com o dado **errado**."
+        }
+      ]
+    },
+    {
+      "id": "final",
+      "kind": "card",
+      "hold": 5.0,
+      "label": "Cartão final",
+      "next": "EP06 · O painel perfeito que estava errado"
+    }
+  ]
+}

@@ -30,8 +30,11 @@ episódio (`docs/plans/2026-10-16-ep04-entrega-capcut.md`).
    de fidelidade é por script determinístico (`scripts/fidelity.mjs`), não por agentes.
 4. **Um render por episódio**: um único ciclo (sem voz + guia). Se a verificação pegar algo
    pequeno depois do render, registre como pendência e avise; não re-renderize.
-5. **Legendas renderizadas no vídeo** (como nos episódios anteriores): trilho `.right` em
-   x ≥ 1210 nas cenas de tela cheia, embaixo nas telas com narrador no canto.
+5. **Legendas renderizadas no vídeo**: trilho `.right` em x ≥ 1210 nas cenas de tela cheia,
+   embaixo nas telas com narrador no canto. **Desde o EP06 (pedido do Fabio em 2026-10-18)**: as
+   legendas ficam **só no `epNN-guia.mp4`**; o `epNN-sem-voz.mp4` sai **sem a faixa de legendas**.
+   Implementado como flag no `build.mjs`: `VOICE=0` desliga as legendas junto com a narração
+   (`CAPTIONS=1` força; `CAPTIONS=0` remove). EP01–EP05 não são re-renderizados por isso.
 6. **Parar ao terminar cada episódio** e esperar a aprovação do Fabio antes do próximo.
 7. Economia de uso: sem re-renders além do planejado, sem agentes extras, snapshots só nos cues
    principais.
@@ -121,10 +124,13 @@ extra})`: regiões de zoom como frações `[x, y, w, h]`, k ≤ 2,4; regiões de
    node scripts/stems.mjs          # epNN-narracao-kokoro.wav + epNN-sfx.wav
    ```
    Nunca faça commit do `index.html` enquanto o build `VOICE=0` estiver no disco
-   (`grep -c 'id="vo"' index.html` tem de dar 1 no commit).
-9. **Verificação**: `bash scripts/verify-entrega.sh` (durações vs. timing.json; 2–18 s do
-   sem-voz em silêncio −91 dB e guia com fala; 3 frames com a zona do CSV desenhada em
-   `entrega/conferencia/`). Olhe os frames.
+   (`grep -c 'id="vo"' index.html` tem de dar 1 no commit; desde o EP06 o build sem voz também
+   omite `el-captions`, então `grep -c 'id="el-captions"' index.html` tem de dar 1 no commit).
+9. **Verificação**: `bash scripts/verify-entrega.sh` (durações vs. timing.json e vs. meta do
+   teleprompter `META ± TOL`; 2–18 s do sem-voz em silêncio −91 dB e guia com fala; 3 frames com a
+   zona do CSV desenhada em `entrega/conferencia/`; desde o EP06, par guia × sem-voz no mesmo
+   instante provando a ausência de legenda no sem-voz, `conferencia/legendas-conferencia.png`,
+   com checagem por luminância da zona da legenda). Olhe os frames.
 10. **Entrega**: MP4 divididos em partes ≤ 30 MiB sem reencode
     (`ffmpeg -i x.mp4 -c copy -map 0 -f segment -segment_time 335 -reset_timestamps 1 x-parte%d.mp4`);
     WAV > 30 MiB vira FLAC só para o envio (`ffmpeg -i x.wav -c:a flac x.flac`); os originais
@@ -136,15 +142,15 @@ extra})`: regiões de zoom como frações `[x, y, w, h]`, k ≤ 2,4; regiões de
 
 ## 5. Scripts (em `epNN/scripts/`, copiados de episódio em episódio)
 
-| Script              | Função                                                                                                                                                                                                                                                             |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `tts.py`            | um WAV por beat via kokoro-onnx; corta silêncio nas pontas; `--voice`, `--speed`, `--force`                                                                                                                                                                        |
-| `build.mjs`         | mede WAVs, calcula timing (lead-in, slack, gaps, pausas, tail), mixa `media/vo/epNN-narration.wav`, gera `index.html`, `compositions/*.html`, legendas, `entrega/epNN-zonas.csv`, `epNN-roteiro-tempos.md`, `sfx-manifest.json`; `VOICE=0` omite `<audio id="vo">` |
-| `scenes.mjs`        | templates das cenas (cabeçalho compartilhado + uma função por tela)                                                                                                                                                                                                |
-| `fidelity.mjs`      | conferência determinística deck × cenas (ver §4.7)                                                                                                                                                                                                                 |
-| `stems.mjs`         | narração cortada no total do episódio + mixagem dos SFX pelo manifesto                                                                                                                                                                                             |
-| `verify-entrega.sh` | durações, silêncio, frames com zona                                                                                                                                                                                                                                |
-| `renders/chain.sh`  | o ciclo único de render (sem voz → com voz → stems), em background                                                                                                                                                                                                 |
+| Script              | Função                                                                                                                                                                                                                                                                                                                                      |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `tts.py`            | um WAV por beat via kokoro-onnx; corta silêncio nas pontas; `--voice`, `--speed`, `--force`                                                                                                                                                                                                                                                 |
+| `build.mjs`         | mede WAVs, calcula timing (lead-in, slack, gaps, pausas, tail), mixa `media/vo/epNN-narration.wav`, gera `index.html`, `compositions/*.html`, legendas, `entrega/epNN-zonas.csv`, `epNN-roteiro-tempos.md`, `sfx-manifest.json`; `VOICE=0` omite `<audio id="vo">` e, desde o EP06, também a faixa de legendas (`CAPTIONS=0/1` sobrescreve) |
+| `scenes.mjs`        | templates das cenas (cabeçalho compartilhado + uma função por tela)                                                                                                                                                                                                                                                                         |
+| `fidelity.mjs`      | conferência determinística deck × cenas (ver §4.7)                                                                                                                                                                                                                                                                                          |
+| `stems.mjs`         | narração cortada no total do episódio + mixagem dos SFX pelo manifesto                                                                                                                                                                                                                                                                      |
+| `verify-entrega.sh` | durações, silêncio, frames com zona                                                                                                                                                                                                                                                                                                         |
+| `renders/chain.sh`  | o ciclo único de render (sem voz → com voz → stems), em background                                                                                                                                                                                                                                                                          |
 
 Zonas (CSV): `canto` = 400×225 em (1472, 807); `tela_cheia` = 0,0,1920,1080 com gráficos em
 x ≥ 1210. Cada linha: início, fim, modo, x, y, largura, altura.

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>South Academy Executive · EP06 · O painel perfeito que estava errado</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #1A1A1A; }
+      /* palco opaco: evita flash branco nas costuras (seam-craft) */
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #EDEDED; }
+      #root > div[data-composition-src] { position: absolute; inset: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="660.18" data-fps="30">
+      <div id="el-tela23" data-composition-id="tela23" data-composition-src="compositions/tela23.html" data-start="29.02" data-duration="51.78" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela24" data-composition-id="tela24" data-composition-src="compositions/tela24.html" data-start="80.8" data-duration="80.45" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela25" data-composition-id="tela25" data-composition-src="compositions/tela25.html" data-start="161.25" data-duration="43.47" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela26" data-composition-id="tela26" data-composition-src="compositions/tela26.html" data-start="204.72" data-duration="57.4" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela26b" data-composition-id="tela26b" data-composition-src="compositions/tela26b.html" data-start="267.12" data-duration="25.47" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela27" data-composition-id="tela27" data-composition-src="compositions/tela27.html" data-start="292.59" data-duration="205.76" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela28" data-composition-id="tela28" data-composition-src="compositions/tela28.html" data-start="498.35" data-duration="94.06" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <!-- narrador (avatar) — atravessa o episódio inteiro, alterna tela cheia / janela -->
+      <div id="el-narrator" data-composition-id="narrator" data-composition-src="compositions/narrator.html" data-start="0" data-duration="660.18" data-track-index="2" data-width="1920" data-height="1080"></div>
+      <div id="el-gancho" data-composition-id="gancho" data-composition-src="compositions/gancho.html" data-start="0" data-duration="25.82" data-track-index="3" data-width="1920" data-height="1080"></div>
+      <div id="el-decisao" data-composition-id="decisao" data-composition-src="compositions/decisao.html" data-start="592.41" data-duration="62.77" data-track-index="3" data-width="1920" data-height="1080"></div>
+      <div id="el-vinheta" data-composition-id="vinheta" data-composition-src="compositions/vinheta.html" data-start="25.82" data-duration="3.2" data-track-index="4" data-width="1920" data-height="1080"></div>
+      <div id="el-pausa" data-composition-id="pausa" data-composition-src="compositions/pausa.html" data-start="262.12" data-duration="5" data-track-index="4" data-width="1920" data-height="1080"></div>
+      <div id="el-final" data-composition-id="final" data-composition-src="compositions/final.html" data-start="655.18" data-duration="5" data-track-index="4" data-width="1920" data-height="1080"></div>
+      <!-- legendas (rail) — overlay por cima de tudo -->
+      <div id="el-captions" data-track-kind="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="660.18" data-track-index="6" data-width="1920" data-height="1080"></div>
+      <!-- narração: troque media/vo/ep06/<beat>.wav pela voz clonada e rode scripts/build.mjs -->
+      <audio id="vo" src="media/vo/ep06-narration.wav" data-start="0" data-duration="660.18" data-track-index="10" data-volume="1"></audio>
+      <audio id="sfx-whoosh" src="assets/sfx-whoosh.mp3" data-start="25.67" data-duration="5.54" data-track-index="11" data-volume="0.5"></audio>
+      <audio id="sfx-impact" src="assets/sfx-impact.mp3" data-start="26.37" data-duration="2.12" data-track-index="12" data-volume="0.45"></audio>
+      <audio id="sfx-pop-0" src="assets/sfx-pop.mp3" data-start="300.53" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-1" src="assets/sfx-pop.mp3" data-start="328.93" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-2" src="assets/sfx-pop.mp3" data-start="352.42" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+    </div>
+    <script>
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>
