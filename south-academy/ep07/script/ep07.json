@@ -1,0 +1,705 @@
+{
+  "episode": "EP07",
+  "series": "South Academy Executive",
+  "title": "Carteira, não coleção de pilotos",
+  "narrator": "Fabio Pinheiro",
+  "org": "South System",
+  "timing": {
+    "lineGap": 0.5,
+    "pause": 1.0,
+    "pauseLong": 2.5,
+    "sceneLeadIn": 0.6,
+    "sceneTail": 1.2,
+    "speed": 0.85,
+    "slowSpeed": 0.78,
+    "beatSlack": 0.674
+  },
+  "scenes": [
+    {
+      "id": "gancho",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Gancho frio",
+      "beats": [
+        {
+          "id": "g01",
+          "say": "Lembra das dezessete iniciativas do diretor de operações, no episódio um?",
+          "cue": "open",
+          "cap": "Lembra das **dezessete iniciativas** do diretor de operações, no EP01?",
+          "pause": 1.0
+        },
+        {
+          "id": "g02",
+          "say": "Seis meses depois, eram vinte e três.",
+          "cue": "vinte",
+          "cap": "Seis meses depois, eram **vinte e três**."
+        },
+        {
+          "id": "g03",
+          "say": "Nenhuma tinha morrido. Nenhuma tinha escalado.",
+          "cue": "nenhuma",
+          "cap": "Nenhuma tinha **morrido**. Nenhuma tinha **escalado**.",
+          "pause": 1.0
+        },
+        {
+          "id": "g04",
+          "say": "Isso tem nome: coleção de pilotos.",
+          "cue": "nome",
+          "cap": "Isso tem nome: **coleção de pilotos**."
+        },
+        {
+          "id": "g05",
+          "say": "Hoje é sobre transformar coleção em carteira.",
+          "cue": "carteira",
+          "cap": "Hoje é sobre transformar coleção em **carteira**."
+        }
+      ]
+    },
+    {
+      "id": "vinheta",
+      "kind": "sting",
+      "hold": 3.2,
+      "label": "Vinheta"
+    },
+    {
+      "id": "tela29",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 29 · Divisória · Módulo 3",
+      "beats": [
+        {
+          "id": "t29-01",
+          "say": "Módulo três: quais iniciativas merecem começar primeiro.",
+          "cue": "title",
+          "cap": "**Módulo 3:** quais iniciativas merecem começar primeiro."
+        },
+        {
+          "id": "t29-02",
+          "say": "Valor, viabilidade, riscos, dependências.",
+          "cue": "chips",
+          "cap": "**Valor**, **viabilidade**, **riscos**, **dependências**."
+        },
+        {
+          "id": "t29-03",
+          "say": "E, no fim, cada ideia recebe uma de três decisões: iniciar, preparar melhor ou adiar.",
+          "cue": "decisoes",
+          "cap": "E, no fim, cada ideia recebe uma de três decisões: **iniciar**, **preparar melhor** ou **adiar**."
+        },
+        {
+          "id": "t29-04",
+          "say": "Mapa do EP quatro na mão.",
+          "cue": "mapa",
+          "cap": "Mapa do **EP04** na mão."
+        }
+      ]
+    },
+    {
+      "id": "tela30",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 30 · Sem método, a carteira vira coleção de pilotos",
+      "beats": [
+        {
+          "id": "t30-01",
+          "say": "Setenta e cinco por cento das iniciativas sem objetivo de negócio definido não vão gerar valor.",
+          "cue": "n1",
+          "cap": "**75%** das iniciativas sem objetivo de negócio definido **não vão gerar valor**.",
+          "slow": true
+        },
+        {
+          "id": "t30-02",
+          "say": "Quarenta por cento das provas de conceito chegam à produção.",
+          "cue": "n2",
+          "cap": "**40%** das provas de conceito **chegam à produção**.",
+          "slow": true
+        },
+        {
+          "id": "t30-03",
+          "say": "Cinquenta e quatro por cento citam a dificuldade de medir valor.",
+          "cue": "n3",
+          "cap": "**54%** citam a **dificuldade de medir valor**.",
+          "slow": true
+        },
+        {
+          "id": "t30-04",
+          "say": "Duas regras.",
+          "cue": "regras",
+          "cap": "**Duas regras.**"
+        },
+        {
+          "id": "t30-05",
+          "say": "Pontue com critério, não com debate.",
+          "cue": "r1",
+          "cap": "**Pontue com critério, não com debate.**"
+        },
+        {
+          "id": "t30-06",
+          "say": "O debate favorece quem fala melhor. O critério favorece a ideia melhor.",
+          "cue": "r1b",
+          "cap": "O debate favorece **quem fala melhor**. O critério favorece **a ideia melhor**."
+        },
+        {
+          "id": "t30-07",
+          "say": "Respeite a maturidade.",
+          "cue": "r2",
+          "cap": "**Respeite a maturidade.**"
+        },
+        {
+          "id": "t30-08",
+          "say": "Caso acima da maturidade da área é uma das principais causas de fracasso.",
+          "cue": "r2b",
+          "cap": "Caso **acima da maturidade** da área é uma das principais causas de fracasso."
+        },
+        {
+          "id": "t30-09",
+          "say": "Engatinhar, andar, correr.",
+          "cue": "chips",
+          "cap": "**Engatinhar**, **andar**, **correr**."
+        },
+        {
+          "id": "t30-10",
+          "say": "Quantas iniciativas de IA você conhece na sua empresa?",
+          "cue": "q1",
+          "cap": "Quantas iniciativas de IA você conhece na sua empresa?"
+        },
+        {
+          "id": "t30-11",
+          "say": "E quantas têm o objetivo de negócio escrito em uma frase?",
+          "cue": "q2",
+          "cap": "E quantas têm o objetivo de negócio **escrito** em uma frase?"
+        }
+      ]
+    },
+    {
+      "id": "tela31",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 31 · Defender, expandir e transformar",
+      "beats": [
+        {
+          "id": "t31-01",
+          "say": "Três tipos de iniciativa.",
+          "cue": "intro",
+          "cap": "**Três tipos** de iniciativa."
+        },
+        {
+          "id": "t31-02",
+          "say": "Defender: paridade e eficiência. Retorno em três a seis meses. Faturas, resumo de chamados.",
+          "cue": "c1",
+          "cap": "**Defender:** paridade e eficiência. Retorno em **3 a 6 meses**. Faturas, resumo de chamados."
+        },
+        {
+          "id": "t31-03",
+          "say": "Expandir: diferenciação por processo. Seis a doze meses. Triagem de N um, previsão de churn.",
+          "cue": "c2",
+          "cap": "**Expandir:** diferenciação por processo. **6 a 12 meses**. Triagem de N1, previsão de churn."
+        },
+        {
+          "id": "t31-04",
+          "say": "Transformar: novo modelo de negócio. Doze a vinte e quatro meses ou mais. Novos serviços baseados em IA.",
+          "cue": "c3",
+          "cap": "**Transformar:** novo modelo de negócio. **12 a 24 meses** ou mais. Novos serviços baseados em IA."
+        },
+        {
+          "id": "t31-05",
+          "say": "Se a carteira de IA da sua empresa fosse uma pizza, quanto dela seria defender hoje?",
+          "cue": "pizza",
+          "cap": "Se a carteira de IA da sua empresa fosse uma pizza, quanto dela seria **“defender”** hoje?"
+        },
+        {
+          "id": "t31-06",
+          "say": "Se for tudo, você está protegendo margem. Mas não está construindo diferença.",
+          "cue": "tudo",
+          "cap": "Se for tudo, você está **protegendo margem**. Mas não está **construindo diferença**."
+        }
+      ]
+    },
+    {
+      "id": "tela31a",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 31A · Gartner · Mapa de valor do portfólio",
+      "beats": [
+        {
+          "id": "t31a-01",
+          "say": "A versão original da Gartner. Olhe só a base de cada degrau.",
+          "cue": "fig",
+          "cap": "A versão original da Gartner. Olhe só a **base de cada degrau**."
+        },
+        {
+          "id": "t31a-02",
+          "say": "Defender exige competência tecnológica.",
+          "cue": "defend",
+          "cap": "**Defender** exige competência **tecnológica**."
+        },
+        {
+          "id": "t31a-03",
+          "say": "Estender, de negócio.",
+          "cue": "extend",
+          "cap": "**Estender**, de **negócio**."
+        },
+        {
+          "id": "t31a-04",
+          "say": "Transformar, comportamental.",
+          "cue": "upend",
+          "cap": "**Transformar**, **comportamental**."
+        },
+        {
+          "id": "t31a-05",
+          "say": "Quanto mais ambicioso o caso, mais a mudança é de pessoas.",
+          "cue": "pessoas",
+          "cap": "Quanto mais ambicioso o caso, mais a mudança é **de pessoas**."
+        }
+      ]
+    },
+    {
+      "id": "tela32",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 32 · Mix de carteira conforme a maturidade",
+      "beats": [
+        {
+          "id": "t32-01",
+          "say": "Inicial: oitenta, quinze, cinco.",
+          "cue": "l1",
+          "cap": "**Inicial:** 80, 15, 5."
+        },
+        {
+          "id": "t32-02",
+          "say": "Em escala: quarenta, cinquenta, dez.",
+          "cue": "l2",
+          "cap": "**Em escala:** 40, 50, 10."
+        },
+        {
+          "id": "t32-03",
+          "say": "Otimizada: vinte, quarenta, quarenta.",
+          "cue": "l3",
+          "cap": "**Otimizada:** 20, 40, 40."
+        },
+        {
+          "id": "t32-04",
+          "say": "Uma pergunta honesta: em que linha a sua empresa está?",
+          "cue": "q1",
+          "cap": "Uma pergunta honesta: em que linha a sua empresa **está**?"
+        },
+        {
+          "id": "t32-05",
+          "say": "E em que linha o seu plano estratégico finge que ela está?",
+          "cue": "q2",
+          "cap": "E em que linha o seu plano estratégico **finge** que ela está?"
+        }
+      ]
+    },
+    {
+      "id": "tela33",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 33 · Valor: três critérios",
+      "beats": [
+        {
+          "id": "t33-01",
+          "say": "A régua de valor. Três critérios, um a cinco.",
+          "cue": "intro",
+          "cap": "A **régua de valor**. Três critérios, 1 a 5."
+        },
+        {
+          "id": "t33-02",
+          "say": "Impacto no resultado: quanto muda receita, custo, perda ou risco.",
+          "cue": "c1",
+          "cap": "**Impacto no resultado:** quanto muda receita, custo, perda ou risco."
+        },
+        {
+          "id": "t33-03",
+          "say": "Relevância estratégica: conecta com a prioridade da empresa?",
+          "cue": "c2",
+          "cap": "**Relevância estratégica:** conecta com a prioridade da empresa?"
+        },
+        {
+          "id": "t33-04",
+          "say": "Alcance: quantas pessoas, clientes ou transações.",
+          "cue": "c3",
+          "cap": "**Alcance:** quantas pessoas, clientes ou transações."
+        },
+        {
+          "id": "t33-05",
+          "say": "Média dos três.",
+          "cue": "media",
+          "cap": "**Média dos três.**"
+        },
+        {
+          "id": "t33-06",
+          "say": "E uma exigência: peça um número para o impacto, mesmo aproximado.",
+          "cue": "numero",
+          "cap": "E uma exigência: peça um **número** para o impacto, mesmo aproximado."
+        },
+        {
+          "id": "t33-07",
+          "say": "Esse número vira a meta do Módulo cinco.",
+          "cue": "meta",
+          "cap": "Esse número vira a **meta do Módulo 5**."
+        },
+        {
+          "id": "t33-08",
+          "say": "Ideia sem número não entra na régua.",
+          "cue": "regua",
+          "cap": "Ideia **sem número** não entra na régua."
+        }
+      ]
+    },
+    {
+      "id": "tela34",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 34 · Viabilidade: cinco critérios",
+      "beats": [
+        {
+          "id": "t34-01",
+          "say": "A régua de viabilidade. Cinco critérios.",
+          "cue": "intro",
+          "cap": "A **régua de viabilidade**. Cinco critérios."
+        },
+        {
+          "id": "t34-02",
+          "say": "Dados, integração, custo, competências, adoção.",
+          "cue": "cinco",
+          "cap": "**Dados**, **integração**, **custo**, **competências**, **adoção**."
+        },
+        {
+          "id": "t34-03",
+          "say": "Média dos cinco.",
+          "cue": "media",
+          "cap": "**Média dos cinco.**"
+        },
+        {
+          "id": "t34-04",
+          "say": "E a cláusula que ninguém lê: um risco bloqueante veta a iniciativa, mesmo com nota alta.",
+          "cue": "veto",
+          "cap": "E a cláusula que ninguém lê: **um risco bloqueante veta a iniciativa, mesmo com nota alta.**",
+          "slow": true
+        },
+        {
+          "id": "t34-05",
+          "say": "Dado pessoal sem base legal, ferramenta fora do ambiente aprovado, decisão sem explicabilidade.",
+          "cue": "cro",
+          "cap": "Dado pessoal **sem base legal**, ferramenta **fora do ambiente aprovado**, decisão **sem explicabilidade**."
+        },
+        {
+          "id": "t34-06",
+          "say": "Qualquer um desses é veto. Não é desconto na nota.",
+          "cue": "naoeh",
+          "cap": "Qualquer um desses é **veto**. Não é desconto na nota."
+        }
+      ]
+    },
+    {
+      "id": "tela35",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 35 · Valor × viabilidade: onde cada ideia cai",
+      "beats": [
+        {
+          "id": "t35-01",
+          "say": "A matriz. É aqui que a reunião de comitê acontece.",
+          "cue": "intro",
+          "cap": "A **matriz**. É aqui que a reunião de comitê acontece."
+        },
+        {
+          "id": "t35-02",
+          "say": "Valor alto, viabilidade alta: iniciar. Ganhos prováveis.",
+          "cue": "iniciar",
+          "cap": "Valor alto, viabilidade alta: **iniciar**. Ganhos prováveis."
+        },
+        {
+          "id": "t35-03",
+          "say": "Ciclo de três a seis meses, meta e linha de base. Depois: seguir, ajustar ou parar.",
+          "cue": "iniciar2",
+          "cap": "Ciclo de **3 a 6 meses**, meta e linha de base. Depois: seguir, ajustar ou parar."
+        },
+        {
+          "id": "t35-04",
+          "say": "Valor alto, viabilidade baixa: preparar melhor. Riscos calculados.",
+          "cue": "preparar",
+          "cap": "Valor alto, viabilidade baixa: **preparar melhor**. Riscos calculados."
+        },
+        {
+          "id": "t35-05",
+          "say": "Seis a dezoito meses de preparo em dados, pessoas e integração.",
+          "cue": "preparar2",
+          "cap": "**6 a 18 meses** de preparo em dados, pessoas e integração."
+        },
+        {
+          "id": "t35-06",
+          "say": "Valor baixo: adiar. Não dilua recursos.",
+          "cue": "adiar",
+          "cap": "Valor baixo: **adiar**. Não dilua recursos."
+        },
+        {
+          "id": "t35-07",
+          "say": "Numa seguradora, a ideia mais defendida no comitê era um agente de subscrição.",
+          "cue": "parabola",
+          "cap": "Numa seguradora, a ideia mais defendida no comitê era um **agente de subscrição**."
+        },
+        {
+          "id": "t35-08",
+          "say": "Nota de valor: cinco.",
+          "cue": "v5",
+          "cap": "Nota de valor: **5**."
+        },
+        {
+          "id": "t35-09",
+          "say": "Nota de viabilidade: dois. Dados de sinistro em três sistemas, sem dono.",
+          "cue": "v2",
+          "cap": "Nota de viabilidade: **2**. Dados de sinistro em três sistemas, sem dono."
+        },
+        {
+          "id": "t35-10",
+          "say": "A segunda ideia, resumo automático de laudo, tinha valor três, viabilidade cinco.",
+          "cue": "segunda",
+          "cap": "A segunda ideia, **resumo automático de laudo**, tinha valor **3**, viabilidade **5**.",
+          "pause": 1.0
+        },
+        {
+          "id": "t35-11",
+          "say": "O comitê aprovou a segunda e colocou a primeira em preparar melhor, com um projeto de dados de nove meses.",
+          "cue": "aprovou",
+          "cap": "O comitê aprovou a segunda e colocou a primeira em **“preparar melhor”**, com um projeto de dados de nove meses."
+        },
+        {
+          "id": "t35-12",
+          "say": "Um ano depois, a segunda estava em produção pagando a primeira.",
+          "cue": "pagando",
+          "cap": "Um ano depois, a segunda estava em produção **pagando a primeira**.",
+          "pause": 1.0
+        },
+        {
+          "id": "t35-13",
+          "say": "Sem a matriz, eles teriam começado pela mais bonita. E parado nos dados.",
+          "cue": "bonita",
+          "cap": "Sem a matriz, eles teriam começado **pela mais bonita**. E parado nos dados."
+        },
+        {
+          "id": "t35-14",
+          "say": "Quatro regras.",
+          "cue": "regras",
+          "cap": "**Quatro regras.**"
+        },
+        {
+          "id": "t35-15",
+          "say": "Pontue com critérios, não por debate.",
+          "cue": "r1",
+          "cap": "**Pontue com critérios**, não por debate."
+        },
+        {
+          "id": "t35-16",
+          "say": "Corte em três vírgula cinco nos dois eixos.",
+          "cue": "r2",
+          "cap": "Corte em **3,5** nos dois eixos."
+        },
+        {
+          "id": "t35-17",
+          "say": "Risco bloqueante sem mitigação: adiar, qualquer que seja a nota.",
+          "cue": "r3",
+          "cap": "Risco bloqueante sem mitigação: **adiar**, qualquer que seja a nota."
+        },
+        {
+          "id": "t35-18",
+          "say": "Revise a carteira a cada trimestre.",
+          "cue": "r4",
+          "cap": "Revise a carteira **a cada trimestre**."
+        },
+        {
+          "id": "t35-19",
+          "say": "Onde caiu a ideia do seu mapa?",
+          "cue": "olho",
+          "cap": "Onde caiu a **ideia do seu mapa**?"
+        }
+      ]
+    },
+    {
+      "id": "tela36",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 36 · Seis checagens antes de aprovar",
+      "beats": [
+        {
+          "id": "t36-01",
+          "say": "Antes de assinar, seis checagens.",
+          "cue": "intro",
+          "cap": "Antes de assinar, **seis checagens**."
+        },
+        {
+          "id": "t36-02",
+          "say": "Dados: existem, têm dono, servem a este caso? Dados maduros: um vírgula sete vez mais protótipos em produção.",
+          "cue": "c1",
+          "cap": "**Dados:** existem, têm dono, servem a este caso? Dados maduros: **1,7×** mais protótipos em produção."
+        },
+        {
+          "id": "t36-03",
+          "say": "Integração e custo: tem API? Quem sustenta? O uso variável tem teto?",
+          "cue": "c2",
+          "cap": "**Integração e custo:** tem API? Quem sustenta? O uso variável tem teto?"
+        },
+        {
+          "id": "t36-04",
+          "say": "Segurança e compliance: dado pessoal ou sigiloso? Quem aprova? Dá para explicar a decisão?",
+          "cue": "c3",
+          "cap": "**Segurança e compliance:** dado pessoal ou sigiloso? Quem aprova? Dá para explicar a decisão?"
+        },
+        {
+          "id": "t36-05",
+          "say": "Pessoas e patrocínio: competência no time e um patrocinador com orçamento.",
+          "cue": "c4",
+          "cap": "**Pessoas e patrocínio:** competência no time e um patrocinador com orçamento."
+        },
+        {
+          "id": "t36-06",
+          "say": "Sem dono único, problema de todos e de ninguém.",
+          "cue": "c4b",
+          "cap": "Sem dono único, **“problema de todos e de ninguém”**."
+        },
+        {
+          "id": "t36-07",
+          "say": "Adoção e mudança: cem dias de implantação pedem até duzentos de mudança.",
+          "cue": "c5",
+          "cap": "**Adoção e mudança:** 100 dias de implantação pedem até **200 de mudança**."
+        },
+        {
+          "id": "t36-08",
+          "say": "Medição: linha de base antes do piloto. Só onze por cento capturam valor significativo.",
+          "cue": "c6",
+          "cap": "**Medição:** linha de base antes do piloto. Só **11%** capturam valor significativo."
+        }
+      ]
+    },
+    {
+      "id": "tela36a",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 36A · Gartner · Governança em três passos",
+      "beats": [
+        {
+          "id": "t36a-01",
+          "say": "Traduzir a política em controles. Embutir os controles no sistema. Aplicar em escala, com monitoramento.",
+          "cue": "passos",
+          "cap": "Traduzir a política em **controles**. Embutir os controles no **sistema**. Aplicar em **escala**, com monitoramento."
+        },
+        {
+          "id": "t36a-02",
+          "say": "Política de IA no portal interno não é governança.",
+          "cue": "cro",
+          "cap": "Política de IA no portal interno **não é governança**."
+        },
+        {
+          "id": "t36a-03",
+          "say": "Controle no pipeline é.",
+          "cue": "pipeline",
+          "cap": "**Controle no pipeline** é."
+        }
+      ]
+    },
+    {
+      "id": "tela36b",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 36B · Gartner · Processo e artefatos de IA",
+      "beats": [
+        {
+          "id": "t36b-01",
+          "say": "Em cada camada, um registro: avaliação de impacto, ficha de modelo, log de versão, relatório de viés, ficha de dados.",
+          "cue": "camadas",
+          "cap": "Em cada camada, um registro: **avaliação de impacto**, **ficha de modelo**, **log de versão**, **relatório de viés**, **ficha de dados**."
+        },
+        {
+          "id": "t36b-02",
+          "say": "É o dossiê que o regulador vai pedir e que o auditor vai elogiar.",
+          "cue": "dossie",
+          "cap": "É o dossiê que o **regulador** vai pedir e que o **auditor** vai elogiar."
+        }
+      ]
+    },
+    {
+      "id": "tela36c",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 36C · Gartner · Seis princípios de ética em IA",
+      "beats": [
+        {
+          "id": "t36c-01",
+          "say": "Sustentável, centrado no humano, justo, responsável, seguro, explicável.",
+          "cue": "seis",
+          "cap": "**Sustentável**, **centrado no humano**, **justo**, **responsável**, **seguro**, **explicável**."
+        },
+        {
+          "id": "t36c-02",
+          "say": "Cada um com dono. Princípio sem dono vira discurso de evento.",
+          "cue": "dono",
+          "cap": "Cada um **com dono**. Princípio sem dono vira **discurso de evento**."
+        }
+      ]
+    },
+    {
+      "id": "decisao",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Decisão para levar",
+      "beats": [
+        {
+          "id": "d01",
+          "say": "Decisão deste episódio: leve uma ideia do seu mapa ao próximo comitê, já pontuada, já na matriz, já com as seis checagens.",
+          "cue": "task",
+          "cap": "Decisão deste episódio: leve **uma** ideia do seu mapa ao próximo comitê, já **pontuada**, já **na matriz**, já com as **seis checagens**."
+        },
+        {
+          "id": "d02",
+          "say": "Não leve dezessete. Leve uma com número.",
+          "cue": "uma",
+          "cap": "Não leve dezessete. Leve **uma** com **número**.",
+          "pause": 1.0
+        },
+        {
+          "id": "d03",
+          "say": "É aqui que a South mais ajuda, e de três formas diferentes.",
+          "cue": "south",
+          "cap": "É aqui que a **South** mais ajuda, e de **três formas** diferentes."
+        },
+        {
+          "id": "d04",
+          "say": "Se a ideia caiu em preparar melhor, um assessment de dados e risco para encurtar os dezoito meses.",
+          "cue": "s1",
+          "cap": "Se caiu em **“preparar melhor”**: assessment de dados e risco para encurtar os 18 meses."
+        },
+        {
+          "id": "d05",
+          "say": "Se caiu em iniciar, um squad gerenciado com escopo almejado para tirar do papel em noventa dias.",
+          "cue": "s2",
+          "cap": "Se caiu em **“iniciar”**: squad gerenciado com escopo almejado para tirar do papel em 90 dias."
+        },
+        {
+          "id": "d06",
+          "say": "E se o comitê quer prova antes de escalar, escopo fechado: número, prazo e critério de aceite.",
+          "cue": "s3",
+          "cap": "E se o comitê quer **prova** antes de escalar: escopo fechado com número, prazo e critério de aceite."
+        },
+        {
+          "id": "d07",
+          "say": "Próximo episódio: três projetos reais da South.",
+          "cue": "next",
+          "cap": "Próximo episódio: **três projetos reais** da South."
+        },
+        {
+          "id": "d08",
+          "say": "Com o número e com a origem do número.",
+          "cue": "punch2",
+          "cap": "Com o **número** e com a **origem do número**."
+        }
+      ]
+    },
+    {
+      "id": "final",
+      "kind": "card",
+      "hold": 5.0,
+      "label": "Cartão final",
+      "next": "EP08 · Três projetos reais"
+    }
+  ]
+}

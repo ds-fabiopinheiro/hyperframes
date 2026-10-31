@@ -41,20 +41,20 @@ episódio (`docs/plans/2026-10-16-ep04-entrega-capcut.md`).
 
 ## 3. Estado por episódio
 
-| EP   | Telas do deck                         | Branch / PR                             | Estado                                                              |
-| ---- | ------------------------------------- | --------------------------------------- | ------------------------------------------------------------------- |
-| EP01 | 01–05                                 | `south-academy-ep01` / PR #1 (mesclado) | entregue                                                            |
-| EP02 | 06–10E (10C–10E opcionais)            | `south-academy-ep02` / PR #2 (mesclado) | aprovado                                                            |
-| EP03 | 11–12G                                | `south-academy-ep03` / PR #3 (mesclado) | aprovado                                                            |
-| EP04 | 13–17 (16D opcional)                  | `south-academy-ep04` / PR #4 (mesclado) | aprovado                                                            |
-| EP05 | 18, 19, 20, 21, 21A, 21B, 22          | `south-academy-ep05` / PR #5 (mesclado) | aprovado                                                            |
-| EP06 | 23–28 (26 dinâmica, 27 revelação)     | `south-academy-ep06` / PR #6 (draft)    | render único feito; **aguardando aprovação**                        |
-| EP07 | 29–33 (31A Gartner)                   | —                                       | próximo (EP06 já anuncia "EP07 · Carteira, não coleção de pilotos") |
-| EP08 | 37–50 (dois cases + Agentic Commerce) | —                                       | —                                                                   |
-| EP09 | 51–62                                 | —                                       | —                                                                   |
-| EP10 | 63–67 (67 encerramento)               | —                                       | —                                                                   |
+| EP   | Telas do deck                         | Branch / PR                             | Estado      |
+| ---- | ------------------------------------- | --------------------------------------- | ----------- |
+| EP01 | 01–05                                 | `south-academy-ep01` / PR #1 (mesclado) | entregue    |
+| EP02 | 06–10E (10C–10E opcionais)            | `south-academy-ep02` / PR #2 (mesclado) | aprovado    |
+| EP03 | 11–12G                                | `south-academy-ep03` / PR #3 (mesclado) | aprovado    |
+| EP04 | 13–17 (16D opcional)                  | `south-academy-ep04` / PR #4 (mesclado) | aprovado    |
+| EP05 | 18, 19, 20, 21, 21A, 21B, 22          | `south-academy-ep05` / PR #5 (mesclado) | aprovado    |
+| EP06 | 23–28 (26 dinâmica, 27 revelação)     | `south-academy-ep06` / PR #6 (mesclado) | aprovado    |
+| EP07 | 29–36C (31A, 36A–36C Gartner)         | `south-academy-ep07` / PR #7            | em produção |
+| EP08 | 37–50 (dois cases + Agentic Commerce) | —                                       | —           |
+| EP09 | 51–62                                 | —                                       | —           |
+| EP10 | 63–67 (67 encerramento)               | —                                       | —           |
 
-Não há telas 34–36 no teleprompter (o deck pula de 33 para 37).
+Atenção: o `docs/teleprompter.md` original tinha o EP07 truncado na tela 33 (o paste do dia 1 foi cortado em "TOTAL LINES: 2433"); as telas 34, 35, 36, 36A, 36B, 36C e a decisão foram recuperadas do histórico da sessão em 2026-10-31 e gravadas no arquivo. Confira as seções dos próximos episódios contra o deck antes de começar cada um (o deck é a referência de quais telas existem).
 
 Durações entregues: EP02 650,4 s · EP03 660,1 s · EP04 721,9 s (12m02s, folga 0,24) · EP05 420,0 s (7m00s, folga 0,596) · EP06 660,2 s (11m00s, folga 0,619; sem-voz sem legendas).
 Meta de duração = duração do teleprompter ±30 s (EP03 630–690 s; EP04 690–750 s; EP05 390–450 s; EP06 630–690 s). Desde o EP05, `verify-entrega.sh` imprime a duração final contra essa meta (variável `META`).
@@ -253,10 +253,10 @@ Reinstalação, se algo sumiu:
    legendas; o `verify-entrega.sh` já traz a meta do teleprompter (`META`) e a prova de legenda:
    ajuste `META`, o episódio e a cena `canto` da lista de zonas.
 3. Teleprompter: `docs/teleprompter.md`, seção "# EP07 · Carteira, não coleção de pilotos"
-   (telas 29 divisória do Módulo 3, 30, 31, 31A Gartner, 32, 33). Deck:
-   `python3 deck/extract-slides.py ep07 29 30 31 31A 32 33`; a figura da 31A vem de `deck/img/`
-   (o `extract-slides.py` imprime o IMG) e usa `figScene()` com crumb do Módulo 3 (tome o crumb
-   do deck da tela 30).
+   (telas 29 divisória do Módulo 3, 30, 31, 31A Gartner, 32, 33, 34, 35, 36, 36A–36C Gartner). Deck:
+   `python3 deck/extract-slides.py ep07 29 30 31 31A 32 33 34 35 36 36A 36B 36C`; as figuras vêm de
+   `deck/img/` (o `extract-slides.py` imprime o IMG) e usam `figScene()` com crumb do Módulo 3
+   ("Módulo 3 · Priorização").
 4. Seguir o §4. Meta de duração = duração do teleprompter ±30 s. EP06 termina com o teaser
    "EP07 · Carteira, não coleção de pilotos" e a frase "Traga o seu mapa."; o gancho do EP07 deve
    abrir nesse ponto. Folga inicial sugerida: 0,45 (EP05 0,596 com 56 beats; EP06 0,619 com 88

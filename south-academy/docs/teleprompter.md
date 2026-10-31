@@ -1525,8 +1525,139 @@ A régua de valor. / Três critérios, um a cinco.
 **Impacto no resultado:** / quanto muda receita, custo, perda ou risco.
 **Relevância estratégica:** / conecta com a prioridade da empresa?
 **Alcance:** / quantas pessoas, clientes ou transações.
+Média dos três.
 
-TOTAL LINES: 2433
+**[TOM: ênfase]**
+E uma exigência: / peça um **número** para o impacto, / mesmo aproximado.
+Esse número / vira a meta do Módulo 5.
+Ideia sem número / não entra na régua.
+
+**[AVANÇA]**
+
+---
+
+### TELA 34 · "Viabilidade: cinco critérios"
+**[ACELERA]** **[TELA: tabela; faixa final.]**
+
+A régua de viabilidade. / Cinco critérios.
+Dados, / integração, / custo, / competências, / adoção.
+Média dos cinco.
+
+**[TELA: faixa.]** **[RITMO: lento]**
+E a cláusula que ninguém lê:
+**um risco bloqueante / veta a iniciativa, / mesmo com nota alta.**
+**[CADEIRA: CRO]** Dado pessoal sem base legal, / ferramenta fora do ambiente aprovado, / decisão sem explicabilidade.
+Qualquer um desses / é veto. / Não é desconto na nota.
+
+**[AVANÇA]**
+
+---
+
+### TELA 35 · "Valor × viabilidade: onde cada ideia cai"
+**[APROFUNDA]** **[TELA: quadrante laranja; depois os outros; depois as regras.]**
+
+A matriz. / É aqui que a reunião de comitê acontece.
+
+**[TELA: "Iniciar".]**
+Valor alto, viabilidade alta: / **iniciar**. / Ganhos prováveis.
+Ciclo de três a seis meses, / meta e linha de base. / Depois: seguir, ajustar ou parar.
+
+**[TELA: "Preparar melhor".]**
+Valor alto, viabilidade baixa: / **preparar melhor**. / Riscos calculados.
+Seis a dezoito meses de preparo em dados, pessoas e integração.
+
+**[TELA: "Adiar".]**
+Valor baixo: / **adiar**. / Não dilua recursos.
+
+**[PARÁBOLA]** **[TOM: conversa]**
+Numa seguradora, / a ideia mais defendida no comitê era um agente de subscrição.
+Nota de valor: / cinco.
+Nota de viabilidade: / dois. / Dados de sinistro em três sistemas, / sem dono.
+A segunda ideia, / resumo automático de laudo, / tinha valor três, / viabilidade cinco.
+**[PAUSA]**
+O comitê aprovou a segunda / e colocou a primeira em "preparar melhor",
+com um projeto de dados de nove meses.
+Um ano depois, / a segunda estava em produção pagando a primeira.
+**[PAUSA]**
+Sem a matriz, / eles teriam começado pela mais bonita. / E parado nos dados.
+
+**[TELA: regras.]** **[RITMO: cadenciado]**
+Quatro regras.
+Pontue com critérios, / não por debate.
+Corte em três vírgula cinco nos dois eixos.
+Risco bloqueante sem mitigação: / adiar, / qualquer que seja a nota.
+Revise a carteira a cada trimestre.
+
+**[OLHO NA LENTE]**
+Onde caiu a ideia do seu mapa?
+
+**[AVANÇA]**
+
+---
+
+### TELA 36 · "Seis checagens antes de aprovar"
+**[TELA: seis cartões.]** **[RITMO: checklist]**
+
+Antes de assinar, / seis checagens.
+**Dados:** / existem, têm dono, servem a este caso? / Dados maduros: / um vírgula sete vez mais protótipos em produção.
+**Integração e custo:** / tem API? / Quem sustenta? / O uso variável tem teto?
+**Segurança e compliance:** / dado pessoal ou sigiloso? / Quem aprova? / Dá para explicar a decisão?
+**Pessoas e patrocínio:** / competência no time / e um patrocinador com orçamento.
+Sem dono único, / "problema de todos / e de ninguém".
+**Adoção e mudança:** / cem dias de implantação / pedem até duzentos de mudança.
+**Medição:** / linha de base antes do piloto. / Só onze por cento capturam valor significativo.
+
+**[AVANÇA]**
+
+---
+
+> **Bloco Gartner · Governança (36A a 36C)**
+
+### TELA 36A · Gartner · Governança em três passos
+**[ACELERA]** **[TELA: ciclo 1, 2, 3.]**
+
+Traduzir a política em **controles**. / Embutir os controles no **sistema**. / Aplicar em **escala**, com monitoramento.
+**[CADEIRA: CRO]** Política de IA no portal interno / não é governança.
+Controle no pipeline / é.
+
+**[AVANÇA]**
+
+### TELA 36B · Gartner · Processo e artefatos de IA
+**[ACELERA]** **[TELA: camadas.]**
+
+Em cada camada, um registro: / avaliação de impacto, / ficha de modelo, / log de versão, / relatório de viés, / ficha de dados.
+É o dossiê que o regulador vai pedir / e que o auditor vai elogiar.
+
+**[AVANÇA]**
+
+### TELA 36C · Gartner · Seis princípios de ética em IA
+**[ACELERA]** **[TELA: centro e caixas.]**
+
+Sustentável, / centrado no humano, / justo, / responsável, / seguro, / explicável.
+Cada um com dono. / Princípio sem dono / vira discurso de evento.
+
+---
+
+### DECISÃO PARA LEVAR
+**[TELA: narrador em tela cheia.]** **[OLHO NA LENTE]**
+
+Decisão deste episódio:
+leve **uma** ideia do seu mapa ao próximo comitê
+/ já pontuada, / já na matriz, / já com as seis checagens.
+Não leve dezessete. / Leve uma / com número.
+
+**[SOUTH]** **[TOM: de passagem]**
+É aqui que a South mais ajuda, / e de três formas diferentes.
+Se a ideia caiu em "preparar melhor", / um assessment de dados e risco para encurtar os dezoito meses.
+Se caiu em "iniciar", / um squad gerenciado com escopo almejado / para tirar do papel em noventa dias.
+E se o comitê quer **prova** antes de escalar, / escopo fechado: / número, prazo e critério de aceite.
+
+Próximo episódio: / três projetos reais da South.
+Com o número / e com a origem do número.
+
+**[CARTÃO FINAL: "Próximo: EP08 · Três projetos reais"]**
+
+---
 
 ---
 
