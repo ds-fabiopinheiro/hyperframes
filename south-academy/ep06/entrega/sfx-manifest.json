@@ -1,0 +1,37 @@
+[
+  {
+    "id": "sfx-whoosh",
+    "file": "sfx-whoosh.mp3",
+    "at": 25.67,
+    "dur": 5.54,
+    "vol": 0.5
+  },
+  {
+    "id": "sfx-impact",
+    "file": "sfx-impact.mp3",
+    "at": 26.37,
+    "dur": 2.12,
+    "vol": 0.45
+  },
+  {
+    "id": "sfx-pop-0",
+    "file": "sfx-pop.mp3",
+    "at": 300.53,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-1",
+    "file": "sfx-pop.mp3",
+    "at": 328.93,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-2",
+    "file": "sfx-pop.mp3",
+    "at": 352.42,
+    "dur": 0.72,
+    "vol": 0.28
+  }
+]
