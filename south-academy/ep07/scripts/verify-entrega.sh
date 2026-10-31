@@ -29,7 +29,8 @@ echo "--- frames com a zona do CSV sobreposta"
 mkdir -p "$E/conferencia"
 i=0
 # uma linha do CSV por modo: tela_cheia (gancho), canto (tela11), tela_cheia (decisao)
-for cena in gancho tela30 decisao; do
+ZONAS="gancho tela30 decisao"
+for cena in $ZONAS; do
   row=$(grep ",$cena," "$E/$EP-zonas.csv")
   IFS=, read -r ini fim modo x y w h _ <<<"$row"
   t=$(node -e "console.log((($ini*1+$fim*1)/2).toFixed(2))")
@@ -44,7 +45,9 @@ ffmpeg -v error -y -i "$E/conferencia/zona-gancho-"*.png -i "$E/conferencia/zona
 echo "sheet: $E/conferencia/zonas-conferencia.png"
 echo "--- legendas: guia legendado × sem-voz sem legenda, no mesmo instante"
 # instante no meio do 2º beat da primeira tela (narrador no canto, legenda embaixo no guia)
-tc=$(node -e "const sc=JSON.parse(require('fs').readFileSync('$P/script/$EP.json','utf8')).scenes.find(s=>s.kind==='slide'&&s.beats&&s.beats.length>1).id;const t=JSON.parse(require('fs').readFileSync('$P/script/$EP.timing.json','utf8'));const s=t.scenes.find(x=>x.id===sc);const b=s.beats[1];console.log((s.start+(b.t+b.end)/2).toFixed(2))")
+# cena da prova: a mesma cena "canto" da lista de zonas (fundo claro; a divisória laranja confunde a luminância)
+SC_LEG=$(echo "$ZONAS" | awk '{print $2}')
+tc=$(node -e "const t=JSON.parse(require('fs').readFileSync('$P/script/$EP.timing.json','utf8'));const s=t.scenes.find(x=>x.id==='$SC_LEG');const b=s.beats[1];console.log((s.start+(b.t+b.end)/2).toFixed(2))")
 ffmpeg -v error -y -ss "$tc" -i "$E/$EP-guia.mp4" -frames:v 1 -vf "drawtext=text='guia · com legenda · t=${tc}s':x=40:y=40:fontsize=36:fontcolor=lime:box=1:boxcolor=black@0.6" "$E/conferencia/legenda-guia-t${tc}.png"
 ffmpeg -v error -y -ss "$tc" -i "$E/$EP-sem-voz.mp4" -frames:v 1 -vf "drawtext=text='sem-voz · sem legenda · t=${tc}s':x=40:y=40:fontsize=36:fontcolor=lime:box=1:boxcolor=black@0.6" "$E/conferencia/legenda-semvoz-t${tc}.png"
 ffmpeg -v error -y -i "$E/conferencia/legenda-guia-t${tc}.png" -i "$E/conferencia/legenda-semvoz-t${tc}.png" -filter_complex "[0][1]hstack=inputs=2,scale=1800:-1" "$E/conferencia/legendas-conferencia.png"
