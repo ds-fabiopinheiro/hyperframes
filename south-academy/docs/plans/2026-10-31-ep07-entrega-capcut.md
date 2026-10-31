@@ -18,3 +18,9 @@
 2. `scripts/scenes.mjs` (cabeçalho do EP06 + cenas novas: gancho, 29–36, 4 figuras, decisão, final). (90 min)
 3. `fidelity.mjs` (12 slides) + build + lint + check + snapshots; duração na faixa. (25 min)
 4. Render único + stems + `verify-entrega.sh` (META=720, cena canto tela30, prova de legenda) + entrega + commit + PR #7; parar. (2 × ~20 min de render)
+
+## Resultado (2026-10-31)
+- Fonte: EP07 recuperado por inteiro (telas 34–36C e decisão vinham truncadas no `docs/teleprompter.md`); arquivo e HANDOFF corrigidos antes do roteiro. P3 aplicada.
+- Fidelidade deck × cenas (`fidelity.mjs`, 12 slides): 1 falta no 1º build (rótulos do eixo Y da matriz na ordem "Valor baixo / Valor alto" do deck) → corrigida → **12/12**.
+- Duração: 632,3 s com folga 0,45 (abaixo da faixa) → 2º build com 0,75 (749,8 s) → interpolação → **`beatSlack` 0,674 → 720,0 s (12m00s)**, meta "cerca de 12 min" (690–750 s). P2 aplicada.
+- `lint` 0/0; `check` com 2 avisos de layout (carimbo do gancho sobre o rótulo do cartão; título da tela 32 em duas linhas sobre o subtítulo) e 3 de contraste (chips laranja da tela 34) → três ajustes de CSS antes do render → **check sem erros nem avisos (contraste 92/92)**. 64 + 3 snapshots nos cues principais conferidos antes do render.
