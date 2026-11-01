@@ -1,0 +1,881 @@
+{
+  "episode": "EP04",
+  "series": "South Academy Executive",
+  "title": "Jurídico, Pessoas, Atendimento: onde a IA não decide",
+  "narrator": "Fabio Pinheiro",
+  "org": "South System",
+  "timing": {
+    "lineGap": 0.5,
+    "pause": 1.0,
+    "pauseLong": 2.5,
+    "sceneLeadIn": 0.6,
+    "sceneTail": 1.2,
+    "speed": 0.85,
+    "slowSpeed": 0.78,
+    "beatSlack": 0.24
+  },
+  "scenes": [
+    {
+      "id": "gancho",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Gancho frio",
+      "beats": [
+        {
+          "id": "g01",
+          "say": "Um modelo de churn apontou que uma cooperada ia sair.",
+          "cue": "open",
+          "cap": "Um modelo de churn apontou que uma cooperada **ia sair**."
+        },
+        {
+          "id": "g02",
+          "say": "O gerente ligou, ofereceu condição especial, segurou a conta.",
+          "cue": "acao",
+          "pause": 1.0
+        },
+        {
+          "id": "g03",
+          "say": "Três meses depois, descobriram que o score estava errado: ela nunca ia sair.",
+          "cue": "errado",
+          "cap": "Três meses depois, descobriram que o score estava **errado**: ela nunca ia sair."
+        },
+        {
+          "id": "g04",
+          "say": "E agora tinha taxa menor por um erro de dado.",
+          "cue": "taxa",
+          "cap": "E agora tinha taxa menor **por um erro de dado**.",
+          "pause": 1.0
+        },
+        {
+          "id": "g05",
+          "say": "Score orienta. Score não decide.",
+          "cue": "punch",
+          "cap": "**Score orienta. Score não decide.**"
+        },
+        {
+          "id": "g06",
+          "say": "Hoje é sobre essa fronteira.",
+          "cue": "fronteira",
+          "cap": "Hoje é sobre essa **fronteira**."
+        }
+      ]
+    },
+    {
+      "id": "vinheta",
+      "kind": "sting",
+      "hold": 3.2,
+      "label": "Vinheta"
+    },
+    {
+      "id": "tela13",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 13 · Jurídico",
+      "beats": [
+        {
+          "id": "t13-01",
+          "say": "Jurídico. Três casos.",
+          "cue": "intro"
+        },
+        {
+          "id": "t13-02",
+          "say": "Revisão de contratos: extrai cláusulas, aponta desvio do playbook.",
+          "cue": "c1",
+          "cap": "**Revisão de contratos:** extrai cláusulas, aponta desvio do playbook."
+        },
+        {
+          "id": "t13-03",
+          "say": "Cinquenta e cinco por cento veem alto impacto; só vinte e um implantaram.",
+          "cue": "w1",
+          "cap": "**55%** veem alto impacto; só **21%** implantaram."
+        },
+        {
+          "id": "t13-04",
+          "say": "A diferença entre os dois números é playbook digitalizado e base de contratos integrada.",
+          "cue": "req1",
+          "cap": "A diferença entre os dois números é **playbook digitalizado e base de contratos integrada**."
+        },
+        {
+          "id": "t13-05",
+          "say": "Pesquisa e redação: minutas em minutos, ganho realista de dez a vinte por cento.",
+          "cue": "c2",
+          "cap": "**Pesquisa e redação:** minutas em minutos, ganho realista de 10% a 20%."
+        },
+        {
+          "id": "t13-06",
+          "say": "O risco: precedente inventado. Sessenta por cento citam alucinação como a barreira número um.",
+          "cue": "w2",
+          "cap": "O risco: precedente inventado. **60%** citam alucinação como a barreira número um."
+        },
+        {
+          "id": "t13-07",
+          "say": "Em petição, em parecer ao regulador, isso é risco de imagem e de sanção.",
+          "cue": "cro",
+          "cap": "Em petição, em parecer ao regulador, isso é **risco de imagem e de sanção**."
+        },
+        {
+          "id": "t13-08",
+          "say": "Triagem de demandas: até 2029, sessenta por cento dos jurídicos com IA respondendo metade das demandas internas.",
+          "cue": "c3",
+          "cap": "**Triagem de demandas:** até 2029, 60% dos jurídicos com IA respondendo metade das demandas internas."
+        },
+        {
+          "id": "t13-09",
+          "say": "Automatize por completo só o simples, repetitivo e de baixo risco.",
+          "cue": "w3",
+          "cap": "Automatize por completo só o **simples, repetitivo e de baixo risco**."
+        },
+        {
+          "id": "t13-10",
+          "say": "Sessenta e oito por cento relatam retorno positivo em 2025.",
+          "cue": "n1",
+          "cap": "**68%** relatam retorno positivo em 2025."
+        },
+        {
+          "id": "t13-11",
+          "say": "Ferramentas jurídicas específicas são de vinte e cinco a quarenta por cento mais confiáveis que as genéricas.",
+          "cue": "n2",
+          "cap": "Ferramentas jurídicas específicas são **de 25% a 40%** mais confiáveis que as genéricas."
+        },
+        {
+          "id": "t13-12",
+          "say": "E redução de equipe? Três vírgula seis por cento.",
+          "cue": "n3",
+          "cap": "E redução de equipe? **3,6%**."
+        },
+        {
+          "id": "t13-13",
+          "say": "O ganho vem como capacidade, não como corte.",
+          "cue": "capacidade",
+          "cap": "O ganho vem como **capacidade**, não como corte."
+        }
+      ]
+    },
+    {
+      "id": "tela13a",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 13A · Gartner · Quatro formas como a IA muda o jurídico",
+      "beats": [
+        {
+          "id": "t13a-01",
+          "say": "De pirâmide a diamante: menos base operacional, gestores supervisionando pessoas e agentes.",
+          "cue": "fig",
+          "cap": "De **pirâmide** a **diamante**: menos base operacional, gestores supervisionando pessoas e agentes."
+        },
+        {
+          "id": "t13a-02",
+          "say": "A IA muda o desenho do time, não só a ferramenta.",
+          "cue": "time",
+          "cap": "A IA muda o **desenho do time**, não só a ferramenta."
+        }
+      ]
+    },
+    {
+      "id": "tela13b",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 13B · Gartner · Jurídico organizado por resultados",
+      "beats": [
+        {
+          "id": "t13b-01",
+          "say": "Antes, gerentes por especialidade. Depois, gestores por resultado de negócio, com engenheiro jurídico e especialista em IA.",
+          "cue": "fig",
+          "cap": "Antes, gerentes por especialidade. Depois, gestores por **resultado de negócio**, com engenheiro jurídico e especialista em IA."
+        },
+        {
+          "id": "t13b-02",
+          "say": "E as caixas tracejadas: agentes como parte do time.",
+          "cue": "caixas",
+          "cap": "E as caixas tracejadas: **agentes como parte do time**."
+        }
+      ]
+    },
+    {
+      "id": "tela13c",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 13C · Gartner · IA agêntica no trabalho jurídico",
+      "beats": [
+        {
+          "id": "t13c-01",
+          "say": "De assistentes em 2026 a agentes criados sob demanda em 2029.",
+          "cue": "pan",
+          "cap": "De assistentes em **2026** a agentes criados sob demanda em **2029**."
+        },
+        {
+          "id": "t13c-02",
+          "say": "O jurídico precisa de regras de uso antes da escala. Não depois.",
+          "cue": "regras",
+          "cap": "O jurídico precisa de **regras de uso** antes da escala. Não depois."
+        }
+      ]
+    },
+    {
+      "id": "tela13d",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 13D · Gartner · Case LogicMonitor",
+      "beats": [
+        {
+          "id": "t13d-01",
+          "say": "Um caso real: trezentas e sessenta e quatro solicitações, quatro mil, quinhentas e cinquenta e oito horas economizadas.",
+          "cue": "nums",
+          "cap": "Um caso real: **364** solicitações, **4.558** horas economizadas."
+        },
+        {
+          "id": "t13d-02",
+          "say": "O cálculo é do fornecedor. Não foi auditado pela Gartner.",
+          "cue": "honesto",
+          "cap": "O cálculo é do fornecedor. **Não foi auditado** pela Gartner."
+        },
+        {
+          "id": "t13d-03",
+          "say": "Inspira. Mas a meta vem da sua linha de base.",
+          "cue": "meta",
+          "cap": "Inspira. Mas a meta vem da **sua** linha de base."
+        }
+      ]
+    },
+    {
+      "id": "tela14",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 14 · Pessoas",
+      "beats": [
+        {
+          "id": "t14-01",
+          "say": "Pessoas. Três casos.",
+          "cue": "intro"
+        },
+        {
+          "id": "t14-02",
+          "say": "Assistente virtual de RH: corta até metade das perguntas repetitivas.",
+          "cue": "c1",
+          "cap": "**Assistente virtual de RH:** corta até metade das perguntas repetitivas."
+        },
+        {
+          "id": "t14-03",
+          "say": "Base de política desatualizada é resposta errada ao colaborador.",
+          "cue": "w1",
+          "cap": "Base de política desatualizada é **resposta errada** ao colaborador."
+        },
+        {
+          "id": "t14-04",
+          "say": "Skills e trilhas de carreira: mapeia habilidade, recomenda trilha.",
+          "cue": "c2",
+          "cap": "**Skills e trilhas de carreira:** mapeia habilidade, recomenda trilha."
+        },
+        {
+          "id": "t14-05",
+          "say": "Recomendação sem contexto gera ceticismo. O gestor media.",
+          "cue": "w2",
+          "cap": "Recomendação sem contexto gera ceticismo. **O gestor media.**"
+        },
+        {
+          "id": "t14-06",
+          "say": "Recrutamento e risco de saída. Ranking de candidatos e alerta de desligamento.",
+          "cue": "c3",
+          "cap": "**Recrutamento e risco de saída.** Ranking de candidatos e alerta de desligamento.",
+          "slow": true
+        },
+        {
+          "id": "t14-07",
+          "say": "Cinquenta e três por cento dos líderes de RH temem viés e discriminação.",
+          "cue": "w3",
+          "cap": "**53%** dos líderes de RH temem viés e discriminação.",
+          "slow": true,
+          "pause": 1.0
+        },
+        {
+          "id": "t14-08",
+          "say": "E aqui não é só opinião: é LGPD, é risco trabalhista, é reputação.",
+          "cue": "lgpd",
+          "cap": "E aqui não é só opinião: é **LGPD**, é **risco trabalhista**, é **reputação**.",
+          "slow": true
+        },
+        {
+          "id": "t14-09",
+          "say": "A decisão é humana. Sempre.",
+          "cue": "humana",
+          "cap": "**A decisão é humana. Sempre.**",
+          "slow": true
+        },
+        {
+          "id": "t14-10",
+          "say": "Só treze por cento dos casos de IA em RH tiveram ROI positivo.",
+          "cue": "n1",
+          "cap": "Só **13%** dos casos de IA em RH tiveram ROI positivo."
+        },
+        {
+          "id": "t14-11",
+          "say": "Sessenta por cento nem sabem.",
+          "cue": "n1b",
+          "cap": "**60%** nem sabem."
+        },
+        {
+          "id": "t14-12",
+          "say": "Doze a dezessete meses até gerar valor.",
+          "cue": "n2",
+          "cap": "**12 a 17 meses** até gerar valor."
+        },
+        {
+          "id": "t14-13",
+          "say": "E cinquenta e sete por cento das áreas de RH com iniciativas soltas, sem governança central.",
+          "cue": "n3",
+          "cap": "E **57%** das áreas de RH com iniciativas soltas, sem governança central."
+        }
+      ]
+    },
+    {
+      "id": "tela14a",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 14A · Gartner · Prisma de casos em gestão de pessoas",
+      "beats": [
+        {
+          "id": "t14a-01",
+          "say": "Vinte casos por valor e viabilidade.",
+          "cue": "topo",
+          "cap": "**20 casos** por valor e viabilidade."
+        },
+        {
+          "id": "t14a-02",
+          "say": "Os do topo combinam os dois. Priorize pelo par, não pela moda.",
+          "cue": "par",
+          "cap": "Os do topo combinam os dois. Priorize pelo **par**, não pela moda."
+        }
+      ]
+    },
+    {
+      "id": "tela14b",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 14B · Gartner · Casos priorizados pelos líderes de RH",
+      "beats": [
+        {
+          "id": "t14b-01",
+          "say": "Documentos administrativos, descrição de cargos, chatbot para colaboradores.",
+          "cue": "bars",
+          "cap": "**Documentos administrativos**, **descrição de cargos**, **chatbot para colaboradores**."
+        },
+        {
+          "id": "t14b-02",
+          "say": "O RH começa pelo operacional repetitivo. E está certo.",
+          "cue": "certo",
+          "cap": "O RH começa pelo **operacional repetitivo**. E está certo."
+        }
+      ]
+    },
+    {
+      "id": "tela14c",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 14C · Gartner · Adoção em gestão de desempenho",
+      "beats": [
+        {
+          "id": "t14c-01",
+          "say": "Resumir feedback: trinta e oito por cento usam.",
+          "cue": "feedback",
+          "cap": "Resumir feedback: **38%** usam."
+        },
+        {
+          "id": "t14c-02",
+          "say": "Dar a nota de desempenho: sessenta por cento não pretendem usar IA.",
+          "cue": "nota",
+          "cap": "Dar a nota de desempenho: **60%** não pretendem usar IA."
+        },
+        {
+          "id": "t14c-03",
+          "say": "A IA escreve e resume. Quem avalia é o gestor.",
+          "cue": "gestor",
+          "cap": "A IA escreve e resume. **Quem avalia é o gestor.**"
+        }
+      ]
+    },
+    {
+      "id": "tela14d",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 14D · Gartner · Risco × retorno em desempenho",
+      "beats": [
+        {
+          "id": "t14d-01",
+          "say": "Esta tela é a fronteira do gancho.",
+          "cue": "fig",
+          "cap": "Esta tela é a **fronteira do gancho**.",
+          "slow": true
+        },
+        {
+          "id": "t14d-02",
+          "say": "Adotar: planos de desenvolvimento, apoio para metas, resumo e escrita de feedback.",
+          "cue": "adopt",
+          "cap": "**Adotar:** planos de desenvolvimento, apoio para metas, resumo e escrita de feedback.",
+          "slow": true
+        },
+        {
+          "id": "t14d-03",
+          "say": "Equilibrar: resumo de indicadores, preparação da calibração.",
+          "cue": "balance",
+          "cap": "**Equilibrar:** resumo de indicadores, preparação da calibração.",
+          "slow": true
+        },
+        {
+          "id": "t14d-04",
+          "say": "Evitar: dar a nota, inferir comportamento, criar plano de melhoria.",
+          "cue": "avoid",
+          "cap": "**Evitar:** dar a nota, inferir comportamento, criar plano de melhoria.",
+          "slow": true
+        },
+        {
+          "id": "t14d-05",
+          "say": "Pense no gerente de agência que recebe um ranking de risco de desligamento da equipe.",
+          "cue": "parabola",
+          "cap": "Pense no gerente de agência que recebe um **ranking de risco de desligamento** da equipe.",
+          "slow": true
+        },
+        {
+          "id": "t14d-06",
+          "say": "Ele não fez nada com o ranking.",
+          "cue": "nada",
+          "cap": "Ele **não fez nada** com o ranking.",
+          "slow": true
+        },
+        {
+          "id": "t14d-07",
+          "say": "Mas passou a olhar diferente para quem estava no topo da lista.",
+          "cue": "olhar",
+          "cap": "Mas passou a **olhar diferente** para quem estava no topo da lista.",
+          "slow": true,
+          "pause": 1.0
+        },
+        {
+          "id": "t14d-08",
+          "say": "A IA não decidiu nada. E mesmo assim decidiu.",
+          "cue": "decidiu",
+          "cap": "A IA não decidiu nada. **E mesmo assim decidiu.**",
+          "slow": true
+        },
+        {
+          "id": "t14d-09",
+          "say": "Quanto mais a IA toca em pessoas, maior o risco.",
+          "cue": "embed",
+          "cap": "Quanto mais a IA toca em **pessoas**, maior o risco.",
+          "slow": true
+        },
+        {
+          "id": "t14d-10",
+          "say": "E parte desse risco não aparece em nenhum log.",
+          "cue": "log",
+          "cap": "E parte desse risco **não aparece em nenhum log**.",
+          "slow": true
+        }
+      ]
+    },
+    {
+      "id": "tela15",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 15 · CS e Atendimento",
+      "beats": [
+        {
+          "id": "t15-01",
+          "say": "Atendimento e sucesso do cliente.",
+          "cue": "intro"
+        },
+        {
+          "id": "t15-02",
+          "say": "Previsão de churn e health score. O caso mais maduro. Identifica a conta em risco antes da perda.",
+          "cue": "c1",
+          "cap": "**Previsão de churn e health score.** O caso mais maduro. Identifica a conta em risco antes da perda.",
+          "slow": true
+        },
+        {
+          "id": "t15-03",
+          "say": "Numa cooperativa, churn é cooperado que leva a conta e o capital.",
+          "cue": "coop",
+          "cap": "Numa **cooperativa**, churn é cooperado que leva a conta e o capital.",
+          "slow": true
+        },
+        {
+          "id": "t15-04",
+          "say": "Numa adquirente, é estabelecimento que troca a maquininha.",
+          "cue": "adq",
+          "cap": "Numa **adquirente**, é estabelecimento que troca a maquininha.",
+          "slow": true
+        },
+        {
+          "id": "t15-05",
+          "say": "Numa seguradora, é renovação que não acontece.",
+          "cue": "seg",
+          "cap": "Numa **seguradora**, é renovação que não acontece.",
+          "slow": true
+        },
+        {
+          "id": "t15-06",
+          "say": "O score orienta o gerente. Não substitui o julgamento na conta estratégica. Lembrem do gancho.",
+          "cue": "w1",
+          "cap": "O score **orienta** o gerente. Não substitui o julgamento na conta estratégica. Lembrem do gancho.",
+          "slow": true
+        },
+        {
+          "id": "t15-07",
+          "say": "Assistente do agente: intenção, sentimento, próxima ação em tempo real.",
+          "cue": "c2",
+          "cap": "**Assistente do agente:** intenção, sentimento, próxima ação em tempo real."
+        },
+        {
+          "id": "t15-08",
+          "say": "Sessenta e um por cento dos líderes estão com a base de conhecimento atrasada.",
+          "cue": "r2",
+          "cap": "**61%** dos líderes estão com a base de conhecimento atrasada."
+        },
+        {
+          "id": "t15-09",
+          "say": "E custo: aplicações de IA generativa quarenta por cento mais caras até 2027.",
+          "cue": "w2",
+          "cap": "E custo: aplicações de IA generativa **40%** mais caras até 2027."
+        },
+        {
+          "id": "t15-10",
+          "say": "Autoatendimento conversacional: setenta por cento das jornadas começando por IA até 2028.",
+          "cue": "c3",
+          "cap": "**Autoatendimento conversacional:** 70% das jornadas começando por IA até 2028."
+        },
+        {
+          "id": "t15-11",
+          "say": "Mas só quatorze por cento dos problemas se resolvem por completo no digital.",
+          "cue": "w3",
+          "cap": "Mas só **14%** dos problemas se resolvem por completo no digital."
+        },
+        {
+          "id": "t15-12",
+          "say": "Quarenta e dois por cento dos casos com ROI incerto.",
+          "cue": "n1",
+          "cap": "**42%** dos casos com ROI incerto.",
+          "slow": true
+        },
+        {
+          "id": "t15-13",
+          "say": "Só onze por cento reduziram equipe de linha de frente.",
+          "cue": "n2",
+          "cap": "Só **11%** reduziram equipe de linha de frente.",
+          "slow": true
+        },
+        {
+          "id": "t15-14",
+          "say": "E setenta por cento das que trocaram atendimento por IA vão recontratar até 2027.",
+          "cue": "n3",
+          "cap": "E **70%** das que trocaram atendimento por IA vão recontratar até 2027.",
+          "slow": true
+        },
+        {
+          "id": "t15-15",
+          "say": "Setenta por cento vão recontratar.",
+          "cue": "olho1",
+          "cap": "**70% vão recontratar.**"
+        },
+        {
+          "id": "t15-16",
+          "say": "Isso não é um argumento contra IA no atendimento.",
+          "cue": "olho2",
+          "cap": "Isso não é um argumento **contra IA** no atendimento."
+        },
+        {
+          "id": "t15-17",
+          "say": "É um argumento contra substituir em vez de assistir.",
+          "cue": "embed",
+          "cap": "É um argumento contra **substituir** em vez de **assistir**."
+        }
+      ]
+    },
+    {
+      "id": "tela16",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 16 · Cinco padrões",
+      "beats": [
+        {
+          "id": "t16-01",
+          "say": "Sete áreas, cinco padrões.",
+          "cue": "intro",
+          "cap": "Sete áreas, **cinco padrões**."
+        },
+        {
+          "id": "t16-02",
+          "say": "Eficiência não é eficácia.",
+          "cue": "p1",
+          "cap": "**Eficiência não é eficácia.**"
+        },
+        {
+          "id": "t16-03",
+          "say": "A base de conhecimento manda.",
+          "cue": "p2",
+          "cap": "**A base de conhecimento manda.**"
+        },
+        {
+          "id": "t16-04",
+          "say": "Humano no loop na medida do risco.",
+          "cue": "p3",
+          "cap": "**Humano no loop** na medida do risco."
+        },
+        {
+          "id": "t16-05",
+          "say": "Custo variável é risco real.",
+          "cue": "p4",
+          "cap": "**Custo variável** é risco real."
+        },
+        {
+          "id": "t16-06",
+          "say": "Alto volume e baixo risco primeiro.",
+          "cue": "p5",
+          "cap": "**Alto volume e baixo risco** primeiro."
+        },
+        {
+          "id": "t16-07",
+          "say": "Na prática: comece pequeno, meça contra a linha de base, e só então amplie.",
+          "cue": "pratica",
+          "cap": "Na prática: **comece pequeno**, meça contra a linha de base, e só então amplie."
+        }
+      ]
+    },
+    {
+      "id": "tela16a",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 16A · Gartner · Estratégia: valor × viabilidade",
+      "beats": [
+        {
+          "id": "t16a-01",
+          "say": "Para quem lidera estratégia: ganhos prováveis são monitoramento externo, inteligência competitiva e insights de cliente.",
+          "cue": "likely",
+          "cap": "Para quem lidera estratégia: **ganhos prováveis** são monitoramento externo, inteligência competitiva e insights de cliente."
+        },
+        {
+          "id": "t16a-02",
+          "say": "Ganho marginal: redigir a estratégia com IA.",
+          "cue": "drafting",
+          "cap": "**Ganho marginal:** redigir a estratégia com IA."
+        },
+        {
+          "id": "t16a-03",
+          "say": "A IA ajuda a enxergar o mercado, não a escrever o plano.",
+          "cue": "mercado",
+          "cap": "A IA ajuda a **enxergar o mercado**, não a escrever o plano."
+        }
+      ]
+    },
+    {
+      "id": "tela16b",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 16B · Gartner · Pipeline de estratégia",
+      "beats": [
+        {
+          "id": "t16b-01",
+          "say": "A maioria dos casos atua em monitorar e em adaptar.",
+          "cue": "fig",
+          "cap": "A maioria dos casos atua em **monitorar** e em **adaptar**."
+        },
+        {
+          "id": "t16b-02",
+          "say": "Comece usando IA para ver a mudança cedo: Open Finance, novo entrante, mudança regulatória.",
+          "cue": "cedo",
+          "cap": "Comece usando IA para ver a mudança **cedo**: Open Finance, novo entrante, mudança regulatória."
+        }
+      ]
+    },
+    {
+      "id": "tela16c",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 16C · Gartner · Scorecard de estratégia",
+      "beats": [
+        {
+          "id": "t16c-01",
+          "say": "A coluna de viabilidade externa está cheia.",
+          "cue": "external",
+          "cap": "A coluna de **viabilidade externa** está cheia."
+        },
+        {
+          "id": "t16c-02",
+          "say": "Já existe ferramenta pronta para os casos de maior valor.",
+          "cue": "pronta",
+          "cap": "Já existe **ferramenta pronta** para os casos de maior valor."
+        }
+      ]
+    },
+    {
+      "id": "tela16d",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 16D · Gartner · Serviços de IA: insights [CORTE OPCIONAL]",
+      "optional": true,
+      "beats": [
+        {
+          "id": "t16d-01",
+          "say": "Engajamento com cliente, dados organizados, assistência preditiva.",
+          "cue": "fig",
+          "cap": "**Engajamento com cliente**, **dados organizados**, **assistência preditiva**."
+        },
+        {
+          "id": "t16d-02",
+          "say": "O valor vem dos dados, não só do modelo.",
+          "cue": "dados",
+          "cap": "O valor vem dos **dados**, não só do modelo."
+        }
+      ]
+    },
+    {
+      "id": "tela16e",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 16E · Gartner · Casos mais adotados em serviços de IA",
+      "beats": [
+        {
+          "id": "t16e-01",
+          "say": "Engajamento do cliente: dezessete por cento. Dados e analytics: treze.",
+          "cue": "bar",
+          "cap": "Engajamento do cliente: **17%**. Dados e analytics: **13%**."
+        },
+        {
+          "id": "t16e-02",
+          "say": "O mercado começa pelo cliente e pelos dados.",
+          "cue": "cliente",
+          "cap": "O mercado começa pelo **cliente** e pelos **dados**."
+        }
+      ]
+    },
+    {
+      "id": "tela17",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 17 · Atividade · Mapa de oportunidades",
+      "beats": [
+        {
+          "id": "t17-01",
+          "say": "Agora a tarefa que eu pedi no episódio um. Aquela tarefa cara feita à mão.",
+          "cue": "intro",
+          "cap": "Agora a tarefa que eu pedi no episódio 1. Aquela **tarefa cara feita à mão**."
+        },
+        {
+          "id": "t17-02",
+          "say": "A folha está na descrição.",
+          "cue": "folha",
+          "cap": "A folha está **na descrição**."
+        },
+        {
+          "id": "t17-03",
+          "say": "Três linhas, três dores da sua área.",
+          "cue": "linhas",
+          "cap": "**Três linhas**, três dores da sua área."
+        },
+        {
+          "id": "t17-04",
+          "say": "Para cada uma: valor buscado, tipo de IA, dado necessário, risco principal, como medir.",
+          "cue": "cols",
+          "cap": "Para cada uma: **valor buscado**, **tipo de IA**, **dado necessário**, **risco principal**, **como medir**."
+        },
+        {
+          "id": "t17-05",
+          "say": "O exemplo da tela é atendimento. Mas pense no seu contexto:",
+          "cue": "exemplo",
+          "cap": "O exemplo da tela é atendimento. Mas pense no **seu contexto**:"
+        },
+        {
+          "id": "t17-06",
+          "say": "reanálise de proposta de crédito que volta por documento faltante.",
+          "cue": "ex1",
+          "cap": "reanálise de **proposta de crédito** que volta por documento faltante."
+        },
+        {
+          "id": "t17-07",
+          "say": "Sinistro simples que espera três dias por um parecer padrão.",
+          "cue": "ex2",
+          "cap": "**Sinistro simples** que espera três dias por um parecer padrão."
+        },
+        {
+          "id": "t17-08",
+          "say": "Chargeback que o analista pesquisa à mão em quatro sistemas.",
+          "cue": "ex3",
+          "cap": "**Chargeback** que o analista pesquisa à mão em quatro sistemas."
+        },
+        {
+          "id": "t17-09",
+          "say": "Pergunta de PLD que chega igual toda semana.",
+          "cue": "ex4",
+          "cap": "Pergunta de **PLD** que chega igual toda semana."
+        },
+        {
+          "id": "t17-10",
+          "say": "Pause o vídeo. Dez minutos.",
+          "cue": "pausa",
+          "cap": "**Pause o vídeo.** 10 minutos."
+        },
+        {
+          "id": "t17-11",
+          "say": "E uma regra: nenhuma IA é resposta válida. Se uma regra resolve, escreva: regra.",
+          "cue": "regra",
+          "cap": "E uma regra: **“nenhuma IA”** é resposta válida. Se uma regra resolve, escreva “regra”."
+        }
+      ]
+    },
+    {
+      "id": "pausa",
+      "kind": "sting",
+      "hold": 5.0,
+      "label": "Cartão de pausa · 10 min"
+    },
+    {
+      "id": "decisao",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Decisão para levar",
+      "beats": [
+        {
+          "id": "d01",
+          "say": "Com o mapa na mão, você fecha o Módulo um com algo que a maioria das diretorias não tem:",
+          "cue": "task",
+          "cap": "Com o mapa na mão, você fecha o Módulo 1 com algo que a maioria das diretorias **não tem**:"
+        },
+        {
+          "id": "d02",
+          "say": "três oportunidades escritas com risco e métrica.",
+          "cue": "tres",
+          "cap": "**três oportunidades** escritas com **risco e métrica**."
+        },
+        {
+          "id": "d03",
+          "say": "É esse mapa, aliás, que a South usa como ponto de partida num South Design:",
+          "cue": "south",
+          "cap": "É esse mapa, aliás, que a South usa como ponto de partida num **South Design**:"
+        },
+        {
+          "id": "d04",
+          "say": "uma semana para transformar as três linhas em um caso com dado, risco e número.",
+          "cue": "semana",
+          "cap": "**uma semana** para transformar as três linhas em um caso com dado, risco e número."
+        },
+        {
+          "id": "d05",
+          "say": "Próximo episódio: Módulo dois. Preditiva, generativa ou nenhuma IA.",
+          "cue": "next",
+          "cap": "Próximo episódio: Módulo 2. **Preditiva, generativa ou nenhuma IA.**"
+        },
+        {
+          "id": "d06",
+          "say": "Rápido no conceito, porque vocês já sabem. Devagar em quando não usar.",
+          "cue": "punch2",
+          "cap": "Rápido no conceito, porque vocês já sabem. Devagar em quando **não** usar."
+        }
+      ]
+    },
+    {
+      "id": "final",
+      "kind": "card",
+      "hold": 5.0,
+      "label": "Cartão final",
+      "next": "EP05 · A pergunta de ouro"
+    }
+  ]
+}

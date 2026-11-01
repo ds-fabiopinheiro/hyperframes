@@ -1,0 +1,128 @@
+[
+  {
+    "id": "sfx-whoosh",
+    "file": "sfx-whoosh.mp3",
+    "at": 33.63,
+    "dur": 5.54,
+    "vol": 0.5
+  },
+  {
+    "id": "sfx-impact",
+    "file": "sfx-impact.mp3",
+    "at": 34.33,
+    "dur": 2.12,
+    "vol": 0.45
+  },
+  {
+    "id": "sfx-pop-0",
+    "file": "sfx-pop.mp3",
+    "at": 107.52,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-1",
+    "file": "sfx-pop.mp3",
+    "at": 121.16,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-2",
+    "file": "sfx-pop.mp3",
+    "at": 157.19,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-3",
+    "file": "sfx-pop.mp3",
+    "at": 168.85,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-4",
+    "file": "sfx-pop.mp3",
+    "at": 180.29,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-5",
+    "file": "sfx-pop.mp3",
+    "at": 276.86,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-6",
+    "file": "sfx-pop.mp3",
+    "at": 284.63,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-7",
+    "file": "sfx-pop.mp3",
+    "at": 291.86,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-8",
+    "file": "sfx-pop.mp3",
+    "at": 425.02,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-9",
+    "file": "sfx-pop.mp3",
+    "at": 476.09,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-10",
+    "file": "sfx-pop.mp3",
+    "at": 481.01,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-11",
+    "file": "sfx-pop.mp3",
+    "at": 486.57,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-12",
+    "file": "sfx-pop.mp3",
+    "at": 494.46,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-13",
+    "file": "sfx-pop.mp3",
+    "at": 509.41,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-14",
+    "file": "sfx-pop.mp3",
+    "at": 522.7,
+    "dur": 0.72,
+    "vol": 0.28
+  },
+  {
+    "id": "sfx-pop-15",
+    "file": "sfx-pop.mp3",
+    "at": 531.12,
+    "dur": 0.72,
+    "vol": 0.28
+  }
+]

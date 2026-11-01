@@ -1,0 +1,661 @@
+{
+  "episode": "EP06",
+  "series": "South Academy Executive",
+  "title": "O painel perfeito que estava errado",
+  "narrator": "Fabio Pinheiro",
+  "org": "South System",
+  "timing": {
+    "lineGap": 0.5,
+    "pause": 1.0,
+    "pauseLong": 2.5,
+    "sceneLeadIn": 0.6,
+    "sceneTail": 1.2,
+    "speed": 0.85,
+    "slowSpeed": 0.78,
+    "beatSlack": 0.619
+  },
+  "scenes": [
+    {
+      "id": "gancho",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Gancho frio",
+      "beats": [
+        {
+          "id": "g01",
+          "say": "Vou te mostrar um painel de retenção.",
+          "cue": "open",
+          "cap": "Vou te mostrar um **painel de retenção**."
+        },
+        {
+          "id": "g02",
+          "say": "Receita, risco de churn, chamados críticos.",
+          "cue": "cols",
+          "cap": "**Receita**, **risco de churn**, **chamados críticos**."
+        },
+        {
+          "id": "g03",
+          "say": "Você vai escolher três clientes para uma campanha.",
+          "cue": "escolha",
+          "cap": "Você vai escolher **três clientes** para uma campanha.",
+          "pause": 1.0
+        },
+        {
+          "id": "g04",
+          "say": "E depois eu vou te mostrar o que a sua área de dados não te contou.",
+          "cue": "depois",
+          "cap": "E depois eu vou te mostrar o que a sua área de dados **não te contou**."
+        }
+      ]
+    },
+    {
+      "id": "vinheta",
+      "kind": "sting",
+      "hold": 3.2,
+      "label": "Vinheta"
+    },
+    {
+      "id": "tela23",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 23 · Dado confiável para IA",
+      "beats": [
+        {
+          "id": "t23-01",
+          "say": "Quatro dimensões que o seu time de dados conhece: qualidade, contexto, atualização, governança.",
+          "cue": "dims",
+          "cap": "Quatro dimensões que o seu time de dados conhece: **qualidade**, **contexto**, **atualização**, **governança**."
+        },
+        {
+          "id": "t23-02",
+          "say": "Vou só marcar o que muda para IA.",
+          "cue": "muda",
+          "cap": "Vou só marcar **o que muda para IA**."
+        },
+        {
+          "id": "t23-03",
+          "say": "O teste é representatividade: o dado representa o caso de uso, inclusive os erros, os outliers e os eventos raros?",
+          "cue": "teste",
+          "cap": "O teste é **representatividade**: o dado representa o caso de uso, **inclusive** os erros, os outliers e os eventos raros?"
+        },
+        {
+          "id": "t23-04",
+          "say": "Porque, para a IA, o raro é o sinal.",
+          "cue": "raro",
+          "cap": "Porque, para a IA, **o raro é o sinal**."
+        },
+        {
+          "id": "t23-05",
+          "say": "A fraude. O sinistro atípico. O cooperado prestes a sair.",
+          "cue": "exemplos",
+          "cap": "A **fraude**. O **sinistro atípico**. O **cooperado prestes a sair**."
+        },
+        {
+          "id": "t23-06",
+          "say": "Se o seu processo de qualidade limpa o raro, ele limpa exatamente o que o modelo precisava ver.",
+          "cue": "limpa",
+          "cap": "Se o seu processo de qualidade **limpa o raro**, ele limpa exatamente o que o modelo **precisava ver**."
+        }
+      ]
+    },
+    {
+      "id": "tela24",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 24 · Relatório × IA",
+      "beats": [
+        {
+          "id": "t24-01",
+          "say": "É o ponto que mais surpreende diretoria.",
+          "cue": "intro",
+          "cap": "É o ponto que **mais surpreende** diretoria."
+        },
+        {
+          "id": "t24-02",
+          "say": "O relatório quer um padrão único para a empresa. A IA quer representar um caso específico.",
+          "cue": "par1",
+          "cap": "O relatório quer um **padrão único** para a empresa. A IA quer representar um **caso específico**."
+        },
+        {
+          "id": "t24-03",
+          "say": "O relatório remove outliers como sujeira. A IA preserva, porque podem ser sinal.",
+          "cue": "par2",
+          "cap": "O relatório **remove outliers** como sujeira. A IA **preserva**, porque podem ser sinal."
+        },
+        {
+          "id": "t24-04",
+          "say": "O relatório é avaliado por período. A IA, continuamente.",
+          "cue": "par3",
+          "cap": "O relatório é avaliado **por período**. A IA, **continuamente**."
+        },
+        {
+          "id": "t24-05",
+          "say": "Pense na sala de máquinas de um navio e no painel do capitão.",
+          "cue": "parabola",
+          "cap": "Pense na **sala de máquinas** de um navio e no **painel do capitão**."
+        },
+        {
+          "id": "t24-06",
+          "say": "O painel mostra velocidade e rumo, lindos e estáveis.",
+          "cue": "painel",
+          "cap": "O painel mostra velocidade e rumo, **lindos e estáveis**."
+        },
+        {
+          "id": "t24-07",
+          "say": "A sala de máquinas mostra cada vibração estranha.",
+          "cue": "sala",
+          "cap": "A sala de máquinas mostra **cada vibração estranha**."
+        },
+        {
+          "id": "t24-08",
+          "say": "O painel foi feito para quem decide. A sala de máquinas, para quem prevê a falha.",
+          "cue": "quem",
+          "cap": "O painel foi feito para **quem decide**. A sala de máquinas, para **quem prevê a falha**.",
+          "pause": 1.0
+        },
+        {
+          "id": "t24-09",
+          "say": "O dashboard que o comitê adora é o painel do capitão.",
+          "cue": "dash",
+          "cap": "O dashboard que o comitê adora é o **painel do capitão**."
+        },
+        {
+          "id": "t24-10",
+          "say": "O modelo de IA precisa da sala de máquinas.",
+          "cue": "modelo",
+          "cap": "O modelo de IA precisa da **sala de máquinas**."
+        },
+        {
+          "id": "t24-11",
+          "say": "Pergunte sempre: pronto para qual caso de uso?",
+          "cue": "regra",
+          "cap": "Pergunte sempre: pronto **para qual caso de uso?**"
+        }
+      ]
+    },
+    {
+      "id": "tela25",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 25 · O custo de dados que não estão prontos",
+      "beats": [
+        {
+          "id": "t25-01",
+          "say": "Sessenta por cento dos projetos sem dados prontos: abandonados.",
+          "cue": "n1",
+          "cap": "**60%** dos projetos sem dados prontos: abandonados."
+        },
+        {
+          "id": "t25-02",
+          "say": "Sessenta e três por cento das organizações sem práticas adequadas de dados para IA, ou sem saber se têm.",
+          "cue": "n2",
+          "cap": "**63%** das organizações sem práticas adequadas de dados para IA, ou sem saber se têm."
+        },
+        {
+          "id": "t25-03",
+          "say": "Quarenta por cento com dado ruim entre as três maiores barreiras.",
+          "cue": "n3",
+          "cap": "**40%** com dado ruim entre as três maiores barreiras."
+        },
+        {
+          "id": "t25-04",
+          "say": "E quatorze por cento muito confiantes de que os dados estão seguros e governados para IA.",
+          "cue": "n4",
+          "cap": "E **14%** muito confiantes de que os dados estão seguros e governados para IA.",
+          "pause": 1.0
+        },
+        {
+          "id": "t25-05",
+          "say": "Chega de número. Vamos jogar.",
+          "cue": "jogar",
+          "cap": "Chega de número. **Vamos jogar.**"
+        }
+      ]
+    },
+    {
+      "id": "tela26",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 26 · Dinâmica · A campanha de retenção",
+      "beats": [
+        {
+          "id": "t26-01",
+          "say": "A situação.",
+          "cue": "intro"
+        },
+        {
+          "id": "t26-02",
+          "say": "Orçamento para uma ação de retenção em três de oito clientes.",
+          "cue": "tres",
+          "cap": "Orçamento para uma ação de retenção em **três** de **oito** clientes."
+        },
+        {
+          "id": "t26-03",
+          "say": "O painel vem da base. É tudo o que você tem.",
+          "cue": "painel",
+          "cap": "O painel vem da base. **É tudo o que você tem.**"
+        },
+        {
+          "id": "t26-04",
+          "say": "Receita, risco de churn, chamados críticos em noventa dias.",
+          "cue": "cols",
+          "cap": "**Receita**, **risco de churn**, **chamados críticos** em 90 dias."
+        },
+        {
+          "id": "t26-05",
+          "say": "Pense como você pensaria na sua carteira: cooperados de maior saldo, estabelecimentos de maior TPV, apólices de maior prêmio.",
+          "cue": "carteira",
+          "cap": "Pense como você pensaria na sua carteira: cooperados de maior **saldo**, estabelecimentos de maior **TPV**, apólices de maior **prêmio**."
+        },
+        {
+          "id": "t26-06",
+          "say": "Três regras: escolha três, anote o critério, e não vale pedir mais dado. Ainda.",
+          "cue": "regras",
+          "cap": "Três regras: **escolha três**, **anote o critério**, e **não vale pedir mais dado**. Ainda."
+        },
+        {
+          "id": "t26-07",
+          "say": "Os dados são fictícios. A situação, não.",
+          "cue": "ficticios",
+          "cap": "Os dados são fictícios. **A situação, não.**"
+        },
+        {
+          "id": "t26-08",
+          "say": "Pause o vídeo. Dois minutos.",
+          "cue": "pause",
+          "cap": "**Pause o vídeo.** Dois minutos."
+        }
+      ]
+    },
+    {
+      "id": "pausa",
+      "kind": "card",
+      "hold": 5.0,
+      "label": "Cartão de pausa · escolha 3 clientes"
+    },
+    {
+      "id": "tela26b",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 26 · Dinâmica · retomada",
+      "beats": [
+        {
+          "id": "t26-09",
+          "say": "Pronto? Deixa eu adivinhar.",
+          "cue": "pronto",
+          "cap": "Pronto? **Deixa eu adivinhar.**"
+        },
+        {
+          "id": "t26-10",
+          "say": "A Alfa está na sua lista: oitenta e dois por cento de risco, um vírgula dois milhão, nove chamados.",
+          "cue": "alfa",
+          "cap": "A **Alfa** está na sua lista: **82%** de risco, **R$ 1,2 mi**, **9** chamados."
+        },
+        {
+          "id": "t26-11",
+          "say": "E a Beta ficou de fora: noventa e cinco mil. Pequena.",
+          "cue": "beta",
+          "cap": "E a **Beta** ficou de fora: **R$ 95 mil**. Pequena."
+        },
+        {
+          "id": "t26-12",
+          "say": "Guarde a sua escolha.",
+          "cue": "guarde",
+          "cap": "**Guarde a sua escolha.**"
+        }
+      ]
+    },
+    {
+      "id": "tela27",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 27 · Revelação",
+      "beats": [
+        {
+          "id": "t27-01",
+          "say": "Cada erro aqui é uma das quatro dimensões da tela vinte e três.",
+          "cue": "intro",
+          "cap": "Cada erro aqui é uma das **quatro dimensões** da tela 23."
+        },
+        {
+          "id": "t27-02",
+          "say": "Contexto. A Beta.",
+          "cue": "c1",
+          "cap": "**Contexto.** A **Beta**.",
+          "slow": true
+        },
+        {
+          "id": "t27-03",
+          "say": "A receita estava em base mensal. As outras, anual.",
+          "cue": "c1b",
+          "cap": "A receita estava em base **mensal**. As outras, anual.",
+          "slow": true
+        },
+        {
+          "id": "t27-04",
+          "say": "Em base anual: um vírgula catorze milhão. Segunda maior carteira. Setenta e seis por cento de risco.",
+          "cue": "c1c",
+          "cap": "Em base anual: **R$ 1,14 mi**. Segunda maior carteira. **76%** de risco.",
+          "slow": true
+        },
+        {
+          "id": "t27-05",
+          "say": "Atualização. A Alfa.",
+          "cue": "c2",
+          "cap": "**Atualização.** A **Alfa**.",
+          "slow": true
+        },
+        {
+          "id": "t27-06",
+          "say": "O risco era um retrato de seis meses atrás. Os problemas foram resolvidos.",
+          "cue": "c2b",
+          "cap": "O risco era um retrato de **seis meses atrás**. Os problemas foram resolvidos.",
+          "slow": true
+        },
+        {
+          "id": "t27-07",
+          "say": "Risco atual: cerca de trinta por cento.",
+          "cue": "c2c",
+          "cap": "Risco atual: cerca de **30%**.",
+          "slow": true
+        },
+        {
+          "id": "t27-08",
+          "say": "Qualidade. A Épsilon.",
+          "cue": "c3",
+          "cap": "**Qualidade.** A **Épsilon**.",
+          "slow": true
+        },
+        {
+          "id": "t27-09",
+          "say": "Zero chamados porque os tickets migraram para uma ferramenta não integrada.",
+          "cue": "c3b",
+          "cap": "**Zero chamados** porque os tickets migraram para uma ferramenta não integrada.",
+          "slow": true
+        },
+        {
+          "id": "t27-10",
+          "say": "Foram oito críticos.",
+          "cue": "c3c",
+          "cap": "Foram **oito** críticos.",
+          "slow": true
+        },
+        {
+          "id": "t27-11",
+          "say": "Governança. Alfa e Alfa Serviços.",
+          "cue": "c4",
+          "cap": "**Governança.** **Alfa** e **Alfa Serviços**.",
+          "slow": true
+        },
+        {
+          "id": "t27-12",
+          "say": "O mesmo grupo econômico, cadastrado duas vezes.",
+          "cue": "c4b",
+          "cap": "O mesmo grupo econômico, **cadastrado duas vezes**.",
+          "slow": true
+        },
+        {
+          "id": "t27-13",
+          "say": "Um vírgula dois milhão, não dois vírgula três.",
+          "cue": "c4c",
+          "cap": "**R$ 1,2 mi**, não R$ 2,3 mi.",
+          "pause": 2.5,
+          "slow": true
+        },
+        {
+          "id": "t27-14",
+          "say": "Com o dado corrigido: Alfa sai, Beta entra, Épsilon disputa a terceira vaga.",
+          "cue": "faixa",
+          "cap": "Com o dado corrigido: **Alfa sai**, **Beta entra**, Épsilon disputa a terceira vaga."
+        },
+        {
+          "id": "t27-15",
+          "say": "Duas das três escolhas mudam.",
+          "cue": "duas",
+          "cap": "**Duas das três escolhas mudam.**"
+        },
+        {
+          "id": "t27-16",
+          "say": "E repare no que aconteceu.",
+          "cue": "repare",
+          "cap": "E repare no que aconteceu."
+        },
+        {
+          "id": "t27-17",
+          "say": "Você usou o critério certo. Receita vezes risco. É o que qualquer comitê usaria.",
+          "cue": "criterio",
+          "cap": "Você usou o **critério certo**. Receita vezes risco. É o que qualquer comitê usaria."
+        },
+        {
+          "id": "t27-18",
+          "say": "O dado é que estava errado.",
+          "cue": "dado",
+          "cap": "**O dado** é que estava errado.",
+          "pause": 1.0
+        },
+        {
+          "id": "t27-19",
+          "say": "Agora substitua você por um modelo de propensão treinado nesse painel.",
+          "cue": "modelo",
+          "cap": "Agora substitua você por um **modelo de propensão** treinado nesse painel."
+        },
+        {
+          "id": "t27-20",
+          "say": "Ele erraria igual. Com a mesma confiança.",
+          "cue": "igual",
+          "cap": "Ele erraria **igual**. Com a **mesma confiança**."
+        },
+        {
+          "id": "t27-21",
+          "say": "Mais rápido. E para a carteira inteira.",
+          "cue": "rapido",
+          "cap": "**Mais rápido.** E para a **carteira inteira**."
+        },
+        {
+          "id": "t27-22",
+          "say": "Nenhum desses quatro erros é de tecnologia.",
+          "cue": "ceo",
+          "cap": "Nenhum desses quatro erros é **de tecnologia**."
+        },
+        {
+          "id": "t27-23",
+          "say": "Base mensal versus anual é falta de dicionário de dados.",
+          "cue": "e1",
+          "cap": "Base mensal versus anual é falta de **dicionário de dados**."
+        },
+        {
+          "id": "t27-24",
+          "say": "Retrato de seis meses é falta de SLA de atualização.",
+          "cue": "e2",
+          "cap": "Retrato de seis meses é falta de **SLA de atualização**."
+        },
+        {
+          "id": "t27-25",
+          "say": "Ferramenta não integrada é projeto que terminou sem integração.",
+          "cue": "e3",
+          "cap": "Ferramenta não integrada é projeto que terminou **sem integração**."
+        },
+        {
+          "id": "t27-26",
+          "say": "Cadastro duplicado é falta de dono do cadastro.",
+          "cue": "e4",
+          "cap": "Cadastro duplicado é falta de **dono do cadastro**.",
+          "pause": 1.0
+        },
+        {
+          "id": "t27-27",
+          "say": "Quatro decisões de gestão que ninguém tomou.",
+          "cue": "gestao",
+          "cap": "**Quatro decisões de gestão** que ninguém tomou."
+        },
+        {
+          "id": "t27-28",
+          "say": "Então, para a sua área: quem é o dono de cada dado que alimenta a sua decisão mais cara?",
+          "cue": "debate",
+          "cap": "Então, para a sua área: **quem é o dono de cada dado** que alimenta a sua decisão mais cara?",
+          "pause": 2.5
+        }
+      ]
+    },
+    {
+      "id": "tela28",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 28 · Revisão humana na medida do risco",
+      "beats": [
+        {
+          "id": "t28-01",
+          "say": "Se o dado pode enganar, a resposta da IA também pode.",
+          "cue": "intro",
+          "cap": "Se o dado pode enganar, **a resposta da IA também pode**."
+        },
+        {
+          "id": "t28-02",
+          "say": "A revisão humana é a resposta. Mas calibrada pelo risco.",
+          "cue": "calibrada",
+          "cap": "A revisão humana é a resposta. Mas **calibrada pelo risco**."
+        },
+        {
+          "id": "t28-03",
+          "say": "Baixo risco: uso interno, reversível. Autor revisa, checagem por amostra.",
+          "cue": "baixo",
+          "cap": "**Baixo risco:** uso interno, reversível. Autor revisa, checagem por amostra."
+        },
+        {
+          "id": "t28-04",
+          "say": "Médio risco: vai para cliente ou parceiro. Revisão obrigatória, base aprovada, registro de quem aprovou.",
+          "cue": "medio",
+          "cap": "**Médio risco:** vai para cliente ou parceiro. Revisão obrigatória, base aprovada, registro de quem aprovou."
+        },
+        {
+          "id": "t28-05",
+          "say": "Alto risco: dinheiro, pessoas, direitos, compliance.",
+          "cue": "alto",
+          "cap": "**Alto risco:** dinheiro, pessoas, direitos, compliance.",
+          "slow": true
+        },
+        {
+          "id": "t28-06",
+          "say": "Crédito, bloqueio por fraude, contratação, lançamento contábil.",
+          "cue": "exemplos",
+          "cap": "Crédito, bloqueio por fraude, contratação, lançamento contábil.",
+          "slow": true
+        },
+        {
+          "id": "t28-07",
+          "say": "A IA recomenda. A pessoa decide.",
+          "cue": "decide",
+          "cap": "**A IA recomenda. A pessoa decide.**",
+          "slow": true
+        },
+        {
+          "id": "t28-08",
+          "say": "Trilha de auditoria, teste de viés, plano de contingência.",
+          "cue": "controles",
+          "cap": "Trilha de auditoria, teste de viés, plano de contingência.",
+          "slow": true
+        },
+        {
+          "id": "t28-09",
+          "say": "No setor financeiro, quase tudo que chega ao cliente está no degrau do meio para cima.",
+          "cue": "cro",
+          "cap": "No setor financeiro, quase tudo que chega ao cliente está **no degrau do meio para cima**."
+        },
+        {
+          "id": "t28-10",
+          "say": "Isso não é obstáculo. É o seu desenho de controle.",
+          "cue": "desenho",
+          "cap": "Isso não é obstáculo. É o seu **desenho de controle**."
+        },
+        {
+          "id": "t28-11",
+          "say": "E é o que o regulador vai perguntar quando pedir a documentação do modelo.",
+          "cue": "regulador",
+          "cap": "E é o que o **regulador** vai perguntar quando pedir a documentação do modelo."
+        }
+      ]
+    },
+    {
+      "id": "decisao",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Decisão para levar",
+      "beats": [
+        {
+          "id": "d01",
+          "say": "A decisão deste episódio é uma lista.",
+          "cue": "task",
+          "cap": "A decisão deste episódio é **uma lista**."
+        },
+        {
+          "id": "d02",
+          "say": "Os cinco dados que alimentam a decisão mais cara da sua área.",
+          "cue": "cinco",
+          "cap": "Os **cinco dados** que alimentam a decisão mais cara da sua área."
+        },
+        {
+          "id": "d03",
+          "say": "Ao lado de cada um: um nome. O dono.",
+          "cue": "dono",
+          "cap": "Ao lado de cada um: **um nome**. O **dono**.",
+          "pause": 1.0
+        },
+        {
+          "id": "d04",
+          "say": "Se houver um campo em branco, você encontrou o seu próximo projeto.",
+          "cue": "branco",
+          "cap": "Se houver um campo em branco, você encontrou o seu **próximo projeto**."
+        },
+        {
+          "id": "d05",
+          "say": "E ele não é de IA.",
+          "cue": "naoia",
+          "cap": "E ele **não é de IA**."
+        },
+        {
+          "id": "d06",
+          "say": "Num assessment de dados, é exatamente essa lista que a South monta primeiro.",
+          "cue": "south",
+          "cap": "Num assessment de dados, é exatamente essa lista que a **South** monta primeiro."
+        },
+        {
+          "id": "d07",
+          "say": "Dono, dicionário, SLA de atualização e integração.",
+          "cue": "itens",
+          "cap": "**Dono**, **dicionário**, **SLA de atualização** e **integração**."
+        },
+        {
+          "id": "d08",
+          "say": "O modelo é a última linha do plano. Não a primeira.",
+          "cue": "ultima",
+          "cap": "O modelo é a **última linha** do plano. Não a primeira."
+        },
+        {
+          "id": "d09",
+          "say": "Próximo episódio: Módulo três.",
+          "cue": "next",
+          "cap": "Próximo episódio: **Módulo 3**."
+        },
+        {
+          "id": "d10",
+          "say": "Carteira, não coleção de pilotos.",
+          "cue": "punch2",
+          "cap": "**Carteira**, não coleção de pilotos."
+        },
+        {
+          "id": "d11",
+          "say": "Traga o seu mapa.",
+          "cue": "mapa",
+          "cap": "Traga o seu **mapa**."
+        }
+      ]
+    },
+    {
+      "id": "final",
+      "kind": "card",
+      "hold": 5.0,
+      "label": "Cartão final",
+      "next": "EP07 · Carteira, não coleção de pilotos"
+    }
+  ]
+}
