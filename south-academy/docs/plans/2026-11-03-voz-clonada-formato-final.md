@@ -9,11 +9,13 @@ só no cartão inicial, no gancho e no cartão final; branch isolado.
 
 - P1. A autorização cobre só a API de áudio da HeyGen (geração da voz). O MCP da HeyGen, avatar,
   vídeo e render na nuvem continuam proibidos (HANDOFF, regra 1).
-- P2. A chave só é usada por variável de ambiente cujo nome o Fabio informa; nunca é lida, impressa
-  nem procurada. Nenhuma chamada real à HeyGen foi feita até este plano.
+- P2. A chave é um segredo de rede do ambiente: o proxy a aplica nas chamadas para `api.heygen.com` e
+  a sessão nunca a vê. Ela nunca é lida, impressa nem procurada. (Eu tinha assumido uma variável de
+  ambiente; o Fabio cadastrou como segredo, e a ferramenta passou a suportar isso: `key_source: proxy`.)
 - P3. Piloto no EP08. EP01 a EP07 só são refeitos depois da aprovação do piloto.
-- P4. Modelo padrão `heygen-voice-1` (pago, é o padrão da API). `heygen-voice-1-turbo-free` é gratuito
-  até 2026-11-30 e aceita clone instantâneo, mas sem garantia de disponibilidade. Escolha do Fabio.
+- P4. "Fabio - Voice 2" está no catálogo geral de vozes clonadas pelo app, não nos clones de modelo.
+  O `speak` usa `POST /v3/voices/speech` com o motor `heygen_voice` (a voz aceita `starfish`, `orca`
+  e `elevenlabs`, sem motor padrão salvo). O modelo `heygen-voice-1` só vale para clones de modelo.
 - P5. Beats em Opus 128 kbps no git, porque o WAV de 44,1 kHz passa do limite de 500 KB do hook.
 - P6. A decisão não leva foto (o Fabio listou cartão inicial, gancho e cartão final); a coluna de
   gráficos é centralizada na tela, já que a metade esquerda ficou sem o vídeo.
@@ -45,8 +47,14 @@ só no cartão inicial, no gancho e no cartão final; branch isolado.
 - `verify-final.sh` contra os MP4 antigos do EP07: o sem-voz antigo passa na prova da legenda e falha
   na do canto; o guia antigo falha nas duas; ambos mostram duração 720,00 s contra a meta de 720 s.
 
+## Teste real com a voz do Fabio (2026-11-03, único uso real da HeyGen até aqui)
+
+- `find-voice`: modelo 0 vozes; catálogo 2 vozes clonadas, uma "Fabio - Voice 2" (português).
+- `speak` de três beats do EP07 (156 caracteres) com o motor `heygen_voice`: 4,4 s, 3,3 s e 3,4 s.
+  O Fabio recebeu a amostra (12 s) para ouvir.
+- Um primeiro `speak` sem motor falhou em `400 invalid_parameter` e não gerou nada.
+
 ## Pendente
 
-- Nome da variável de ambiente da chave e escolha do modelo (P4), com o Fabio.
-- `find-voice --save` (confirma "Fabio - Voice 2" e se é clone instantâneo ou profissional).
+- O Fabio ouvir a amostra e aprovar a voz.
 - EP08 (HANDOFF §10), render único e verificação; depois a refação de EP01 a EP07.

@@ -34,12 +34,12 @@ episódio (`docs/plans/2026-10-16-ep04-entrega-capcut.md`).
      `render_video`) e qualquer composição ou render na nuvem. Todo render segue local (regra 2).
    - **Qualquer outro uso da HeyGen** (avatar, vídeo, projeto hospedado) exige nova autorização
      do Fabio: pare e avise.
-   - **Chave:** não ler, imprimir nem procurar. Usar só a partir de variável de ambiente já
-     configurada, lida dentro do script e sem eco no terminal ou em log. O nome da variável é
-     `HEYGEN_API_KEY` (escolhido em 2026-11-03, a pedido do Fabio). O Fabio cadastra a chave nas
-     configurações do ambiente (menu do ambiente na barra do título da sessão, Edit; em "Network
-     secrets" quando existir, senão como variável de ambiente); só uma sessão nova enxerga. Se a
-     chamada falhar por falta de chave, pare e avise.
+   - **Chave:** não ler, imprimir nem procurar. Ela é um **segredo de rede** do ambiente (cadastrado
+     pelo Fabio em "Network secrets"): o proxy do container a coloca nas chamadas para
+     `api.heygen.com` e a sessão nunca a vê, então não existe variável de ambiente nem há o que
+     ler. `voz.json` tem `key_source: "proxy"` e a ferramenta não envia cabeçalho de chave. Se um
+     dia a chamada der 401, o segredo não foi aplicado: pare e avise o Fabio. Alternativa, só se o
+     Fabio pedir: `key_source: "env"` com `key_env` (padrão `HEYGEN_API_KEY`).
 2. **Todo render é local** (`node packages/cli/dist/cli.js render`), headless Chrome no container.
 3. **Sem workflows multi-agente** (nada de `Workflow`, nada de fan-out de agentes). A conferência
    de fidelidade é por script determinístico (`scripts/fidelity.mjs`), não por agentes.
@@ -70,23 +70,26 @@ final; tudo em um branch isolado (`south-academy-voz-clonada`).
 - **Foto** (`brand/fabio.webp`, copiada para `epNN/assets/`): gancho à esquerda (os gráficos ficam em
   x ≥ 1210); vinheta e cartão final no painel escuro da direita (x ≥ 1346) do fundo da capa do deck.
   A decisão não leva foto: a coluna de gráficos é centralizada.
-- **Voz:** `tools/heygen-tts.mjs` gera um beat por chamada em `POST /v3/models/audio/tts`, com
-  cache por hash do texto (nunca paga duas vezes pelo mesmo texto). Configuração em `voz.json`.
-  A chave vem de uma variável de ambiente cujo nome o Fabio informa (`--key-env NOME`).
+- **Voz:** `tools/heygen-tts.mjs` gera um beat por chamada, com cache por hash do texto (nunca paga
+  duas vezes pelo mesmo texto). Configuração em `voz.json`. "Fabio - Voice 2" (`voice_id`
+  `fc39272ed2fe42be94a80c8179cea62a`, português) está no **catálogo geral** de vozes clonadas pelo
+  app (`GET /v3/voices?type=private`), não na lista de clones de modelo (`/v3/models/audio/voices`,
+  vazia na conta). Por isso o `speak` usa `POST /v3/voices/speech` (`endpoint: "catalog"`), com o
+  motor `heygen_voice` (a voz não tem motor padrão salvo; aceita `starfish`, `orca` e `elevenlabs`).
+  O áudio chega em qualquer formato; a ferramenta converte para PCM16 mono antes de cortar o silêncio.
 - **Áudio no git:** cada beat vai como `media/vo/epNN/<beat>.opus` (Opus 128 kbps, cerca de 7 MB por
   episódio). O WAV de 44,1 kHz da HeyGen passa de 500 KB e o hook de arquivos grandes barra; ele
   fica só no cache local `.raw/`, fora do git. O build decodifica o Opus para `.wav/` (também fora).
 - **Build e verificação compartilhados:** `tools/build.mjs <pasta-do-episódio>` e
   `tools/verify-final.sh <pasta-do-episódio> <META>`. O `scenes.mjs` de cada episódio não muda.
-- **Ritmo:** a voz clonada instantânea ignora o parâmetro de velocidade e não aceita SSML. Os beats
-  `slow` são desacelerados em 10% por `atempo` (`slowTempo` em `voz.json`); as pausas continuam
-  nas contas do `build.mjs` (`pause`, `lineGap`, `beatSlack`).
-- **Decidido em 2026-11-03 (o Fabio delegou a escolha):** variável `HEYGEN_API_KEY` e modelo
-  `heygen-voice-1` (pago; é o padrão da API, aceita clone instantâneo e profissional e foi o primeiro
-  colocado no ranking de identidade de voz da HeyGen). `heygen-voice-1-turbo-free` é gratuito até
-  2026-11-30, mas sem garantia de disponibilidade e sem clone profissional; só vale para testes.
-- **Ainda em aberto:** o Fabio cadastrar a chave no ambiente e abrir uma sessão nova; depois,
-  `find-voice --save` confirma "Fabio - Voice 2" e se é clone instantâneo ou profissional.
+- **Ritmo:** no catálogo a API aceita `speed` (0,5 a 2,0): os beats `slow` vão com `speed` igual a
+  `slowTempo` (0,9). Nos clones de modelo a API ignora a velocidade e a ferramenta aplica `atempo`
+  local. As pausas continuam nas contas do `build.mjs` (`pause`, `lineGap`, `beatSlack`).
+- **Decidido em 2026-11-03 (o Fabio delegou a escolha):** motor `heygen_voice` (o motor próprio da
+  HeyGen, o de melhor fidelidade de voz segundo a documentação). O modelo `heygen-voice-1` só vale
+  se a voz for migrada para os clones de modelo. Teste real feito: três beats do EP07 (156 caracteres)
+  viraram 4,4 s, 3,3 s e 3,4 s de fala, e o Fabio recebeu a amostra para ouvir.
+- **Ainda em aberto:** o Fabio ouvir a amostra e aprovar a voz; depois, o EP08.
 - **Ordem de trabalho:** EP08 como piloto no formato final; depois de aprovado, refazer EP01 a EP07
   (mesmo roteiro e mesmas cenas, só voz nova e o formato final). Não re-renderizar EP01–EP07 antes disso.
 - **Segurança:** a chave nunca é lida, impressa nem procurada; as chamadas à HeyGen vão só para
@@ -124,7 +127,7 @@ Meta de duração = duração do teleprompter ±30 s (EP03 630–690 s; EP04 690
   `package.json` e os arquivos de configuração; não copie `scripts/build.mjs`, `stems.mjs` nem
   `verify-entrega.sh` (o build e a verificação são `tools/`).
 - Passo 5 (voz): `node tools/heygen-tts.mjs speak epNN/script/epNN.json epNN/media/vo/epNN --key-env NOME`
-  (antes, `--dry-run` para contar beats e caracteres; `find-voice --save` uma vez para gravar o `voice_id`).
+  (antes, `--dry-run` para contar beats e caracteres).
 - Passo 7: `node tools/build.mjs epNN` no lugar de `node scripts/build.mjs`.
 - Passo 8 (render único): `node $CLI render epNN -q looks --quiet -o epNN/entrega/epNN.mp4`.
 - Passo 9: `bash tools/verify-final.sh epNN <META>` (composição sem legendas e sem narrador, duração
@@ -226,14 +229,14 @@ extra})`: regiões de zoom como frações `[x, y, w, h]`, k ≤ 2,4; regiões de
 
 Formato final (§2A), em `south-academy/tools/` (compartilhados, não copiados por episódio):
 
-| Arquivo               | Função                                                                                                                                                           |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `heygen-tts.mjs`      | `find-voice` (acha e grava o `voice_id`) e `speak` (um beat por chamada, cache por hash, `atempo` nos beats lentos, corte de silêncio, Opus, `heygen-meta.json`) |
-| `test-heygen-tts.mjs` | teste offline contra servidor falso: nova tentativa em 429, cache, `--force`, chave só no host da API                                                            |
-| `build.mjs`           | timing, mixagem, `index.html` e `compositions/*.html` sem legendas e sem narrador; fundo escuro nas cenas de tela cheia; foto no gancho, vinheta e cartão final  |
-| `verify-final.sh`     | verificação do `epNN.mp4` (§4, passo 9)                                                                                                                          |
-| `../voz.json`         | nome da voz, `voice_id`, modo, modelo, idioma, `expressiveness_boost` 0,5, `slowTempo` 0,9, `opusKbps` 128                                                       |
-| `../brand/fabio.webp` | foto do Fabio usada nos cartões e no gancho                                                                                                                      |
+| Arquivo               | Função                                                                                                                                                                                         |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `heygen-tts.mjs`      | `find-voice` (nos dois catálogos; `--save` grava o `voice_id`) e `speak` (um beat por chamada, cache por hash, beats lentos por `speed`/`atempo`, corte de silêncio, Opus, `heygen-meta.json`) |
+| `test-heygen-tts.mjs` | teste offline contra servidor falso: nova tentativa em 429, cache, `--force`, chave só no host da API                                                                                          |
+| `build.mjs`           | timing, mixagem, `index.html` e `compositions/*.html` sem legendas e sem narrador; fundo escuro nas cenas de tela cheia; foto no gancho, vinheta e cartão final                                |
+| `verify-final.sh`     | verificação do `epNN.mp4` (§4, passo 9)                                                                                                                                                        |
+| `../voz.json`         | nome da voz, `voice_id`, modo, modelo, idioma, `expressiveness_boost` 0,5, `slowTempo` 0,9, `opusKbps` 128                                                                                     |
+| `../brand/fabio.webp` | foto do Fabio usada nos cartões e no gancho                                                                                                                                                    |
 
 Zonas (CSV, só no formato antigo): `canto` = 400×225 em (1472, 807); `tela_cheia` = 0,0,1920,1080 com gráficos em
 x ≥ 1210. Cada linha: início, fim, modo, x, y, largura, altura.
@@ -315,8 +318,8 @@ Reinstalação, se algo sumiu:
   padrão: passe `--model small --language pt`. `hyperframes doctor` encontra o binário em
   `/usr/local/bin/whisper-cli`.
 
-- **HeyGen (formato final)**: nada a instalar. Precisa de uma variável de ambiente com a chave
-  (nome informado pelo Fabio) e de `ffmpeg` com `libopus` (`ffmpeg -encoders | grep libopus`).
+- **HeyGen (formato final)**: nada a instalar. A chave é um segredo de rede do ambiente (o proxy a
+  aplica); precisa só de `ffmpeg` com `libopus` (`ffmpeg -encoders | grep libopus`).
   Node 22.21 ou superior: o `heygen-tts.mjs` se reexecuta com `NODE_USE_ENV_PROXY=1` para usar o
   proxy do container.
 
@@ -342,9 +345,9 @@ Reinstalação, se algo sumiu:
 
 ## 10. Como começar o próximo episódio (EP08, piloto do formato final)
 
-1. Branch: `south-academy-voz-clonada` (já existe; o EP08 entra nele). Confirmar que a sessão enxerga
-   `HEYGEN_API_KEY` sem imprimir o valor (`test -n "$HEYGEN_API_KEY" && echo ok`). Rodar
-   `node tools/test-heygen-tts.mjs` (offline) e `node tools/heygen-tts.mjs find-voice --save`.
+1. Branch: `south-academy-voz-clonada` (já existe; o EP08 entra nele). Rodar
+   `node tools/test-heygen-tts.mjs` (offline) e `node tools/heygen-tts.mjs find-voice`
+   (leitura, sem custo: deve listar "Fabio - Voice 2" no catálogo; `voz.json` já guarda o `voice_id`).
 2. Copiar `ep07/` para `ep08/` só com `script/`, `scripts/scenes.mjs`, `scripts/fidelity.mjs`,
    `assets/` (sem `fig-*`), `meta.json`, `package.json`, `hyperframes.json`, `CLAUDE.md`, `AGENTS.md`,
    `.gitignore`; trocar `ep07` por `ep08` onde aparecer. O `ep07.json` serve de modelo de roteiro.

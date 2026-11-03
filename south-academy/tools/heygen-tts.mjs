@@ -5,7 +5,8 @@
  * Autorizado pelo Fabio em 2026-11-03 (HANDOFF, regra 1): só a API de áudio (POST /v3/models/audio/tts
  * e GET /v3/models/audio/voices). Nada de MCP da HeyGen, avatar, vídeo ou render na nuvem.
  *
- * Chave: lida só de uma variável de ambiente, `key_env` do voz.json (HEYGEN_API_KEY) ou --key-env NOME. O script não
+ * Chave: segredo de rede do ambiente (`key_source: proxy` no voz.json; o proxy injeta a chave) ou variável de
+ * ambiente (`key_source: env`, `key_env` ou --key-env NOME). O script não
  * lista, não procura e não imprime variáveis. A chave vai só no cabeçalho das chamadas à api.heygen.com;
  * o download do WAV gerado (outro host) é feito sem a chave.
  *
@@ -60,7 +61,14 @@ function parseArgs(argv) {
 const configPath = (opt) => resolve(opt.config ?? DEFAULT_CONFIG);
 const loadConfig = (opt) => JSON.parse(readFileSync(configPath(opt), "utf8"));
 
+/**
+ * Chave da HeyGen. Dois modos (voz.json `key_source`):
+ *  - "proxy": a chave é um segredo de rede do ambiente; o proxy a coloca nas chamadas para api.heygen.com
+ *    e a sessão nunca a vê. Aqui não há chave local (devolve null) e nenhum cabeçalho X-Api-Key é enviado.
+ *  - "env": variável de ambiente `key_env` (ou --key-env NOME). Nunca procura outras variáveis.
+ */
 function apiKey(opt, cfg) {
+  if (!opt["key-env"] && cfg.key_source === "proxy") return null;
   const name = opt["key-env"] ?? cfg.key_env;
   if (!name)
     fail(
@@ -72,7 +80,7 @@ function apiKey(opt, cfg) {
 }
 
 const HINTS = {
-  401: "chave inválida ou expirada.",
+  401: "chave inválida, expirada ou ausente (em key_source proxy, o segredo de rede não foi aplicado a api.heygen.com).",
   402: "sem crédito ou limite de uso atingido: pare e avise o Fabio.",
   403: "a voz é um clone profissional e a conta não está habilitada para ele.",
   404: "a voz não está na conta dona da chave (confira o voice_id com find-voice).",
@@ -88,7 +96,7 @@ async function call(base, key, method, path, body) {
       res = await fetch(base + path, {
         method,
         headers: {
-          "X-Api-Key": key,
+          ...(key ? { "X-Api-Key": key } : {}),
           "Content-Type": "application/json",
           Accept: "application/json",
         },
@@ -202,41 +210,67 @@ function ffmpeg(args) {
 const norm = (s) => String(s).replace(/\*\*/g, "").replace(/\s+/g, " ").trim();
 const hashOf = (o) => createHash("sha1").update(JSON.stringify(o)).digest("hex").slice(0, 16);
 
+/** Lista paginada (limit/token) de um endpoint de vozes. */
+async function listAll(base, key, path) {
+  const out = [];
+  let token = null;
+  do {
+    const url = `${path}${token ? `&token=${encodeURIComponent(token)}` : ""}`;
+    const { json } = await call(base, key, "GET", url);
+    out.push(...json.data);
+    token = json.has_more ? json.next_token : null;
+  } while (token);
+  return out;
+}
+
+// A HeyGen tem dois catálogos de voz: os clones "de modelo" (instantâneo/profissional, POST /v3/models/audio/tts)
+// e o catálogo geral, onde ficam as vozes clonadas pelo app (POST /v3/voices/speech).
+const SOURCES = [
+  { id: "models", path: "/v3/models/audio/voices?type=private&limit=100" },
+  { id: "catalog", path: "/v3/voices?type=private&limit=100" },
+];
+
 async function findVoice(opt) {
   const cfg = loadConfig(opt);
   const base = opt["base-url"] ?? "https://api.heygen.com";
   const key = apiKey(opt, cfg);
   const wanted = (opt.name ?? cfg.name).toLowerCase();
-  const all = [];
-  let token = null;
-  do {
-    const path = `/v3/models/audio/voices?type=private&limit=100${token ? `&token=${encodeURIComponent(token)}` : ""}`;
+  const found = [];
+  for (const src of SOURCES) {
+    let list = [];
     try {
-      const { json } = await call(base, key, "GET", path);
-      all.push(...json.data);
-      token = json.has_more ? json.next_token : null;
+      list = await listAll(base, key, src.path);
     } catch (e) {
-      die(e, "GET /v3/models/audio/voices");
+      if ([401, 402].includes(e.status)) die(e, `GET ${src.path.split("?")[0]}`);
+      console.warn(`  ${src.id}: ${e.message}`);
+      continue;
     }
-  } while (token);
-  const hit = all.filter((v) => v.name.toLowerCase().includes(wanted));
-  console.log(
-    `${all.length} voz(es) na conta; ${hit.length} com o nome "${opt.name ?? cfg.name}":`,
-  );
-  for (const v of hit.length ? hit : all)
+    const hit = list.filter((v) => String(v.name).toLowerCase().includes(wanted));
     console.log(
-      `  ${v.voice_id}  ${v.name}  modo=${v.mode}  status=${v.status}  idioma=${v.language ?? "-"}`,
+      `${src.id}: ${list.length} voz(es) clonada(s) na conta; ${hit.length} com o nome "${opt.name ?? cfg.name}"`,
     );
+    for (const v of hit.length ? hit : list)
+      console.log(
+        `  ${v.voice_id}  ${v.name}  ${src.id === "models" ? `modo=${v.mode} status=${v.status}` : `engine padrão=${v.default_engine ?? "-"} motores=${(v.available_engines ?? []).join(",") || "-"} pausa=${v.support_pause ?? "-"} idioma=${v.language ?? "-"}`}`,
+      );
+    found.push(...hit.map((v) => ({ ...v, source: src.id })));
+  }
   if (opt.save) {
-    const exact = hit.filter((v) => v.name.toLowerCase() === wanted);
-    const pick = exact.length === 1 ? exact[0] : hit.length === 1 ? hit[0] : null;
-    if (!pick) fail("não deu para escolher uma voz só; passe o nome exato ou edite voz.json");
-    if (pick.status !== "ACTIVE") fail(`a voz está ${pick.status}`);
+    const exact = found.filter((v) => String(v.name).toLowerCase() === wanted);
+    const pool = exact.length ? exact : found;
+    if (pool.length !== 1)
+      fail(
+        `não deu para escolher uma voz só (${pool.length} candidatas); passe --name exato ou edite voz.json`,
+      );
+    const pick = pool[0];
+    if (pick.source === "models" && pick.status !== "ACTIVE") fail(`a voz está ${pick.status}`);
     cfg.voice_id = pick.voice_id;
-    cfg.mode = pick.mode;
     cfg.name = pick.name;
+    cfg.endpoint = pick.source;
+    cfg.mode = pick.source === "models" ? pick.mode : "catalog";
+    cfg.engine = pick.source === "catalog" ? (pick.default_engine ?? null) : null;
     writeFileSync(configPath(opt), JSON.stringify(cfg, null, 2) + "\n");
-    console.log(`voz.json atualizado: ${pick.name} (${pick.mode})`);
+    console.log(`voz.json atualizado: ${pick.name} (${cfg.endpoint}, ${cfg.mode})`);
   }
 }
 
@@ -244,6 +278,7 @@ async function speak(opt, pos) {
   const [scriptPath, outArg] = pos.slice(1);
   if (!scriptPath || !outArg) fail("uso: speak <script.json> <pasta-de-saida>");
   const cfg = loadConfig(opt);
+  const endpoint = opt.endpoint ?? cfg.endpoint ?? "models";
   const model = opt.model ?? cfg.model;
   const voiceId = opt["voice-id"] ?? cfg.voice_id;
   const base = opt["base-url"] ?? "https://api.heygen.com";
@@ -259,29 +294,34 @@ async function speak(opt, pos) {
   for (const b of beats) if (b.text.length > 5000) fail(`o beat ${b.id} passa de 5000 caracteres`);
   const meta = existsSync(metaPath) ? JSON.parse(readFileSync(metaPath, "utf8")) : {};
   const settings = {
+    endpoint,
     model,
+    engine: cfg.engine ?? null,
     voice_id: voiceId,
     language: cfg.language,
     boost: cfg.expressiveness_boost,
   };
   const state = beats.map((b) => {
-    const hash = hashOf({ ...settings, text: b.text });
     const tempo = b.slow ? cfg.slowTempo : 1;
+    // catálogo: a velocidade vai na API (speed); modelo: a API ignora speed, então o atempo é local
+    const apiSpeed = endpoint === "catalog" ? tempo : 1;
+    const localTempo = endpoint === "catalog" ? 1 : tempo;
+    const hash = hashOf({ ...settings, speed: apiSpeed, text: b.text });
     const m = meta[b.id];
     const ready =
       !opt.force &&
       existsSync(join(outDir, `${b.id}.opus`)) &&
       m?.hash === hash &&
       m?.tempo === tempo;
-    const cached = existsSync(join(rawDir, `${hash}.wav`)) && !opt.force;
-    return { ...b, hash, tempo, ready, cached };
+    const cached = existsSync(join(rawDir, `${hash}.audio`)) && !opt.force;
+    return { ...b, hash, tempo, apiSpeed, localTempo, ready, cached };
   });
   const chars = (xs) => xs.reduce((a, b) => a + b.text.length, 0);
   const toCall = state.filter((b) => !b.ready && !b.cached);
   console.log(
     `${state.length} beats, ${chars(state)} caracteres · prontos ${state.filter((b) => b.ready).length} · ` +
       `só reprocessar (cache) ${state.filter((b) => !b.ready && b.cached).length} · ` +
-      `chamadas à API ${toCall.length} (${chars(toCall)} caracteres) · modelo ${model}`,
+      `chamadas à API ${toCall.length} (${chars(toCall)} caracteres) · ${endpoint === "catalog" ? `catálogo (engine ${cfg.engine ?? "padrão da voz"})` : `modelo ${model}`}`,
   );
   if (opt["dry-run"]) return;
   if (!voiceId) fail("sem voice_id: rode find-voice --save ou passe --voice-id");
@@ -291,44 +331,56 @@ async function speak(opt, pos) {
   let novos = 0;
   for (const b of state) {
     if (b.ready) continue;
-    const rawPath = join(rawDir, `${b.hash}.wav`);
+    const rawPath = join(rawDir, `${b.hash}.audio`);
     let requestId = meta[b.id]?.requestId ?? null;
     let apiDuration = meta[b.id]?.apiDuration ?? null;
     if (!existsSync(rawPath) || opt.force) {
       const wait = last + MIN_INTERVAL_MS - Date.now();
       if (wait > 0) await sleep(wait);
-      const body = { model, voice_id: voiceId, text: b.text, language: cfg.language };
-      if (cfg.mode !== "professional") body.expressiveness_boost = cfg.expressiveness_boost;
+      let path;
+      let body;
+      if (endpoint === "catalog") {
+        path = "/v3/voices/speech";
+        body = { text: b.text, voice_id: voiceId, language: cfg.language, speed: b.apiSpeed };
+        if (cfg.engine) body.engine = cfg.engine;
+      } else {
+        path = "/v3/models/audio/tts";
+        body = { model, voice_id: voiceId, text: b.text, language: cfg.language };
+        if (cfg.mode !== "professional") body.expressiveness_boost = cfg.expressiveness_boost;
+      }
       let out;
       try {
-        out = await call(base, key, "POST", "/v3/models/audio/tts", body);
+        out = await call(base, key, "POST", path, body);
       } catch (e) {
-        if (e.status === 400 && e.param === "expressiveness_boost") {
+        if (endpoint === "models" && e.status === 400 && e.param === "expressiveness_boost") {
           delete body.expressiveness_boost;
           cfg.mode = "professional";
-          out = await call(base, key, "POST", "/v3/models/audio/tts", body).catch((e2) =>
-            die(e2, `beat ${b.id}`),
-          );
+          out = await call(base, key, "POST", path, body).catch((e2) => die(e2, `beat ${b.id}`));
         } else die(e, `beat ${b.id}`);
       }
       last = Date.now();
-      const { audio_url: url, duration } = out.json.data;
-      // o WAV fica em outro host: baixa SEM a chave
+      const { audio_url: url, duration, request_id: bodyRequestId } = out.json.data;
+      // o áudio fica em outro host: baixa SEM a chave
       const dl = await fetch(url, { signal: AbortSignal.timeout(180_000) });
       if (!dl.ok) fail(`download do áudio do beat ${b.id}: HTTP ${dl.status}`);
       writeFileSync(rawPath, Buffer.from(await dl.arrayBuffer()));
-      requestId = out.headers.get("x-request-id");
+      requestId = out.headers.get("x-request-id") ?? bodyRequestId ?? null;
       apiDuration = duration;
       novos++;
     }
-    // pós-processo: ritmo lento (atempo), corte das pontas, Opus
-    let wavPath = rawPath;
+    // pós-processo: qualquer formato vira PCM16 mono; ritmo lento local (modelo), corte das pontas, Opus
     const tmp = join(rawDir, `${b.id}.tmp.wav`);
-    if (b.tempo !== 1) {
-      ffmpeg(["-i", rawPath, "-filter:a", `atempo=${b.tempo}`, "-c:a", "pcm_s16le", tmp]);
-      wavPath = tmp;
-    }
-    const { rate, samples } = readWav(readFileSync(wavPath));
+    ffmpeg([
+      "-i",
+      rawPath,
+      "-ac",
+      "1",
+      ...(b.localTempo !== 1 ? ["-filter:a", `atempo=${b.localTempo}`] : []),
+      "-c:a",
+      "pcm_s16le",
+      tmp,
+    ]);
+    const { rate, samples } = readWav(readFileSync(tmp));
     const trimmed = trim(samples, rate);
     const trimPath = join(rawDir, `${b.id}.trim.wav`);
     writeFileSync(trimPath, wavBuffer(trimmed, rate));
@@ -352,7 +404,8 @@ async function speak(opt, pos) {
       seconds: Math.round((trimmed.length / rate) * 100) / 100,
       apiDuration,
       requestId,
-      model,
+      endpoint,
+      model: endpoint === "catalog" ? null : model,
     };
     writeFileSync(metaPath, JSON.stringify(meta, null, 2) + "\n");
     console.log(`  ${b.id}: ${meta[b.id].seconds}s${b.tempo !== 1 ? ` (tempo ${b.tempo})` : ""}`);
