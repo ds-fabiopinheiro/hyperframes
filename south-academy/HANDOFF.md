@@ -92,6 +92,14 @@ final; tudo em um branch isolado (`south-academy-voz-clonada`).
 - **Ainda em aberto:** o Fabio ouvir a amostra e aprovar a voz; depois, o EP08.
 - **Ordem de trabalho:** EP08 como piloto no formato final; depois de aprovado, refazer EP01 a EP07
   (mesmo roteiro e mesmas cenas, só voz nova e o formato final). Não re-renderizar EP01–EP07 antes disso.
+- **Desenvolvimento das ferramentas com TDD (pedido do Fabio, superpowers):** nenhuma mudança em
+  `tools/` sem teste que falhou primeiro. Ciclo: escrever o teste e vê-lo falhar pelo motivo certo,
+  código mínimo, vê-lo passar, rodar a suíte inteira (`bash tools/test-all.sh`) e por fim
+  `node tools/mutation-check.mjs`: ele quebra de propósito uma cópia do código (uma mutação por vez) e
+  exige que algum teste fique vermelho. Mutação que sobrevive = comportamento sem proteção ou teste
+  tautológico: reforce o teste, não a tabela. Não rode duas vezes o mesmo grupo de mutação ao mesmo
+  tempo no mesmo log (cada processo usa o próprio arquivo `.mutant-*`, mas o log se mistura).
+  Nenhum teste chama a HeyGen: a API é simulada por um servidor local.
 - **Segurança:** a chave nunca é lida, impressa nem procurada; as chamadas à HeyGen vão só para
   `api.heygen.com`, e o WAV gerado é baixado de outro host sem a chave. O teste
   `node tools/test-heygen-tts.mjs` roda contra um servidor falso local e não toca na HeyGen.
@@ -128,6 +136,9 @@ Meta de duração = duração do teleprompter ±30 s (EP03 630–690 s; EP04 690
   `verify-entrega.sh` (o build e a verificação são `tools/`).
 - Passo 5 (voz): `node tools/heygen-tts.mjs speak epNN/script/epNN.json epNN/media/vo/epNN --key-env NOME`
   (antes, `--dry-run` para contar beats e caracteres).
+- Antes da voz (passo 5): `node tools/validate-script.mjs epNN` acusa, de uma vez, id de beat repetido,
+  cena sem template, cue usado e não definido, kind inválido, hold ou next ausentes, beat sem texto,
+  pausa inválida e texto acima de 5000 caracteres. Rode antes de gastar crédito.
 - Passo 7: `node tools/build.mjs epNN` no lugar de `node scripts/build.mjs`.
 - Passo 8 (render único): `node $CLI render epNN -q looks --quiet -o epNN/entrega/epNN.mp4`.
 - Passo 9: `bash tools/verify-final.sh epNN <META>` (composição sem legendas e sem narrador, duração
@@ -234,6 +245,10 @@ Formato final (§2A), em `south-academy/tools/` (compartilhados, não copiados p
 | `heygen-tts.mjs`      | `find-voice` (nos dois catálogos; `--save` grava o `voice_id`) e `speak` (um beat por chamada, cache por hash, beats lentos por `speed`/`atempo`, corte de silêncio, Opus, `heygen-meta.json`) |
 | `test-heygen-tts.mjs` | teste offline contra servidor falso: nova tentativa em 429, cache, `--force`, chave só no host da API                                                                                          |
 | `build.mjs`           | timing, mixagem, `index.html` e `compositions/*.html` sem legendas e sem narrador; fundo escuro nas cenas de tela cheia; foto no gancho, vinheta e cartão final                                |
+| `validate-script.mjs` | confere o roteiro antes da voz e do build (§4)                                                                                                                                                 |
+| `test-*.mjs`          | quatro testes offline: `heygen-tts` (servidor falso), `build` (episódio de fixture e Chromium), `verify-final` (MP4 sintéticos) e `validate-script`                                            |
+| `mutation-check.mjs`  | quebra o código de propósito e exige teste vermelho (§2A, TDD)                                                                                                                                 |
+| `test-all.sh`         | roda os quatro testes; `--mutacao` roda também as mutações                                                                                                                                     |
 | `verify-final.sh`     | verificação do `epNN.mp4` (§4, passo 9)                                                                                                                                                        |
 | `../voz.json`         | nome da voz, `voice_id`, modo, modelo, idioma, `expressiveness_boost` 0,5, `slowTempo` 0,9, `opusKbps` 128                                                                                     |
 | `../brand/fabio.webp` | foto do Fabio usada nos cartões e no gancho                                                                                                                                                    |
@@ -357,7 +372,7 @@ Reinstalação, se algo sumiu:
    final "Próximo: EP09 · A conta que o CFO vai fazer", conferido em 2026-11-03); duração "cerca de
    14 min", então `META = 840` s ± 30. Deck:
    `python3 deck/extract-slides.py ep08 37 38 39 40 41 42 43 44 45 46 47 48 49 50`.
-4. Seguir o §4 com as mudanças do formato final. Meta de duração = duração do teleprompter ±30 s.
+4. Seguir o §4 com as mudanças do formato final (`validate-script` antes da voz). Meta de duração = duração do teleprompter ±30 s.
    O EP07 termina com o teaser "EP08 · Três projetos reais" e a frase "Com o número. E com a origem do
    número."; o gancho do EP08 abre nesse ponto. A folga (`beatSlack`) precisa ser reajustada: a voz
    da HeyGen tem outro ritmo que a Kokoro (comece em 0,3 e interpole entre dois builds). O EP08 é o

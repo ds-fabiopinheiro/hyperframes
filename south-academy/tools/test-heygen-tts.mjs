@@ -14,7 +14,7 @@ import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const TOOL = join(HERE, "heygen-tts.mjs");
+const TOOL = process.env.HEYGEN_TTS_TOOL ?? join(HERE, "heygen-tts.mjs");
 const KEY = "chave-falsa-do-teste";
 const dir = mkdtempSync(join(tmpdir(), "hf-tts-"));
 
@@ -69,6 +69,7 @@ const seen = {
   bodies: [],
 };
 let first429 = true;
+let failWith = 0;
 const server = createServer((req, res) => {
   const url = new URL(req.url, "http://x");
   const send = (code, obj, headers = {}) => {
@@ -164,6 +165,8 @@ const server = createServer((req, res) => {
     req.on("end", () => {
       seen.tts++;
       const b = JSON.parse(body);
+      if (failWith)
+        return send(failWith, { error: { code: "insufficient_credit", message: "sem crédito" } });
       seen.bodies.push(b);
       if (first429) {
         first429 = false;
@@ -363,6 +366,67 @@ assert.ok(
   `catálogo não aplica atempo local (b02 ${metaCat.b02.seconds})`,
 );
 assert.ok(existsSync(join(outCat, "b03.opus")));
+
+// 9. sem crédito (402) não é repetido: uma única chamada e erro claro
+//    Quebra que pega: tratar 402 como erro transitório e gastar tentativas com a conta vazia
+failWith = 402;
+modelsEmpty = false;
+catalogEmpty = true;
+let before9 = seen.tts;
+r = await run(["speak", scriptPath, join(dir, "vo-402"), "--config", cfg]);
+assert.notEqual(r.code, 0, r.out);
+assert.match(r.out, /crédito/);
+assert.equal(seen.tts - before9, 1, "402 não pode ser repetido");
+failWith = 0;
+
+// 10. --dry-run não faz chamada de rede nem grava áudio
+//     Quebra que pega: o dry-run gastar crédito ou exigir a chave
+const outDry = join(dir, "vo-dry");
+let before10 = seen.tts;
+r = await runAsync(["speak", scriptPath, outDry, "--config", cfgProxy, "--dry-run"]);
+assert.equal(r.code, 0, r.out);
+assert.match(r.out, /3 beats, \d+ caracteres/);
+assert.match(r.out, /chamadas à API 3 /);
+assert.equal(seen.tts, before10, "dry-run não chama a API");
+assert.equal(existsSync(join(outDry, "b01.opus")), false);
+
+// 11. --only gera só os beats pedidos
+//     Quebra que pega: regerar (e pagar) o episódio inteiro quando se pediu um beat
+const outOnly = join(dir, "vo-only");
+let before11 = seen.tts;
+r = await run(["speak", scriptPath, outOnly, "--config", cfg, "--only", "b02"]);
+assert.equal(r.code, 0, r.out);
+assert.equal(seen.tts - before11, 1);
+assert.ok(existsSync(join(outOnly, "b02.opus")));
+assert.equal(existsSync(join(outOnly, "b01.opus")), false);
+assert.equal(existsSync(join(outOnly, "b03.opus")), false);
+
+// 12. mesma voz nos dois catálogos: find-voice --save recusa e não grava nada
+//     Quebra que pega: gravar no voz.json uma voz escolhida no chute
+modelsEmpty = false;
+catalogEmpty = false;
+const cfgAmb = join(dir, "voz-ambigua.json");
+writeFileSync(
+  cfgAmb,
+  JSON.stringify({ ...JSON.parse(readFileSync(cfg, "utf8")), key_source: "proxy", voice_id: null }),
+);
+r = await runAsync(["find-voice", "--config", cfgAmb, "--save"]);
+assert.notEqual(r.code, 0, r.out);
+assert.match(r.out, /uma voz só/);
+assert.equal(JSON.parse(readFileSync(cfgAmb, "utf8")).voice_id, null, "voz.json não pode mudar");
+
+// 13. beat com mais de 5000 caracteres falha antes de qualquer chamada
+//     Quebra que pega: enviar texto que a API rejeita, depois de pagar os beats anteriores
+const bigScript = join(dir, "ep98.json");
+writeFileSync(
+  bigScript,
+  JSON.stringify({ scenes: [{ id: "a", beats: [{ id: "g01", say: "x".repeat(5001) }] }] }),
+);
+let before13 = seen.tts;
+r = await run(["speak", bigScript, join(dir, "vo-big"), "--config", cfg]);
+assert.notEqual(r.code, 0, r.out);
+assert.match(r.out, /5000/);
+assert.equal(seen.tts, before13);
 
 server.close();
 console.log(

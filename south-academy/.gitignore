@@ -1,3 +1,6 @@
 # formato final com a voz clonada (HANDOFF §2A): cache da HeyGen e WAV decodificado ficam fora do git
 ep*/media/vo/*/.raw/
 ep*/media/vo/*/.wav/
+
+# arquivos temporários do mutation-check (apagados ao fim de cada mutação)
+tools/.mutant-*
