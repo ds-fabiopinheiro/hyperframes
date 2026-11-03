@@ -106,18 +106,18 @@ final; tudo em um branch isolado (`south-academy-voz-clonada`).
 
 ## 3. Estado por episódio
 
-| EP   | Telas do deck                         | Branch / PR                             | Estado                                                 |
-| ---- | ------------------------------------- | --------------------------------------- | ------------------------------------------------------ |
-| EP01 | 01–05                                 | `south-academy-ep01` / PR #1 (mesclado) | entregue                                               |
-| EP02 | 06–10E (10C–10E opcionais)            | `south-academy-ep02` / PR #2 (mesclado) | aprovado                                               |
-| EP03 | 11–12G                                | `south-academy-ep03` / PR #3 (mesclado) | aprovado                                               |
-| EP04 | 13–17 (16D opcional)                  | `south-academy-ep04` / PR #4 (mesclado) | aprovado                                               |
-| EP05 | 18, 19, 20, 21, 21A, 21B, 22          | `south-academy-ep05` / PR #5 (mesclado) | aprovado                                               |
-| EP06 | 23–28 (26 dinâmica, 27 revelação)     | `south-academy-ep06` / PR #6 (mesclado) | aprovado                                               |
-| EP07 | 29–36C (31A, 36A–36C Gartner)         | `south-academy-ep07` / PR #7 (mesclado) | entregue; **aprovação explícita do Fabio pendente**    |
-| EP08 | 37–50 (dois cases + Agentic Commerce) | —                                       | próximo (EP07 já anuncia "EP08 · Três projetos reais") |
-| EP09 | 51–62                                 | —                                       | —                                                      |
-| EP10 | 63–67 (67 encerramento)               | —                                       | —                                                      |
+| EP   | Telas do deck                         | Branch / PR                             | Estado                                              |
+| ---- | ------------------------------------- | --------------------------------------- | --------------------------------------------------- |
+| EP01 | 01–05                                 | `south-academy-ep01` / PR #1 (mesclado) | entregue                                            |
+| EP02 | 06–10E (10C–10E opcionais)            | `south-academy-ep02` / PR #2 (mesclado) | aprovado                                            |
+| EP03 | 11–12G                                | `south-academy-ep03` / PR #3 (mesclado) | aprovado                                            |
+| EP04 | 13–17 (16D opcional)                  | `south-academy-ep04` / PR #4 (mesclado) | aprovado                                            |
+| EP05 | 18, 19, 20, 21, 21A, 21B, 22          | `south-academy-ep05` / PR #5 (mesclado) | aprovado                                            |
+| EP06 | 23–28 (26 dinâmica, 27 revelação)     | `south-academy-ep06` / PR #6 (mesclado) | aprovado                                            |
+| EP07 | 29–36C (31A, 36A–36C Gartner)         | `south-academy-ep07` / PR #7 (mesclado) | entregue; **aprovação explícita do Fabio pendente** |
+| EP08 | 37–50 (dois cases + Agentic Commerce) | `south-academy-voz-clonada` / PR #9     | piloto do formato final (voz HeyGen); em produção   |
+| EP09 | 51–62                                 | —                                       | —                                                   |
+| EP10 | 63–67 (67 encerramento)               | —                                       | —                                                   |
 
 EP01–EP07 foram entregues no formato antigo (sem-voz + guia para o CapCut). EP08 em diante, e a
 refação de EP01–EP07, seguem o formato final (§2A).
