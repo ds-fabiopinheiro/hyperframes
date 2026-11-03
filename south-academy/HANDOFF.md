@@ -1,4 +1,4 @@
-# South Academy Executive · HANDOFF (estado do projeto em 2026-10-16)
+# South Academy Executive · HANDOFF (estado do projeto em 2026-11-03)
 
 Documento de passagem para continuar a produção (EP05 a EP10) numa sessão nova.
 Leia junto com `south-academy/README.md` (pipeline e entregáveis) e com o plano do último
@@ -7,8 +7,11 @@ episódio (`docs/plans/2026-10-16-ep04-entrega-capcut.md`).
 ## 1. O que é o projeto
 
 - Série: **South Academy Executive · Letramento de IA para líderes**, 10 episódios (EP01–EP10).
-- Narrador: Fabio Pinheiro (South System). Ele grava a própria narração e monta no CapCut sobre o
-  render. A narração Kokoro (TTS local) é **só guia de tempo**.
+- Narrador: Fabio Pinheiro (South System). **Até o EP07** ele gravava a própria narração e montava
+  no CapCut sobre o render; a narração Kokoro (TTS local) era só guia de tempo.
+  **Desde 2026-11-03** a narração é gerada com a voz clonada "Fabio - Voice 2" pela API de áudio da
+  HeyGen e cada episódio sai como um único vídeo final (ver §2A). O branch isolado dessa mudança é
+  `south-academy-voz-clonada`.
 - Um projeto HyperFrames por episódio em `south-academy/epNN/`, gerado do roteiro em JSON
   (`script/epNN.json`) + um WAV por beat (`media/vo/epNN/<beat>.wav`).
 - Fontes de conteúdo:
@@ -37,16 +40,53 @@ episódio (`docs/plans/2026-10-16-ep04-entrega-capcut.md`).
 2. **Todo render é local** (`node packages/cli/dist/cli.js render`), headless Chrome no container.
 3. **Sem workflows multi-agente** (nada de `Workflow`, nada de fan-out de agentes). A conferência
    de fidelidade é por script determinístico (`scripts/fidelity.mjs`), não por agentes.
-4. **Um render por episódio**: um único ciclo (sem voz + guia). Se a verificação pegar algo
-   pequeno depois do render, registre como pendência e avise; não re-renderize.
+4. **Um render por episódio**: um único ciclo. Até o EP07 eram dois MP4 (sem voz + guia); no
+   formato final (§2A) é um único `epNN.mp4`. Se a verificação pegar algo pequeno depois do
+   render, registre como pendência e avise; não re-renderize.
 5. **Legendas renderizadas no vídeo**: trilho `.right` em x ≥ 1210 nas cenas de tela cheia,
    embaixo nas telas com narrador no canto. **Desde o EP06 (pedido do Fabio em 2026-10-18)**: as
    legendas ficam **só no `epNN-guia.mp4`**; o `epNN-sem-voz.mp4` sai **sem a faixa de legendas**.
    Implementado como flag no `build.mjs`: `VOICE=0` desliga as legendas junto com a narração
    (`CAPTIONS=1` força; `CAPTIONS=0` remove). EP01–EP05 não são re-renderizados por isso.
+   **Desde 2026-11-03 (pedido do Fabio)**: nenhum vídeo leva legenda renderizada.
 6. **Parar ao terminar cada episódio** e esperar a aprovação do Fabio antes do próximo.
 7. Economia de uso: sem re-renders além do planejado, sem agentes extras, snapshots só nos cues
    principais.
+
+## 2A. Formato final com a voz clonada (a partir de 2026-11-03, pedido do Fabio)
+
+Pedidos do Fabio, nesta ordem: usar a HeyGen com a voz "Fabio - Voice 2" em todos os episódios,
+de EP01 ao último; sem a caixa reservada ao vídeo dele; não precisa mais do sem-voz nem do guia
+("faça direto"); sem legenda renderizada; foto dele só no cartão inicial, no gancho e no cartão
+final; tudo em um branch isolado (`south-academy-voz-clonada`).
+
+- **Entregável por episódio:** `entrega/epNN.mp4`, com a voz clonada e os SFX. Acabaram o
+  `epNN-sem-voz.mp4`, o `epNN-guia.mp4`, os stems, o `epNN-zonas.csv` e o `epNN-roteiro-tempos.md`.
+- **Sem legendas e sem janela do narrador.** O `index.html` não tem `el-captions` nem
+  `el-narrator`; as cenas de tela cheia (gancho, decisão) ganham fundo escuro próprio.
+- **Foto** (`brand/fabio.webp`, copiada para `epNN/assets/`): gancho à esquerda (os gráficos ficam em
+  x ≥ 1210); vinheta e cartão final no painel escuro da direita (x ≥ 1346) do fundo da capa do deck.
+  A decisão não leva foto: a coluna de gráficos é centralizada.
+- **Voz:** `tools/heygen-tts.mjs` gera um beat por chamada em `POST /v3/models/audio/tts`, com
+  cache por hash do texto (nunca paga duas vezes pelo mesmo texto). Configuração em `voz.json`.
+  A chave vem de uma variável de ambiente cujo nome o Fabio informa (`--key-env NOME`).
+- **Áudio no git:** cada beat vai como `media/vo/epNN/<beat>.opus` (Opus 128 kbps, cerca de 7 MB por
+  episódio). O WAV de 44,1 kHz da HeyGen passa de 500 KB e o hook de arquivos grandes barra; ele
+  fica só no cache local `.raw/`, fora do git. O build decodifica o Opus para `.wav/` (também fora).
+- **Build e verificação compartilhados:** `tools/build.mjs <pasta-do-episódio>` e
+  `tools/verify-final.sh <pasta-do-episódio> <META>`. O `scenes.mjs` de cada episódio não muda.
+- **Ritmo:** a voz clonada instantânea ignora o parâmetro de velocidade e não aceita SSML. Os beats
+  `slow` são desacelerados em 10% por `atempo` (`slowTempo` em `voz.json`); as pausas continuam
+  nas contas do `build.mjs` (`pause`, `lineGap`, `beatSlack`).
+- **Ainda em aberto (precisa do Fabio):** nome da variável de ambiente da chave; modelo
+  (`heygen-voice-1` é pago; `heygen-voice-1-turbo-free` é gratuito até 2026-11-30 e aceita clone
+  instantâneo, sem garantia de disponibilidade); se "Fabio - Voice 2" é clone instantâneo ou
+  profissional (`find-voice --save` registra o modo em `voz.json`).
+- **Ordem de trabalho:** EP08 como piloto no formato final; depois de aprovado, refazer EP01 a EP07
+  (mesmo roteiro e mesmas cenas, só voz nova e o formato final). Não re-renderizar EP01–EP07 antes disso.
+- **Segurança:** a chave nunca é lida, impressa nem procurada; as chamadas à HeyGen vão só para
+  `api.heygen.com`, e o WAV gerado é baixado de outro host sem a chave. O teste
+  `node tools/test-heygen-tts.mjs` roda contra um servidor falso local e não toca na HeyGen.
 
 ## 3. Estado por episódio
 
@@ -63,12 +103,28 @@ episódio (`docs/plans/2026-10-16-ep04-entrega-capcut.md`).
 | EP09 | 51–62                                 | —                                       | —                                                      |
 | EP10 | 63–67 (67 encerramento)               | —                                       | —                                                      |
 
+EP01–EP07 foram entregues no formato antigo (sem-voz + guia para o CapCut). EP08 em diante, e a
+refação de EP01–EP07, seguem o formato final (§2A).
+
 Atenção: o `docs/teleprompter.md` original tinha o EP07 truncado na tela 33 (o paste do dia 1 foi cortado em "TOTAL LINES: 2433"); as telas 34, 35, 36, 36A, 36B, 36C e a decisão foram recuperadas do histórico da sessão em 2026-10-31 e gravadas no arquivo. Confira as seções dos próximos episódios contra o deck antes de começar cada um (o deck é a referência de quais telas existem).
 
 Durações entregues: EP02 650,4 s · EP03 660,1 s · EP04 721,9 s (12m02s, folga 0,24) · EP05 420,0 s (7m00s, folga 0,596) · EP06 660,2 s (11m00s, folga 0,619; sem-voz sem legendas) · EP07 720,0 s (12m00s, folga 0,674).
 Meta de duração = duração do teleprompter ±30 s (EP03 630–690 s; EP04 690–750 s; EP05 390–450 s; EP06 630–690 s; EP07 690–750 s). Desde o EP05, `verify-entrega.sh` imprime a duração final contra essa meta (variável `META`).
 
 ## 4. Padrão de produção por episódio (como foi feito no EP03 e no EP04)
+
+**Formato final (§2A): o que muda nos passos abaixo.**
+
+- Passo 2: copie só `script/`, `scripts/scenes.mjs`, `scripts/fidelity.mjs`, `assets/`, `meta.json`,
+  `package.json` e os arquivos de configuração; não copie `scripts/build.mjs`, `stems.mjs` nem
+  `verify-entrega.sh` (o build e a verificação são `tools/`).
+- Passo 5 (voz): `node tools/heygen-tts.mjs speak epNN/script/epNN.json epNN/media/vo/epNN --key-env NOME`
+  (antes, `--dry-run` para contar beats e caracteres; `find-voice --save` uma vez para gravar o `voice_id`).
+- Passo 7: `node tools/build.mjs epNN` no lugar de `node scripts/build.mjs`.
+- Passo 8 (render único): `node $CLI render epNN -q looks --quiet -o epNN/entrega/epNN.mp4`.
+- Passo 9: `bash tools/verify-final.sh epNN <META>` (composição sem legendas e sem narrador, duração
+  vs `timing.json` e vs meta, fala no gancho, loudness, 5 quadros, provas por pixel nos slides).
+- Passo 10: um MP4; se passar de 30 MiB, divida com `-c copy -f segment`.
 
 Todos os comandos com caminho absoluto (chamadas paralelas do Bash disputam o cwd).
 `CLI=/home/user/hyperframes/packages/cli/dist/cli.js` (o projeto fixa `hyperframes@0.8.156`
@@ -163,7 +219,18 @@ extra})`: regiões de zoom como frações `[x, y, w, h]`, k ≤ 2,4; regiões de
 | `verify-entrega.sh` | durações, silêncio, frames com zona                                                                                                                                                                                                                                                                                                         |
 | `renders/chain.sh`  | o ciclo único de render (sem voz → com voz → stems), em background                                                                                                                                                                                                                                                                          |
 
-Zonas (CSV): `canto` = 400×225 em (1472, 807); `tela_cheia` = 0,0,1920,1080 com gráficos em
+Formato final (§2A), em `south-academy/tools/` (compartilhados, não copiados por episódio):
+
+| Arquivo               | Função                                                                                                                                                           |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `heygen-tts.mjs`      | `find-voice` (acha e grava o `voice_id`) e `speak` (um beat por chamada, cache por hash, `atempo` nos beats lentos, corte de silêncio, Opus, `heygen-meta.json`) |
+| `test-heygen-tts.mjs` | teste offline contra servidor falso: nova tentativa em 429, cache, `--force`, chave só no host da API                                                            |
+| `build.mjs`           | timing, mixagem, `index.html` e `compositions/*.html` sem legendas e sem narrador; fundo escuro nas cenas de tela cheia; foto no gancho, vinheta e cartão final  |
+| `verify-final.sh`     | verificação do `epNN.mp4` (§4, passo 9)                                                                                                                          |
+| `../voz.json`         | nome da voz, `voice_id`, modo, modelo, idioma, `expressiveness_boost` 0,5, `slowTempo` 0,9, `opusKbps` 128                                                       |
+| `../brand/fabio.webp` | foto do Fabio usada nos cartões e no gancho                                                                                                                      |
+
+Zonas (CSV, só no formato antigo): `canto` = 400×225 em (1472, 807); `tela_cheia` = 0,0,1920,1080 com gráficos em
 x ≥ 1210. Cada linha: início, fim, modo, x, y, largura, altura.
 
 ## 6. Premissas e decisões registradas (válidas para os próximos episódios)
@@ -226,6 +293,7 @@ Reinstalação, se algo sumiu:
   Versões usadas: kokoro-onnx 0.6.1, onnxruntime 1.31.0, soundfile 0.14.0, phonemizer 3.4.0,
   espeakng-loader 0.2.4. CPU só.
 - **whisper.cpp (transcrição, CPU, sem CUDA)** — linhas do setup script já entregues ao Fabio:
+
   ```bash
   git clone https://github.com/ggml-org/whisper.cpp.git /tmp/whisper.cpp
   cmake -S /tmp/whisper.cpp -B /tmp/whisper.cpp/build -DCMAKE_BUILD_TYPE=Release -DGGML_CUDA=OFF -DWHISPER_BUILD_TESTS=OFF
@@ -234,12 +302,18 @@ Reinstalação, se algo sumiu:
   mkdir -p ~/.cache/hyperframes/whisper/models
   curl -L -o ~/.cache/hyperframes/whisper/models/ggml-small.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin
   ```
+
   Modelo escolhido: **ggml-small** (ggml-base trocou "sim" por "assim"; small transcreveu 30 s
   exatos em 10,3 s com 4 threads, ~3× tempo real). Uso:
   `whisper-cli -m ~/.cache/hyperframes/whisper/models/ggml-small.bin -l pt -t 4 -f audio-16k-mono.wav`
   (converter antes com `ffmpeg -ar 16000 -ac 1`). `hyperframes transcribe` usa `small.en` por
   padrão: passe `--model small --language pt`. `hyperframes doctor` encontra o binário em
   `/usr/local/bin/whisper-cli`.
+
+- **HeyGen (formato final)**: nada a instalar. Precisa de uma variável de ambiente com a chave
+  (nome informado pelo Fabio) e de `ffmpeg` com `libopus` (`ffmpeg -encoders | grep libopus`).
+  Node 22.21 ou superior: o `heygen-tts.mjs` se reexecuta com `NODE_USE_ENV_PROXY=1` para usar o
+  proxy do container.
 
 ## 9. Armadilhas já encontradas
 
@@ -254,21 +328,29 @@ Reinstalação, se algo sumiu:
 - Teleprompter de um episódio pode vir partido em duas mensagens: `docs/teleprompter.md` já está
   inteiro e revisado.
 - Zoom com região `[0, y, 1, h]` dá escala 1 (sem zoom).
+- O CSS das composições não é isolado por cena: uma regra `#root .stage` de uma cena vale para as
+  outras. O `tools/build.mjs` só injeta regras com ids próprios (`#fx-photo`, `#fx-bg`) e a regra
+  `.stage` da decisão, que usa `data-layout-allow-overflow` no palco.
+- O fundo da capa do deck (`assets/cover-bg.jpg`) já traz um painel escuro à direita (x ≥ 1346); o
+  vídeo antigo mostrava esse painel vazio na vinheta e no cartão final.
+- A chave da HeyGen nunca vai em argumento de linha de comando, log ou arquivo.
 
-## 10. Como começar o próximo episódio (EP08)
+## 10. Como começar o próximo episódio (EP08, piloto do formato final)
 
-1. Confirmar com o Fabio que o EP07 (PR #7) foi aprovado e mesclar antes de criar o branch.
-2. `git fetch origin main && git checkout -b south-academy-ep08 origin/main`; copiar `ep07/` como
-   base (§4.2; `cp -r` e apague `media/`, `entrega/`, `renders/`, `compositions/`, `index.html`,
-   `.hyperframes/`, `assets/fig-*`). O `verify-entrega.sh` já traz `META`, a lista `ZONAS` (cena
-   "canto" usada também na prova de legenda) e a prova; ajuste `META`, o episódio e a cena canto.
+1. Branch: `south-academy-voz-clonada` (já existe; o EP08 entra nele). Confirmar com o Fabio o nome
+   da variável de ambiente da chave e o modelo (§2A) antes de qualquer chamada à HeyGen. Rodar
+   `node tools/test-heygen-tts.mjs` (offline) e `node tools/heygen-tts.mjs find-voice --key-env NOME --save`.
+2. Copiar `ep07/` para `ep08/` só com `script/`, `scripts/scenes.mjs`, `scripts/fidelity.mjs`,
+   `assets/` (sem `fig-*`), `meta.json`, `package.json`, `hyperframes.json`, `CLAUDE.md`, `AGENTS.md`,
+   `.gitignore`; trocar `ep07` por `ep08` onde aparecer. O `ep07.json` serve de modelo de roteiro.
 3. Teleprompter: `docs/teleprompter.md`, seção "# EP08 · Três projetos reais, com o número e a
    origem" (telas 37 divisória do Módulo 4, 38–42 Case 1 Pix, 43–47 Case 2 N1, 48 Agentic Commerce,
    49–50 "O que ninguém conta"). **Confira primeiro se a seção vai até a tela 50 e termina na decisão
    e no cartão final**; se faltar algo, recupere do histórico como no EP07. Deck:
    `python3 deck/extract-slides.py ep08 37 38 39 40 41 42 43 44 45 46 47 48 49 50`.
-4. Seguir o §4. Meta de duração = duração do teleprompter ±30 s. EP07 termina com o teaser
-   "EP08 · Três projetos reais" e a frase "Com o número. E com a origem do número."; o gancho do
-   EP08 deve abrir nesse ponto. Folga inicial sugerida: 0,6 (EP06 0,619 com 88 beats e 11 min;
-   EP07 0,674 com 92 beats e 12 min); interpolar em dois builds. O EP08 é o maior episódio (14
-   telas): escreva as cenas em dois blocos (Case 1 e Case 2) para manter o arquivo legível.
+4. Seguir o §4 com as mudanças do formato final. Meta de duração = duração do teleprompter ±30 s.
+   O EP07 termina com o teaser "EP08 · Três projetos reais" e a frase "Com o número. E com a origem do
+   número."; o gancho do EP08 abre nesse ponto. A folga (`beatSlack`) precisa ser reajustada: a voz
+   da HeyGen tem outro ritmo que a Kokoro (comece em 0,3 e interpole entre dois builds). O EP08 é o
+   maior episódio (14 telas): escreva as cenas em dois blocos (Case 1 e Case 2).
+5. Parar ao terminar e esperar a aprovação do Fabio antes de refazer EP01–EP07 e antes do EP09.

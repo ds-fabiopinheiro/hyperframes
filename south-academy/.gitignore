@@ -1,0 +1,3 @@
+# formato final com a voz clonada (HANDOFF §2A): cache da HeyGen e WAV decodificado ficam fora do git
+ep*/media/vo/*/.raw/
+ep*/media/vo/*/.wav/

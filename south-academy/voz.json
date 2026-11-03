@@ -1,0 +1,10 @@
+{
+  "name": "Fabio - Voice 2",
+  "voice_id": null,
+  "mode": null,
+  "model": "heygen-voice-1",
+  "language": "pt",
+  "expressiveness_boost": 0.5,
+  "slowTempo": 0.9,
+  "opusKbps": 128
+}

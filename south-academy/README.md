@@ -40,23 +40,27 @@ bash scripts/verify-entrega.sh                           # durações, silêncio
 Ritmo: `timing.speed` (Kokoro), `timing.slowSpeed` nos beats `"slow": true` (`[RITMO: lento]`) e
 `timing.beatSlack` (folga após cada beat, fração da fala). Todo render é local; a HeyGen só entra na geração da voz, conforme a regra 1 do `HANDOFF.md`.
 
-## Trocar a narração pela voz clonada
+## Narração com a voz clonada (formato final)
 
-Gere um WAV por beat com os mesmos nomes (`media/vo/ep01/<beat-id>.wav`, os ids estão em
-`script/ep01.json`) e rode `node scripts/build.mjs`. O timing e as legendas são recalculados.
+Desde 2026-11-03 a narração sai da API de áudio da HeyGen com a voz "Fabio - Voice 2" e o episódio
+vira um único vídeo (`entrega/epNN.mp4`), sem legendas renderizadas e sem a caixa do narrador:
 
-## Trocar o avatar placeholder pelo avatar real
+```bash
+node south-academy/tools/heygen-tts.mjs speak epNN/script/epNN.json epNN/media/vo/epNN --dry-run
+node south-academy/tools/heygen-tts.mjs speak epNN/script/epNN.json epNN/media/vo/epNN --key-env NOME_DA_VARIAVEL
+node south-academy/tools/build.mjs south-academy/epNN
+node packages/cli/dist/cli.js render south-academy/epNN -q looks --quiet -o south-academy/epNN/entrega/epNN.mp4
+bash south-academy/tools/verify-final.sh south-academy/epNN <meta-em-segundos>
+```
 
-Coloque o vídeo em `media/avatar/ep01.mp4` (1920×1080, mesma linha do tempo do episódio) e rode
-`node scripts/build.mjs`. A camada `compositions/narrator.html` passa a usar o vídeo, com as mesmas
-posições: tela cheia nos ganchos e na decisão, janela 400×225 no canto inferior direito nas telas.
+Detalhes, regras e pendências: `HANDOFF.md`, seção 2A.
 
 ## Estrutura
 
 - `script/ep01.json` — beats (texto da narração, legenda, cue visual, pausas). Fonte de verdade.
 - `script/ep01.timing.json` — gerado: início/fim de cada beat e cena.
 - `scripts/scenes.mjs` — templates das cenas (uma função por tela, cues → tempos locais).
-- `scripts/build.mjs` — gerador (host, narrador, legendas, mixagem).
+- `scripts/build.mjs` — gerador do formato antigo (host, narrador, legendas, mixagem); no formato final vale `tools/build.mjs`.
 - `assets/` — logo, fundos e SFX extraídos do deck / biblioteca bundled do media-use.
 
 ## Transcrição local (whisper.cpp, CPU)
