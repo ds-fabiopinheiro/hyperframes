@@ -1,0 +1,1162 @@
+{
+  "g01": {
+    "hash": "b5c31843aed32d1b",
+    "chars": 14,
+    "tempo": 0.9,
+    "seconds": 1.61,
+    "apiDuration": 1.6979591836734693,
+    "requestId": "5c26aa5419894e3596c5ea257385d6a5",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "g02": {
+    "hash": "8efae8f87ca3874c",
+    "chars": 41,
+    "tempo": 0.9,
+    "seconds": 3.52,
+    "apiDuration": 3.6310204081632653,
+    "requestId": "d95652fb38504eaea0bd224af6546682",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "g03": {
+    "hash": "d13d4b3c5fc3b2ea",
+    "chars": 27,
+    "tempo": 0.9,
+    "seconds": 3.08,
+    "apiDuration": 3.2653061224489797,
+    "requestId": "4391fc6cbfec41dca2323f77940bc288",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "g04": {
+    "hash": "43e8fff517e5536b",
+    "chars": 59,
+    "tempo": 0.9,
+    "seconds": 4.37,
+    "apiDuration": 4.649795918367347,
+    "requestId": "7d062d63d2d34b1f8dff6b61563d5b31",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "g05": {
+    "hash": "cb6ec4d9ec0682ad",
+    "chars": 76,
+    "tempo": 0.9,
+    "seconds": 4.34,
+    "apiDuration": 4.7542857142857144,
+    "requestId": "5fd1ac60096a44ada0fff4dd9a8acc0e",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t37-01": {
+    "hash": "cbf65a202cf75a8c",
+    "chars": 35,
+    "tempo": 1,
+    "seconds": 3.03,
+    "apiDuration": 3.422040816326531,
+    "requestId": "15871c539be2486b90a62eb09a99e2ef",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t37-02": {
+    "hash": "3ef38829f1bc29cd",
+    "chars": 62,
+    "tempo": 1,
+    "seconds": 5.2,
+    "apiDuration": 5.328979591836735,
+    "requestId": "48ab74dad58b42bfb4d5f02a13b1f07c",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t37-03": {
+    "hash": "5f5b4e29727e04fa",
+    "chars": 57,
+    "tempo": 1,
+    "seconds": 5.17,
+    "apiDuration": 5.1722448979591835,
+    "requestId": "5db60ba97e714061a49e1e67b6c4ff09",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t37-04": {
+    "hash": "584a2f3c4b93e7e9",
+    "chars": 69,
+    "tempo": 1,
+    "seconds": 4.12,
+    "apiDuration": 4.310204081632653,
+    "requestId": "67a80b8be4374b89a4aeb7f3c52f9ef6",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t38-01": {
+    "hash": "9d6e3a0671f947bd",
+    "chars": 43,
+    "tempo": 1,
+    "seconds": 3.55,
+    "apiDuration": 3.5526530612244898,
+    "requestId": "c1adbba1b3f047d88ea0754cfbfedda5",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t38-02": {
+    "hash": "f873af183f8dfd0b",
+    "chars": 31,
+    "tempo": 1,
+    "seconds": 3.13,
+    "apiDuration": 3.1346938775510202,
+    "requestId": "f0fc991a97d34977a5f3317d9425056f",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t38-03": {
+    "hash": "46dc6cd90ec6958d",
+    "chars": 58,
+    "tempo": 1,
+    "seconds": 4.38,
+    "apiDuration": 4.466938775510204,
+    "requestId": "a8ac28de46eb468e9e4847ef4ccfe031",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t38-04": {
+    "hash": "68fb5cae69c47793",
+    "chars": 48,
+    "tempo": 1,
+    "seconds": 3.25,
+    "apiDuration": 3.4481632653061225,
+    "requestId": "3cafdd8c8d7a47868410499436eb4707",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t38-05": {
+    "hash": "07a31ce2f3291959",
+    "chars": 52,
+    "tempo": 1,
+    "seconds": 3.26,
+    "apiDuration": 3.422040816326531,
+    "requestId": "2e7f41b5c9db44eabf596398aca35adf",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t38-06": {
+    "hash": "cd8b7d6b5c15c36d",
+    "chars": 58,
+    "tempo": 1,
+    "seconds": 5.01,
+    "apiDuration": 5.093877551020408,
+    "requestId": "37336700dd8d4964970fd11a007dc303",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t38-07": {
+    "hash": "01ba8b139a004a17",
+    "chars": 48,
+    "tempo": 1,
+    "seconds": 4,
+    "apiDuration": 4.022857142857143,
+    "requestId": "696d5a9b37904613a04827885d69de7a",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t38-08": {
+    "hash": "f20adb1e39c18bb4",
+    "chars": 51,
+    "tempo": 1,
+    "seconds": 3.09,
+    "apiDuration": 3.239183673469388,
+    "requestId": "cb33393ff42c44b5badf0121a52e0312",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t39-01": {
+    "hash": "17ed41bb1e5e99b2",
+    "chars": 41,
+    "tempo": 1,
+    "seconds": 2.66,
+    "apiDuration": 2.7689795918367346,
+    "requestId": "b41d4f42082e40c79a3b5e18e6016ae8",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t39-02": {
+    "hash": "1a5b0d0bd8b3721d",
+    "chars": 58,
+    "tempo": 1,
+    "seconds": 4.36,
+    "apiDuration": 4.362448979591837,
+    "requestId": "ebf4298a1523429b9e1e7b910a51241f",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t39-03": {
+    "hash": "c29601ee76bcb879",
+    "chars": 40,
+    "tempo": 1,
+    "seconds": 2.9,
+    "apiDuration": 2.899591836734694,
+    "requestId": "98a077e95256457d94535bd58d4ea62a",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t39-04": {
+    "hash": "296f17bc75d53bb5",
+    "chars": 31,
+    "tempo": 1,
+    "seconds": 2.82,
+    "apiDuration": 2.8212244897959184,
+    "requestId": "58184dacfc2647249b395fe5ce7e708d",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t39-05": {
+    "hash": "abc22e48af842705",
+    "chars": 51,
+    "tempo": 1,
+    "seconds": 3.63,
+    "apiDuration": 3.6310204081632653,
+    "requestId": "149ca4ec8ad248189254772fd31f76c5",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t39-06": {
+    "hash": "3640a797b0aedf49",
+    "chars": 101,
+    "tempo": 1,
+    "seconds": 5.88,
+    "apiDuration": 5.929795918367347,
+    "requestId": "07eb9471134d405fb654bff04e9fe5d2",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t40-01": {
+    "hash": "34518372bc4cd2f4",
+    "chars": 14,
+    "tempo": 1,
+    "seconds": 1.44,
+    "apiDuration": 1.436734693877551,
+    "requestId": "8c259ac8513349e18a919b0802aff23b",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t40-02": {
+    "hash": "cc17869bcc612aea",
+    "chars": 42,
+    "tempo": 1,
+    "seconds": 2.67,
+    "apiDuration": 2.8212244897959184,
+    "requestId": "91ce1c55e64d436389aaed94f42a79be",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t40-03": {
+    "hash": "485683353c764395",
+    "chars": 82,
+    "tempo": 1,
+    "seconds": 5.97,
+    "apiDuration": 6.0081632653061225,
+    "requestId": "e11ba416f42e4d2e96a6337edeece6d6",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t40-04": {
+    "hash": "a6d658a71c758092",
+    "chars": 58,
+    "tempo": 1,
+    "seconds": 3.94,
+    "apiDuration": 3.944489795918367,
+    "requestId": "bd52dd3d5dc04dcdb7423e180ace5fcd",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t40-05": {
+    "hash": "30dcedeab8522fe4",
+    "chars": 63,
+    "tempo": 1,
+    "seconds": 4.21,
+    "apiDuration": 4.2057142857142855,
+    "requestId": "1fe6aae131484ac5abdba8b175c7bbd5",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t40-06": {
+    "hash": "7cbef73f2dd8b108",
+    "chars": 54,
+    "tempo": 0.9,
+    "seconds": 4.22,
+    "apiDuration": 4.519183673469388,
+    "requestId": "24ccd4f611e1418583a87aa165c91f23",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t40-07": {
+    "hash": "bdc9ba5f9d077abd",
+    "chars": 55,
+    "tempo": 0.9,
+    "seconds": 4.65,
+    "apiDuration": 5.1722448979591835,
+    "requestId": "6a653384f72144259000988a49c066fc",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t40-08": {
+    "hash": "06e4f72c91231fda",
+    "chars": 47,
+    "tempo": 0.9,
+    "seconds": 4.08,
+    "apiDuration": 4.41469387755102,
+    "requestId": "048cdad9dc424328b39063b01e34f6f6",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t41-01": {
+    "hash": "3aac55ca4e251498",
+    "chars": 55,
+    "tempo": 1,
+    "seconds": 4.17,
+    "apiDuration": 4.362448979591837,
+    "requestId": "f48be2b3c2764183b52554c05fa1bf01",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t41-02": {
+    "hash": "f8d30e0e50d8c231",
+    "chars": 61,
+    "tempo": 1,
+    "seconds": 4.61,
+    "apiDuration": 4.780408163265306,
+    "requestId": "dfd857f7740742aa95e66ca2ac7a9bc4",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t41-03": {
+    "hash": "ede16bd28fddbdd2",
+    "chars": 43,
+    "tempo": 1,
+    "seconds": 4.08,
+    "apiDuration": 4.25795918367347,
+    "requestId": "1327417b076740f9b5df54300ef764f7",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t41-04": {
+    "hash": "e4be3306758d6617",
+    "chars": 71,
+    "tempo": 1,
+    "seconds": 4.56,
+    "apiDuration": 4.571428571428571,
+    "requestId": "b211d6c3abe64ee889a27d93e2cb1884",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t42-01": {
+    "hash": "62920bfc8d817203",
+    "chars": 10,
+    "tempo": 1,
+    "seconds": 1.14,
+    "apiDuration": 1.1755102040816328,
+    "requestId": "c387dc2a3b7b474e8ead1e8f92a22dc1",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t42-02": {
+    "hash": "2ef6c252d16e7245",
+    "chars": 75,
+    "tempo": 1,
+    "seconds": 5.9,
+    "apiDuration": 5.903673469387755,
+    "requestId": "dbc1403bc9cf4251baba3f4d00fec962",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t42-03": {
+    "hash": "8a817e6eae3cc981",
+    "chars": 64,
+    "tempo": 1,
+    "seconds": 4.28,
+    "apiDuration": 4.284081632653061,
+    "requestId": "f0ea757a2a6042bc911a120a296ab8e9",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t42-04": {
+    "hash": "09a2abd760d28a9d",
+    "chars": 85,
+    "tempo": 1,
+    "seconds": 5.74,
+    "apiDuration": 6.1387755102040815,
+    "requestId": "259870a5b25a4ca78e8b0e75ae8a97d1",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t42-05": {
+    "hash": "489a465723f7dcf0",
+    "chars": 54,
+    "tempo": 1,
+    "seconds": 3.97,
+    "apiDuration": 3.9706122448979593,
+    "requestId": "f40831c48f2c4a0399fe599ef664572b",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t42-06": {
+    "hash": "c005f7515af10192",
+    "chars": 89,
+    "tempo": 1,
+    "seconds": 5.49,
+    "apiDuration": 5.485714285714286,
+    "requestId": "cd212b26e36b48d18782eb172b39df23",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t42-07": {
+    "hash": "2ca69eba8bfcc181",
+    "chars": 93,
+    "tempo": 1,
+    "seconds": 6.37,
+    "apiDuration": 6.373877551020408,
+    "requestId": "3bc58dbec87f4249abb6a753ce6ce83c",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t42-08": {
+    "hash": "62e639de4b33c2be",
+    "chars": 39,
+    "tempo": 1,
+    "seconds": 3.53,
+    "apiDuration": 3.526530612244898,
+    "requestId": "22048c12f5474dc79142a5f7b4bb77d3",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t42-09": {
+    "hash": "25b32644bd0f0b11",
+    "chars": 42,
+    "tempo": 1,
+    "seconds": 3.52,
+    "apiDuration": 3.657142857142857,
+    "requestId": "bead943135354198837cb721a5260097",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t42-10": {
+    "hash": "23346af83d05b6c1",
+    "chars": 47,
+    "tempo": 1,
+    "seconds": 3.42,
+    "apiDuration": 3.422040816326531,
+    "requestId": "1c45b2492ed94bcf8b4af5644e8ff2f0",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t43-01": {
+    "hash": "acad3edc9bc940e8",
+    "chars": 112,
+    "tempo": 1,
+    "seconds": 7.92,
+    "apiDuration": 7.915102040816326,
+    "requestId": "6af347a33a614831ae5c1e48762e51cf",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t43-02": {
+    "hash": "418596c17a07f73a",
+    "chars": 72,
+    "tempo": 1,
+    "seconds": 4.74,
+    "apiDuration": 4.911020408163266,
+    "requestId": "5a2c30501053487a8e9902fd2921791a",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t43-03": {
+    "hash": "da7817462e80db4f",
+    "chars": 32,
+    "tempo": 1,
+    "seconds": 3.1,
+    "apiDuration": 3.1085714285714285,
+    "requestId": "dfd2c7ef4b89499989525ffacdc8e35e",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t43-04": {
+    "hash": "f7569a512091f74b",
+    "chars": 56,
+    "tempo": 1,
+    "seconds": 3.87,
+    "apiDuration": 3.866122448979592,
+    "requestId": "7d64e6346fad480097cb9e7e771f6ace",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t43-05": {
+    "hash": "8027b5b30090532b",
+    "chars": 13,
+    "tempo": 1,
+    "seconds": 1.2,
+    "apiDuration": 1.436734693877551,
+    "requestId": "43e2f49bccb74b7596a181b3007f941a",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t43-06": {
+    "hash": "944e395d12616707",
+    "chars": 81,
+    "tempo": 1,
+    "seconds": 5.21,
+    "apiDuration": 5.40734693877551,
+    "requestId": "00dbd81bc8124bd1bd722a0edcc28af0",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t43-07": {
+    "hash": "627763f80b3f29f4",
+    "chars": 60,
+    "tempo": 1,
+    "seconds": 3.74,
+    "apiDuration": 3.7355102040816326,
+    "requestId": "afb830ac064f478c84c888ec65c91eb0",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t44-01": {
+    "hash": "d4f573997af2adec",
+    "chars": 37,
+    "tempo": 1,
+    "seconds": 2.9,
+    "apiDuration": 2.899591836734694,
+    "requestId": "7ca51e3b122548a49e7e3f0f07a4d35d",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t44-02": {
+    "hash": "b7b45ebd43460725",
+    "chars": 31,
+    "tempo": 1,
+    "seconds": 3.38,
+    "apiDuration": 3.422040816326531,
+    "requestId": "07ea1ebf72c1448b8a1a843f2f2b9b5e",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t44-03": {
+    "hash": "9923b0311d72bb2f",
+    "chars": 40,
+    "tempo": 1,
+    "seconds": 4.35,
+    "apiDuration": 4.362448979591837,
+    "requestId": "2ecb2041c0b54cf5be60700bb46c0716",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t44-04": {
+    "hash": "41f14209506cf880",
+    "chars": 30,
+    "tempo": 1,
+    "seconds": 3.21,
+    "apiDuration": 3.213061224489796,
+    "requestId": "0c4048ef4e5942b69d3b6c524d94930a",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t44-05": {
+    "hash": "53aef3234784a2ad",
+    "chars": 35,
+    "tempo": 1,
+    "seconds": 2.59,
+    "apiDuration": 2.5861224489795918,
+    "requestId": "e9f73ae6148444b1a783484c1af2df7b",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t44-06": {
+    "hash": "c266aa2d66dbddc5",
+    "chars": 34,
+    "tempo": 1,
+    "seconds": 2.88,
+    "apiDuration": 2.9257142857142857,
+    "requestId": "080ba377f9c54f0092c12ae9c74d0269",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t44-07": {
+    "hash": "acd6966a7799853b",
+    "chars": 50,
+    "tempo": 1,
+    "seconds": 3.68,
+    "apiDuration": 3.683265306122449,
+    "requestId": "17be11163590423d8957323fb8632cff",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t45-01": {
+    "hash": "f5f3f7b54e9e0c28",
+    "chars": 21,
+    "tempo": 1,
+    "seconds": 1.56,
+    "apiDuration": 1.8546938775510204,
+    "requestId": "e6e98ea658aa40aa8d6a7e215ca93d91",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t45-02": {
+    "hash": "c4a680cff5473ff7",
+    "chars": 42,
+    "tempo": 1,
+    "seconds": 3.4,
+    "apiDuration": 3.3959183673469386,
+    "requestId": "0899aea370a84d9c831fadf520604558",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t45-03": {
+    "hash": "a22b39089add0ecf",
+    "chars": 54,
+    "tempo": 1,
+    "seconds": 4.21,
+    "apiDuration": 4.2057142857142855,
+    "requestId": "aa178ce5639c4bdbaac39afbedc3c3d0",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t45-04": {
+    "hash": "70679344e741650a",
+    "chars": 56,
+    "tempo": 1,
+    "seconds": 4.02,
+    "apiDuration": 4.022857142857143,
+    "requestId": "f6895a3ff9a94f7eb4c08d83500f4a56",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t45-05": {
+    "hash": "4ae3613de75610c9",
+    "chars": 65,
+    "tempo": 1,
+    "seconds": 4.65,
+    "apiDuration": 4.649795918367347,
+    "requestId": "da986aea55344302a089ead627172872",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t46-01": {
+    "hash": "359cfab937d29ad3",
+    "chars": 96,
+    "tempo": 1,
+    "seconds": 6.99,
+    "apiDuration": 7.157551020408163,
+    "requestId": "68e582c1105d4a4e8b90ddedbef5230b",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t46-02": {
+    "hash": "0e9d5a38c394891a",
+    "chars": 61,
+    "tempo": 1,
+    "seconds": 4.15,
+    "apiDuration": 4.153469387755102,
+    "requestId": "8f50722c1f44460093dd174a9aa1a40c",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t46-03": {
+    "hash": "cd9c855b2048080a",
+    "chars": 69,
+    "tempo": 1,
+    "seconds": 4.88,
+    "apiDuration": 4.884897959183673,
+    "requestId": "c7482ecae1bc480aaaae5c476a628f6f",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t47-01": {
+    "hash": "c63c9bda03371810",
+    "chars": 10,
+    "tempo": 0.9,
+    "seconds": 1.25,
+    "apiDuration": 1.3844897959183673,
+    "requestId": "a685ba2206d1460b8e3566b5c4e5e210",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t47-02": {
+    "hash": "f051d0f02c8b8ef2",
+    "chars": 59,
+    "tempo": 0.9,
+    "seconds": 4.28,
+    "apiDuration": 4.83265306122449,
+    "requestId": "3a4bdc0a328e4cc5ae890715ab69e9a6",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t47-03": {
+    "hash": "ffbadb550a66c9fe",
+    "chars": 10,
+    "tempo": 0.9,
+    "seconds": 1.26,
+    "apiDuration": 1.5151020408163265,
+    "requestId": "bb2ba56edbe54dfe94896bbd2e177937",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t47-04": {
+    "hash": "5fb73af620564140",
+    "chars": 43,
+    "tempo": 0.9,
+    "seconds": 3.39,
+    "apiDuration": 3.5526530612244898,
+    "requestId": "995c51762f1a4c42927a55c088162ca6",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t47-05": {
+    "hash": "783559611b5aaedd",
+    "chars": 44,
+    "tempo": 1,
+    "seconds": 3.34,
+    "apiDuration": 3.3436734693877552,
+    "requestId": "1575930f641a4a08ba990cc17ecd6930",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t47-06": {
+    "hash": "18f17fdad0d9da61",
+    "chars": 91,
+    "tempo": 1,
+    "seconds": 5.85,
+    "apiDuration": 5.851428571428571,
+    "requestId": "c52374634bda4b23a92654669c8bbb1a",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t47-07": {
+    "hash": "5be8077b1110c72a",
+    "chars": 58,
+    "tempo": 1,
+    "seconds": 3.87,
+    "apiDuration": 3.9706122448979593,
+    "requestId": "72406d44b6764ccba84c52f75243ce90",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t47-08": {
+    "hash": "0c9a7a1f7fb1a78e",
+    "chars": 67,
+    "tempo": 1,
+    "seconds": 5.17,
+    "apiDuration": 5.1722448979591835,
+    "requestId": "fbec325c6a0e4d679ef589bfd5c47852",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t47-09": {
+    "hash": "764b619f374a8958",
+    "chars": 62,
+    "tempo": 1,
+    "seconds": 3.94,
+    "apiDuration": 3.944489795918367,
+    "requestId": "4379ae563be241e99926c5c52e9c4f8c",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t47-10": {
+    "hash": "b25a125aecad999c",
+    "chars": 47,
+    "tempo": 1,
+    "seconds": 3.82,
+    "apiDuration": 3.866122448979592,
+    "requestId": "a428eac74518460aa70b50a1fb3b5d93",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t47-11": {
+    "hash": "2b156370cadece52",
+    "chars": 45,
+    "tempo": 1,
+    "seconds": 3.87,
+    "apiDuration": 3.866122448979592,
+    "requestId": "e6ec2e5c2e2e4253839f6dcdf70836bd",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t47-12": {
+    "hash": "32bc00ea4f46a393",
+    "chars": 26,
+    "tempo": 1,
+    "seconds": 1.83,
+    "apiDuration": 1.8285714285714285,
+    "requestId": "bf68d08b69704bf6ac90117831b4e91c",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t47-13": {
+    "hash": "a1be436015381e93",
+    "chars": 96,
+    "tempo": 1,
+    "seconds": 6.8,
+    "apiDuration": 7.000816326530612,
+    "requestId": "23f1cd67bef54da584f73daf911050b5",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t47-14": {
+    "hash": "8aef2229096a576e",
+    "chars": 42,
+    "tempo": 1,
+    "seconds": 4.21,
+    "apiDuration": 4.2057142857142855,
+    "requestId": "f2512e96cd27497c88fedeff30d2c220",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t48-01": {
+    "hash": "9ae487bdc2154c88",
+    "chars": 33,
+    "tempo": 1,
+    "seconds": 2.72,
+    "apiDuration": 2.742857142857143,
+    "requestId": "e4fa3376c2ab464f98830698fcf7db0c",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t48-02": {
+    "hash": "d2d77c6c20ade373",
+    "chars": 87,
+    "tempo": 1,
+    "seconds": 4.78,
+    "apiDuration": 4.780408163265306,
+    "requestId": "12b8cb92423a4d6dbcb49ea49cc5aa4d",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t48-03": {
+    "hash": "ea56a58b127309b2",
+    "chars": 103,
+    "tempo": 1,
+    "seconds": 6.5,
+    "apiDuration": 6.635102040816326,
+    "requestId": "77fc23551c1a4a7481e42af2c44721b4",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t48-04": {
+    "hash": "981aa0d1f3b800e7",
+    "chars": 66,
+    "tempo": 0.9,
+    "seconds": 5.15,
+    "apiDuration": 5.433469387755102,
+    "requestId": "152024e9b8124060bf93795e07d9af6d",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t48-05": {
+    "hash": "2f83116ac249cc96",
+    "chars": 57,
+    "tempo": 0.9,
+    "seconds": 3.97,
+    "apiDuration": 4.12734693877551,
+    "requestId": "07ded9329f8e45bfabde175e0cf9a634",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t48-06": {
+    "hash": "aac8567f4453ebbd",
+    "chars": 90,
+    "tempo": 0.9,
+    "seconds": 5.5,
+    "apiDuration": 5.825306122448979,
+    "requestId": "9a3b20b20ce54d9b9a3509920b915054",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t48-07": {
+    "hash": "fa4e139ffbc66fc1",
+    "chars": 61,
+    "tempo": 1,
+    "seconds": 4.57,
+    "apiDuration": 4.571428571428571,
+    "requestId": "d26fbc3c73e549928acdfc88f067021f",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t48-08": {
+    "hash": "b711713f26f6de65",
+    "chars": 67,
+    "tempo": 1,
+    "seconds": 4.68,
+    "apiDuration": 4.675918367346939,
+    "requestId": "380b4b5d8231498db30a18071da5d9f7",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t48-09": {
+    "hash": "389ecdd0a0fc1efd",
+    "chars": 78,
+    "tempo": 1,
+    "seconds": 5.16,
+    "apiDuration": 5.198367346938776,
+    "requestId": "5a23c8846e484f2dad3ef9a40f09d119",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t49-01": {
+    "hash": "00e8bf5cda56fdf1",
+    "chars": 40,
+    "tempo": 1,
+    "seconds": 3.65,
+    "apiDuration": 3.7877551020408164,
+    "requestId": "f5483437f0704b83a768cae62e3a21e3",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t49-02": {
+    "hash": "95ef314df60651ee",
+    "chars": 148,
+    "tempo": 1,
+    "seconds": 9.07,
+    "apiDuration": 9.299591836734693,
+    "requestId": "d01ac99240d842b3a820e8dfef75f8b9",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t49-03": {
+    "hash": "f96bdba6d74ecf40",
+    "chars": 51,
+    "tempo": 1,
+    "seconds": 4.41,
+    "apiDuration": 4.519183673469388,
+    "requestId": "6475443434344da9803e2fdd89ee0224",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t49-04": {
+    "hash": "0f81a390c2204bef",
+    "chars": 70,
+    "tempo": 1,
+    "seconds": 5.15,
+    "apiDuration": 5.1722448979591835,
+    "requestId": "cf08ccbd34df402eb8449d73f1e20e11",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-01": {
+    "hash": "3d43c0d34e88ae95",
+    "chars": 33,
+    "tempo": 1,
+    "seconds": 3.55,
+    "apiDuration": 3.5787755102040815,
+    "requestId": "8d8b88170f264d208768006302b0bdfc",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-02": {
+    "hash": "8376a2a088ef79c1",
+    "chars": 94,
+    "tempo": 1,
+    "seconds": 5.9,
+    "apiDuration": 6.086530612244898,
+    "requestId": "4a89f631600d48a9a6a6013f3809e087",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-03": {
+    "hash": "089be8d8d954d60a",
+    "chars": 51,
+    "tempo": 1,
+    "seconds": 4.23,
+    "apiDuration": 4.388571428571429,
+    "requestId": "ed6924c76879400ba59f79bb809b5a69",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-04": {
+    "hash": "db15cf4e3c205baf",
+    "chars": 72,
+    "tempo": 1,
+    "seconds": 4.98,
+    "apiDuration": 5.146122448979592,
+    "requestId": "eb0b2172e3c2413490e97f1d8c7b7c5c",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-05": {
+    "hash": "24b06a00ed2ab978",
+    "chars": 20,
+    "tempo": 0.9,
+    "seconds": 1.44,
+    "apiDuration": 1.6979591836734693,
+    "requestId": "3da6f6c85c6c4a3daa50a044addb2ff3",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-06": {
+    "hash": "746d5cf79b4e9763",
+    "chars": 56,
+    "tempo": 0.9,
+    "seconds": 5.23,
+    "apiDuration": 5.40734693877551,
+    "requestId": "f6b71f2f10e8490f9792f4cc507bb45c",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-07": {
+    "hash": "ad46bcc43a6165e0",
+    "chars": 99,
+    "tempo": 1,
+    "seconds": 6.11,
+    "apiDuration": 6.112653061224489,
+    "requestId": "49e5a23cbc044690a6a2bcae816d4e53",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-08": {
+    "hash": "0d06da36de90fef0",
+    "chars": 24,
+    "tempo": 1,
+    "seconds": 1.97,
+    "apiDuration": 2.0114285714285716,
+    "requestId": "10f411cf50ce40b985cb035d74d428da",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-09": {
+    "hash": "2c7594ed66b8badc",
+    "chars": 36,
+    "tempo": 1,
+    "seconds": 2.74,
+    "apiDuration": 2.742857142857143,
+    "requestId": "bb37c85a609c4d55aed11950deccf603",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-10": {
+    "hash": "f9d41a92b8a378db",
+    "chars": 42,
+    "tempo": 1,
+    "seconds": 3.19,
+    "apiDuration": 3.186938775510204,
+    "requestId": "cbe6a83bc8044b588efbe3081addf977",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-11": {
+    "hash": "1cb9dfccaf02494d",
+    "chars": 47,
+    "tempo": 1,
+    "seconds": 3.76,
+    "apiDuration": 3.866122448979592,
+    "requestId": "f181acf48f3f4ed7bc783d34e4fd8063",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-12": {
+    "hash": "e3bff42070f102e3",
+    "chars": 54,
+    "tempo": 1,
+    "seconds": 4.33,
+    "apiDuration": 4.466938775510204,
+    "requestId": "c0d31745daeb4f2694c2d7bc327ddb25",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-13": {
+    "hash": "edd293931dea3ad1",
+    "chars": 54,
+    "tempo": 1,
+    "seconds": 3.55,
+    "apiDuration": 3.5526530612244898,
+    "requestId": "1c4b62c730344f13bafefcf18f83ce80",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-14": {
+    "hash": "0a4d89574075561e",
+    "chars": 28,
+    "tempo": 1,
+    "seconds": 1.83,
+    "apiDuration": 1.8285714285714285,
+    "requestId": "256a7b9cd2844a218a142d45c568b0bd",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-15": {
+    "hash": "4d62de24c079a113",
+    "chars": 66,
+    "tempo": 1,
+    "seconds": 4.44,
+    "apiDuration": 4.493061224489796,
+    "requestId": "823c6132b7134c869541d015adb4bf8f",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "t50-16": {
+    "hash": "d5e6c22792fd5a15",
+    "chars": 41,
+    "tempo": 1,
+    "seconds": 3.23,
+    "apiDuration": 3.3436734693877552,
+    "requestId": "7d3d885f2efc42edb976d767ac027fa1",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "d01": {
+    "hash": "c68268d2842347ce",
+    "chars": 23,
+    "tempo": 1,
+    "seconds": 2.36,
+    "apiDuration": 2.3771428571428572,
+    "requestId": "0019a21fa24e4cdba2e97d423ed12a09",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "d02": {
+    "hash": "d9f37e0207ca9d31",
+    "chars": 114,
+    "tempo": 1,
+    "seconds": 6.58,
+    "apiDuration": 6.765714285714286,
+    "requestId": "6a4a0bab60fa4065bc9f261167c29a59",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "d03": {
+    "hash": "bf0648243482d95e",
+    "chars": 46,
+    "tempo": 1,
+    "seconds": 4.53,
+    "apiDuration": 4.571428571428571,
+    "requestId": "ac70184fabdc4c45ac6d2534bc83a1d2",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "d04": {
+    "hash": "b6ccda5a682f7559",
+    "chars": 70,
+    "tempo": 1,
+    "seconds": 4.36,
+    "apiDuration": 4.493061224489796,
+    "requestId": "14e13d9ecb934254bbd1a8ce58410377",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "d05": {
+    "hash": "ab178f084398c7e6",
+    "chars": 46,
+    "tempo": 1,
+    "seconds": 3.47,
+    "apiDuration": 3.657142857142857,
+    "requestId": "2fda27b3c4fb4a1db3893c10685ea500",
+    "endpoint": "catalog",
+    "model": null
+  },
+  "d06": {
+    "hash": "71362c455a22a4c7",
+    "chars": 91,
+    "tempo": 1,
+    "seconds": 5.09,
+    "apiDuration": 5.093877551020408,
+    "requestId": "aaa38877e09d43338b8d97df67d344f4",
+    "endpoint": "catalog",
+    "model": null
+  }
+}

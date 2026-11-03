@@ -1,0 +1,14 @@
+{
+  "name": "Fabio - Voice 2",
+  "key_source": "proxy",
+  "key_env": "HEYGEN_API_KEY",
+  "voice_id": "fc39272ed2fe42be94a80c8179cea62a",
+  "mode": "catalog",
+  "model": "heygen-voice-1",
+  "language": "pt",
+  "expressiveness_boost": 0.5,
+  "slowTempo": 0.9,
+  "opusKbps": 128,
+  "endpoint": "catalog",
+  "engine": "heygen_voice"
+}

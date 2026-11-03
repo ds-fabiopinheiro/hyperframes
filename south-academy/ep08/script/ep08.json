@@ -1,0 +1,762 @@
+{
+  "episode": "EP08",
+  "series": "South Academy Executive",
+  "title": "Três projetos reais, com o número e a origem",
+  "narrator": "Fabio Pinheiro",
+  "org": "South System",
+  "timing": {
+    "lineGap": 0.5,
+    "pause": 1,
+    "pauseLong": 2.5,
+    "sceneLeadIn": 0.6,
+    "sceneTail": 1.2,
+    "beatSlack": 0.548
+  },
+  "scenes": [
+    {
+      "id": "gancho",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Gancho frio",
+      "beats": [
+        {
+          "id": "g01",
+          "say": "Nove centavos.",
+          "cue": "open",
+          "pause": 1,
+          "slow": true
+        },
+        {
+          "id": "g02",
+          "say": "Um minuto depois, quinhentos e dez reais.",
+          "cue": "r510",
+          "pause": 1,
+          "slow": true
+        },
+        {
+          "id": "g03",
+          "say": "Separados, dois Pix comuns.",
+          "cue": "sep",
+          "slow": true
+        },
+        {
+          "id": "g04",
+          "say": "Juntos, o padrão clássico de teste de conta antes do golpe.",
+          "cue": "juntos",
+          "slow": true
+        },
+        {
+          "id": "g05",
+          "say": "E a sua equipe de prevenção tem menos de um segundo para enxergar a relação.",
+          "cue": "seg",
+          "slow": true
+        }
+      ]
+    },
+    {
+      "id": "vinheta",
+      "kind": "sting",
+      "hold": 3.2,
+      "label": "Vinheta"
+    },
+    {
+      "id": "tela37",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 37 · Divisória · Módulo 4",
+      "beats": [
+        {
+          "id": "t37-01",
+          "say": "Módulo quatro. Três cases da South.",
+          "cue": "title"
+        },
+        {
+          "id": "t37-02",
+          "say": "Antifraude Pix, agente de triagem de N1, Agentic Commerce B2B.",
+          "cue": "cases"
+        },
+        {
+          "id": "t37-03",
+          "say": "Em cada um: cliente, dor, solução, governança, resultado.",
+          "cue": "each"
+        },
+        {
+          "id": "t37-04",
+          "say": "E a origem de cada número. Vocês vão ver por que isso importa no fim.",
+          "cue": "origem"
+        }
+      ]
+    },
+    {
+      "id": "tela38",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 38 · Case 1 · Pix em menos de um segundo",
+      "beats": [
+        {
+          "id": "t38-01",
+          "say": "Case um. Banco digital, Pix de alto volume.",
+          "cue": "open"
+        },
+        {
+          "id": "t38-02",
+          "say": "O Pix mudou a física da fraude.",
+          "cue": "fisica"
+        },
+        {
+          "id": "t38-03",
+          "say": "Antes, o dinheiro levava horas para sair. Agora, segundos.",
+          "cue": "seg"
+        },
+        {
+          "id": "t38-04",
+          "say": "E esse banco analisava em lote, no dia seguinte.",
+          "cue": "lote",
+          "pause": 1
+        },
+        {
+          "id": "t38-05",
+          "say": "Quando o relatório chegava, o dinheiro já tinha ido.",
+          "cue": "tarde"
+        },
+        {
+          "id": "t38-06",
+          "say": "E é uma decisão regulada: explicável, auditável, com LGPD.",
+          "cue": "cro"
+        },
+        {
+          "id": "t38-07",
+          "say": "Bloquear errado é problema. Não bloquear também.",
+          "cue": "bloq"
+        },
+        {
+          "id": "t38-08",
+          "say": "Esse projeto virou o acelerador de fraude da South.",
+          "cue": "acel"
+        }
+      ]
+    },
+    {
+      "id": "tela39",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 39 · Case 1 · Classe rara",
+      "beats": [
+        {
+          "id": "t39-01",
+          "say": "Vocês conhecem o problema de classe rara.",
+          "cue": "open"
+        },
+        {
+          "id": "t39-02",
+          "say": "Milhões de transações legítimas, dois pontinhos de fraude.",
+          "cue": "dots"
+        },
+        {
+          "id": "t39-03",
+          "say": "Modelo de prateleira não aprende o raro.",
+          "cue": "prat"
+        },
+        {
+          "id": "t39-04",
+          "say": "Mas o gargalo não era o modelo.",
+          "cue": "garg"
+        },
+        {
+          "id": "t39-05",
+          "say": "Era calcular as variáveis de comportamento a tempo.",
+          "cue": "tempo"
+        },
+        {
+          "id": "t39-06",
+          "say": "O time de dados sabia fazer o modelo. O que não existia era a engenharia para servi-lo em tempo real.",
+          "cue": "eng"
+        }
+      ]
+    },
+    {
+      "id": "tela40",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 40 · Case 1 · Solução",
+      "beats": [
+        {
+          "id": "t40-01",
+          "say": "Quatro passos.",
+          "cue": "open"
+        },
+        {
+          "id": "t40-02",
+          "say": "Captura em streaming, antes da liquidação.",
+          "cue": "d1"
+        },
+        {
+          "id": "t40-03",
+          "say": "Cálculo de variáveis em janelas de um minuto a sete dias, por CPF, conta e cartão.",
+          "cue": "d2"
+        },
+        {
+          "id": "t40-04",
+          "say": "Decisão em milissegundos, modelo cem por cento explicável.",
+          "cue": "d3"
+        },
+        {
+          "id": "t40-05",
+          "say": "Aprendizado com dados sintéticos para equilibrar a classe rara.",
+          "cue": "d4"
+        },
+        {
+          "id": "t40-06",
+          "say": "E o gancho: a fraude está na relação entre os eventos.",
+          "cue": "band",
+          "slow": true
+        },
+        {
+          "id": "t40-07",
+          "say": "Nove centavos seguido de quinhentos e dez em um minuto.",
+          "cue": "r510",
+          "slow": true
+        },
+        {
+          "id": "t40-08",
+          "say": "Os mesmos valores, isolados, não disparam nada.",
+          "cue": "iso",
+          "slow": true
+        }
+      ]
+    },
+    {
+      "id": "tela41",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 41 · Case 1 · Governança",
+      "beats": [
+        {
+          "id": "t41-01",
+          "say": "Sem caixa-preta: explicável para auditoria e regulador.",
+          "cue": "c1"
+        },
+        {
+          "id": "t41-02",
+          "say": "Sem expor dado real: o padrão é aprendido com dado sintético.",
+          "cue": "c2"
+        },
+        {
+          "id": "t41-03",
+          "say": "Sintético com rigor: validado em base cega.",
+          "cue": "c3"
+        },
+        {
+          "id": "t41-04",
+          "say": "É o dossiê que o Banco Central e a LGPD pedem, pronto antes do go-live.",
+          "cue": "cro"
+        }
+      ]
+    },
+    {
+      "id": "tela42",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 42 · Case 1 · Resultados",
+      "beats": [
+        {
+          "id": "t42-01",
+          "say": "Resultado.",
+          "cue": "open"
+        },
+        {
+          "id": "t42-02",
+          "say": "AUC acima de zero vírgula noventa e oito. KS acima de zero vírgula noventa.",
+          "cue": "auc"
+        },
+        {
+          "id": "t42-03",
+          "say": "Para o time de risco de vocês, esses números dispensam tradução.",
+          "cue": "risco"
+        },
+        {
+          "id": "t42-04",
+          "say": "Para o comitê: separação quase perfeita entre fraude e legítimo, antes da liquidação.",
+          "cue": "comite"
+        },
+        {
+          "id": "t42-05",
+          "say": "Latência em milissegundos, no lugar do lote D mais um.",
+          "cue": "ms"
+        },
+        {
+          "id": "t42-06",
+          "say": "Para calibrar: a Gartner lembra que no Pix a decisão precisa sair em menos de um segundo,",
+          "cue": "gartner"
+        },
+        {
+          "id": "t42-07",
+          "say": "e que no Swedbank um modelo híbrido cortou cerca de cinquenta por cento dos falsos positivos.",
+          "cue": "swed"
+        },
+        {
+          "id": "t42-08",
+          "say": "Falso positivo é cliente bom bloqueado.",
+          "cue": "cfo"
+        },
+        {
+          "id": "t42-09",
+          "say": "Em adquirência, é venda recusada no caixa.",
+          "cue": "venda"
+        },
+        {
+          "id": "t42-10",
+          "say": "Reduzir falso positivo é receita, não só risco.",
+          "cue": "receita"
+        }
+      ]
+    },
+    {
+      "id": "tela43",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 43 · Case 2 · O N1 procurando",
+      "beats": [
+        {
+          "id": "t43-01",
+          "say": "Case dois. Uma das três maiores adquirentes do Brasil, Brasil e América Latina, PCI e ISO vinte e sete mil e um.",
+          "cue": "open"
+        },
+        {
+          "id": "t43-02",
+          "say": "A dor: o primeiro nível gastava mais tempo procurando do que resolvendo.",
+          "cue": "dor"
+        },
+        {
+          "id": "t43-03",
+          "say": "Uma fila por área no ServiceNow.",
+          "cue": "r1"
+        },
+        {
+          "id": "t43-04",
+          "say": "Quarenta mil incidentes no histórico, pesquisados à mão.",
+          "cue": "r2"
+        },
+        {
+          "id": "t43-05",
+          "say": "Três idiomas.",
+          "cue": "r3"
+        },
+        {
+          "id": "t43-06",
+          "say": "O buscador nativo era lento e o módulo de IA do fornecedor não estava disponível.",
+          "cue": "pains"
+        },
+        {
+          "id": "t43-07",
+          "say": "Quem tem operação em mais de um país reconhece isso na hora.",
+          "cue": "lente"
+        }
+      ]
+    },
+    {
+      "id": "tela44",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 44 · Case 2 · Solução",
+      "beats": [
+        {
+          "id": "t44-01",
+          "say": "Lê o incidente a cada quinze minutos.",
+          "cue": "d1"
+        },
+        {
+          "id": "t44-02",
+          "say": "Consulta o histórico resolvido.",
+          "cue": "d2"
+        },
+        {
+          "id": "t44-03",
+          "say": "Classifica, prioriza, sugere roteamento.",
+          "cue": "d3"
+        },
+        {
+          "id": "t44-04",
+          "say": "Escreve nas notas de trabalho.",
+          "cue": "d4"
+        },
+        {
+          "id": "t44-05",
+          "say": "O atendente não muda de ferramenta.",
+          "cue": "band"
+        },
+        {
+          "id": "t44-06",
+          "say": "A IA vai até onde ele já trabalha.",
+          "cue": "band2"
+        },
+        {
+          "id": "t44-07",
+          "say": "Lembra da régua de adoção? Nota cinco por desenho.",
+          "cue": "nota"
+        }
+      ]
+    },
+    {
+      "id": "tela45",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 45 · Case 2 · Governança",
+      "beats": [
+        {
+          "id": "t45-01",
+          "say": "Sem mudar a operação.",
+          "cue": "c1"
+        },
+        {
+          "id": "t45-02",
+          "say": "Só notas internas, por decisão do cliente.",
+          "cue": "c2"
+        },
+        {
+          "id": "t45-03",
+          "say": "Feedback dos atendentes já capturado para a fase dois.",
+          "cue": "c3"
+        },
+        {
+          "id": "t45-04",
+          "say": "Revisão humana no degrau do meio, como no episódio seis.",
+          "cue": "cro"
+        },
+        {
+          "id": "t45-05",
+          "say": "Em ambiente PCI, isso não foi negociação. Foi o ponto de partida.",
+          "cue": "pci"
+        }
+      ]
+    },
+    {
+      "id": "tela46",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 46 · Case 2 · Análise pronta",
+      "beats": [
+        {
+          "id": "t46-01",
+          "say": "Resumo, classificação, prioridade, confiança, roteamento, incidentes parecidos, próximos passos.",
+          "cue": "notes"
+        },
+        {
+          "id": "t46-02",
+          "say": "Cada item era uma decisão que o analista tomava sem contexto.",
+          "cue": "gestor"
+        },
+        {
+          "id": "t46-03",
+          "say": "A IA entrega o contexto. A decisão continua com a pessoa, registrada.",
+          "cue": "decide"
+        }
+      ]
+    },
+    {
+      "id": "tela47",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 47 · Case 2 · 48 min para 7 min",
+      "beats": [
+        {
+          "id": "t47-01",
+          "say": "Resultado.",
+          "cue": "open",
+          "slow": true
+        },
+        {
+          "id": "t47-02",
+          "say": "Localizar e entender um chamado: de quarenta e oito minutos",
+          "cue": "m48",
+          "pause": 2.5,
+          "slow": true
+        },
+        {
+          "id": "t47-03",
+          "say": "para sete.",
+          "cue": "m7",
+          "slow": true
+        },
+        {
+          "id": "t47-04",
+          "say": "Cerca de oitenta e cinco por cento a menos.",
+          "cue": "p85",
+          "slow": true
+        },
+        {
+          "id": "t47-05",
+          "say": "Declarado pela gestão do projeto no cliente.",
+          "cue": "origem"
+        },
+        {
+          "id": "t47-06",
+          "say": "Cem por cento dos duzentos e noventa e quatro incidentes das filas contratadas processados.",
+          "cue": "v1"
+        },
+        {
+          "id": "t47-07",
+          "say": "Produção assistida desde junho de dois mil e vinte e seis.",
+          "cue": "v2"
+        },
+        {
+          "id": "t47-08",
+          "say": "E o sinal que importa: mais doze filas incorporadas além do escopo.",
+          "cue": "v3"
+        },
+        {
+          "id": "t47-09",
+          "say": "Tem um teste simples para saber se um projeto de IA deu certo.",
+          "cue": "par"
+        },
+        {
+          "id": "t47-10",
+          "say": "Não é o NPS. Não é o relatório de encerramento.",
+          "cue": "nps"
+        },
+        {
+          "id": "t47-11",
+          "say": "É se a operação pede mais sem ninguém vender.",
+          "cue": "pede",
+          "pause": 1
+        },
+        {
+          "id": "t47-12",
+          "say": "Doze filas ninguém vendeu.",
+          "cue": "doze"
+        },
+        {
+          "id": "t47-13",
+          "say": "E, para ser justo: a Gartner diz que resultado medido em triagem com IA ainda é raro no mercado.",
+          "cue": "gartner"
+        },
+        {
+          "id": "t47-14",
+          "say": "Por isso a origem do número está no slide.",
+          "cue": "src"
+        }
+      ]
+    },
+    {
+      "id": "tela48",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 48 · Agentic Commerce",
+      "beats": [
+        {
+          "id": "t48-01",
+          "say": "O terceiro é do tipo transformar.",
+          "cue": "open"
+        },
+        {
+          "id": "t48-02",
+          "say": "O desenvolvedor de um parceiro pede a integração em linguagem natural, a qualquer hora.",
+          "cue": "d1"
+        },
+        {
+          "id": "t48-03",
+          "say": "Agentes seguem os protocolos das bandeiras, conectados às APIs de pagamento, e respondem em tempo real.",
+          "cue": "d2"
+        },
+        {
+          "id": "t48-04",
+          "say": "Estimativa: cerca de dez por cento a mais no volume transacionado,",
+          "cue": "p10",
+          "slow": true
+        },
+        {
+          "id": "t48-05",
+          "say": "algo em torno de vinte e quatro bilhões de euros por ano.",
+          "cue": "eur",
+          "slow": true
+        },
+        {
+          "id": "t48-06",
+          "say": "E o primeiro pagamento agêntico da América Latina, com o protocolo de uma bandeira global.",
+          "cue": "first",
+          "slow": true
+        },
+        {
+          "id": "t48-07",
+          "say": "O aprendizado que vale para cooperativa, banco ou seguradora:",
+          "cue": "ceo"
+        },
+        {
+          "id": "t48-08",
+          "say": "a mesma arquitetura serve ao autosserviço de cliente e de parceiro.",
+          "cue": "arq"
+        },
+        {
+          "id": "t48-09",
+          "say": "E agentes especializados, orquestrados, dão mais controle que um agente único.",
+          "cue": "orq"
+        }
+      ]
+    },
+    {
+      "id": "tela49",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 49 · Lições · dados e modelos",
+      "beats": [
+        {
+          "id": "t49-01",
+          "say": "Seis lições. Três sobre dados e modelos.",
+          "cue": "open"
+        },
+        {
+          "id": "t49-02",
+          "say": "A inteligência nasce nos dados. Em projetos com base de conhecimento, cerca de noventa por cento do sucesso vem da curadoria da base. Não do modelo.",
+          "cue": "c1"
+        },
+        {
+          "id": "t49-03",
+          "say": "Dados sintéticos exigem rigor. Valide em base cega.",
+          "cue": "c2"
+        },
+        {
+          "id": "t49-04",
+          "say": "Agentes especializados, não monolito. Um agente único concentra falha.",
+          "cue": "c3"
+        }
+      ]
+    },
+    {
+      "id": "tela50",
+      "kind": "slide",
+      "avatar": "pip",
+      "label": "Tela 50 · Lições · desenho e evidência",
+      "beats": [
+        {
+          "id": "t50-01",
+          "say": "E três sobre desenho e evidência.",
+          "cue": "open"
+        },
+        {
+          "id": "t50-02",
+          "say": "Comece pela decisão e pelo prazo dela. Tempo real só quando a decisão perde valor em segundos.",
+          "cue": "c1"
+        },
+        {
+          "id": "t50-03",
+          "say": "Se o seu caso é D mais um, não pague por streaming.",
+          "cue": "c1b"
+        },
+        {
+          "id": "t50-04",
+          "say": "Humano no loop por desenho. Automatize o repetitivo, decida com pessoas.",
+          "cue": "c2"
+        },
+        {
+          "id": "t50-05",
+          "say": "Evidência tem nível.",
+          "cue": "c3",
+          "slow": true
+        },
+        {
+          "id": "t50-06",
+          "say": "Provado em produção. Demonstrado em teste. Ou planejado.",
+          "cue": "lv",
+          "slow": true
+        },
+        {
+          "id": "t50-07",
+          "say": "Numa concorrência, três fornecedores apresentaram redução de noventa por cento no tempo de análise.",
+          "cue": "par"
+        },
+        {
+          "id": "t50-08",
+          "say": "O mesmo número. Os três.",
+          "cue": "mesmo"
+        },
+        {
+          "id": "t50-09",
+          "say": "O comprador perguntou de onde vinha.",
+          "cue": "perg"
+        },
+        {
+          "id": "t50-10",
+          "say": "Um: benchmark do fornecedor da ferramenta.",
+          "cue": "v1"
+        },
+        {
+          "id": "t50-11",
+          "say": "Outro: piloto de duas semanas com dez usuários.",
+          "cue": "v2"
+        },
+        {
+          "id": "t50-12",
+          "say": "O terceiro: produção, doze meses, medido pelo cliente.",
+          "cue": "v3",
+          "pause": 1
+        },
+        {
+          "id": "t50-13",
+          "say": "O mesmo número em três níveis de evidência diferentes.",
+          "cue": "niveis"
+        },
+        {
+          "id": "t50-14",
+          "say": "E só um deles era um número.",
+          "cue": "um"
+        },
+        {
+          "id": "t50-15",
+          "say": "De hoje em diante, toda vez que um número de IA chegar à sua mesa,",
+          "cue": "mesa"
+        },
+        {
+          "id": "t50-16",
+          "say": "a pergunta é uma só: de qual nível ele é?",
+          "cue": "qual"
+        }
+      ]
+    },
+    {
+      "id": "decisao",
+      "kind": "narrator",
+      "avatar": "full",
+      "label": "Decisão para levar",
+      "beats": [
+        {
+          "id": "d01",
+          "say": "Decisão deste episódio:",
+          "cue": "task"
+        },
+        {
+          "id": "d02",
+          "say": "defina, com o seu time de procurement, qual nível de evidência a sua empresa aceita para aprovar um projeto de IA.",
+          "cue": "def"
+        },
+        {
+          "id": "d03",
+          "say": "Produção, teste ou plano. Escreva isso na RFP.",
+          "cue": "rfp",
+          "pause": 1
+        },
+        {
+          "id": "d04",
+          "say": "Isso vai mudar o que os fornecedores te apresentam. Inclusive a South.",
+          "cue": "south"
+        },
+        {
+          "id": "d05",
+          "say": "Próximo episódio: a conta que o CFO vai fazer.",
+          "cue": "next"
+        },
+        {
+          "id": "d06",
+          "say": "E por que um projeto que se paga em cinco meses no papel pode levar seis anos na vida real.",
+          "cue": "punch2"
+        }
+      ]
+    },
+    {
+      "id": "final",
+      "kind": "card",
+      "hold": 5,
+      "label": "Cartão final",
+      "next": "EP09 · A conta que o CFO vai fazer"
+    }
+  ]
+}

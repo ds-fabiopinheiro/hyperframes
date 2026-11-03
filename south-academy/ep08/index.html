@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>South Academy Executive · EP08 · Três projetos reais, com o número e a origem</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #1A1A1A; }
+      /* palco opaco: evita flash branco nas costuras (seam-craft) */
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #EDEDED; }
+      #root > div[data-composition-src] { position: absolute; inset: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="839.91" data-fps="30">
+      <div id="el-tela37" data-composition-id="tela37" data-composition-src="compositions/tela37.html" data-start="39.84" data-duration="30.43" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela38" data-composition-id="tela38" data-composition-src="compositions/tela38.html" data-start="70.27" data-duration="52.24" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela39" data-composition-id="tela39" data-composition-src="compositions/tela39.html" data-start="122.51" data-duration="38.75" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela40" data-composition-id="tela40" data-composition-src="compositions/tela40.html" data-start="161.26" data-duration="57.11" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela41" data-composition-id="tela41" data-composition-src="compositions/tela41.html" data-start="218.37" data-duration="30.26" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela42" data-composition-id="tela42" data-composition-src="compositions/tela42.html" data-start="248.63" data-duration="73.44" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela43" data-composition-id="tela43" data-composition-src="compositions/tela43.html" data-start="322.07" data-duration="50.9" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela44" data-composition-id="tela44" data-composition-src="compositions/tela44.html" data-start="372.97" data-duration="40.39" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela45" data-composition-id="tela45" data-composition-src="compositions/tela45.html" data-start="413.36" data-duration="31.41" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela46" data-composition-id="tela46" data-composition-src="compositions/tela46.html" data-start="444.77" data-duration="27.62" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela47" data-composition-id="tela47" data-composition-src="compositions/tela47.html" data-start="472.39" data-duration="96.44" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela48" data-composition-id="tela48" data-composition-src="compositions/tela48.html" data-start="568.83" data-duration="76.4" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela49" data-composition-id="tela49" data-composition-src="compositions/tela49.html" data-start="645.23" data-duration="37.78" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-tela50" data-composition-id="tela50" data-composition-src="compositions/tela50.html" data-start="683.01" data-duration="105.75" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="el-gancho" data-composition-id="gancho" data-composition-src="compositions/gancho.html" data-start="0" data-duration="36.64" data-track-index="3" data-width="1920" data-height="1080"></div>
+      <div id="el-decisao" data-composition-id="decisao" data-composition-src="compositions/decisao.html" data-start="788.76" data-duration="46.15" data-track-index="3" data-width="1920" data-height="1080"></div>
+      <div id="el-vinheta" data-composition-id="vinheta" data-composition-src="compositions/vinheta.html" data-start="36.64" data-duration="3.2" data-track-index="4" data-width="1920" data-height="1080"></div>
+      <div id="el-final" data-composition-id="final" data-composition-src="compositions/final.html" data-start="834.91" data-duration="5" data-track-index="4" data-width="1920" data-height="1080"></div>
+      <!-- formato final: sem legendas renderizadas e sem janela do narrador -->
+      <!-- narração: voz clonada do Fabio (HeyGen), um beat por arquivo em media/vo/ep08/ -->
+      <audio id="vo" src="media/vo/ep08-narration.wav" data-start="0" data-duration="839.91" data-track-index="10" data-volume="1"></audio>
+      <audio id="sfx-whoosh" src="assets/sfx-whoosh.mp3" data-start="36.49" data-duration="5.54" data-track-index="11" data-volume="0.5"></audio>
+      <audio id="sfx-impact" src="assets/sfx-impact.mp3" data-start="37.19" data-duration="2.12" data-track-index="12" data-volume="0.45"></audio>
+      <audio id="sfx-pop-0" src="assets/sfx-pop.mp3" data-start="164.59" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-1" src="assets/sfx-pop.mp3" data-start="169.22" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-2" src="assets/sfx-pop.mp3" data-start="178.96" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-3" src="assets/sfx-pop.mp3" data-start="185.57" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-4" src="assets/sfx-pop.mp3" data-start="218.97" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-5" src="assets/sfx-pop.mp3" data-start="225.93" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-6" src="assets/sfx-pop.mp3" data-start="233.57" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-7" src="assets/sfx-pop.mp3" data-start="343.27" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-8" src="assets/sfx-pop.mp3" data-start="348.57" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-9" src="assets/sfx-pop.mp3" data-start="355.06" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-10" src="assets/sfx-pop.mp3" data-start="373.57" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-11" src="assets/sfx-pop.mp3" data-start="378.56" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-12" src="assets/sfx-pop.mp3" data-start="384.29" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-13" src="assets/sfx-pop.mp3" data-start="391.52" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-14" src="assets/sfx-pop.mp3" data-start="413.96" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-15" src="assets/sfx-pop.mp3" data-start="416.87" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-16" src="assets/sfx-pop.mp3" data-start="422.63" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-17" src="assets/sfx-pop.mp3" data-start="501.7" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-18" src="assets/sfx-pop.mp3" data-start="511.26" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-19" src="assets/sfx-pop.mp3" data-start="517.75" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-20" src="assets/sfx-pop.mp3" data-start="574.14" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-21" src="assets/sfx-pop.mp3" data-start="582.04" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-22" src="assets/sfx-pop.mp3" data-start="651.98" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-23" src="assets/sfx-pop.mp3" data-start="666.52" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-24" src="assets/sfx-pop.mp3" data-start="673.85" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-25" src="assets/sfx-pop.mp3" data-start="689.6" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-26" src="assets/sfx-pop.mp3" data-start="706.3" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-27" src="assets/sfx-pop.mp3" data-start="714.51" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-28" src="assets/sfx-pop.mp3" data-start="745.91" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+      <audio id="sfx-pop-29" src="assets/sfx-pop.mp3" data-start="751.35" data-duration="0.72" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-pop-30" src="assets/sfx-pop.mp3" data-start="757.66" data-duration="0.72" data-track-index="14" data-volume="0.28"></audio>
+    </div>
+    <script>
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>
