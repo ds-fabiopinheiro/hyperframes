@@ -114,7 +114,6 @@ export const SHARED_JS = `
   };
 `;
 
-const CURSOR_SVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l14 9.5-6.2 1.2 3.4 6.3-2.6 1.4-3.4-6.3L5 19.5z" fill="#1c1c1c" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>`;
 
 const chrome = (crumb, num, light = false) => `
   <div class="chrome">
@@ -164,7 +163,7 @@ const FIG_CSS = `
  * zooms: { cue: [fx, fy, fw, fh] } em frações da imagem; "fig" volta ao enquadramento inteiro.
  */
 const figScene = (id, { num, crumb = "Módulo 2 · Fundamentos", eyebrow, title, img, iw, ih, desc, insights, key = "", src, zooms = {}, extra = "" }) =>
-  ({ cues, dur, beats }) => {
+  ({ dur, beats }) => {
     const BW = 1070, BH = 670;
     const s0 = Math.min(BW / iw, BH / ih);
     const w0 = Math.round(iw * s0), h0 = Math.round(ih * s0);

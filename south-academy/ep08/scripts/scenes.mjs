@@ -114,7 +114,6 @@ export const SHARED_JS = `
   };
 `;
 
-const CURSOR_SVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l14 9.5-6.2 1.2 3.4 6.3-2.6 1.4-3.4-6.3L5 19.5z" fill="#1c1c1c" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>`;
 
 const chrome = (crumb, num, light = false) => `
   <div class="chrome">
