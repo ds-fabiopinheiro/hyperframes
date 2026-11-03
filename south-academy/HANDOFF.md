@@ -22,9 +22,18 @@ episódio (`docs/plans/2026-10-16-ep04-entrega-capcut.md`).
 
 ## 2. Regras fixas (não negociar)
 
-1. **Sem HeyGen.** Proibido chamar qualquer endpoint da API HeyGen ou o MCP da HeyGen
-   (`mcp__HyperFrames_by_HeyGen__*`, `compose`, `render_video`, etc.). Se algum passo exigir
-   HeyGen, pare e avise o Fabio. Não ler, imprimir nem procurar a chave da HeyGen.
+1. **HeyGen só para a voz, com autorização expressa do Fabio em 2026-11-03.** A proibição
+   anterior (nenhum endpoint da API HeyGen e nem o MCP da HeyGen) foi atualizada a pedido dele:
+   ele já usa a API com frequência e quer a qualidade e a economia de tempo na gravação.
+   - **Autorizado:** gerar a narração com a voz clonada "Fabio - Voice 2" pela API de áudio da
+     HeyGen.
+   - **Continua proibido:** o MCP da HeyGen (`mcp__HyperFrames_by_HeyGen__*`, `compose`,
+     `render_video`) e qualquer composição ou render na nuvem. Todo render segue local (regra 2).
+   - **Qualquer outro uso da HeyGen** (avatar, vídeo, projeto hospedado) exige nova autorização
+     do Fabio: pare e avise.
+   - **Chave:** não ler, imprimir nem procurar. Usar só a partir de variável de ambiente já
+     configurada, lida dentro do script e sem eco no terminal ou em log. O Fabio informa o nome
+     da variável. Se a chamada falhar por falta de chave, pare e avise.
 2. **Todo render é local** (`node packages/cli/dist/cli.js render`), headless Chrome no container.
 3. **Sem workflows multi-agente** (nada de `Workflow`, nada de fan-out de agentes). A conferência
    de fidelidade é por script determinístico (`scripts/fidelity.mjs`), não por agentes.
@@ -49,7 +58,7 @@ episódio (`docs/plans/2026-10-16-ep04-entrega-capcut.md`).
 | EP04 | 13–17 (16D opcional)                  | `south-academy-ep04` / PR #4 (mesclado) | aprovado                                               |
 | EP05 | 18, 19, 20, 21, 21A, 21B, 22          | `south-academy-ep05` / PR #5 (mesclado) | aprovado                                               |
 | EP06 | 23–28 (26 dinâmica, 27 revelação)     | `south-academy-ep06` / PR #6 (mesclado) | aprovado                                               |
-| EP07 | 29–36C (31A, 36A–36C Gartner)         | `south-academy-ep07` / PR #7 (draft)    | render único feito; **aguardando aprovação**           |
+| EP07 | 29–36C (31A, 36A–36C Gartner)         | `south-academy-ep07` / PR #7 (mesclado) | entregue; **aprovação explícita do Fabio pendente**    |
 | EP08 | 37–50 (dois cases + Agentic Commerce) | —                                       | próximo (EP07 já anuncia "EP08 · Três projetos reais") |
 | EP09 | 51–62                                 | —                                       | —                                                      |
 | EP10 | 63–67 (67 encerramento)               | —                                       | —                                                      |

@@ -38,7 +38,7 @@ bash scripts/verify-entrega.sh                           # durações, silêncio
 ```
 
 Ritmo: `timing.speed` (Kokoro), `timing.slowSpeed` nos beats `"slow": true` (`[RITMO: lento]`) e
-`timing.beatSlack` (folga após cada beat, fração da fala). Sem HeyGen: tudo é local.
+`timing.beatSlack` (folga após cada beat, fração da fala). Todo render é local; a HeyGen só entra na geração da voz, conforme a regra 1 do `HANDOFF.md`.
 
 ## Trocar a narração pela voz clonada
 
