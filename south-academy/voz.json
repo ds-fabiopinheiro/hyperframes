@@ -1,5 +1,6 @@
 {
   "name": "Fabio - Voice 2",
+  "key_env": "HEYGEN_API_KEY",
   "voice_id": null,
   "mode": null,
   "model": "heygen-voice-1",

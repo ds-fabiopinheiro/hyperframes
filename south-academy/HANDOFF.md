@@ -35,8 +35,11 @@ episódio (`docs/plans/2026-10-16-ep04-entrega-capcut.md`).
    - **Qualquer outro uso da HeyGen** (avatar, vídeo, projeto hospedado) exige nova autorização
      do Fabio: pare e avise.
    - **Chave:** não ler, imprimir nem procurar. Usar só a partir de variável de ambiente já
-     configurada, lida dentro do script e sem eco no terminal ou em log. O Fabio informa o nome
-     da variável. Se a chamada falhar por falta de chave, pare e avise.
+     configurada, lida dentro do script e sem eco no terminal ou em log. O nome da variável é
+     `HEYGEN_API_KEY` (escolhido em 2026-11-03, a pedido do Fabio). O Fabio cadastra a chave nas
+     configurações do ambiente (menu do ambiente na barra do título da sessão, Edit; em "Network
+     secrets" quando existir, senão como variável de ambiente); só uma sessão nova enxerga. Se a
+     chamada falhar por falta de chave, pare e avise.
 2. **Todo render é local** (`node packages/cli/dist/cli.js render`), headless Chrome no container.
 3. **Sem workflows multi-agente** (nada de `Workflow`, nada de fan-out de agentes). A conferência
    de fidelidade é por script determinístico (`scripts/fidelity.mjs`), não por agentes.
@@ -78,10 +81,12 @@ final; tudo em um branch isolado (`south-academy-voz-clonada`).
 - **Ritmo:** a voz clonada instantânea ignora o parâmetro de velocidade e não aceita SSML. Os beats
   `slow` são desacelerados em 10% por `atempo` (`slowTempo` em `voz.json`); as pausas continuam
   nas contas do `build.mjs` (`pause`, `lineGap`, `beatSlack`).
-- **Ainda em aberto (precisa do Fabio):** nome da variável de ambiente da chave; modelo
-  (`heygen-voice-1` é pago; `heygen-voice-1-turbo-free` é gratuito até 2026-11-30 e aceita clone
-  instantâneo, sem garantia de disponibilidade); se "Fabio - Voice 2" é clone instantâneo ou
-  profissional (`find-voice --save` registra o modo em `voz.json`).
+- **Decidido em 2026-11-03 (o Fabio delegou a escolha):** variável `HEYGEN_API_KEY` e modelo
+  `heygen-voice-1` (pago; é o padrão da API, aceita clone instantâneo e profissional e foi o primeiro
+  colocado no ranking de identidade de voz da HeyGen). `heygen-voice-1-turbo-free` é gratuito até
+  2026-11-30, mas sem garantia de disponibilidade e sem clone profissional; só vale para testes.
+- **Ainda em aberto:** o Fabio cadastrar a chave no ambiente e abrir uma sessão nova; depois,
+  `find-voice --save` confirma "Fabio - Voice 2" e se é clone instantâneo ou profissional.
 - **Ordem de trabalho:** EP08 como piloto no formato final; depois de aprovado, refazer EP01 a EP07
   (mesmo roteiro e mesmas cenas, só voz nova e o formato final). Não re-renderizar EP01–EP07 antes disso.
 - **Segurança:** a chave nunca é lida, impressa nem procurada; as chamadas à HeyGen vão só para
@@ -337,16 +342,17 @@ Reinstalação, se algo sumiu:
 
 ## 10. Como começar o próximo episódio (EP08, piloto do formato final)
 
-1. Branch: `south-academy-voz-clonada` (já existe; o EP08 entra nele). Confirmar com o Fabio o nome
-   da variável de ambiente da chave e o modelo (§2A) antes de qualquer chamada à HeyGen. Rodar
-   `node tools/test-heygen-tts.mjs` (offline) e `node tools/heygen-tts.mjs find-voice --key-env NOME --save`.
+1. Branch: `south-academy-voz-clonada` (já existe; o EP08 entra nele). Confirmar que a sessão enxerga
+   `HEYGEN_API_KEY` sem imprimir o valor (`test -n "$HEYGEN_API_KEY" && echo ok`). Rodar
+   `node tools/test-heygen-tts.mjs` (offline) e `node tools/heygen-tts.mjs find-voice --save`.
 2. Copiar `ep07/` para `ep08/` só com `script/`, `scripts/scenes.mjs`, `scripts/fidelity.mjs`,
    `assets/` (sem `fig-*`), `meta.json`, `package.json`, `hyperframes.json`, `CLAUDE.md`, `AGENTS.md`,
    `.gitignore`; trocar `ep07` por `ep08` onde aparecer. O `ep07.json` serve de modelo de roteiro.
 3. Teleprompter: `docs/teleprompter.md`, seção "# EP08 · Três projetos reais, com o número e a
    origem" (telas 37 divisória do Módulo 4, 38–42 Case 1 Pix, 43–47 Case 2 N1, 48 Agentic Commerce,
-   49–50 "O que ninguém conta"). **Confira primeiro se a seção vai até a tela 50 e termina na decisão
-   e no cartão final**; se faltar algo, recupere do histórico como no EP07. Deck:
+   49–50 "O que ninguém conta"). A seção está completa (telas 37 a 50, "DECISÃO PARA LEVAR" e cartão
+   final "Próximo: EP09 · A conta que o CFO vai fazer", conferido em 2026-11-03); duração "cerca de
+   14 min", então `META = 840` s ± 30. Deck:
    `python3 deck/extract-slides.py ep08 37 38 39 40 41 42 43 44 45 46 47 48 49 50`.
 4. Seguir o §4 com as mudanças do formato final. Meta de duração = duração do teleprompter ±30 s.
    O EP07 termina com o teaser "EP08 · Três projetos reais" e a frase "Com o número. E com a origem do

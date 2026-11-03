@@ -5,7 +5,7 @@
  * Autorizado pelo Fabio em 2026-11-03 (HANDOFF, regra 1): só a API de áudio (POST /v3/models/audio/tts
  * e GET /v3/models/audio/voices). Nada de MCP da HeyGen, avatar, vídeo ou render na nuvem.
  *
- * Chave: lida só de uma variável de ambiente cujo NOME o Fabio informa (--key-env NOME). O script não
+ * Chave: lida só de uma variável de ambiente, `key_env` do voz.json (HEYGEN_API_KEY) ou --key-env NOME. O script não
  * lista, não procura e não imprime variáveis. A chave vai só no cabeçalho das chamadas à api.heygen.com;
  * o download do WAV gerado (outro host) é feito sem a chave.
  *
@@ -60,11 +60,11 @@ function parseArgs(argv) {
 const configPath = (opt) => resolve(opt.config ?? DEFAULT_CONFIG);
 const loadConfig = (opt) => JSON.parse(readFileSync(configPath(opt), "utf8"));
 
-function apiKey(opt) {
-  const name = opt["key-env"];
+function apiKey(opt, cfg) {
+  const name = opt["key-env"] ?? cfg.key_env;
   if (!name)
     fail(
-      "informe --key-env NOME_DA_VARIAVEL (o Fabio diz qual é). O script nunca procura variáveis.",
+      "informe --key-env NOME_DA_VARIAVEL ou key_env no voz.json. O script nunca procura variáveis.",
     );
   const v = process.env[name];
   if (!v) fail(`a variável ${name} está vazia ou não existe neste ambiente.`);
@@ -205,7 +205,7 @@ const hashOf = (o) => createHash("sha1").update(JSON.stringify(o)).digest("hex")
 async function findVoice(opt) {
   const cfg = loadConfig(opt);
   const base = opt["base-url"] ?? "https://api.heygen.com";
-  const key = apiKey(opt);
+  const key = apiKey(opt, cfg);
   const wanted = (opt.name ?? cfg.name).toLowerCase();
   const all = [];
   let token = null;
@@ -286,7 +286,7 @@ async function speak(opt, pos) {
   if (opt["dry-run"]) return;
   if (!voiceId) fail("sem voice_id: rode find-voice --save ou passe --voice-id");
   mkdirSync(rawDir, { recursive: true });
-  const key = toCall.length ? apiKey(opt) : null;
+  const key = toCall.length ? apiKey(opt, cfg) : null;
   let last = 0;
   let novos = 0;
   for (const b of state) {
