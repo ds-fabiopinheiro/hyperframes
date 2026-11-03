@@ -54,6 +54,30 @@ só no cartão inicial, no gancho e no cartão final; branch isolado.
   O Fabio recebeu a amostra (12 s) para ouvir.
 - Um primeiro `speak` sem motor falhou em `400 invalid_parameter` e não gerou nada.
 
+## Testes automatizados e teste de mutação (TDD das ferramentas)
+
+O Fabio pediu as skills do superpowers. Estado antes: o teste do `heygen-tts` foi escrito depois do código, e o
+`build.mjs` e o `verify-final.sh` só tinham conferência manual. Isso foi corrigido com testes que rodam offline
+(nenhum chama a HeyGen) e com teste de mutação, que quebra o código de propósito e exige um teste vermelho.
+
+| Ferramenta        | Teste                     | Mutações mortas |
+| ----------------- | ------------------------- | --------------- |
+| `heygen-tts.mjs`  | `test-heygen-tts.mjs`     | 13 de 13        |
+| `build.mjs`       | `test-build.mjs`          | 20 de 20        |
+| `verify-final.sh` | `test-verify-final.mjs`   | 11 de 11        |
+| `validate-script` | `test-validate-script.mjs` | 12 de 12        |
+
+- `validate-script.mjs` foi escrito teste-primeiro: o teste foi visto falhando (o arquivo não existia) antes do código.
+- Os demais testes foram escritos depois do código já existente; a prova de que protegem é a mutação.
+- O que a mutação achou: (1) a mutação do cache apontava o trecho errado e o teste do `build` não percebia a foto
+  inserida duas vezes, então o teste passou a exigir exatamente uma foto por cena; (2) o executor de mutação usava o
+  mesmo arquivo temporário em rodadas simultâneas e apagava o mutante de outra rodada, então cada processo usa o
+  seu; (3) o filtro de mutações mostrava a contagem total, não a filtrada.
+- Valores esperados dos testes: tempos calculados à mão; geometria medida num Chromium real; nenhuma asserção compara
+  texto do código-fonte.
+- Como rodar: `bash south-academy/tools/test-all.sh` (testes) e `node south-academy/tools/mutation-check.mjs`
+  (mutações; aceita o grupo e um filtro do motivo).
+
 ## Pendente
 
 - O Fabio ouvir a amostra e aprovar a voz.
