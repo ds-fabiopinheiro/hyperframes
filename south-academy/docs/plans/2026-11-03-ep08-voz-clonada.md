@@ -31,3 +31,32 @@ foto do Fabio no gancho, na vinheta e no cartão final. Render local único; par
   ("Provado em produção, demonstrado em teste ou planejado."); corrigida, 14 de 14.
 - `hyperframes check`: aviso informativo de título encoberto na tela 47 e sobreposição do título com o "04" na tela 37
   (vista nos quadros); os dois corrigidos.
+
+## Voz (HeyGen) e duração
+
+- 116 beats, 6399 caracteres, um por chamada, sem nenhuma nova tentativa; cerca de 6 s por beat.
+- Velocidade mediana da voz: 13,6 caracteres por segundo. Nenhum beat fora do padrão para o tamanho do texto
+  (o único destaque foi "Resultado.", uma palavra só).
+- Folga ajustada por interpolação entre dois builds (0,3 → 715,75 s; 1,0 → 1066,24 s): 0,548 → 839,91 s.
+- Transcrição de conferência (whisper.cpp, ggml-small, pt) de cada beat contra o roteiro: taxa média de erro por
+  palavra 0,094; 21 beats acima de 0,20, quase todos por formatação de número do whisper ("9 centavos", "85%").
+  Trechos a ouvir: "Agentic Commerce" (tela 37, ouvido como "agente de e-commerce"), "Latência em milissegundos"
+  (tela 42, ouvido como "lá tem 100 milissegundos"), "AUC" (tela 42, "Ao C") e "Lê o incidente" (tela 44, "Leu").
+- Quadros nos cues com o tempo real da voz (gancho "Juntos", tela 38 "< 1 s", tela 47 "48 → 7", tela 50 "Provado em
+  produção"): cada animação cai na fala certa.
+- O lint do repositório inteiro (gancho de commit) acusou 14 declarações sem uso nos scenes.mjs do EP02 ao EP08;
+  removidas, sem mudar nenhum vídeo (o build do EP08 gerou saída idêntica).
+
+## Render e verificação final
+
+- Render local único (`ep08/renders/render.sh`). O primeiro disparo foi interrompido pelo reinício do container e o
+  segundo não passou da sondagem do `ffmpeg` logo após o reinício; o terceiro rodou inteiro (cerca de 24 min). Nenhum
+  render completo foi descartado.
+- `tools/verify-final.sh ep08 840 30`:
+  - composição sem legendas e sem janela do narrador;
+  - `ep08.mp4` 839,93 s contra `timing.json` 839,91 s (+0,02 s) e contra a meta de 840 s (−0,1 s; faixa 810–870 s);
+  - fala no gancho (2 a 18 s): −21,3 dB; episódio inteiro: −14,3 LUFS, LRA 9,5 LU, pico −1,3 dBFS;
+  - provas por pixel: faixa da legenda e canto inferior direito claros em 4 de 5 slides; a exceção é a divisória da
+    tela 37 (fundo laranja e painel escuro da capa), como a divisória do EP07;
+  - montagem com vinheta, gancho, tela 42, decisão e cartão final conferida.
+- Entrega: `entrega/ep08.mp4` (31,3 MiB), dividido sem recodificar em duas partes de cerca de 7 min para o envio.
