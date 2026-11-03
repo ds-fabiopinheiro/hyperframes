@@ -10,7 +10,7 @@
     "pauseLong": 2.5,
     "sceneLeadIn": 0.6,
     "sceneTail": 1.2,
-    "beatSlack": 0.3
+    "beatSlack": 0.548
   },
   "scenes": [
     {

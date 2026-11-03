@@ -358,6 +358,15 @@ Reinstalação, se algo sumiu:
   vídeo antigo mostrava esse painel vazio na vinheta e no cartão final.
 - A chave da HeyGen nunca vai em argumento de linha de comando, log ou arquivo.
 
+## 10A. Depois da aprovação do EP08: EP09
+
+- Teleprompter conferido em 2026-11-03: a seção "# EP09 · A conta que o CFO vai fazer" está completa (telas 51 a 62,
+  "DECISÃO PARA LEVAR" e cartão final "Próximo: EP10 · Decidir"); duração "cerca de 13 min", então `META = 780` s ± 30.
+- Mesmo fluxo do EP08 (§10 e §4 com o formato final): pasta `ep09/` a partir de `ep08/` (sem `media/`, `entrega/`,
+  `renders/`, `compositions/`, `index.html`), roteiro, `validate-script` (vermelho → verde), cenas, fidelidade
+  (`python3 deck/extract-slides.py ep09 51 52 53 54 55 56 57 58 59 60 61 62`), voz, ajuste de folga, render único.
+- Folga: no EP08 a voz da HeyGen falou cerca de 13,6 caracteres por segundo (mediana); comece pela folga final do EP08.
+
 ## 10. Como começar o próximo episódio (EP08, piloto do formato final)
 
 1. Branch: `south-academy-voz-clonada` (já existe; o EP08 entra nele). Rodar
